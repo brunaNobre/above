@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  test:
+    docker:
+      - image: circleci/php:7.3
+    steps:
+      - run:
+          echo "Run awesome tests"
+  deploy:
+    - image: circleci/php:7.3
+      steps:
+        - run:
+            echo "Super Deploy"
+workflows:      
+  version: 2
+  aboveWorkflow:
+   jobs:
+    - test:
+        filters:
+          branches:
+            only: master
+    - deploy:
+        requires:
+          - test
+        filters:
+          branches:
+            only: master
