@@ -76,7 +76,7 @@
                 font-weight: normal;
                 padding: 0.5em;
                 position: absolute;
-                right: 5%;
+                right: 10%;
             }
 
             .register-link {
