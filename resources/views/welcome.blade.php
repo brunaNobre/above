@@ -7,17 +7,25 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:light,regular,bold|Arvo:regular,bold|Roboto:thin,light,regular,medium,bold,black" rel="stylesheet">
 
         <!-- Styles -->
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
+                color: white;
+                font-family: 'Arvo', serif;
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
+            }
+
+            .main-container {
+                background-color: #E2C9A7;
+                background: linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)) , url({{ asset('images/presentation-page-background.png') }});
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: 20%;
             }
 
             .full-height {
@@ -41,21 +49,48 @@
             }
 
             .content {
-                text-align: center;
+                text-align: left;
             }
 
             .title {
-                font-size: 84px;
+                font-size: 2.6em;
+                font-weight: bold;
+                margin-left: 0.5em;
+                margin-right: 1em;
+            }
+
+            .logo-above {
+                position: absolute;
+                top: 0%;
+                left: 6%;
             }
 
             .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
+                color: white;
                 text-decoration: none;
                 text-transform: uppercase;
+            }
+
+            .login-link {
+                font-family: 'Roboto Condensed', sans-serif;
+                font-weight: normal;
+                padding: 0.5em;
+                position: absolute;
+                right: 5%;
+            }
+
+            .register-link {
+                font-family: 'Roboto', sans-serif;
+                font-weight: 500;
+                font-size: 1.2em;
+                border: 2px solid #8344E0;
+                background-color: #8344E0;
+                padding: .5em 1.5em;
+                border-radius: 1.5em;
+                display: block;
+                position: relative;
+                top: 68vh;
+                left: -9em;
             }
 
             .m-b-md {
@@ -64,24 +99,26 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center position-ref full-height main-container">
+
+        <h1 class="logo-above">above</h1>
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Entrar</a>
+                        <a class="login-link" href="{{ route('login') }}">Entrar</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Começar</a>
+                            <a class="register-link" href="{{ route('register') }}">Começar</a>
                         @endif
                     @endauth
                 </div>
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Organização para uma vida mais virginiane.
+                <div class="m-b-md">
+                    <p class="title">Organização para uma vida mais virginiane.</p>
                 </div>
 
               
