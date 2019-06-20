@@ -96,6 +96,19 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            @media (min-width: 440px) {
+                .register-link { 
+                    font-size: 1.5em;
+                }
+            } 
+
+             @media (min-width: 380px) {
+                .register-link { 
+                    font-size: 1.3em;
+                }
+            } 
+
         </style>
     </head>
     <body>
