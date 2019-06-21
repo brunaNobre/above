@@ -1,0 +1,49 @@
+.card-header {
+    font-family: Roboto, sans-serif;
+    color: black;
+    font-size: 1.5em;
+    background-color: white;
+    border: none;
+}
+
+.card-body {
+    position: relative;
+}
+
+
+.login-form {
+
+     label {
+        color: gray;
+    }
+
+    #email-label, #password-label {
+        position: absolute;
+        left: 5%;
+        top: 0;
+    }
+
+    #email:focus + label, 
+    #password:focus + label, 
+    #email:valid + label,
+    #password:valid + label, 
+     {
+        z-index: -9999;
+    }
+
+  
+
+    #email, #password {
+
+        &:valid {
+            border-color: green;
+        }
+
+        &::selection {
+            border-color: red;
+        }
+    }
+
+    
+}
+
