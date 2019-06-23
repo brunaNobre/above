@@ -11232,6 +11232,11 @@ button.above-btn {
   width: 100%;
 }
 
+button.above-btn:hover {
+  background-color: #B188F1;
+  border-color: #B188F1;
+}
+
 .card-header {
   font-family: Roboto, sans-serif;
   color: black;

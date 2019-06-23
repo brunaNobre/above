@@ -22,6 +22,11 @@ button.above-btn {
     border-radius: 1.5em;
     display: block;
     width: 100%;
+
+    &:hover {
+        background-color: #B188F1;
+        border-color: #B188F1;
+    }
 }
 
 .card-header {
