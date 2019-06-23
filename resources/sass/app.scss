@@ -39,3 +39,20 @@ button.above-btn {
 .hidden-behind {
     z-index: -9999;
 }
+
+a.google-account {
+    color: gray;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    font-weight: 300;
+    text-align: center;
+
+    img {
+        width: 10%;
+        margin-right: 2%;
+    }
+}
+

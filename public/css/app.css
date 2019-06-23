@@ -11164,8 +11164,7 @@ a.text-dark:focus {
   border-color: green;
 }
 
-.login-card .login-form a.forgot-password,
-.login-card .login-form a.google-login {
+.login-card .login-form a.forgot-password {
   color: gray;
   padding-top: 5%;
   padding-bottom: 5%;
@@ -11173,15 +11172,6 @@ a.text-dark:focus {
   margin-right: 10%;
   width: 80%;
   font-weight: 300;
-}
-
-.login-card .login-form a.google-login {
-  text-align: center;
-}
-
-.login-card .login-form a.google-login img {
-  width: 10%;
-  margin-right: 2%;
 }
 
 .login-card p.register-call {
@@ -11238,6 +11228,10 @@ a.text-dark:focus {
   border-color: green;
 }
 
+.register-card .register-form a.google-account {
+  margin-top: 5%;
+}
+
 button.above-btn {
   background-color: #8344E0;
   border-color: #8344E0;
@@ -11261,5 +11255,21 @@ button.above-btn {
 
 .hidden-behind {
   z-index: -9999;
+}
+
+a.google-account {
+  color: gray;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  font-weight: 300;
+  text-align: center;
+}
+
+a.google-account img {
+  width: 10%;
+  margin-right: 2%;
 }
 

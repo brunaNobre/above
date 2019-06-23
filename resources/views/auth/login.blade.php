@@ -68,7 +68,7 @@
                             </div>
                         </div>
 
-                        <a class="btn btn-link google-login" href="#">
+                        <a class="btn btn-link google-account" href="#">
                             <img src="{{ asset('images/google-logo.png') }}" alt="Google Entrar">
                             Usar a conta do Google
 
