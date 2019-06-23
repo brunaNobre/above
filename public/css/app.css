@@ -11128,3 +11128,97 @@ a.text-dark:focus {
   }
 }
 
+.login-card {
+  border: none;
+}
+
+.login-card .login-form label {
+  color: gray;
+  font-weight: 300;
+}
+
+.login-card .login-form #email-label,
+.login-card .login-form #password-label {
+  position: absolute;
+  left: 5%;
+  top: 0;
+}
+
+.login-card .login-form #email:focus + label,
+.login-card .login-form #password:focus + label,
+.login-card .login-form #email:valid + label,
+.login-card .login-form #password:valid + label {
+  z-index: -9999;
+}
+
+.login-card .login-form #email,
+.login-card .login-form #password {
+  border-radius: 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.login-card .login-form #email:valid,
+.login-card .login-form #password:valid {
+  border-color: green;
+}
+
+.login-card .login-form a.forgot-password,
+.login-card .login-form a.google-login {
+  color: gray;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  font-weight: 300;
+}
+
+.login-card .login-form a.google-login {
+  text-align: center;
+}
+
+.login-card .login-form a.google-login img {
+  width: 10%;
+  margin-right: 2%;
+}
+
+.login-card p.register-call {
+  margin-top: 10%;
+  text-align: center;
+}
+
+.login-card p.register-call a.register-link {
+  color: #8344E0 !important;
+}
+
+.register-card {
+  border: none;
+}
+
+button.above-btn {
+  background-color: #8344E0;
+  border-color: #8344E0;
+  padding: 0.5em 1.5em;
+  border-radius: 1.5em;
+  display: block;
+  width: 100%;
+}
+
+.card-header {
+  font-family: Roboto, sans-serif;
+  color: black;
+  font-size: 1.5em;
+  background-color: white;
+  border: none;
+}
+
+.card-body {
+  position: relative;
+}
+
+.hidden-behind {
+  z-index: -9999;
+}
+
