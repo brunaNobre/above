@@ -11197,6 +11197,47 @@ a.text-dark:focus {
   border: none;
 }
 
+.register-card .register-form label {
+  color: gray;
+  font-weight: 300;
+}
+
+.register-card .register-form #name-label,
+.register-card .register-form #email-label,
+.register-card .register-form #password-label,
+.register-card .register-form #password-confirm-label {
+  position: absolute;
+  left: 5%;
+  top: 0;
+}
+
+.register-card .register-form #name:focus + label,
+.register-card .register-form #email:focus + label,
+.register-card .register-form #password:focus + label,
+.register-card .register-form #password-confirm:focus + label,
+.register-card .register-form #email:valid + label,
+.register-card .register-form #password:valid + label,
+.register-card .register-form #password-confirm:valid + label {
+  z-index: -9999;
+}
+
+.register-card .register-form #name,
+.register-card .register-form #email,
+.register-card .register-form #password,
+.register-card .register-form #password-confirm {
+  border-radius: 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.register-card .register-form #name:valid,
+.register-card .register-form #email:valid,
+.register-card .register-form #password:valid,
+.register-card .register-form #password-confirm:valid {
+  border-color: green;
+}
+
 button.above-btn {
   background-color: #8344E0;
   border-color: #8344E0;

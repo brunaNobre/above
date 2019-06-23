@@ -1,3 +1,46 @@
 .register-card {
     border: none;
+
+
+    .register-form {
+
+        label {
+            color: gray;
+            font-weight: 300;
+        }
+    
+        #name-label, #email-label, #password-label, #password-confirm-label {
+            position: absolute;
+            left: 5%;
+            top: 0;
+        }
+    
+        #name:focus + label,
+        #email:focus + label, 
+        #password:focus + label,
+        #password-confirm:focus + label,
+        #email:valid + label,
+        #password:valid + label,
+        #password-confirm:valid + label 
+         {
+            z-index: -9999;
+        }
+    
+      
+    
+        #name, #email, #password, #password-confirm {
+    
+            border-radius: 0;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+    
+            &:valid {
+                border-color: green;
+            }
+    
+            
+        }
+    }
+
 }
