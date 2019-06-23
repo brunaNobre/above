@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card login-card">
                 <div class="card-header">Olá, pode entrar :)</div>
 
                 <div class="card-body">
@@ -41,7 +41,7 @@
                             </div>
 
                         </div>
-
+<!--
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
@@ -53,23 +53,33 @@
                                 </div>
                             </div>
                         </div>
-
+-->
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary above-btn">
                                     Entrar
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <a class="btn btn-link forgot-password" href="{{ route('password.request') }}">
                                         Esqueci a senha
                                     </a>
                                 @endif
                             </div>
                         </div>
+
+                        <a class="btn btn-link google-login" href="#">
+                            <img src="{{ asset('images/google-logo.png') }}" alt="Google Entrar">
+                            Usar a conta do Google
+
+                        </a>
+
                     </form>
 
-                    <a class="register-link" href="{{ route('register') }}">Começar</a>
+                    <p class="register-call">
+                    Acabou de chegar de marte?
+                    <a class="register-link" href="{{ route('register') }}"> Cadastre-se</a>
+                    </p>
                 </div>
             </div>
         </div>

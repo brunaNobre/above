@@ -1,20 +1,10 @@
 $('#email').on('change', function(){
     
-    $('#email').val() != "" ? $('#email-label').text('') : $('#email-label').text('E-mail ou nome de usuário(a)')
+    $('#email').val() != "" ? $('#email-label').addClass("hidden-behind") : $('#email-label').removeClass("hidden-behind");
 
-    $('#password').val() != "" ? $('#password-label').text('') : $('#password-label')
-    .text('Senha')
+    $('#password').val() != "" ? $('#password-label').addClass("hidden-behind") : $('#password-label')
+    .removeClass("hidden-behind");
 
   
 })
 
-/* 
-
-  if($('#email').val() != "") {
-        $('#email-label').text('');
-    } else if($('#password').val() != "") {
-        $('#password-label').text('');
-    }
-
-
-*/

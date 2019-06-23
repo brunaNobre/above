@@ -1,20 +1,12 @@
-.card-header {
-    font-family: Roboto, sans-serif;
-    color: black;
-    font-size: 1.5em;
-    background-color: white;
+.login-card {
     border: none;
-}
-
-.card-body {
-    position: relative;
-}
 
 
 .login-form {
 
      label {
         color: gray;
+        font-weight: 300;
     }
 
     #email-label, #password-label {
@@ -35,15 +27,48 @@
 
     #email, #password {
 
+        border-radius: 0;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+
         &:valid {
             border-color: green;
         }
 
-        &::selection {
-            border-color: red;
-        }
+        
     }
 
+  
+    a.forgot-password, a.google-login {
+        color: gray;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 80%;
+        font-weight: 300;
+    }
+
+   a.google-login {
+    text-align: center;
+
+        img {
+            width: 10%;
+            margin-right: 2%;
+        }
+
+   } 
     
 }
 
+p.register-call {
+    margin-top: 10%;
+    text-align: center;
+    a.register-link {
+        color: #8344E0 !important;
+    }
+
+}
+
+}

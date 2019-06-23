@@ -10,3 +10,32 @@
 
 // Pages
 @import 'pages/login';
+@import 'pages/register';
+
+
+// General
+
+button.above-btn {
+    background-color: #8344E0;
+    border-color: #8344E0;
+    padding: .5em 1.5em;
+    border-radius: 1.5em;
+    display: block;
+    width: 100%;
+}
+
+.card-header {
+    font-family: Roboto, sans-serif;
+    color: black;
+    font-size: 1.5em;
+    background-color: white;
+    border: none;
+}
+
+.card-body {
+    position: relative;
+}
+
+.hidden-behind {
+    z-index: -9999;
+}
