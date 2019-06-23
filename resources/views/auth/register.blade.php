@@ -42,7 +42,7 @@
                         <div class="form-group row">
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" minlength="8" maxlength="25" pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,25}" required autocomplete="new-password">
                                 <label id="password-label" for="password" class="col-md-4 col-form-label text-md-right">Senha</label>
 
                                 @error('password')
@@ -56,7 +56,7 @@
                         <div class="form-group row">
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" minlength="8" maxlength="25" pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,25}" required autocomplete="new-password">
                                 <label id="password-confirm-label" for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirme sua senha</label>
 
                             </div>
