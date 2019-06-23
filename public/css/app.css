@@ -11174,15 +11174,6 @@ a.text-dark:focus {
   font-weight: 300;
 }
 
-.login-card p.register-call {
-  margin-top: 10%;
-  text-align: center;
-}
-
-.login-card p.register-call a.register-link {
-  color: #8344E0 !important;
-}
-
 .register-card {
   border: none;
 }
@@ -11271,5 +11262,16 @@ a.google-account {
 a.google-account img {
   width: 10%;
   margin-right: 2%;
+}
+
+p.login-register-call {
+  margin-top: 10%;
+  text-align: center;
+  font-weight: 100;
+}
+
+p.login-register-call a.register-link {
+  color: #8344E0 !important;
+  font-weight: 500;
 }
 

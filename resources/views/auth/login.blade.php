@@ -76,7 +76,7 @@
 
                     </form>
 
-                    <p class="register-call">
+                    <p class="login-register-call">
                     Acabou de chegar de marte?
                     <a class="register-link" href="{{ route('register') }}"> Cadastre-se</a>
                     </p>

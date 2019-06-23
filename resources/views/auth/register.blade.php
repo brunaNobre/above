@@ -77,6 +77,12 @@
                         </a>
 
                     </form>
+
+                     <p class="login-register-call">
+                    Já é de casa?
+                    <a class="register-link" href="{{ route('login') }}"> Pode entrar</a>
+                    </p>
+
                 </div>
             </div>
         </div>
