@@ -34,3 +34,5 @@ Route::resource('moons', 'MoonController');
 Route::resource('planets', 'PlanetController');
 
 Route::resource('signs', 'SignController');
+
+Route::resource('tasks', 'TaskController');
