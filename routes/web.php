@@ -26,3 +26,11 @@ Route::get('/callback', 'Auth\LoginController@handleProviderCallback');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('moods', 'MoodController');
+
+Route::resource('moons', 'MoonController');
+
+Route::resource('planets', 'PlanetController');
+
+Route::resource('signs', 'SignController');
