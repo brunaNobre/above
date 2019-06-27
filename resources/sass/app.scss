@@ -11,6 +11,7 @@
 // Pages
 @import 'pages/login';
 @import 'pages/register';
+@import 'pages/places';
 
 
 // General
@@ -72,3 +73,22 @@ p.login-register-call {
 
 }
 
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}

@@ -11223,6 +11223,80 @@ a.text-dark:focus {
   margin-top: 5%;
 }
 
+body {
+  font-family: "Arvo", serif;
+  font-weight: 200;
+  height: 100vh;
+  margin: 0;
+  position: relative;
+}
+
+body .places {
+  text-align: left;
+  position: relative;
+  top: 15%;
+  height: 50vh;
+}
+
+body .places .content {
+  text-align: left;
+}
+
+body .places .logo-above {
+  color: #8344E0;
+  position: absolute;
+  top: -20%;
+  left: 5%;
+}
+
+body .places div.sign-places a {
+  color: #8344E0;
+  font-size: 1.1em;
+}
+
+body .places div.sign-places a.active {
+  background-color: #8344E0;
+  color: white;
+}
+
+body .places div.sign-places .tab-pane h3 {
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+body .places div.sign-places .tab-pane p {
+  width: 80%;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  font-size: 1em;
+  color: #313030;
+}
+
+body .places .m-b-md {
+  margin-bottom: 30px;
+}
+
+@media (min-width: 440px) {
+  body .places .register-link {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 380px) {
+  body .places .register-link {
+    font-size: 1.3em;
+  }
+}
+
+#map {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  top: 15%;
+}
+
 button.above-btn {
   background-color: #8344E0;
   border-color: #8344E0;
@@ -11278,5 +11352,28 @@ p.login-register-call {
 p.login-register-call a.register-link {
   color: #8344E0 !important;
   font-weight: 500;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.flex-center {
+  -webkit-align-items: center;
+          align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+
+.position-ref {
+  position: relative;
+}
+
+.top-right {
+  position: absolute;
+  right: 10px;
+  top: 18px;
 }
 

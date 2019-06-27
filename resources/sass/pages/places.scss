@@ -1,0 +1,91 @@
+body {
+
+    font-family: 'Arvo', serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+
+
+.places {
+
+
+    text-align: left;
+    position: relative;
+    top: 15%;
+    height: 50vh;
+   
+    .content {
+        text-align: left;
+    }
+
+
+    .logo-above {
+        color: #8344E0;
+        position: absolute;
+        top: -20%;
+        left: 5%;
+    }
+
+    div.sign-places {
+         
+        a {
+            color: #8344E0;
+            font-size: 1.1em;
+
+            &.active {
+                background-color: #8344E0;
+                color: white;
+            }
+        }
+
+        .tab-pane {
+
+            h3 {
+                margin-left: 10%;
+                margin-top: 5%;
+            }
+            p {
+                width: 80%;
+                text-align: left;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 5%;
+                font-size: 1em;
+                color: #313030;
+            }
+        }
+
+
+    }
+
+  
+
+
+    .m-b-md {
+        margin-bottom: 30px;
+    }
+
+    @media (min-width: 440px) {
+        .register-link { 
+            font-size: 1.5em;
+        }
+    } 
+
+     @media (min-width: 380px) {
+        .register-link { 
+            font-size: 1.3em;
+        }
+    } 
+}
+
+
+
+}
+
+#map {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    top: 15%;
+}
