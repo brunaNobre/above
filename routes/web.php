@@ -15,11 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Route::get('/places', function () {
     return view('places');
 });
 
 Auth::routes();
+
+Route::get('/admin', 'HomeController@index');
+
 
 Route::get('/redirect', 'Auth\LoginController@redirectToProvider')->name('redirect');
 Route::get('/callback', 'Auth\LoginController@handleProviderCallback');
