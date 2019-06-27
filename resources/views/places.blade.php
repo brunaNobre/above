@@ -60,61 +60,61 @@
                     </ul>
                     <div class="tab-content" id="signPlacesTabContent">
                         <div class="tab-pane fade show active" id="aries" role="tabpanel" aria-labelledby="aries-tab">
-                            <h3>Áries</h3>
+                            <h3>Áries - Academias</h3>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
                         </div>
                         <div class="tab-pane fade" id="taurus" role="tabpanel" aria-labelledby="taurus-tab">
-                        <h3>Touro</h3>
+                        <h3>Touro - Padarias</h3>
 
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
                         </div>
                         <div class="tab-pane fade" id="gemini" role="tabpanel" aria-labelledby="gemini-tab">
-                        <h3>Gêmeos</h3>
+                        <h3>Gêmeos - Livrarias</h3>
 
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
                         </div>
                         <div class="tab-pane fade" id="cancer" role="tabpanel" aria-labelledby="cancer-tab">
-                        <h3>Câncer</h3>
+                        <h3>Câncer - Artigos para a casa</h3>
 
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
                         </div>
                         <div class="tab-pane fade" id="leo" role="tabpanel" aria-labelledby="leo-tab">
-                        <h3>Leão</h3>
+                        <h3>Leão - Baladas</h3>
 
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
                         </div>
                         <div class="tab-pane fade" id="virgo" role="tabpanel" aria-labelledby="virgo-tab">
-                        <h3>Virgem</h3>
+                        <h3>Virgem - Spas</h3>
 
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
                         </div>
                         <div class="tab-pane fade" id="libra" role="tabpanel" aria-labelledby="libra-tab">
-                        <h3>Libra</h3>
+                        <h3>Libra - Bares</h3>
 
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
                         </div>
                         <div class="tab-pane fade" id="scorpio" role="tabpanel" aria-labelledby="scorpio-tab">
-                        <h3>Escorpião</h3>
+                        <h3>Escorpião - Lojas de bebidas</h3>
 
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
                         </div>
                         <div class="tab-pane fade" id="sagittarius" role="tabpanel" aria-labelledby="sagittarius-tab">
-                        <h3>Sagitário</h3>
+                        <h3>Sagitário - Parques</h3>
 
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
                         </div>
                         <div class="tab-pane fade" id="capricorn" role="tabpanel" aria-labelledby="capricorn-tab">
-                        <h3>Capricórnio</h3>
+                        <h3>Capricórnio - Shoppings</h3>
 
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
                         </div>
                         <div class="tab-pane fade" id="aquarius" role="tabpanel" aria-labelledby="aquarius-tab">
-                        <h3>Aquário</h3>
+                        <h3>Aquário - Artigos eletrônicos</h3>
 
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
                         </div>
                         <div class="tab-pane fade" id="pisces" role="tabpanel" aria-labelledby="pisces-tab">
-                        <h3>Peixes</h3>
+                        <h3>Peixes - Cinemas</h3>
 
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
                         </div>
