@@ -8,7 +8,7 @@ function initMap() {
 
     var infoWindow = new google.maps.InfoWindow;
     
-     map = new google.maps.Map(document.getElementById('map'), {
+     map = new google.maps.Map(document.getElementById('map'), {  
       center: {lat: -31.776, lng: -52.3594},
       zoom: 15,
       styles: [
@@ -268,7 +268,7 @@ function initMap() {
     });
 
     
-    
+    var currentPosition = {};
 
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
@@ -280,8 +280,10 @@ function initMap() {
 
      
       map.setCenter(pos);
-            
         
+      currentPosition = pos;
+
+
 
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
@@ -314,13 +316,57 @@ function initMap() {
 
     clearMarkers();
 
-    var typeOfSign = (e.target.innerText == "Áries" ? "gym" : "bakery");
+    var typeOfSign = e.target.innerText;
+    var typeOfPlace;
+
+
+    switch (typeOfSign) {
+        case 'Áries':
+            typeOfPlace = "gym";
+          break;
+        case 'Touro':
+            typeOfPlace = "bakery";
+          break;
+        case 'Gêmeos':
+            typeOfPlace = "book_store";
+          break;
+        case 'Câncer':
+            typeOfPlace = "home_goods_store";
+          break;
+        case 'Leão':
+            typeOfPlace = "night_club";
+          break;    
+        case 'Virgem':
+            typeOfPlace = "spa";
+          break;
+        case 'Libra':
+            typeOfPlace = "beauty_salon";
+          break;
+        case 'Escorpião':
+            typeOfPlace = "liquor_store";
+          break;
+        case 'Sagitário':
+            typeOfPlace = "park";
+          break;
+        case 'Capricórnio':
+            typeOfPlace = "shopping_mall";
+          break;  
+          case 'Aquário':
+            typeOfPlace = "eletronics_store";
+          break;
+        case 'Peixes':
+            typeOfPlace = "movie_theater";
+          break; 
+         
+        default:
+         typeOfPlace = "";
+      }
 
 
     request = {
-        location: {lat: -31.776, lng: -52.3594},
+        location: currentPosition,
         radius: 5000,
-        type: typeOfSign
+        type: typeOfPlace
   
     };
 
@@ -336,6 +382,7 @@ function initMap() {
         if(status == google.maps.places.PlacesServiceStatus.OK){
             for(var i = 0; i < results.length; i++) {
                 createMarker(results[i]);
+                console.log(results[i]);
             }
         }
     }
