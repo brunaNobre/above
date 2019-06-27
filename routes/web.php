@@ -23,14 +23,13 @@ Route::get('/places', function () {
 
 Auth::routes();
 
-Route::get('/admin', 'HomeController@index');
+Route::get('/admin', 'HomeController@index')->name('admin');;
 
 
 Route::get('/redirect', 'Auth\LoginController@redirectToProvider')->name('redirect');
 Route::get('/callback', 'Auth\LoginController@handleProviderCallback');
 
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('moods', 'MoodController');
 
