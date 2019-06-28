@@ -14,7 +14,11 @@ class PlanetController extends Controller
      */
     public function index()
     {
-        //
+        if (!Auth::check()) {
+            return redirect('/');
+        }
+        $planets = Planet::all();
+        return view('admin.planets_list', compact('planets'));
     }
 
     /**
@@ -24,7 +28,14 @@ class PlanetController extends Controller
      */
     public function create()
     {
-        //
+        
+        if (!Auth::check()) {
+            return redirect('/');
+        }
+        // 1: indica inclusão
+        $acao = 1;
+        return view('admin.planets_form', compact('acao'));
+
     }
 
     /**
@@ -35,7 +46,17 @@ class PlanetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|unique:planets|min:2|max:60',
+            'description' => 'required',
+        ]);
+        // obtém os dados do form
+        $dados = $request->all();
+        $inc = Planet::create($dados);
+        if ($inc) {
+            return redirect()->route('planets.index')
+                ->with('status', $request->modelo . ' Incluído!');
+            }
     }
 
     /**
@@ -57,7 +78,13 @@ class PlanetController extends Controller
      */
     public function edit(Planet $planet)
     {
-        //
+        if (!Auth::check()) {
+            return redirect('/');
+        }
+        // posiciona no registro a ser alterado e obtém seus dados
+        $reg = Planet::find($id);
+        $acao = 2;
+        return view('admin.planets_form', compact('reg', 'acao'));
     }
 
     /**
@@ -69,7 +96,20 @@ class PlanetController extends Controller
      */
     public function update(Request $request, Planet $planet)
     {
-        //
+        $this->validate($request, [
+            'name' => ['required', 'unique:planets'],
+            'description' => 'required'
+        ]);
+        // obtém os dados do form
+        $dados = $request->all();
+        // posiciona no registo a ser alterado
+        $reg = Planets::find($id);
+        // realiza a alteração
+        $alt = $reg->update($dados);
+        if ($alt) {
+            return redirect()->route('planets.index')
+                ->with('status', $request->name . ' Alterado!');
+        }
     }
 
     /**
@@ -80,6 +120,10 @@ class PlanetController extends Controller
      */
     public function destroy(Planet $planet)
     {
-        //
+        $planet = Planets::find($id);
+        if ($planet->delete()) {
+            return redirect()->route('planets.index')
+                ->with('status', $planet->name . ' Excluído!');
+        }
     }
 }
