@@ -34,9 +34,8 @@ class PlanetController extends Controller
         if (!Auth::check()) {
             return redirect('/');
         }
-        // 1: indica inclusão
-        $acao = 1;
-        return view('admin.planets_form', compact('acao'));
+
+        return view('admin.planet_create');
 
     }
 
@@ -49,9 +48,12 @@ class PlanetController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|unique:planets|min:2|max:60',
+            'name' => 'string',
             'description' => 'required',
         ]);
+
+        
+
         // obtém os dados do form
         $dados = $request->all();
         $inc = Planet::create($dados);
@@ -78,15 +80,14 @@ class PlanetController extends Controller
      * @param  \App\Planet  $planet
      * @return \Illuminate\Http\Response
      */
-    public function edit(Planet $planet)
+    public function edit($id)
     {
         if (!Auth::check()) {
             return redirect('/');
         }
         // posiciona no registro a ser alterado e obtém seus dados
-        $reg = Planet::find($planet);
-        $acao = 2;
-        return view('admin.planets_form', compact('reg', 'acao'));
+        $planet = Planet::find($id);
+        return view('admin.planet_edit', compact('planet'));
     }
 
     /**
@@ -96,7 +97,7 @@ class PlanetController extends Controller
      * @param  \App\Planet  $planet
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Planet $planet)
+    public function update(Request $request, $id)
     {
         $this->validate($request, [
             'name' => ['required', 'unique:planets'],
@@ -105,9 +106,9 @@ class PlanetController extends Controller
         // obtém os dados do form
         $dados = $request->all();
         // posiciona no registo a ser alterado
-        $reg = Planet::find($planet);
+        $planet = Planet::find($id);
         // realiza a alteração
-        $alt = $reg->update($dados);
+        $alt = $planet->update($dados);
         if ($alt) {
             return redirect()->route('planets.index')
                 ->with('status', $request->name . ' Alterado!');
@@ -120,9 +121,9 @@ class PlanetController extends Controller
      * @param  \App\Planet  $planet
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Planet $planet)
+    public function destroy($id)
     {
-        $planet = Planet::find($planet);
+        $planet = Planet::find($id);
         if ($planet->delete()) {
             return redirect()->route('planets.index')
                 ->with('status', $planet->name . ' Excluído!');

@@ -4,14 +4,11 @@
 
 
 <div class='col-sm-11'>
-@if ($acao == 1)
-    <h2> Incluir Fase da Lua </h2>
-@else
-    <h2> Alterar Fase da Lua </h2>
-@endif
+    <h2> Incluir Planeta </h2>
+
 </div>
 <div class='col-sm-1'>
-    <a href="{{route('moons.index')}}" class="above-admin-btn btn btn-primary" 
+    <a href="{{route('planets.index')}}" class="above-admin-btn btn btn-primary" 
        role="button">Voltar</a>
 </div>
 
@@ -27,19 +24,13 @@
     </div>
 @endif        
     
-@if ($acao == 1)
-    <form method="post" action="{{route('moons.store')}}">
-@else
-    <form method="post" action="{{route('moons.update', $reg->moon)}}">
-    {!! method_field('put') !!}
-@endif
+    <form method="post" action="{{route('planets.store')}}">
         {{ csrf_field() }}
 
         <div class="form-group">
-            <label for="moon_phase">Fase da Lua:</label>
-            <input type="text" class="form-control" id="moon_phase"
-                   name="moon_phase" 
-                   value=""
+            <label for="name">Nome do planeta:</label>
+            <input type="text" class="form-control" id="name"
+                   name="name" 
                    required>
         </div>
 
@@ -49,7 +40,6 @@
             <label for="description">Descrição:</label>
             <input type="text" class="form-control" id="description"
                    name="description" 
-                   value=""
                    required>
         </div>
 

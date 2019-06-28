@@ -34,6 +34,7 @@ class MoonController extends Controller
             return redirect('/');
         }
         // 1: indica inclusão
+
         $acao = 1;
         return view('admin.moons_form', compact('acao'));
     }
