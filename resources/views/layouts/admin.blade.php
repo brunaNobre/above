@@ -50,7 +50,6 @@
     </div>
     <div class="w3-bar-block">
         <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Fechar Menu</a>
-        <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><!--<i class="fa fa-car fa-fw"></i>-->  Moods</a>
         <a href="#" class="w3-bar-item w3-button w3-padding"><!--<i class="fa fa-tags fa-fw"></i>-->  Fases da Lua</a>
         <a href="#" class="w3-bar-item w3-button w3-padding"><!--<i class="fa fa-money fa-fw"></i>-->  Planetas</a>
         <a href="#" class="w3-bar-item w3-button w3-padding"><!--<i class="fa fa-search fa-fw"></i>-->  Signos</a>
