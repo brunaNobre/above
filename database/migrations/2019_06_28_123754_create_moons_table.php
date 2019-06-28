@@ -13,7 +13,7 @@ class CreateMoonsTable extends Migration
      */
     public function up()
     {
-        Schema::table('moons', function (Blueprint $table) {
+        Schema::create('moons', function (Blueprint $table) {
             //
         });
     }
@@ -25,8 +25,6 @@ class CreateMoonsTable extends Migration
      */
     public function down()
     {
-        Schema::table('moons', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('moons');
     }
 }

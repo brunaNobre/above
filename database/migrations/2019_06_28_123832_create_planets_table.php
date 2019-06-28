@@ -13,7 +13,7 @@ class CreatePlanetsTable extends Migration
      */
     public function up()
     {
-        Schema::table('planets', function (Blueprint $table) {
+        Schema::create('planets', function (Blueprint $table) {
             //
         });
     }
@@ -25,8 +25,6 @@ class CreatePlanetsTable extends Migration
      */
     public function down()
     {
-        Schema::table('planets', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('planets');
     }
 }

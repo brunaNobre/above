@@ -13,7 +13,7 @@ class CreateSignsTable extends Migration
      */
     public function up()
     {
-        Schema::table('signs', function (Blueprint $table) {
+        Schema::create('signs', function (Blueprint $table) {
             //
         });
     }
@@ -25,8 +25,6 @@ class CreateSignsTable extends Migration
      */
     public function down()
     {
-        Schema::table('signs', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('signs');
     }
 }
