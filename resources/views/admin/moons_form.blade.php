@@ -36,7 +36,7 @@
         {{ csrf_field() }}
 
         <div class="form-group">
-            <label for="moon_phase">Nome do moona:</label>
+            <label for="moon_phase">Fase da Lua:</label>
             <input type="text" class="form-control" id="moon_phase"
                    name="moon_phase" 
                    value="{{$reg->moon_phase or old('moon_phase')}}"
