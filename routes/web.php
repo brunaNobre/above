@@ -33,10 +33,10 @@ Route::get('/callback', 'Auth\LoginController@handleProviderCallback');
 
 //Route::resource('moods', 'MoodController');
 
-Route::resource('moons', 'MoonController');
+Route::resource('admin/moons', 'MoonController');
 
-Route::resource('planets', 'PlanetController');
+Route::resource('admin/planets', 'PlanetController');
 
-Route::resource('signs', 'SignController');
+Route::resource('admin/signs', 'SignController');
 
 //Route::resource('tasks', 'TaskController');
