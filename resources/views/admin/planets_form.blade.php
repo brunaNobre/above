@@ -5,9 +5,9 @@
 
 <div class='col-sm-11'>
 @if ($acao == 1)
-    <h2> Inclusão de Planetas </h2>
+    <h2> Incluir Planeta </h2>
 @else
-    <h2> Alteração de Planetas </h2>
+    <h2> Alterar Planeta </h2>
 @endif
 </div>
 <div class='col-sm-1'>

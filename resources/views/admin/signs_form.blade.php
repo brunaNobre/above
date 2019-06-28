@@ -5,9 +5,9 @@
 
 <div class='col-sm-11'>
 @if ($acao == 1)
-    <h2> Inclusão de Signos </h2>
+    <h2> Incluir Signo </h2>
 @else
-    <h2> Alteração de Signos </h2>
+    <h2> Alterar Signo </h2>
 @endif
 </div>
 <div class='col-sm-1'>

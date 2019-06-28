@@ -5,9 +5,9 @@
 
 <div class='col-sm-11'>
 @if ($acao == 1)
-    <h2> Inclusão de Fases da Lua </h2>
+    <h2> Incluir Fase da Lua </h2>
 @else
-    <h2> Alteração de Fases </h2>
+    <h2> Alterar Fase da Lua </h2>
 @endif
 </div>
 <div class='col-sm-1'>
