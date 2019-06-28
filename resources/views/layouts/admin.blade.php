@@ -50,9 +50,9 @@
     </div>
     <div class="w3-bar-block">
         <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Fechar Menu</a>
-        <a href="#" class="w3-bar-item w3-button w3-padding"><!--<i class="fa fa-tags fa-fw"></i>-->  Fases da Lua</a>
-        <a href="#" class="w3-bar-item w3-button w3-padding"><!--<i class="fa fa-money fa-fw"></i>-->  Planetas</a>
-        <a href="#" class="w3-bar-item w3-button w3-padding"><!--<i class="fa fa-search fa-fw"></i>-->  Signos</a>
+        <a href="{{route('moons.index')}}" class="w3-bar-item w3-button w3-padding"><!--<i class="fa fa-tags fa-fw"></i>-->  Fases da Lua</a>
+        <a href="{{route('planets.index')}}" class="w3-bar-item w3-button w3-padding"><!--<i class="fa fa-money fa-fw"></i>-->  Planetas</a>
+        <a href="{{route('signs.index')}}" class="w3-bar-item w3-button w3-padding"><!--<i class="fa fa-search fa-fw"></i>-->  Signos</a>
      
     </div>
 </nav>
