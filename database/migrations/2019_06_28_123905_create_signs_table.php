@@ -14,7 +14,10 @@ class CreateSignsTable extends Migration
     public function up()
     {
         Schema::create('signs', function (Blueprint $table) {
-            //
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('description');
+            $table->timestamps();
         });
     }
 
