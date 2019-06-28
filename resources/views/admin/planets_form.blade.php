@@ -11,7 +11,7 @@
 @endif
 </div>
 <div class='col-sm-1'>
-    <a href="{{route('planets.index')}}" class="btn btn-primary" 
+    <a href="{{route('planets.index')}}" class="above-admin-btn btn btn-primary" 
        role="button">Voltar</a>
 </div>
 
@@ -57,7 +57,7 @@
 
 
 
-        <button type="submit" class="btn btn-primary">Enviar</button>        
+        <button type="submit" class="above-admin-btn btn btn-primary">Enviar</button>        
         <button type="reset" class="btn btn-warning">Limpar</button>        
     </form>    
 </div>    

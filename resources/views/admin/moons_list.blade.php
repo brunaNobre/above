@@ -44,7 +44,7 @@
     </td>
 </tr>
 @endforeach
-    <tr> <td><a href="{{route('moons.create')}}" class="btn btn-info"
+    <tr> <td><a href="{{route('moons.create')}}" class="above-admin-btn btn btn-info"
                 role="button">Novo</a></td></tr>
     </tbody>
   </table>    
