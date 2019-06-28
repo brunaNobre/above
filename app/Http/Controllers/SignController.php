@@ -14,7 +14,11 @@ class SignController extends Controller
      */
     public function index()
     {
-        //
+        if (!Auth::check()) {
+            return redirect('/');
+        }
+        $signs = Sign::all();
+        return view('admin.signs_list', compact('signs'));
     }
 
     /**
@@ -24,7 +28,12 @@ class SignController extends Controller
      */
     public function create()
     {
-        //
+        if (!Auth::check()) {
+            return redirect('/');
+        }
+        // 1: indica inclusão
+        $acao = 1;
+        return view('admin.signs_form', compact('acao'));
     }
 
     /**
@@ -35,7 +44,17 @@ class SignController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|unique:signs|min:2|max:60',
+            'description' => 'required',
+        ]);
+        // obtém os dados do form
+        $dados = $request->all();
+        $inc = Sign::create($dados);
+        if ($inc) {
+            return redirect()->route('signs.index')
+                ->with('status', $request->name. ' Incluído!');
+            }
     }
 
     /**
@@ -57,7 +76,13 @@ class SignController extends Controller
      */
     public function edit(Sign $sign)
     {
-        //
+        if (!Auth::check()) {
+            return redirect('/');
+        }
+        // posiciona no registro a ser alterado e obtém seus dados
+        $reg = Sign::find($sign);
+        $acao = 2;
+        return view('admin.signs_form', compact('reg', 'acao'));
     }
 
     /**
@@ -69,7 +94,20 @@ class SignController extends Controller
      */
     public function update(Request $request, Sign $sign)
     {
-        //
+        $this->validate($request, [
+            'name' => ['required', 'unique:signs'],
+            'description' => 'required'
+        ]);
+        // obtém os dados do form
+        $dados = $request->all();
+        // posiciona no registo a ser alterado
+        $reg = Sign::find($sign);
+        // realiza a alteração
+        $alt = $reg->update($dados);
+        if ($alt) {
+            return redirect()->route('signs.index')
+                ->with('status', $request->name . ' Alterado!');
+        }
     }
 
     /**
@@ -80,6 +118,10 @@ class SignController extends Controller
      */
     public function destroy(Sign $sign)
     {
-        //
+        $sign = Sign::find($sign);
+        if ($sign->delete()) {
+            return redirect()->route('signs.index')
+                ->with('status', $sign->name . ' Excluído!');
+        }
     }
 }

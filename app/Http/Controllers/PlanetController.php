@@ -82,7 +82,7 @@ class PlanetController extends Controller
             return redirect('/');
         }
         // posiciona no registro a ser alterado e obtém seus dados
-        $reg = Planet::find($id);
+        $reg = Planet::find($planet);
         $acao = 2;
         return view('admin.planets_form', compact('reg', 'acao'));
     }
@@ -103,7 +103,7 @@ class PlanetController extends Controller
         // obtém os dados do form
         $dados = $request->all();
         // posiciona no registo a ser alterado
-        $reg = Planet::find($id);
+        $reg = Planet::find($planet);
         // realiza a alteração
         $alt = $reg->update($dados);
         if ($alt) {
@@ -120,7 +120,7 @@ class PlanetController extends Controller
      */
     public function destroy(Planet $planet)
     {
-        $planet = Planet::find($id);
+        $planet = Planet::find($planet);
         if ($planet->delete()) {
             return redirect()->route('planets.index')
                 ->with('status', $planet->name . ' Excluído!');

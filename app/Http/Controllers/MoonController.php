@@ -80,7 +80,7 @@ class MoonController extends Controller
             return redirect('/');
         }
         // posiciona no registro a ser alterado e obtém seus dados
-        $reg = Moon::find($id);
+        $reg = Moon::find($moon);
         $acao = 2;
         return view('admin.moons_form', compact('reg', 'acao'));
     }
@@ -101,7 +101,7 @@ class MoonController extends Controller
         // obtém os dados do form
         $dados = $request->all();
         // posiciona no registo a ser alterado
-        $reg = Moon::find($id);
+        $reg = Moon::find($moon);
         // realiza a alteração
         $alt = $reg->update($dados);
         if ($alt) {
@@ -118,7 +118,7 @@ class MoonController extends Controller
      */
     public function destroy(Moon $moon)
     {
-        $planet = Moon::find($id);
+        $planet = Moon::find($moon);
         if ($moon->delete()) {
             return redirect()->route('moons.index')
                 ->with('status', $moon->phase . ' Excluída!');
