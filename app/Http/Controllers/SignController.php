@@ -33,9 +33,8 @@ class SignController extends Controller
         if (!Auth::check()) {
             return redirect('/');
         }
-        // 1: indica inclusão
-        $acao = 1;
-        return view('admin.signs_form', compact('acao'));
+       
+        return view('admin.sign_create');
     }
 
     /**
@@ -47,7 +46,7 @@ class SignController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|unique:signs|min:2|max:60',
+            'name' => 'required',
             'description' => 'required',
         ]);
         // obtém os dados do form
@@ -76,15 +75,14 @@ class SignController extends Controller
      * @param  \App\Sign  $sign
      * @return \Illuminate\Http\Response
      */
-    public function edit(Sign $sign)
+    public function edit($id)
     {
         if (!Auth::check()) {
             return redirect('/');
         }
         // posiciona no registro a ser alterado e obtém seus dados
-        $reg = Sign::find($sign);
-        $acao = 2;
-        return view('admin.signs_form', compact('reg', 'acao'));
+        $sign = Sign::find($id);
+        return view('admin.sign_edit', compact('sign'));
     }
 
     /**
@@ -94,18 +92,18 @@ class SignController extends Controller
      * @param  \App\Sign  $sign
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sign $sign)
+    public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => ['required', 'unique:signs'],
+            'name' => ['required'],
             'description' => 'required'
         ]);
         // obtém os dados do form
         $dados = $request->all();
         // posiciona no registo a ser alterado
-        $reg = Sign::find($sign);
+        $sign = Sign::find($id);
         // realiza a alteração
-        $alt = $reg->update($dados);
+        $alt = $sign->update($dados);
         if ($alt) {
             return redirect()->route('signs.index')
                 ->with('status', $request->name . ' Alterado!');
@@ -118,9 +116,9 @@ class SignController extends Controller
      * @param  \App\Sign  $sign
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sign $sign)
+    public function destroy($id)
     {
-        $sign = Sign::find($sign);
+        $sign = Sign::find($id);
         if ($sign->delete()) {
             return redirect()->route('signs.index')
                 ->with('status', $sign->name . ' Excluído!');
