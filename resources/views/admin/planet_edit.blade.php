@@ -31,7 +31,7 @@
             <label for="name">Nome do planeta:</label>
             <input type="text" class="form-control" id="name"
                    name="name" 
-                   value="{{$planet->name or old('name')}}"
+                   value="{{$planet->name}}"
                    required>
         </div>
 
@@ -39,10 +39,9 @@
                 
         <div class="form-group">
             <label for="description">Descrição:</label>
-            <input type="text" class="form-control" id="description"
+            <textarea rows="30" cols="30" class="form-control" id="description"
                    name="description" 
-                   value="{{$planet->description or old('description')}}"
-                   required>
+                   required>{{$planet->description}}</textarea>
         </div>
 
      

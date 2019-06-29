@@ -1,7 +1,3 @@
-
-
-
-
 function initMap() {
 
     var map, marker, request, service;

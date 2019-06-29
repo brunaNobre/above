@@ -38,11 +38,12 @@
                 
         <div class="form-group">
             <label for="description">Descrição:</label>
-            <input type="text" class="form-control" id="description"
+            <textarea rows="30" cols="30" class="form-control" id="description"
                    name="description" 
-                   required>
+                   required></textarea>
         </div>
 
+        
      
 
 

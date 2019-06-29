@@ -16,7 +16,7 @@ class CreatePlanetsTable extends Migration
         Schema::create('planets', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('description');
+            $table->string('description', 9999);
             $table->timestamps();
         });
     }

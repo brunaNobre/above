@@ -100,7 +100,7 @@ class PlanetController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => ['required', 'unique:planets'],
+            'name' => ['required'],
             'description' => 'required'
         ]);
         // obtém os dados do form
