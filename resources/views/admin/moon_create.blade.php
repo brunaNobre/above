@@ -30,7 +30,7 @@
         <div class="form-group">
             <label for="phase">Fase da Lua:</label>
             <input type="text" class="form-control" id="phase"
-                   moon="phase" 
+                   name="phase" 
                    required>
         </div>
 
@@ -49,7 +49,6 @@
 
 
         <button type="submit" class="above-admin-btn btn btn-primary">Enviar</button>        
-        <button type="reset" class="btn btn-warning">Limpar</button>        
     </form>    
 </div>    
 

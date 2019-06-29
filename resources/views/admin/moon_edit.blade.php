@@ -47,7 +47,6 @@
 
 
         <button type="submit" class="above-admin-btn btn btn-primary">Enviar</button>        
-        <button type="reset" class="btn btn-warning">Limpar</button>        
     </form>    
 </div>    
 
