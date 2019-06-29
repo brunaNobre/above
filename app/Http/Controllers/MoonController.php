@@ -33,10 +33,8 @@ class MoonController extends Controller
         if (!Auth::check()) {
             return redirect('/');
         }
-        // 1: indica inclusão
-
-        $acao = 1;
-        return view('admin.moons_form', compact('acao'));
+       
+        return view('admin.moon_create');
     }
 
     /**
@@ -77,15 +75,14 @@ class MoonController extends Controller
      * @param  \App\Moon  $moon
      * @return \Illuminate\Http\Response
      */
-    public function edit(Moon $moon)
+    public function edit($id)
     {
         if (!Auth::check()) {
             return redirect('/');
         }
         // posiciona no registro a ser alterado e obtém seus dados
-        $reg = Moon::find($moon);
-        $acao = 2;
-        return view('admin.moons_form', compact('reg', 'acao'));
+        $moon = Moon::find($id);
+        return view('admin.moon_edit', compact('moon'));
     }
 
     /**
@@ -95,18 +92,18 @@ class MoonController extends Controller
      * @param  \App\Moon  $moon
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Moon $moon)
+    public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'phase' => ['required', 'unique:moons'],
+            'phase' => ['required'],
             'description' => 'required'
         ]);
         // obtém os dados do form
         $dados = $request->all();
         // posiciona no registo a ser alterado
-        $reg = Moon::find($moon);
+        $moon = Moon::find($id);
         // realiza a alteração
-        $alt = $reg->update($dados);
+        $alt = $moon->update($dados);
         if ($alt) {
             return redirect()->route('moons.index')
                 ->with('status', $request->phase . ' Alterada!');
@@ -119,9 +116,9 @@ class MoonController extends Controller
      * @param  \App\Moon  $moon
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Moon $moon)
+    public function destroy($id)
     {
-        $planet = Moon::find($moon);
+        $moon = Moon::find($id);
         if ($moon->delete()) {
             return redirect()->route('moons.index')
                 ->with('status', $moon->phase . ' Excluída!');
