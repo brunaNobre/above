@@ -16,7 +16,7 @@ class CreateSignsTable extends Migration
         Schema::create('signs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('description');
+            $table->string('description', 9999);
             $table->timestamps();
         });
     }

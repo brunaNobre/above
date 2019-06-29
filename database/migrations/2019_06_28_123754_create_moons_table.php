@@ -16,7 +16,7 @@ class CreateMoonsTable extends Migration
         Schema::create('moons', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('phase');
-            $table->string('description');
+            $table->string('description', 9999);
             $table->timestamps();
         });
     }
