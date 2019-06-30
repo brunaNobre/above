@@ -16,7 +16,8 @@
 }
 
 .admin-menu {
-  background-color: #d2c7c7;
+  background-color: white;
+  border-right: 1px dotted #BFBFBF;
 }
 
 .admin-logo {
