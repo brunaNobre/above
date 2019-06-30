@@ -19,6 +19,8 @@
 
 // General
 
+
+
 button.above-btn {
     background-color: #8344E0;
     border-color: #8344E0;
@@ -26,12 +28,19 @@ button.above-btn {
     border-radius: 1.5em;
     display: block;
     width: 100%;
+    margin-top: 10%;
+
 
     &:hover {
         background-color: #B188F1;
         border-color: #B188F1;
     }
+
+
 }
+
+
+
 
 .card-header {
     font-family: Roboto, sans-serif;
@@ -95,3 +104,37 @@ p.login-register-call {
     right: 10px;
     top: 18px;
 }
+
+
+
+@media (min-width: 800px) {
+    button.above-btn {
+        width: 50%;
+        font-size: 1.3em;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+
+    a.google-account {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        font-size: 0.9em;
+    }
+
+    p.login-register-call {
+        margin-top: 0;
+    }
+
+    .navbar-brand {
+        font-size: 1.4em;
+
+    
+    }
+ } 
+
+
+
+
+

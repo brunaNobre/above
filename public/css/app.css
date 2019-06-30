@@ -11174,6 +11174,21 @@ a.text-dark:focus {
   font-weight: 300;
 }
 
+@media (min-width: 768px) {
+  .login-card {
+    font-size: 1.3em;
+  }
+
+  a.forgot-password {
+    font-size: 0.9em;
+  }
+
+  #email-label,
+  #password-label {
+    text-align: left !important;
+  }
+}
+
 .register-card {
   border: none;
 }
@@ -11219,8 +11234,17 @@ a.text-dark:focus {
   border-color: green;
 }
 
-.register-card .register-form a.google-account {
-  margin-top: 5%;
+@media (min-width: 768px) {
+  .register-card {
+    font-size: 1.3em;
+  }
+
+  #name-label,
+  #email-label,
+  #password-label,
+  #password-confirm-label {
+    text-align: left !important;
+  }
 }
 
 body {
@@ -11304,6 +11328,7 @@ button.above-btn {
   border-radius: 1.5em;
   display: block;
   width: 100%;
+  margin-top: 10%;
 }
 
 button.above-btn:hover {
@@ -11375,5 +11400,29 @@ p.login-register-call a.register-link {
   position: absolute;
   right: 10px;
   top: 18px;
+}
+
+@media (min-width: 800px) {
+  button.above-btn {
+    width: 50%;
+    font-size: 1.3em;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  a.google-account {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    font-size: 0.9em;
+  }
+
+  p.login-register-call {
+    margin-top: 0;
+  }
+
+  .navbar-brand {
+    font-size: 1.4em;
+  }
 }
 

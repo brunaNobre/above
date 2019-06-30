@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('content')
 <div class="container">
@@ -13,9 +13,9 @@
 
                         <div class="form-group row">
 
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" required autocomplete="email" autofocus>
-                                <label id="email-label" for="email" class="col-md-4 col-form-label text-md-right">E-mail ou nome de usuário(a)</label>
+                                <label id="email-label" for="email" class="col-md-12 col-form-label text-md-right">E-mail ou nome de usuário(a)</label>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -29,9 +29,9 @@
 
                         <div class="form-group row">
 
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-                                <label id="password-label" for="password" class="col-md-4 col-form-label text-md-right">Senha</label>
+                                <label id="password-label" for="password" class="col-md-12 col-form-label text-md-right">Senha</label>
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -54,8 +54,8 @@
                             </div>
                         </div>
 -->
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
+                        <div class="form-group">
+                            <div>
                                 <button type="submit" class="btn btn-primary above-btn">
                                     Entrar
                                 </button>

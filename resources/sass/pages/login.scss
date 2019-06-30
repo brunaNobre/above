@@ -7,6 +7,8 @@
      label {
         color: gray;
         font-weight: 300;
+
+       
     }
 
     #email-label, #password-label {
@@ -54,4 +56,20 @@
 
 
 
+
 }
+
+@media (min-width: 768px) {
+    .login-card {
+        font-size: 1.3em;
+    }
+
+    a.forgot-password {
+        font-size: 0.9em;
+    }
+   
+    #email-label, #password-label {
+        text-align: left !important;
+    }
+
+} 

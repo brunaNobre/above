@@ -44,10 +44,21 @@
 
 
 
-       a.google-account {
-           margin-top: 5%;
-       }
 
     }
 
 }
+
+
+
+@media (min-width: 768px) {
+    .register-card {
+        font-size: 1.3em;
+    }
+
+   
+    #name-label, #email-label, #password-label, #password-confirm-label  {
+        text-align: left !important;
+    }
+
+} 
