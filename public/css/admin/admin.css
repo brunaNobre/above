@@ -1,4 +1,4 @@
-.above-admin-btn {
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:light,regular,bold|Arvo:regular,bold|Roboto:thin,light,regular,medium,bold,black);.above-admin-btn {
   background-color: #8344E0;
   border-color: #8344E0;
 }
@@ -6,5 +6,16 @@
 .above-admin-btn:hover {
   background-color: #B188F1;
   border-color: #B188F1;
+}
+
+.menu-link:hover,
+.menu-link:active {
+  background-color: #8344E0 !important;
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.admin-menu {
+  background-color: #d2c7c7;
 }
 

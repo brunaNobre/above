@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="{{ asset('css/admin/admin.css') }}" rel="stylesheet">
 
@@ -26,7 +27,7 @@
 </div>
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-white" style="z-index:3;width:300px;" id="mySidebar"><br>
+<nav class="admin-menu w3-sidebar w3-collapse" style="z-index:3;width:300px;" id="mySidebar"><br>
     <div class="w3-container w3-row">
      
         <div class="w3-col s8 w3-bar">
@@ -51,10 +52,10 @@
     </div>
     <div class="w3-bar-block">
         <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Fechar Menu</a>
-        <a href="{{route('moons.index')}}" class="w3-bar-item w3-button w3-padding"><!--<i class="fa fa-tags fa-fw"></i>-->  Fases da Lua</a>
-        <a href="{{route('planets.index')}}" class="w3-bar-item w3-button w3-padding"><!--<i class="fa fa-money fa-fw"></i>-->  Planetas</a>
-        <a href="{{route('signs.index')}}" class="w3-bar-item w3-button w3-padding"><!--<i class="fa fa-search fa-fw"></i>-->  Signos</a>
-        <a href="{{route('users.index')}}" class="w3-bar-item w3-button w3-padding"><!--<i class="fa fa-search fa-fw"></i>-->  Usuários</a>
+        <a href="{{route('moons.index')}}" class="menu-link w3-bar-item w3-button w3-padding"><i class="fas fa-moon fa-fw"></i>Fases da Lua</a>
+        <a href="{{route('planets.index')}}" class="menu-link w3-bar-item w3-button w3-padding"><i class="fas fa-atlas fa-fw"></i>  Planetas</a>
+        <a href="{{route('signs.index')}}" class="menu-link w3-bar-item w3-button w3-padding"><i class="far fa-star fa-fw"></i>  Signos</a>
+        <a href="{{route('users.index')}}" class="menu-link w3-bar-item w3-button w3-padding"><i class="fas fa-users fa-fw"></i> Usuários</a>
      
     </div>
 </nav>
