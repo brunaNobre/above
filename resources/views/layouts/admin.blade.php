@@ -54,6 +54,7 @@
         <a href="{{route('moons.index')}}" class="w3-bar-item w3-button w3-padding"><!--<i class="fa fa-tags fa-fw"></i>-->  Fases da Lua</a>
         <a href="{{route('planets.index')}}" class="w3-bar-item w3-button w3-padding"><!--<i class="fa fa-money fa-fw"></i>-->  Planetas</a>
         <a href="{{route('signs.index')}}" class="w3-bar-item w3-button w3-padding"><!--<i class="fa fa-search fa-fw"></i>-->  Signos</a>
+        <a href="{{route('users.index')}}" class="w3-bar-item w3-button w3-padding"><!--<i class="fa fa-search fa-fw"></i>-->  Usuários</a>
      
     </div>
 </nav>

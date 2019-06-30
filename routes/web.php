@@ -39,4 +39,7 @@ Route::resource('admin/planets', 'PlanetController');
 
 Route::resource('admin/signs', 'SignController');
 
+Route::resource('admin/users', 'UserController');
+
+
 //Route::resource('tasks', 'TaskController');
