@@ -25,3 +25,9 @@
   font-family: Arvo, sans-serif;
 }
 
+.admin-logo:hover,
+.admin-logo:active {
+  text-decoration: none;
+  color: #8344E0;
+}
+

@@ -28,4 +28,8 @@
 .admin-logo {
     color: white;
     font-family: Arvo, sans-serif;
+        &:hover, &:active {
+        text-decoration: none;
+        color: #8344E0;    
+    }
 }
