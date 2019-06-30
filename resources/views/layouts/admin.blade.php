@@ -55,6 +55,7 @@
         <a href="{{route('moons.index')}}" class="menu-link w3-bar-item w3-button w3-padding"><i class="fas fa-moon fa-fw"></i>Fases da Lua</a>
         <a href="{{route('planets.index')}}" class="menu-link w3-bar-item w3-button w3-padding"><i class="fas fa-atlas fa-fw"></i>  Planetas</a>
         <a href="{{route('signs.index')}}" class="menu-link w3-bar-item w3-button w3-padding"><i class="far fa-star fa-fw"></i>  Signos</a>
+        <a href="{{route('advices.index')}}" class="menu-link w3-bar-item w3-button w3-padding"><i class="fas fa-exclamation fa-fw"></i>  Dicas</a>
         <a href="{{route('users.index')}}" class="menu-link w3-bar-item w3-button w3-padding"><i class="fas fa-users fa-fw"></i> Usuários</a>
      
     </div>

@@ -41,5 +41,8 @@ Route::resource('admin/signs', 'SignController');
 
 Route::resource('admin/users', 'UserController');
 
+Route::resource('admin/advices', 'AdviceController');
+
+
 
 //Route::resource('tasks', 'TaskController');
