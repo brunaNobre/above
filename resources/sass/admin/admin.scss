@@ -13,20 +13,55 @@
 }
 
 .menu-link {
+
+    transition: background-color .3s;
+
     &:hover, &:active {
         background-color: #8344E0 !important;
         color: white !important;
         text-decoration: none !important;
+
+        .fas, .far {
+            transform: rotate(-30deg);
+
+        }
+    }
+
+
+    .fas, .far{
+        margin-right: 5%;
+        
     }
 }
 
 .admin-menu {
     background-color: white;
-    border-right: 1px dotted #BFBFBF;
+    box-shadow: 1px 0px 5px 0px rgba(90, 89, 89, 0.75);
+
+
+   .admin-user-container {
+    
+    .admin-user-image-container {
+        height: 100%;
+
+
+        .admin-user-image {
+            transform: rotate(-90deg);
+            height: 70px;
+            width: 70px;
+        }
+
+    }
+   }
+
+   
 }
 
 .admin-top-container {
-    background-color: #8344E0;
+    background: #8344E0;
+    background: linear-gradient(90deg, rgba(110,76,232,1) 48%, rgba(131,68,224,1) 70%, rgba(131,68,224,1) 100%);
+    position: relative;
+
 }
 
 .admin-logo {
@@ -37,3 +72,52 @@
         color: white;    
     }
 }
+
+.dash-card {
+    float: left;
+    margin-right: 6%;
+    margin-top: 3%;
+    box-shadow: 1px 0px 5px 0px rgba(90, 89, 89, 0.75);
+
+
+}
+
+.insights {
+
+    h5 {
+        color: #8344E0;
+        font-size: 2em;
+        margin-top: 3%;
+        margin-bottom: 3%;
+    }
+}
+
+div.insight-pink {
+    background-color: #FAA0E0;
+
+}
+
+div.insight-pale-pink {
+    background-color: #FAC4CE;
+
+
+}
+
+
+
+div.insight-purple {
+    background-color: #8344E0;
+
+
+    
+}
+
+
+@media (min-width: 800px) {
+
+    .admin-logo {
+        font-size: 2em;
+    }
+
+
+ }

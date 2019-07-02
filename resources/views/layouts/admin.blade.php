@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
     <link href="{{ asset('css/admin/admin.css') }}" rel="stylesheet">
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
+   
 
 
 </head>
@@ -28,7 +30,10 @@
 
 <!-- Sidebar/menu -->
 <nav class="admin-menu w3-sidebar w3-collapse" style="z-index:3;width:300px;" id="mySidebar"><br>
-    <div class="w3-container w3-row">
+    <div class="admin-user-container w3-container w3-row">
+        <div class="w3-col s4 admin-user-image-container">
+            <img src="/images/users/admin-user.jpg" class="admin-user-image w3-circle w3-margin-right">
+        </div>
      
         <div class="w3-col s8 w3-bar">
             @php
@@ -39,7 +44,7 @@
             <a href="{{ route('logout') }}"
                onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();"
-               class="w3-bar-item w3-button"><i class="fa fa-sign-out"></i></a>
+               class="w3-bar-item w3-button"><i class="fas fa-sign-out-alt"></i></a>
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 {{ csrf_field() }}
