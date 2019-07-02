@@ -25,11 +25,15 @@
     border-right: 1px dotted #BFBFBF;
 }
 
+.admin-top-container {
+    background-color: #8344E0;
+}
+
 .admin-logo {
     color: white;
     font-family: Arvo, sans-serif;
         &:hover, &:active {
         text-decoration: none;
-        color: #8344E0;    
+        color: white;    
     }
 }
