@@ -3,7 +3,7 @@
 @section('content')
 
 <div class='col-sm-8'>
-    <h2>Fases da Lua </h2> 
+    <h2 class="sec-title">Fases da Lua </h2> 
 </div>
 <div class='col-sm-4'>
     @if (session('status'))

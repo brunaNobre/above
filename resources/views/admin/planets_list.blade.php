@@ -3,7 +3,7 @@
 @section('content')
 
 <div class='col-sm-8'>
-    <h2> Planetas </h2>
+    <h2 class="sec-title"> Planetas </h2>
 </div>
 <div class='col-sm-4'>
     @if (session('status'))

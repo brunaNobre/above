@@ -8,6 +8,16 @@
   border-color: #B188F1;
 }
 
+h2.sec-title {
+  padding-top: 6%;
+}
+
+.go-back-button {
+  position: absolute;
+  right: 5%;
+  top: 15%;
+}
+
 .menu-link {
   transition: background-color 0.3s;
 }
