@@ -42,8 +42,6 @@
 }
 
 .admin-menu .admin-user-container .admin-user-image-container .admin-user-image {
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
   height: 70px;
   width: 70px;
 }

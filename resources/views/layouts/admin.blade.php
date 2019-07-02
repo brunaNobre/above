@@ -32,7 +32,7 @@
 <nav class="admin-menu w3-sidebar w3-collapse" style="z-index:3;width:300px;" id="mySidebar"><br>
     <div class="admin-user-container w3-container w3-row">
         <div class="w3-col s4 admin-user-image-container">
-            <img src="/images/users/admin-user.jpg" class="admin-user-image w3-circle w3-margin-right">
+            <img src="/images/users/user.png" class="admin-user-image w3-circle w3-margin-right">
         </div>
      
         <div class="w3-col s8 w3-bar">
