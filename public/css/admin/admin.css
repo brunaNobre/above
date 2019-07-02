@@ -32,9 +32,19 @@
   margin-right: 5%;
 }
 
+.hamburguer-menu {
+  color: white;
+}
+
 .admin-menu {
   background-color: white;
   box-shadow: 1px 0px 5px 0px rgba(90, 89, 89, 0.75);
+  margin-top: 2%;
+}
+
+.admin-menu a.logout {
+  text-align: right;
+  margin-top: 30%;
 }
 
 .admin-menu .admin-user-container .admin-user-image-container {
@@ -49,7 +59,6 @@
 .admin-top-container {
   background: #8344E0;
   background: linear-gradient(90deg, #6e4ce8 48%, #8344e0 70%, #8344e0 100%);
-  position: relative;
 }
 
 .admin-logo {
@@ -66,7 +75,7 @@
 .dash-card {
   float: left;
   margin-right: 6%;
-  margin-top: 3%;
+  margin-top: 10%;
   box-shadow: 1px 0px 5px 0px rgba(90, 89, 89, 0.75);
 }
 
@@ -93,5 +102,9 @@ div.insight-purple {
   .admin-logo {
     font-size: 2em;
   }
+}
+
+.logout-icon {
+  margin-left: 3%;
 }
 

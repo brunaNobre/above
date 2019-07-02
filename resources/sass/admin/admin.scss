@@ -14,6 +14,8 @@
 
 .menu-link {
 
+
+
     transition: background-color .3s;
 
     &:hover, &:active {
@@ -32,11 +34,25 @@
         margin-right: 5%;
         
     }
+
+   
+
+    
+}
+
+.hamburguer-menu {
+    color: white;
 }
 
 .admin-menu {
     background-color: white;
     box-shadow: 1px 0px 5px 0px rgba(90, 89, 89, 0.75);
+    margin-top: 2%;
+
+    a.logout {
+        text-align: right;
+        margin-top: 30%;
+    }
 
 
    .admin-user-container {
@@ -59,9 +75,9 @@
 .admin-top-container {
     background: #8344E0;
     background: linear-gradient(90deg, rgba(110,76,232,1) 48%, rgba(131,68,224,1) 70%, rgba(131,68,224,1) 100%);
-    position: relative;
 
 }
+
 
 .admin-logo {
     color: white;
@@ -75,7 +91,7 @@
 .dash-card {
     float: left;
     margin-right: 6%;
-    margin-top: 3%;
+    margin-top: 10%;
     box-shadow: 1px 0px 5px 0px rgba(90, 89, 89, 0.75);
 
 
@@ -120,3 +136,9 @@ div.insight-purple {
 
 
  }
+
+  
+
+ .logout-icon {
+    margin-left: 3%;
+}

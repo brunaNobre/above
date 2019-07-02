@@ -24,9 +24,10 @@
 
 <!-- Top container -->
 <div class="admin-top-container w3-bar w3-top w3-large" style="z-index:4">
-    <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+    <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey hamburguer-menu" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
     <a href="/admin" class="admin-logo w3-bar-item w3-right">Above</a>
 </div>
+
 
 <!-- Sidebar/menu -->
 <nav class="admin-menu w3-sidebar w3-collapse" style="z-index:3;width:300px;" id="mySidebar"><br>
@@ -41,17 +42,9 @@
                $first_name = $user_name[0];
             @endphp
             <span>Bem vindo(a), <strong>{{ $first_name }}</strong></span><br>
-            <a href="{{ route('logout') }}"
-               onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();"
-               class="w3-bar-item w3-button"><i class="fas fa-sign-out-alt"></i></a>
-
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                {{ csrf_field() }}
-            </form>
+            
         </div>
     </div>
-    <hr>
     <div class="w3-container">
         <h5>Menu</h5>
     </div>
@@ -62,6 +55,15 @@
         <a href="{{route('signs.index')}}" class="menu-link w3-bar-item w3-button w3-padding"><i class="far fa-star fa-fw"></i>  Signos</a>
         <a href="{{route('advices.index')}}" class="menu-link w3-bar-item w3-button w3-padding"><i class="fas fa-exclamation fa-fw"></i>  Dicas</a>
         <a href="{{route('users.index')}}" class="menu-link w3-bar-item w3-button w3-padding"><i class="fas fa-users fa-fw"></i> Usuários</a>
+        <br>
+        <a href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();"
+               class="w3-bar-item w3-button logout">Sair <i class="fas fa-sign-out-alt logout-icon"></i></a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
      
     </div>
 </nav>
