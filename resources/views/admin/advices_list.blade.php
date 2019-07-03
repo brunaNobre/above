@@ -28,7 +28,7 @@
 <tr>
     <td>{{$advice->moon}}</td>
     <td>{{$advice->sign}}</td>
-    <td>{{$advice->dica}}</td>
+    <td>{{$advice->advice}}</td>
     
     <td>
        <a href="{{route('advices.edit', $advice->id)}}" 
