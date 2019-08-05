@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\DB;
 
 class PlanetController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,9 +22,7 @@ class PlanetController extends Controller
      */
     public function index()
     {
-        if (!Auth::check()) {
-            return redirect('/');
-        }
+        
         $planets = Planet::all();
         return view('admin.planets_list', compact('planets'));
     }
@@ -31,9 +35,7 @@ class PlanetController extends Controller
     public function create()
     {
         
-        if (!Auth::check()) {
-            return redirect('/');
-        }
+       
 
         return view('admin.planet_create');
 
@@ -82,9 +84,7 @@ class PlanetController extends Controller
      */
     public function edit($id)
     {
-        if (!Auth::check()) {
-            return redirect('/');
-        }
+       
         // posiciona no registro a ser alterado e obtém seus dados
         $planet = Planet::find($id);
         return view('admin.planet_edit', compact('planet'));

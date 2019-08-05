@@ -9,6 +9,15 @@ use Illuminate\Support\Facades\DB;
 
 class MoonController extends Controller
 {
+
+
+
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,9 +25,7 @@ class MoonController extends Controller
      */
     public function index()
     {
-        if (!Auth::check()) {
-            return redirect('/');
-        }
+       
         $moons = Moon::all();
         return view('admin.moons_list', compact('moons'));
     }
@@ -30,9 +37,7 @@ class MoonController extends Controller
      */
     public function create()
     {
-        if (!Auth::check()) {
-            return redirect('/');
-        }
+       
        
         return view('admin.moon_create');
     }
@@ -77,9 +82,7 @@ class MoonController extends Controller
      */
     public function edit($id)
     {
-        if (!Auth::check()) {
-            return redirect('/');
-        }
+        
         // posiciona no registro a ser alterado e obtém seus dados
         $moon = Moon::find($id);
         return view('admin.moon_edit', compact('moon'));

@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\DB;
 
 class SignController extends Controller
 {
+
+
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,9 +23,7 @@ class SignController extends Controller
      */
     public function index()
     {
-        if (!Auth::check()) {
-            return redirect('/');
-        }
+        
         $signs = Sign::all();
         return view('admin.signs_list', compact('signs'));
     }
@@ -30,9 +35,7 @@ class SignController extends Controller
      */
     public function create()
     {
-        if (!Auth::check()) {
-            return redirect('/');
-        }
+       
        
         return view('admin.sign_create');
     }
@@ -77,9 +80,7 @@ class SignController extends Controller
      */
     public function edit($id)
     {
-        if (!Auth::check()) {
-            return redirect('/');
-        }
+       
         // posiciona no registro a ser alterado e obtém seus dados
         $sign = Sign::find($id);
         return view('admin.sign_edit', compact('sign'));

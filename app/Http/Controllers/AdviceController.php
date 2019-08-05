@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\DB;
 
 class AdviceController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -16,9 +23,7 @@ class AdviceController extends Controller
      */
     public function index()
     {
-        if (!Auth::check()) {
-            return redirect('/');
-        }
+       
         $advices = Advice::all();
         return view('admin.advices_list', compact('advices'));
     }
@@ -30,9 +35,7 @@ class AdviceController extends Controller
      */
     public function create()
     {
-        if (!Auth::check()) {
-            return redirect('/');
-        }
+        
 
         return view('admin.advice_create');
     }
@@ -81,9 +84,7 @@ class AdviceController extends Controller
      */
     public function edit($id)
     {
-        if (!Auth::check()) {
-            return redirect('/');
-        }
+       
         // posiciona no registro a ser alterado e obtém seus dados
         $advice = Advice::find($id);
         return view('admin.advice_edit', compact('advice'));
