@@ -23,15 +23,12 @@ Route::get('/places', function () {
 
 Auth::routes();
 
-Route::get('/admin', 'HomeController@index')->name('admin');;
-
 
 Route::get('/redirect', 'Auth\LoginController@redirectToProvider')->name('redirect');
 Route::get('/callback', 'Auth\LoginController@handleProviderCallback');
 
 
 
-//Route::resource('moods', 'MoodController');
 
 Route::resource('admin/moons', 'MoonController');
 
@@ -45,4 +42,3 @@ Route::resource('admin/advices', 'AdviceController');
 
 
 
-//Route::resource('tasks', 'TaskController');
