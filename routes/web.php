@@ -16,7 +16,6 @@ Route::get('/', function () {
 });
 
 
-
 Route::get('/places', function () {
     return view('places');
 });
@@ -24,10 +23,21 @@ Route::get('/places', function () {
 Auth::routes();
 
 
-Route::get('/redirect', 'Auth\LoginController@redirectToProvider')->name('redirect');
-Route::get('/callback', 'Auth\LoginController@handleProviderCallback');
+//Route::get('/redirect', 'Auth\LoginController@redirectToProvider')->name('redirect');
+//Route::get('/callback', 'Auth\LoginController@handleProviderCallback');
 
 
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('admin', 'AdminController@index')->name('admin.dashboard');
+
+
+
+Route::get('admin/register', 'AdminController@create')->name('admin.register');
+Route::post('admin/register', 'AdminController@store')->name('admin.register.store');
+Route::get('admin/login', 'Auth\Admin\LoginController@login')->name('admin.auth.login');
+Route::post('admin/login', 'Auth\Admin\LoginController@loginAdmin')->name('admin.auth.loginAdmin');
+Route::post('admin/logout', 'Auth\Admin\LoginController@logout')->name('admin.auth.logout');
 
 
 Route::resource('admin/moons', 'MoonController');
