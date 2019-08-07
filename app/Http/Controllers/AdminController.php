@@ -10,7 +10,7 @@ class AdminController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth:admin');
+        $this->middleware('auth:admin')->except(['create', 'store']);
 
     }
     /**
@@ -20,6 +20,8 @@ class AdminController extends Controller
      */
     public function index()
     {
+
+
         return view('admin.dashboard');
     }
 
@@ -30,6 +32,8 @@ class AdminController extends Controller
      */
     public function create()
     {
+
+       
         return view('admin.auth.register');
     }
 

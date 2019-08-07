@@ -56,12 +56,12 @@
         <a href="{{route('advices.index')}}" class="menu-link w3-bar-item w3-button w3-padding"><i class="fas fa-exclamation fa-fw"></i>  Dicas</a>
         <a href="{{route('users.index')}}" class="menu-link w3-bar-item w3-button w3-padding"><i class="fas fa-users fa-fw"></i> Usuários</a>
         <br>
-        <a href="{{ route('logout') }}"
+        <a href="{{ route('admin.auth.logout') }}"
                onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();"
+                            document.getElementById('admin-logout-form').submit();"
                class="w3-bar-item w3-button logout">Sair <i class="fas fa-sign-out-alt logout-icon"></i></a>
 
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            <form id="admin-logout-form" action="{{ route('admin.auth.logout') }}" method="POST" style="display: none;">
                 {{ csrf_field() }}
             </form>
      
