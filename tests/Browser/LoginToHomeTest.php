@@ -5,35 +5,49 @@ namespace Tests\Browser;
 use App\User;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+
 
 class LoginToHomeTest extends DuskTestCase
 {
-
-    use DatabaseMigrations;
-
-
     /**
      * A Dusk test example.
      *
      * @return void
      */
-    public function testLogin()
+    public function testHomeLogin()
     {
-        $user = factory(User::class)->create([
-            'email' => 'joana@laravel.com',
-        ]);
+        $user = factory(User::class)->create();
 
 
         $this->browse(function ($browser) use ($user) {
 
 
-            $browser->visit('/login')
+            $browser->visit('login')
             ->type('email', $user->email)
             ->type('password', 'password')
             ->press('Entrar')
             ->assertPathIs('/home');
                   
         });
+
+        $user->delete();
+
+
+    }
+
+    public function testAdminLoginWithNoExistingUser() {
+
+
+        $this->browse(function ($browser) {
+
+
+            $browser->visit('login')
+            ->type('email', 'fake@email.com')
+            ->type('password', 'fakepassword')
+            ->press('Entrar')
+            ->assertPathIsNot('/home');
+                  
+        });
+
     }
 }
