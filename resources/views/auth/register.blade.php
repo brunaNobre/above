@@ -70,7 +70,7 @@
                             </div>
                         </div>
 
-                          <a class="btn btn-link google-account" href="{{ route('redirect') }}">
+                          <a class="btn btn-link google-account" href="">
                             <img src="{{ asset('images/google-logo.png') }}" alt="Google Cadastrar">
                             Cadastrar com o Google
 
