@@ -32,7 +32,7 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: composer install -n --prefer-dist
+      - run: composer install 
 
       - save_cache:
           key: v1-dependencies-{{ checksum "composer.json" }}
@@ -43,11 +43,20 @@ jobs:
             - v1-dependencies-{{ checksum "composer.json" }}
             - node-v1-{{ checksum "package.json" }}
             - node-v1-
-      - run: yarn install
+      - run: npm install
       - save_cache:
           key: node-v1-{{ checksum "package.json" }}
           paths:
             - node_modules
+  deploy:
+    docker:
+      - image: circleci/php:7.1-node-browsers
+    steps:
+      - checkout
+      - run:
+        name: Deploy to Heroku
+        command: |
+          git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
 
 workflows:
   version: 2
