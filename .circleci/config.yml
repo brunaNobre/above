@@ -49,6 +49,8 @@ jobs:
           paths:
             - node_modules
   deploy:
+    docker:
+      - image: circleci/php:7.1-node-browsers
     steps:
       - checkout
       - run:
