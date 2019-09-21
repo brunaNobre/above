@@ -1,11 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
 
-<h1>React App</h1>
+<div id="above-app"></div>
 
+<script src="{{ asset('js/app.js') }}"></script>
 
-
-</div>
 @endsection
