@@ -70096,7 +70096,7 @@ __webpack_require__.r(__webpack_exports__);
 var Header = function Header() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "React funcionando"));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Above em React"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
