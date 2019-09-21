@@ -26,9 +26,6 @@ Auth::routes();
 //Route::post('userlogout', 'Auth\LoginController@logout')->name('userlogout');
 
 
-
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/admin', 'AdminController@index')->name('admin.dashboard');
 
 
@@ -49,5 +46,8 @@ Route::resource('admin/signs', 'SignController');
 Route::resource('admin/users', 'UserController');
 
 Route::resource('admin/advices', 'AdviceController');
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 
 

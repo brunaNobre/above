@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Header from './Header'
 
-class App extends Component {
+class AboveApp extends Component {
   render () {
     return (
       <BrowserRouter>
@@ -15,4 +15,4 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render(<AboveApp />, document.getElementById('above-app'))
