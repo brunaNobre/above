@@ -29,6 +29,9 @@
     <td>{{$user->email}}</td>
     
     <td>
+    <a href="#" 
+          class="above-admin-btn btn btn-info" 
+          role="button">Moods</a> &nbsp;&nbsp;
        <form style="display: inline-block"
              method="post"
              action="{{route('users.destroy', $user->id)}}"
