@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Felling extends Model
+class Feelling extends Model
 {
     protected $fillable = ['moodId', 'name'];
 

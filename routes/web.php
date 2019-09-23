@@ -47,6 +47,8 @@ Route::resource('admin/users', 'UserController');
 
 Route::resource('admin/advices', 'AdviceController');
 
+Route::resource('admin/feellings', 'FeellingController');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 
