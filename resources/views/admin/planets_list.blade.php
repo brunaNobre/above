@@ -2,9 +2,7 @@
 
 @section('content')
 
-<div class='col-sm-8'>
     <h2 class="sec-title"> Planetas </h2>
-</div>
 <div class='col-sm-4'>
     @if (session('status'))
         <div class="alert alert-success">
@@ -13,7 +11,7 @@
     @endif
 </div>
 
-<div class="w3-container">
+<div class="abv-card">
 
 <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white w3-ul w3-card-4">
     <thead>
@@ -44,7 +42,7 @@
     </td>
 </tr>
 @endforeach
-    <tr> <td><a href="{{route('planets.create')}}" class="above-admin-btn btn btn-info"
+    <tr> <td><a href="{{route('planets.create')}}" class="above-admin-btn"
                 role="button">Novo</a></td></tr>
     </tbody>
   </table>    

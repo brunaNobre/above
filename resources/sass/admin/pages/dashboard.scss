@@ -1,0 +1,40 @@
+.abv-dashboard-container main {
+    background-color: #e2e1e0;
+    
+    header {
+        grid-template-columns: 2fr 1fr;
+        width: 97.5%;
+
+        .abv-btn-wrapper {
+            position: relative;
+            text-align: right;
+            a {
+                position: relative;
+                top: 40%;
+                font-weight: bold;
+                padding: 0.5rem 0.8rem;
+
+            }
+        }
+    }
+
+    .abv-card {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        background-color: #fff;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: Roboto, sans-serif;
+
+        table {
+            font-weight: 300;
+        }
+    }
+
+    h2 {
+        font-family: Roboto, sans-serif;
+        font-weight: 200;
+        padding: 5%;
+        margin-left: -2%;
+    }
+}
