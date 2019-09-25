@@ -64469,7 +64469,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -69935,6 +69935,29 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/above-components/adminLogout.js":
+/*!******************************************************!*\
+  !*** ./resources/js/above-components/adminLogout.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var is_hidden = true;
+$('#abvDropdownMenuButton').on('click', function (evt) {
+  evt.preventDefault();
+  is_hidden ? $('#abvDropdownMenu').removeClass('hidden') : $('#abvDropdownMenu').addClass('hidden');
+  is_hidden ? is_hidden = false : is_hidden = true;
+});
+$(document).on('click', function (evt) {
+  var abvDropdownMenuButton = document.getElementById('abvDropdownMenuButton');
+
+  if (!is_hidden && !(evt.target == abvDropdownMenuButton)) {
+    $('#abvDropdownMenu').addClass('hidden');
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -69948,6 +69971,8 @@ module.exports = function(module) {
  * building robust, powerful web applications using React + Laravel.
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+__webpack_require__(/*! ./above-components/adminLogout */ "./resources/js/above-components/adminLogout.js");
 /**
  * Next, we will create a fresh React component instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -70103,6 +70128,17 @@ var Header = function Header() {
 
 /***/ }),
 
+/***/ "./resources/sass/admin/admin.scss":
+/*!*****************************************!*\
+  !*** ./resources/sass/admin/admin.scss ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -70115,14 +70151,15 @@ var Header = function Header() {
 /***/ }),
 
 /***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/*!***********************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/admin/admin.scss ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /Users/brunanobrealmeida/workspace/above/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/brunanobrealmeida/workspace/above/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/brunanobrealmeida/workspace/above/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /Users/brunanobrealmeida/workspace/above/resources/sass/admin/admin.scss */"./resources/sass/admin/admin.scss");
 
 
 /***/ })
