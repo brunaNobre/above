@@ -28,6 +28,54 @@
 
         table {
             font-weight: 300;
+
+            tbody {
+                button {
+                    background-color: white;
+                    border-color: #EF352B;
+                    border-radius: 100%;
+                    padding: 0.35em 0.55em;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: #EF352B;
+                        i {
+                            color: white;
+                        }
+                    } 
+                }
+            }
+
+            .abv-edit-button {
+                border: 1px solid #6BBF6F;
+                padding: 0.5em;
+                border-radius: 100%; 
+                margin-right: 5%;
+                &:hover {
+                    background-color: #6BBF6F;
+                    i {
+                        color: white;
+                    }
+                }           
+            }
+
+
+            
+                button.abv-delete-button {
+                    
+                }
+            
+
+          
+
+            .abv-delete-icon {
+                color: #EF352B;
+            }
+
+            .abv-edit-icon {
+                color: #6BBF6F;
+            }
+
+            
         }
     }
 
@@ -36,5 +84,8 @@
         font-weight: 200;
         padding: 5%;
         margin-left: -2%;
+
+
     }
 }
+

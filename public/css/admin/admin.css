@@ -32,6 +32,45 @@
   font-weight: 300;
 }
 
+.abv-dashboard-container main .abv-card table tbody button {
+  background-color: white;
+  border-color: #EF352B;
+  border-radius: 100%;
+  padding: 0.35em 0.55em;
+  cursor: pointer;
+}
+
+.abv-dashboard-container main .abv-card table tbody button:hover {
+  background-color: #EF352B;
+}
+
+.abv-dashboard-container main .abv-card table tbody button:hover i {
+  color: white;
+}
+
+.abv-dashboard-container main .abv-card table .abv-edit-button {
+  border: 1px solid #6BBF6F;
+  padding: 0.5em;
+  border-radius: 100%;
+  margin-right: 5%;
+}
+
+.abv-dashboard-container main .abv-card table .abv-edit-button:hover {
+  background-color: #6BBF6F;
+}
+
+.abv-dashboard-container main .abv-card table .abv-edit-button:hover i {
+  color: white;
+}
+
+.abv-dashboard-container main .abv-card table .abv-delete-icon {
+  color: #EF352B;
+}
+
+.abv-dashboard-container main .abv-card table .abv-edit-icon {
+  color: #6BBF6F;
+}
+
 .abv-dashboard-container main h2 {
   font-family: Roboto, sans-serif;
   font-weight: 200;
