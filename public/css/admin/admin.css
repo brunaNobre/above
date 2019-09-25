@@ -48,6 +48,21 @@
   color: white;
 }
 
+.abv-dashboard-container main .abv-card table .abv-moods-button {
+  border: 1px solid #6311de;
+  padding: 0.5em;
+  border-radius: 100%;
+  margin-right: 5%;
+}
+
+.abv-dashboard-container main .abv-card table .abv-moods-button:hover {
+  background-color: #6311de;
+}
+
+.abv-dashboard-container main .abv-card table .abv-moods-button:hover i {
+  color: white;
+}
+
 .abv-dashboard-container main .abv-card table .abv-edit-button {
   border: 1px solid #6BBF6F;
   padding: 0.5em;
@@ -69,6 +84,10 @@
 
 .abv-dashboard-container main .abv-card table .abv-edit-icon {
   color: #6BBF6F;
+}
+
+.abv-dashboard-container main .abv-card table .abv-moods-icon {
+  color: #6311de;
 }
 
 .abv-dashboard-container main h2 {

@@ -45,6 +45,19 @@
                 }
             }
 
+            .abv-moods-button {
+                border: 1px solid #6311de;
+                padding: 0.5em;
+                border-radius: 100%; 
+                margin-right: 5%;
+                &:hover {
+                    background-color: #6311de;
+                    i {
+                        color: white;
+                    }
+                }  
+            }
+
             .abv-edit-button {
                 border: 1px solid #6BBF6F;
                 padding: 0.5em;
@@ -73,6 +86,10 @@
 
             .abv-edit-icon {
                 color: #6BBF6F;
+            }
+
+            .abv-moods-icon {
+                color: #6311de;
             }
 
             

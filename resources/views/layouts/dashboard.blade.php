@@ -57,7 +57,7 @@
                   <li class="abv-dashboard-menu-item"><a href="{{route('planets.index')}}"><i class="fas fa-atlas fa-fw"></i>  Planetas</a></li>
                   <li class="abv-dashboard-menu-item"><a href="{{route('moons.index')}}"><i class="fas fa-moon fa-fw"></i>Fases da Lua</a></li>
                   <li class="abv-dashboard-menu-item"><a href="{{route('signs.index')}}"><i class="far fa-star fa-fw"></i>  Signos</a></li>
-                  <li class="abv-dashboard-menu-item"><a href="{{route('feellings.index')}}"><i class="far fa-grin-alt"></i>  Sentimentos</a></li>
+                  <li class="abv-dashboard-menu-item"><a href="{{route('feellings.index')}}"><i class="far fa-grin-beam"></i>  Sentimentos</a></li>
                   <li class="abv-dashboard-menu-item"><a href="{{route('advices.index')}}"><i class="fas fa-exclamation fa-fw"></i>  Dicas</a></li>
                   <li class="abv-dashboard-menu-item"><a href="{{route('users.index')}}"><i class="fas fa-users fa-fw"></i> Usuários</a></li>
               </ul>
