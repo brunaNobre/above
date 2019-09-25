@@ -5,10 +5,7 @@
 <header class="abv-grid">
     <h2>Usuários</h2>
 
-    <div class="abv-btn-wrapper">
-    <a href="{{route('users.create')}}" role="button" class="abv-admin-btn">+</a>
-
-    </div>
+   
 
 </header>
 
