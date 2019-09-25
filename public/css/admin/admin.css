@@ -28,6 +28,20 @@
   font-family: Roboto, sans-serif;
 }
 
+.abv-dashboard-container main .abv-card form.abv-form-create {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1;
+  padding-top: 5%;
+}
+
+.abv-dashboard-container main .abv-card form.abv-form-create button.abv-btn {
+  background-color: #6311de;
+  border-color: #6311de;
+  margin-bottom: 5%;
+}
+
 .abv-dashboard-container main .abv-card table {
   font-weight: 300;
 }
