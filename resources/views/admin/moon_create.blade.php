@@ -6,7 +6,7 @@
     <h2>Nova Lua</h2>
 
     <div class="abv-btn-wrapper">
-    <a href="{{route('advices.index')}}" role="button" class="abv-admin-btn">Voltar</a>
+    <a href="{{route('moons.index')}}" role="button" class="abv-admin-btn">Voltar</a>
 
     </div>
 
@@ -14,7 +14,7 @@
 
 
 <div class="abv-card">
-<form class="abv-form-create" method="post" action="{{route('advices.store')}}">
+<form class="abv-form-create" method="post" action="{{route('moons.store')}}">
         {{ csrf_field() }}
 
 

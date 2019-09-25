@@ -127,7 +127,7 @@ class AdviceController extends Controller
         $advice = Advice::find($id);
         if ($advice->delete()) {
             return redirect()->route('advices.index')
-                ->with('status', 'Dica para ' .$request->moon. ' em ' .$request->sign. ' excluída!');
+                ->with('status', 'Dica para ' .$advice->moon. ' em ' .$advice->sign. ' excluída!');
         }
     }
 }
