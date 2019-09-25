@@ -15,7 +15,6 @@ class CreateFeellingsTable extends Migration
     {
         Schema::create('feellings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('moodId');
             $table->string('name');
             $table->timestamps();
         });

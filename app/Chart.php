@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Chart extends Model
 {
     protected $fillable = [
-        'userId', 'sun', 'rising_sign', 'moon', 'mercury', 'venus', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune', 'pluto', 'mc'
+        'sun', 'rising_sign', 'moon', 'mercury', 'venus', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune', 'pluto', 'mc'
     ];
     
     public function user() {
-        return $this->belongsTo('App\User');
+        return $this->hasOne('App\User');
     }
 }

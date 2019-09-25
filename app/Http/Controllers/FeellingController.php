@@ -27,7 +27,7 @@ class FeellingController extends Controller
         
        
 
-        return view('admin.feelling_create');
+        return view('admin.feellings_create');
 
     }
 
@@ -56,7 +56,7 @@ class FeellingController extends Controller
        
         // posiciona no registro a ser alterado e obtém seus dados
         $feelling = Feelling::find($id);
-        return view('admin.feelling_edit', compact('feelling'));
+        return view('admin.feellings_edit', compact('feelling'));
     }
 
     public function update(Request $request, $id)

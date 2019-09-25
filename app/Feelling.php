@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Feelling extends Model
 {
-    protected $fillable = ['moodId', 'name'];
+    protected $fillable = ['name'];
 
-    public function mood() {
-        return $this->belongsTo('App\Mood');
-    }
+
+   
+
+    
 
 }
