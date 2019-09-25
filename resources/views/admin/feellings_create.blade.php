@@ -2,44 +2,38 @@
 
 @section('content')
 
+<header class="abv-grid">
+    <h2>Novo Sentimento</h2>
 
-<div class='col-sm-11'>
-    <h2 class="sec-title"> Incluir Sentimento </h2>
+    <div class="abv-btn-wrapper">
+    <a href="{{route('feellings.index')}}" role="button" class="abv-admin-btn">Voltar</a>
 
-</div>
-<div class='col-sm-1 go-back-button'>
-    <a href="{{route('feellings.index')}}" class="above-admin-btn btn btn-primary" 
-       role="button">Voltar</a>
-</div>
-
-<div class='col-sm-12'>
-
-@if (count($errors) > 0)
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
     </div>
-@endif        
-    
-    <form method="post" action="{{route('feellings.store')}}">
+
+</header>
+
+
+<div class="abv-card">
+<form class="abv-form-create" method="post" action="{{route('feellings.store')}}">
         {{ csrf_field() }}
 
+
         <div class="form-group">
-            <label for="name">Nome do Sentimento:</label>
+            <label for="name">Nome do sentimento:</label>
             <input type="text" class="form-control" id="name"
                    name="name" 
                    required>
         </div>
 
+   
+      
         
+     
 
 
-        <button type="submit" class="above-admin-btn btn btn-primary">Enviar</button>        
-    </form>    
-</div>    
 
-
+        <button type="submit" class="abv-btn btn btn-primary">Enviar</button>        
+    </form>  
+        
+</div>
 @endsection
