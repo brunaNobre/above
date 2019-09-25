@@ -2,52 +2,51 @@
 
 @section('content')
 
-<div class='col-sm-8'>
-    <h2 class="sec-title"> Sentimentos </h2>
-</div>
-<div class='col-sm-4'>
-    @if (session('status'))
-        <div class="alert alert-success">
-            {{ session('status') }}
-        </div>
-    @endif
-</div>
+<header class="abv-grid">
+    <h2>Sentimentos</h2>
 
-<div class="w3-container">
+    <div class="abv-btn-wrapper">
+    <a href="{{route('feellings.create')}}" role="button" class="abv-admin-btn">+</a>
 
-<table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white w3-ul w3-card-4">
+    </div>
+
+</header>
+
+
+<div class="abv-card">
+    <table class="table">
     <thead>
-      <tr>
-        <th>Nome</th>
-      </tr>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col"></th>
+        </tr>
     </thead>
     <tbody>
-@foreach($feellings as $feelling)
-<tr>
-    <td>{{$feelling->name}}</td>
-    
-    <td>
-       <a href="{{route('feellings.edit', $feelling->id)}}" 
-          class="btn btn-warning" 
-          role="button">Alterar</a> &nbsp;&nbsp;
+        @foreach($feellings as $feelling)
+        <tr>
+            <th scope="row">{{$feelling->id}}</th>
+            <td>{{$feelling->name}}</td>
+            <td>
+
+
+                    <a href="{{route('feellings.edit', $feelling->id)}}" 
+          class="abv-edit-button" 
+          role="button"><i class="abv-edit-icon fas fa-pen"></i></a>
        <form style="display: inline-block"
              method="post"
              action="{{route('feellings.destroy', $feelling->id)}}"
              onsubmit="return confirm('Confirma Exclusão?')">
              {{method_field('delete')}}
              {{csrf_field()}}
-             <button type="submit"
-                     class="btn btn-danger"> Excluir </button>
+             <button type="submit" class="abv-detele-button"> <i class="abv-delete-icon fas fa-trash-alt"></i> </button>
        </form> 
-    </td>
-</tr>
-@endforeach
-    <tr> <td><a href="{{route('feellings.create')}}" class="above-admin-btn btn btn-info"
-                role="button">Novo</a></td></tr>
+
+            </td>
+        </tr>
+        @endforeach   
     </tbody>
-  </table>    
+    </table>
+        
 </div>
-
-
-
 @endsection
