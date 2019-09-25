@@ -13,6 +13,17 @@ $('#abvDropdownMenuButton').on('click', function(evt){
 
 
 
+$(document).on('click', function(evt){
+
+    const abvDropdownMenuButton = document.getElementById('abvDropdownMenuButton');
+
+    if(!is_hidden && !(evt.target == abvDropdownMenuButton)) {
+        $('#abvDropdownMenu').addClass('hidden');
+    }
+
+    
+  
+})
 
 
 
