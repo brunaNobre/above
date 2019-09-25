@@ -27,7 +27,7 @@
         @foreach($moons as $moon)
         <tr>
             <th scope="row">{{$moon->id}}</th>
-            <td>{{$moon->name}}</td>
+            <td>{{$moon->phase}}</td>
             <td>{{$moon->description}}</td>
             <td>
 
