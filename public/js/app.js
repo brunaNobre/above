@@ -69935,6 +69935,22 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/above-components/adminLogout.js":
+/*!******************************************************!*\
+  !*** ./resources/js/above-components/adminLogout.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var is_hidden = true;
+$('#abvDropdownMenuButton').on('click', function (evt) {
+  evt.preventDefault();
+  is_hidden ? $('#abvDropdownMenu').removeClass('hidden') : $('#abvDropdownMenu').addClass('hidden');
+  is_hidden ? is_hidden = false : is_hidden = true;
+});
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -69948,6 +69964,8 @@ module.exports = function(module) {
  * building robust, powerful web applications using React + Laravel.
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+__webpack_require__(/*! ./above-components/adminLogout */ "./resources/js/above-components/adminLogout.js");
 /**
  * Next, we will create a fresh React component instance and attach it to
  * the page. Then, you may begin adding components to this application

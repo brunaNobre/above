@@ -30,7 +30,20 @@
             </a>
         </div>
         <div class="abv-wrapper">
-             <a href="#" class="abv-username">{{ Auth::user()->name }} <i class="fas fa-sort-down"></i></a> 
+             <a href="#" class="abv-username" id="abvDropdownMenuButton"> {{ Auth::user()->name }}<i class="fas fa-sort-down"></i></a> 
+
+            <div id="abvDropdownMenu" class="abv-dropdown-menu hidden" aria-labelledby="abvDropdownMenuButton">
+
+                 <a class="dropdown-item" href="{{ route('admin.auth.logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('admin-logout-form').submit();">
+                                        Sair <i class="fas fa-sign-out-alt"></i>
+                                    </a>
+
+                                    <form id="admin-logout-form" action="{{ route('admin.auth.logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+            </div>
 
         </div>
 
@@ -69,6 +82,7 @@
 
 
 
+    <script src="{{ asset('js/app.js') }}"></script>
 
 </body>
 </html>

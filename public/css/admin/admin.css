@@ -39,6 +39,10 @@
   margin-left: -2%;
 }
 
+.hidden {
+  display: none;
+}
+
 .abv-grid {
   display: grid;
 }
@@ -58,6 +62,30 @@
 .abv-admin-btn:hover {
   color: white;
   background-color: #550ebe;
+}
+
+.abv-dropdown-menu {
+  position: absolute;
+  background-color: #fff;
+  font-family: Roboto, sans-serif;
+  font-size: 1em;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  width: 150px;
+  right: 3%;
+  top: 96%;
+  z-index: 5;
+  text-align: left;
+  border: 1px solid darkgray;
+  border-radius: 2px;
+}
+
+.abv-dropdown-menu .dropdown-item {
+  font-weight: 300;
+}
+
+.abv-dropdown-menu .dropdown-item i {
+  margin-left: 5%;
+  vertical-align: middle;
 }
 
 .abv-dashboard-nav {
