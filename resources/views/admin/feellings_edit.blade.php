@@ -24,7 +24,8 @@
         <div class="form-group">
             <label for="name">Nome do sentimento:</label>
             <input type="text" class="form-control" id="name"
-                   name="name" 
+                   name="name"
+                   value="{{$feelling->name}}" 
                    required>
         </div>
 
