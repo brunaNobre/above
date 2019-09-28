@@ -22,7 +22,8 @@
         <div class="form-group">
             <label for="moon">Lua:</label>
             <input type="text" class="form-control" id="moon"
-                   name="moon" 
+                   name="moon"
+                   value="{{$advice->moon}}" 
                    required>
         </div>
 
@@ -30,7 +31,8 @@
         <div class="form-group">
             <label for="sign">Signo:</label>
             <input type="text" class="form-control" id="sign"
-                   name="sign" 
+                   name="sign"
+                   value="{{$advice->sign}}" 
                    required>
         </div>
    
@@ -39,7 +41,7 @@
             <label for="advice">Dica:</label>
             <textarea rows="9" cols="30" class="form-control" id="advice"
                    name="advice" 
-                   required></textarea>
+                   required>{{$advice->advice}}</textarea>
         </div>
 
         
