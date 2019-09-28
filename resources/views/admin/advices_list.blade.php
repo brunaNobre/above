@@ -30,7 +30,17 @@
             <th scope="row">{{$advice->id}}</th>
             <td>{{$advice->moon}}</td>
             <td>{{$advice->sign}}</td>
-            <td>{{$advice->advice}}</td>
+
+            @php
+            $adviceString = $advice->advice;
+
+            if(strlen($adviceString)>60) {
+                $adviceString = substr($adviceString,0,60).' ...';                    
+            }
+
+            @endphp
+
+            <td>{{$adviceString}}</td>
 
             <td>
 
