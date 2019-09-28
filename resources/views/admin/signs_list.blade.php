@@ -28,7 +28,17 @@
         <tr>
             <th scope="row">{{$sign->id}}</th>
             <td>{{$sign->name}}</td>
-            <td>{{$sign->description}}</td>
+
+            @php
+            $adviceString = $sign->description;
+
+            if(strlen($adviceString)>60) {
+                $adviceString = substr($adviceString,0,60).' ...';                    
+            }
+
+            @endphp
+
+            <td>{{$adviceString}}</td>
             <td>
 
 
