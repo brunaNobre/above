@@ -41,10 +41,14 @@
             <td>{{$adviceString}}</td>
             <td>
 
+                 <a href="#" class="abv-see-btn abv-action-btn" role="button"><i class="far fa-eye"></i></a>
 
-                    <a href="{{route('planets.edit', $planet->id)}}" 
-          class="abv-edit-button" 
+
+
+                 <a href="{{route('planets.edit', $planet->id)}}" 
+          class="abv-action-btn abv-edit-btn" 
           role="button"><i class="abv-edit-icon fas fa-pen"></i></a>
+
        <form style="display: inline-block"
              method="post"
              action="{{route('planets.destroy', $planet->id)}}"

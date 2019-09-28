@@ -72,17 +72,37 @@
                 }  
             }
 
-            .abv-edit-button {
-                border: 1px solid #6BBF6F;
+            .abv-action-btn {
+                border: 1px solid;
                 padding: 0.5em;
                 border-radius: 100%; 
                 margin-right: 5%;
+                        
+            }
+
+            .abv-edit-btn {
+                border-color: #6BBF6F;
                 &:hover {
                     background-color: #6BBF6F;
                     i {
                         color: white;
                     }
-                }           
+                }  
+            }
+
+            .abv-see-btn {
+                border-color: blue;
+
+                i {
+                    color: blue;
+                }
+
+                &:hover {
+                    background-color: blue;
+                    i {
+                        color: white;
+                    }
+                }        
             }
 
 

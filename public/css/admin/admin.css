@@ -77,18 +77,38 @@
   color: white;
 }
 
-.abv-dashboard-container main .abv-card table .abv-edit-button {
-  border: 1px solid #6BBF6F;
+.abv-dashboard-container main .abv-card table .abv-action-btn {
+  border: 1px solid;
   padding: 0.5em;
   border-radius: 100%;
   margin-right: 5%;
 }
 
-.abv-dashboard-container main .abv-card table .abv-edit-button:hover {
+.abv-dashboard-container main .abv-card table .abv-edit-btn {
+  border-color: #6BBF6F;
+}
+
+.abv-dashboard-container main .abv-card table .abv-edit-btn:hover {
   background-color: #6BBF6F;
 }
 
-.abv-dashboard-container main .abv-card table .abv-edit-button:hover i {
+.abv-dashboard-container main .abv-card table .abv-edit-btn:hover i {
+  color: white;
+}
+
+.abv-dashboard-container main .abv-card table .abv-see-btn {
+  border-color: blue;
+}
+
+.abv-dashboard-container main .abv-card table .abv-see-btn i {
+  color: blue;
+}
+
+.abv-dashboard-container main .abv-card table .abv-see-btn:hover {
+  background-color: blue;
+}
+
+.abv-dashboard-container main .abv-card table .abv-see-btn:hover i {
   color: white;
 }
 

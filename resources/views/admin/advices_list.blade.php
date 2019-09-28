@@ -44,10 +44,12 @@
 
             <td>
 
+                    <a href="#" class="abv-see-btn abv-action-btn" role="button"><i class="far fa-eye"></i></a>
 
                     <a href="{{route('advices.edit', $advice->id)}}" 
-          class="abv-edit-button" 
+          class="abv-edit-btn abv-action-btn" 
           role="button"><i class="abv-edit-icon fas fa-pen"></i></a>
+
        <form style="display: inline-block"
              method="post"
              action="{{route('advices.destroy', $advice->id)}}"
