@@ -35,7 +35,7 @@
             $adviceString = $advice->advice;
 
             if(strlen($adviceString)>60) {
-                $adviceString=substr($adviceString,0,60).' ...';                    
+                $adviceString = substr($adviceString,0,60).' ...';                    
             }
 
             @endphp

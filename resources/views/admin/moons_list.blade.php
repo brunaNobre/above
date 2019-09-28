@@ -28,7 +28,17 @@
         <tr>
             <th scope="row">{{$moon->id}}</th>
             <td>{{$moon->phase}}</td>
-            <td>{{$moon->description}}</td>
+
+            @php
+            $descriptionString = $moon->description;
+
+            if(strlen($descriptionString)>60) {
+                $descriptionString = substr($descriptionString,0,60).' ...';                    
+            }
+
+            @endphp
+
+            <td>{{$descriptionString}}</td>
             <td>
 
 
