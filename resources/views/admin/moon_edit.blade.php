@@ -23,7 +23,8 @@
         <div class="form-group">
             <label for="phase">Fase da Lua:</label>
             <input type="text" class="form-control" id="phase"
-                   name="phase" 
+                   name="phase"
+                   value="{{$moon->phase}}" 
                    required>
         </div>
 
@@ -33,7 +34,7 @@
             <label for="description">Descrição:</label>
             <textarea rows="10" cols="30" class="form-control" id="description"
                    name="description" 
-                   required></textarea>
+                   required>{{$moon->description}}</textarea>
         </div>
         
      
