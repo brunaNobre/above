@@ -56,7 +56,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="details-header">Lua <span>{{$advice->moon}}</span> em <span>{{$advice->sign}}</span></h5><br>
+                            <h5 class="details-header" id="adviceDetails">Lua <span>{{$advice->moon}}</span> em <span>{{$advice->sign}}</span></h5><br>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                             <span aria-hidden="true">&times;</span>
                             </button>
