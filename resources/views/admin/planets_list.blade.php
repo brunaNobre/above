@@ -41,7 +41,39 @@
             <td>{{$adviceString}}</td>
             <td>
 
-                 <a href="#" class="abv-see-btn abv-action-btn" role="button"><i class="far fa-eye"></i></a>
+                <button type="button" class="abv-see-btn" data-toggle="modal" data-target="#modalShowDetails">
+                    <i class="far fa-eye"></i>
+                </button>
+
+
+
+
+                <div class="modal fade" id="modalShowDetails" tabindex="-1" role="dialog" aria-labelledby="planetDetails" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="details-header" id="planetDetails"><span>{{$planet->name}}</span></h5><br>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h5>Descrição</h5>
+                            <p>{{$planet->description}}</p>
+                        </div>
+                        <div class="modal-footer">
+
+                            <a href="{{route('planets.edit', $planet->id)}}" role="button" class="btn btn-secondary">
+                                
+                                <i class="fas fa-pen"></i> Editar
+
+                            </a>
+
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
 
 
 
