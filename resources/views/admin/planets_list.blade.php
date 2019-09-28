@@ -28,7 +28,17 @@
         <tr>
             <th scope="row">{{$planet->id}}</th>
             <td>{{$planet->name}}</td>
-            <td>{{$planet->description}}</td>
+
+            @php
+            $adviceString = $planet->description;
+
+            if(strlen($adviceString)>60) {
+                $adviceString = substr($adviceString,0,60).' ...';                    
+            }
+
+            @endphp
+
+            <td>{{$adviceString}}</td>
             <td>
 
 
