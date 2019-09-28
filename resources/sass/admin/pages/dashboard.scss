@@ -44,7 +44,7 @@
             font-weight: 300;
 
             tbody {
-                button {
+                form > button{
                     background-color: white;
                     border-color: #EF352B;
                     border-radius: 100%;
@@ -91,25 +91,49 @@
             }
 
             .abv-see-btn {
-                border-color: blue;
+                border-color: #6311de;
+                border-radius: 100%;
+                padding: 0.5em 0.5em;
+                margin-right: 5%;
 
                 i {
-                    color: blue;
+                    color: #6311de;
                 }
 
                 &:hover {
-                    background-color: blue;
+                    background-color: #6311de;
                     i {
                         color: white;
                     }
                 }        
             }
 
+            .details-header {
+                font-weight: 300;
+
+                span {
+                    font-weight: 400;
+                    color: #6311de;
+                }
+            } 
+
+
+            .modal-footer {
+
+                [role=button], button {
+                    background-color: #6311de;
+                    border-color: #6311de;
+
+                    &:hover {
+                        background-color: #550ebe;
+                    }
+                }
+
+               
+
+            }
 
             
-                button.abv-delete-button {
-                    
-                }
             
 
           

@@ -44,7 +44,42 @@
 
             <td>
 
-                    <a href="#" class="abv-see-btn abv-action-btn" role="button"><i class="far fa-eye"></i></a>
+
+
+                <button type="button" class="abv-see-btn" data-toggle="modal" data-target="#modalShowDetails">
+                    <i class="far fa-eye"></i>
+                </button>
+
+
+
+                <div class="modal fade" id="modalShowDetails" tabindex="-1" role="dialog" aria-labelledby="adviceDetails" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="details-header">Lua <span>{{$advice->moon}}</span> em <span>{{$advice->sign}}</span></h5><br>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h5>Dica</h5>
+                            <p>{{$advice->advice}}</p>
+                        </div>
+                        <div class="modal-footer">
+
+                            <a href="{{route('advices.edit', $advice->id)}}" role="button" class="btn btn-secondary">
+                                
+                                <i class="fas fa-pen"></i> Editar
+
+                            </a>
+
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+
 
                     <a href="{{route('advices.edit', $advice->id)}}" 
           class="abv-edit-btn abv-action-btn" 
