@@ -29,7 +29,6 @@
             <td>{{$feelling->name}}</td>
             <td>
 
-                    <a href="#" class="abv-see-btn abv-action-btn" role="button"><i class="far fa-eye"></i></a>
 
 
                     <a href="{{route('feellings.edit', $feelling->id)}}" 
