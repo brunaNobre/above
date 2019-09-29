@@ -46,7 +46,7 @@
   font-weight: 300;
 }
 
-.abv-dashboard-container main .abv-card table tbody button {
+.abv-dashboard-container main .abv-card table tbody form > button {
   background-color: white;
   border-color: #EF352B;
   border-radius: 100%;
@@ -54,11 +54,11 @@
   cursor: pointer;
 }
 
-.abv-dashboard-container main .abv-card table tbody button:hover {
+.abv-dashboard-container main .abv-card table tbody form > button:hover {
   background-color: #EF352B;
 }
 
-.abv-dashboard-container main .abv-card table tbody button:hover i {
+.abv-dashboard-container main .abv-card table tbody form > button:hover i {
   color: white;
 }
 
@@ -77,19 +77,63 @@
   color: white;
 }
 
-.abv-dashboard-container main .abv-card table .abv-edit-button {
-  border: 1px solid #6BBF6F;
+.abv-dashboard-container main .abv-card table .abv-action-btn {
+  border: 1px solid;
   padding: 0.5em;
   border-radius: 100%;
   margin-right: 5%;
 }
 
-.abv-dashboard-container main .abv-card table .abv-edit-button:hover {
+.abv-dashboard-container main .abv-card table .abv-edit-btn {
+  border-color: #6BBF6F;
+}
+
+.abv-dashboard-container main .abv-card table .abv-edit-btn:hover {
   background-color: #6BBF6F;
 }
 
-.abv-dashboard-container main .abv-card table .abv-edit-button:hover i {
+.abv-dashboard-container main .abv-card table .abv-edit-btn:hover i {
   color: white;
+}
+
+.abv-dashboard-container main .abv-card table .abv-see-btn {
+  border-color: #6311de;
+  border-radius: 100%;
+  padding: 0.36em 0.43em;
+  margin-right: 5%;
+  cursor: pointer;
+}
+
+.abv-dashboard-container main .abv-card table .abv-see-btn i {
+  color: #6311de;
+}
+
+.abv-dashboard-container main .abv-card table .abv-see-btn:hover {
+  background-color: #6311de;
+}
+
+.abv-dashboard-container main .abv-card table .abv-see-btn:hover i {
+  color: white;
+}
+
+.abv-dashboard-container main .abv-card table .details-header {
+  font-weight: 300;
+}
+
+.abv-dashboard-container main .abv-card table .details-header span {
+  font-weight: 400;
+  color: #6311de;
+}
+
+.abv-dashboard-container main .abv-card table .modal-footer [role=button],
+.abv-dashboard-container main .abv-card table .modal-footer button {
+  background-color: #6311de;
+  border-color: #6311de;
+}
+
+.abv-dashboard-container main .abv-card table .modal-footer [role=button]:hover,
+.abv-dashboard-container main .abv-card table .modal-footer button:hover {
+  background-color: #550ebe;
 }
 
 .abv-dashboard-container main .abv-card table .abv-delete-icon {
