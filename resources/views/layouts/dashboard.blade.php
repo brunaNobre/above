@@ -29,6 +29,7 @@
         <div class="abv-logo-wrapper">
             <a class="abv-admin-logo" href="{{ url('/admin') }}">
                     above
+                    <span>beta</span>
             </a>
         </div>
         <div class="abv-wrapper">
