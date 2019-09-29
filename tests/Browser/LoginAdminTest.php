@@ -6,11 +6,16 @@ use App\Admin;
 use App\User;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
+use Illuminate\Support\Facades\Auth;
+
 
 
 
 class LoginAdminTest extends DuskTestCase
 {
+
+
+    //use RefreshDatabase;
 
     /**
      * A Dusk test example.
@@ -19,21 +24,28 @@ class LoginAdminTest extends DuskTestCase
      */
     public function testAdminLogin()
     {
-        $admin = factory(Admin::class)->create();
 
 
-        $this->browse(function ($browser) use ($admin) {
+        $this->browse(function ($browser) {
 
 
-            $browser->visit('admin/login')
-            ->type('email', $admin->email)
-            ->type('password', 'password')
+            $browser->visit('/admin/login')
+            ->pause(2000)
+            ->type('email', 'admina@gmail.com')
+            ->pause(2000)
+            ->type('password', '1qwertyu')
+            ->pause(2000)
             ->press('Entrar')
-            ->assertPathIs('/admin');
+            ->pause(2000)
+            ->assertPathIs('/admin')
+            ->clickLink('Administradora')
+            ->pause(2000)
+            ->clickLink('Sair')
+            ->pause(2000);
+
+
                   
         });
-
-        $admin->delete();
 
 
     }
@@ -41,12 +53,14 @@ class LoginAdminTest extends DuskTestCase
     public function testAdminLoginWithNoExistingAdmin() {
 
 
-        $this->browse(function ($browser) {
+        $admin = Admin::find(3);
+
+        $this->browse(function ($browser) use ($admin){
 
 
             $browser->visit('admin/login')
-            ->type('email', 'fake@email.com')
-            ->type('password', 'fakepassword')
+            ->type('email', $admin->email)
+            ->type('password', $admin->password)
             ->press('Entrar')
             ->assertPathIsNot('/admin');
                   
@@ -58,7 +72,7 @@ class LoginAdminTest extends DuskTestCase
     public function testAdminLoginWithNormalUser() {
 
 
-        $user = factory(User::class)->create();
+        $user = factory('App\User')->create();
 
 
         $this->browse(function ($browser) use ($user) {
@@ -72,7 +86,6 @@ class LoginAdminTest extends DuskTestCase
                   
         });
 
-        $user->delete();
 
     }
 
