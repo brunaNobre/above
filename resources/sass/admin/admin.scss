@@ -94,9 +94,20 @@
             color: white;
             font-size: 2.5em;
             font-weight: 600;
+            position: relative;
          
             &:hover {
                 color: white;
+            }
+
+            span {
+                font-family: Roboto, sans-serif;
+                font-weight: 200;
+                font-style: italic;
+                font-size: 0.4em;
+                position: absolute;
+                top: 75%;
+                right: -2%;
             }
         }
 
