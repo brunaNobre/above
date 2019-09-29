@@ -46,13 +46,13 @@
 
 
 
-                <button type="button" class="abv-see-btn" data-toggle="modal" data-target="#modalShowDetails">
+                <button type="button" class="abv-see-btn" data-toggle="modal" data-target="{{'#modalShowDetails'.$advice->id}}">
                     <i class="far fa-eye"></i>
                 </button>
 
 
 
-                <div class="modal fade" id="modalShowDetails" tabindex="-1" role="dialog" aria-labelledby="adviceDetails" aria-hidden="true">
+                <div class="modal fade" id="{{'modalShowDetails'.$advice->id}}" tabindex="-1" role="dialog" aria-labelledby="adviceDetails" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                         <div class="modal-header">

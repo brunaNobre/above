@@ -41,7 +41,7 @@
             <td>{{$descriptionString}}</td>
             <td>
 
-                 <button type="button" class="abv-see-btn" data-toggle="modal" data-target="#modalShowDetails">
+                 <button type="button" class="abv-see-btn" data-toggle="modal" data-target="{{'#modalShowDetails'.$sign->id}}">
                     <i class="far fa-eye"></i>
                 </button>
 
@@ -52,7 +52,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="details-header" id="signDetails"><span>{{$sign->name}}</span></h5><br>
+                            <h5 class="details-header" id="{{'modalShowDetails'.$sign->id}}"><span>{{$sign->name}}</span></h5><br>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                             <span aria-hidden="true">&times;</span>
                             </button>

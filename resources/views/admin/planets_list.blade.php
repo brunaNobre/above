@@ -41,14 +41,14 @@
             <td>{{$adviceString}}</td>
             <td>
 
-                <button type="button" class="abv-see-btn" data-toggle="modal" data-target="#modalShowDetails">
+                <button type="button" class="abv-see-btn" data-toggle="modal" data-target="{{'#modalShowDetails'.$planet->id}}">
                     <i class="far fa-eye"></i>
                 </button>
 
 
 
 
-                <div class="modal fade" id="modalShowDetails" tabindex="-1" role="dialog" aria-labelledby="planetDetails" aria-hidden="true">
+                <div class="modal fade" id="{{'modalShowDetails'.$planet->id}}" tabindex="-1" role="dialog" aria-labelledby="planetDetails" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                         <div class="modal-header">
