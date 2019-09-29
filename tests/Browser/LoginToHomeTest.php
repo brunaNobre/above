@@ -5,10 +5,13 @@ namespace Tests\Browser;
 use App\User;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
+//use Illuminate\Foundation\Testing\RefreshDatabase;
+
 
 
 class LoginToHomeTest extends DuskTestCase
 {
+
     /**
      * A Dusk test example.
      *
@@ -16,21 +19,29 @@ class LoginToHomeTest extends DuskTestCase
      */
     public function testHomeLogin()
     {
-        $user = factory(User::class)->create();
+        $user = User::find(18);
 
 
         $this->browse(function ($browser) use ($user) {
 
 
-            $browser->visit('login')
+            $browser->visit('/login')
+            ->pause(2000)
             ->type('email', $user->email)
-            ->type('password', 'password')
+            ->pause(2000)
+            ->type('password', '1qwertyu')
+            ->pause(2000)
             ->press('Entrar')
-            ->assertPathIs('/home');
+            ->pause(2000)
+            ->assertPathIs('/home')
+            ->pause(2000)
+            ->clickLink('Usuário ')
+            ->pause(2000)
+            ->clickLink('Logout')
+            ->pause(2000);
                   
         });
 
-        $user->delete();
 
 
     }
