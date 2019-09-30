@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Header from './Header'
+import Panel from './Panel'
+import MoonHeader from './MoonHeader'
+import Calendar from './Calendar'
 
 class AboveApp extends Component {
   render () {
     return (
       <BrowserRouter>
         <div>
-          <Header />
+          <Panel />
+          <MoonHeader />
+          <Calendar />
         </div>
       </BrowserRouter>
     )
