@@ -14,4 +14,9 @@ class Mood extends Model
     public function user() {
         return $this->belongsTo('App\User');
     }
+
+    public function feellings()
+    {
+        return $this->belongsToMany(Feelling::class, 'feelling_mood');
+    }
 }

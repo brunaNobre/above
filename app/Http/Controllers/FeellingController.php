@@ -19,6 +19,10 @@ class FeellingController extends Controller
     {
         
         $feellings = Feelling::all();
+
+
+        //dd($feellings->moods);
+
         return view('admin.feellings_list', compact('feellings'));
     }
 
