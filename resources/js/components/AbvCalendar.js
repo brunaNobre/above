@@ -1,7 +1,6 @@
 import React from 'react'
-import moment from 'moment'
 
-const Calendar = () => (
+const AbvCalendar = () => (
    
   <div className="abvr-calendar">
   
@@ -58,4 +57,4 @@ const Calendar = () => (
   </div>
 )
 
-export default Calendar
+export default AbvCalendar
