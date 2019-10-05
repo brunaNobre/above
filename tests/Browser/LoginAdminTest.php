@@ -30,18 +30,12 @@ class LoginAdminTest extends DuskTestCase
 
 
             $browser->visit('/admin/login')
-            ->pause(2000)
             ->type('email', 'admina@gmail.com')
-            ->pause(2000)
             ->type('password', '1qwertyu')
-            ->pause(2000)
             ->press('Entrar')
-            ->pause(2000)
             ->assertPathIs('/admin')
             ->clickLink('Administradora')
-            ->pause(2000)
-            ->clickLink('Sair')
-            ->pause(2000);
+            ->clickLink('Sair');
 
 
                   
@@ -50,24 +44,7 @@ class LoginAdminTest extends DuskTestCase
 
     }
 
-    public function testAdminLoginWithNoExistingAdmin() {
-
-
-        $admin = Admin::find(3);
-
-        $this->browse(function ($browser) use ($admin){
-
-
-            $browser->visit('admin/login')
-            ->type('email', $admin->email)
-            ->type('password', $admin->password)
-            ->press('Entrar')
-            ->assertPathIsNot('/admin');
-                  
-        });
-
-    }
-
+ 
 
     public function testAdminLoginWithNormalUser() {
 
