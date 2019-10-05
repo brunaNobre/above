@@ -14,7 +14,7 @@ class CreateFeellingsTable extends Migration
     public function up()
     {
         Schema::create('feellings', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->integer('id');
             $table->string('name');
             $table->timestamps();
         });

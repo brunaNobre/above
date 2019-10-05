@@ -14,7 +14,7 @@ class CreateMoodsTable extends Migration
     public function up()
     {
         Schema::create('moods', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->integer('id');
             $table->integer('user_id');
             $table->date('day');
             $table->string('moon_phase');
