@@ -15,9 +15,41 @@
 @import 'pages/register';
 @import 'pages/places';
 
+//Components
+@import 'components/panel';
+@import 'components/moon-display';
+@import 'components/moon-header';
+@import 'components/calendar';
+@import 'components/abvr-calendar';
+
+
 
 // General
 
+
+
+.abvr-logo {
+    color: #fff;
+    z-index: 1;
+    font-size: 3em;
+    font-family: Arvo, serif;
+    font-weight: 700;
+    margin-left: -3%;
+
+    &:hover {
+        text-decoration: none;
+        color: #fff;
+    }
+}
+
+#app .abvr-nav-color {
+    display: block;
+    background-color: #8344E0;
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    left: 0%;
+}
 
 
 button.above-btn {
