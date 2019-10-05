@@ -2,11 +2,11 @@
 
 namespace Tests\Browser;
 
-use App\Advice;
+use App\Sign;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 
-class AdviceCrudTest extends DuskTestCase
+class SignCrudTest extends DuskTestCase
 {
   
     
@@ -22,8 +22,8 @@ class AdviceCrudTest extends DuskTestCase
             ->type('password', '1qwertyu')
             ->press('Entrar')
 
-            ->visit('/admin/advices')
-            ->assertPathIs('/admin/advices')
+            ->visit('/admin/signs')
+            ->assertPathIs('/admin/signs')
             
             ->clickLink('Administradora')
             ->clickLink('Sair');
@@ -35,7 +35,7 @@ class AdviceCrudTest extends DuskTestCase
     }
 
 
-    public function testCreateAnAdvice()
+    public function testCreateSign()
     {
 
 
@@ -47,20 +47,19 @@ class AdviceCrudTest extends DuskTestCase
             ->type('password', '1qwertyu')
             ->press('Entrar')
 
-            ->visit('/admin/advices')
+            ->visit('/admin/signs')
             ->clickLink('+')
-            ->type('moon', 'TestMoon')
-            ->type('sign', 'TestSign')
-            ->type('advice', 'TestAdvice')
+            ->type('name', 'TestName')
+            ->type('description', 'TestDescription')
             ->press('Enviar')
-            ->assertPathIs('/admin/advices')
-            ->assertSee('TestMoon')
+            ->assertPathIs('/admin/signs')
+            ->assertSee('TestName')
 
             ->clickLink('Administradora')
             ->clickLink('Sair');
 
-            $adviceTest = Advice::latest()->first();
-            $adviceTest->delete();
+            $signTest = Sign::latest()->first();
+            $signTest->delete();
                   
         });
 
@@ -68,15 +67,15 @@ class AdviceCrudTest extends DuskTestCase
     }
 
 
-    public function testReadAnAdvice()
+    public function testReadSign()
     {
         $data = [
-            'moon' => 'TestReadMoon',
-            'sign' => 'TestReadSign',
-            'advice' => 'TestReadAdvice',
+            'name' => 'TestReadName',
+            'description' => 'TestReadDescription',
+
         ];
 
-        $adviceTest = Advice::create($data);
+        $signTest = Sign::create($data);
 
         $this->browse(function ($browser) {
 
@@ -86,14 +85,14 @@ class AdviceCrudTest extends DuskTestCase
             ->type('password', '1qwertyu')
             ->press('Entrar')
 
-            ->visit('/admin/advices')
-            ->assertSee('TestReadMoon')
+            ->visit('/admin/signs')
+            ->assertSee('TestReadName')
 
             ->clickLink('Administradora')
             ->clickLink('Sair');
 
-            $adviceTest = Advice::latest()->first();
-            $adviceTest->delete();
+            $signTest = Sign::latest()->first();
+            $signTest->delete();
 
                   
         });
@@ -101,17 +100,16 @@ class AdviceCrudTest extends DuskTestCase
 
     }
 
-    public function testUpdateAnAdvice()
+    public function testUpdateSign()
     {
         $data = [
-            'moon' => 'TestUpMoon',
-            'sign' => 'TestUpSign',
-            'advice' => 'TestUpAdvice',
+            'name' => 'TestUpName',
+            'description' => 'TestUpDescription',
         ];
 
-        $adviceTest = Advice::create($data);
+        $signTest = Sign::create($data);
 
-        $this->browse(function ($browser) use ($adviceTest){
+        $this->browse(function ($browser) use ($signTest){
 
 
             $browser->visit('/admin/login')
@@ -119,18 +117,18 @@ class AdviceCrudTest extends DuskTestCase
             ->type('password', '1qwertyu')
             ->press('Entrar')
 
-            ->visit('/admin/advices/'.$adviceTest->id.'/edit') 
-            ->assertValue('#moon', 'TestUpMoon')
-            ->type('moon', 'UpdatedMoon')
+            ->visit('/admin/signs/'.$signTest->id.'/edit') 
+            ->assertValue('#name', 'TestUpName')
+            ->type('name', 'UpdatedName')
             ->press('Enviar')
-            ->assertSee('UpdatedMoon')
+            ->assertSee('UpdatedName')
 
 
             ->clickLink('Administradora')
             ->clickLink('Sair');
 
-            $adviceTest = Advice::latest()->first();
-            $adviceTest->delete();
+            $signTest = Sign::latest()->first();
+            $signTest->delete();
 
                   
         });

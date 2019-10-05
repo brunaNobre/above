@@ -2,11 +2,11 @@
 
 namespace Tests\Browser;
 
-use App\Advice;
+use App\Feelling;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 
-class AdviceCrudTest extends DuskTestCase
+class FeellingCrudTest extends DuskTestCase
 {
   
     
@@ -22,8 +22,8 @@ class AdviceCrudTest extends DuskTestCase
             ->type('password', '1qwertyu')
             ->press('Entrar')
 
-            ->visit('/admin/advices')
-            ->assertPathIs('/admin/advices')
+            ->visit('/admin/feellings')
+            ->assertPathIs('/admin/feellings')
             
             ->clickLink('Administradora')
             ->clickLink('Sair');
@@ -35,7 +35,7 @@ class AdviceCrudTest extends DuskTestCase
     }
 
 
-    public function testCreateAnAdvice()
+    public function testCreateAFeelling()
     {
 
 
@@ -47,20 +47,18 @@ class AdviceCrudTest extends DuskTestCase
             ->type('password', '1qwertyu')
             ->press('Entrar')
 
-            ->visit('/admin/advices')
+            ->visit('/admin/feellings')
             ->clickLink('+')
-            ->type('moon', 'TestMoon')
-            ->type('sign', 'TestSign')
-            ->type('advice', 'TestAdvice')
+            ->type('name', 'TestName')
             ->press('Enviar')
-            ->assertPathIs('/admin/advices')
-            ->assertSee('TestMoon')
+            ->assertPathIs('/admin/feellings')
+            ->assertSee('TestName')
 
             ->clickLink('Administradora')
             ->clickLink('Sair');
 
-            $adviceTest = Advice::latest()->first();
-            $adviceTest->delete();
+            $feellingTest = Feelling::latest()->first();
+            $feellingTest->delete();
                   
         });
 
@@ -68,15 +66,13 @@ class AdviceCrudTest extends DuskTestCase
     }
 
 
-    public function testReadAnAdvice()
+    public function testReadAFeeling()
     {
         $data = [
-            'moon' => 'TestReadMoon',
-            'sign' => 'TestReadSign',
-            'advice' => 'TestReadAdvice',
+            'name' => 'TestReadName',
         ];
 
-        $adviceTest = Advice::create($data);
+        $feellingTest = Feelling::create($data);
 
         $this->browse(function ($browser) {
 
@@ -86,14 +82,14 @@ class AdviceCrudTest extends DuskTestCase
             ->type('password', '1qwertyu')
             ->press('Entrar')
 
-            ->visit('/admin/advices')
-            ->assertSee('TestReadMoon')
+            ->visit('/admin/feellings')
+            ->assertSee('TestReadName')
 
             ->clickLink('Administradora')
             ->clickLink('Sair');
 
-            $adviceTest = Advice::latest()->first();
-            $adviceTest->delete();
+            $feellingTest = Feelling::latest()->first();
+            $feellingTest->delete();
 
                   
         });
@@ -101,17 +97,15 @@ class AdviceCrudTest extends DuskTestCase
 
     }
 
-    public function testUpdateAnAdvice()
+    public function testUpdateAFeelling()
     {
         $data = [
-            'moon' => 'TestUpMoon',
-            'sign' => 'TestUpSign',
-            'advice' => 'TestUpAdvice',
+            'name' => 'TestUpName',
         ];
 
-        $adviceTest = Advice::create($data);
+        $feellingTest = Feelling::create($data);
 
-        $this->browse(function ($browser) use ($adviceTest){
+        $this->browse(function ($browser) use ($feellingTest){
 
 
             $browser->visit('/admin/login')
@@ -119,18 +113,18 @@ class AdviceCrudTest extends DuskTestCase
             ->type('password', '1qwertyu')
             ->press('Entrar')
 
-            ->visit('/admin/advices/'.$adviceTest->id.'/edit') 
-            ->assertValue('#moon', 'TestUpMoon')
-            ->type('moon', 'UpdatedMoon')
+            ->visit('/admin/feellings/'.$feellingTest->id.'/edit') 
+            ->assertValue('#name', 'TestUpName')
+            ->type('name', 'UpdatedName')
             ->press('Enviar')
-            ->assertSee('UpdatedMoon')
+            ->assertSee('UpdatedName')
 
 
             ->clickLink('Administradora')
             ->clickLink('Sair');
 
-            $adviceTest = Advice::latest()->first();
-            $adviceTest->delete();
+            $feellingTest = Feelling::latest()->first();
+            $feellingTest->delete();
 
                   
         });

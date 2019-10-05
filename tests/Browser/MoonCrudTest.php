@@ -2,11 +2,11 @@
 
 namespace Tests\Browser;
 
-use App\Advice;
+use App\Moon;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 
-class AdviceCrudTest extends DuskTestCase
+class MoonCrudTest extends DuskTestCase
 {
   
     
@@ -22,8 +22,8 @@ class AdviceCrudTest extends DuskTestCase
             ->type('password', '1qwertyu')
             ->press('Entrar')
 
-            ->visit('/admin/advices')
-            ->assertPathIs('/admin/advices')
+            ->visit('/admin/moons')
+            ->assertPathIs('/admin/moons')
             
             ->clickLink('Administradora')
             ->clickLink('Sair');
@@ -35,7 +35,7 @@ class AdviceCrudTest extends DuskTestCase
     }
 
 
-    public function testCreateAnAdvice()
+    public function testCreateMoon()
     {
 
 
@@ -47,20 +47,19 @@ class AdviceCrudTest extends DuskTestCase
             ->type('password', '1qwertyu')
             ->press('Entrar')
 
-            ->visit('/admin/advices')
+            ->visit('/admin/moons')
             ->clickLink('+')
-            ->type('moon', 'TestMoon')
-            ->type('sign', 'TestSign')
-            ->type('advice', 'TestAdvice')
+            ->type('phase', 'TestPhase')
+            ->type('description', 'TestDescription')
             ->press('Enviar')
-            ->assertPathIs('/admin/advices')
-            ->assertSee('TestMoon')
+            ->assertPathIs('/admin/moons')
+            ->assertSee('TestPhase')
 
             ->clickLink('Administradora')
             ->clickLink('Sair');
 
-            $adviceTest = Advice::latest()->first();
-            $adviceTest->delete();
+            $moonTest = Moon::latest()->first();
+            $moonTest->delete();
                   
         });
 
@@ -68,15 +67,15 @@ class AdviceCrudTest extends DuskTestCase
     }
 
 
-    public function testReadAnAdvice()
+    public function testReadMoon()
     {
         $data = [
-            'moon' => 'TestReadMoon',
-            'sign' => 'TestReadSign',
-            'advice' => 'TestReadAdvice',
+            'phase' => 'TestReadPhase',
+            'description' => 'TestReadDescription',
+
         ];
 
-        $adviceTest = Advice::create($data);
+        $moonTest = Moon::create($data);
 
         $this->browse(function ($browser) {
 
@@ -86,14 +85,14 @@ class AdviceCrudTest extends DuskTestCase
             ->type('password', '1qwertyu')
             ->press('Entrar')
 
-            ->visit('/admin/advices')
-            ->assertSee('TestReadMoon')
+            ->visit('/admin/moons')
+            ->assertSee('TestReadPhase')
 
             ->clickLink('Administradora')
             ->clickLink('Sair');
 
-            $adviceTest = Advice::latest()->first();
-            $adviceTest->delete();
+            $moonTest = Moon::latest()->first();
+            $moonTest->delete();
 
                   
         });
@@ -101,17 +100,16 @@ class AdviceCrudTest extends DuskTestCase
 
     }
 
-    public function testUpdateAnAdvice()
+    public function testUpdateMoon()
     {
         $data = [
-            'moon' => 'TestUpMoon',
-            'sign' => 'TestUpSign',
-            'advice' => 'TestUpAdvice',
+            'phase' => 'TestUpPhase',
+            'description' => 'TestUpDescription',
         ];
 
-        $adviceTest = Advice::create($data);
+        $moonTest = Moon::create($data);
 
-        $this->browse(function ($browser) use ($adviceTest){
+        $this->browse(function ($browser) use ($moonTest){
 
 
             $browser->visit('/admin/login')
@@ -119,18 +117,18 @@ class AdviceCrudTest extends DuskTestCase
             ->type('password', '1qwertyu')
             ->press('Entrar')
 
-            ->visit('/admin/advices/'.$adviceTest->id.'/edit') 
-            ->assertValue('#moon', 'TestUpMoon')
-            ->type('moon', 'UpdatedMoon')
+            ->visit('/admin/moons/'.$moonTest->id.'/edit') 
+            ->assertValue('#phase', 'TestUpPhase')
+            ->type('phase', 'UpdatedPhase')
             ->press('Enviar')
-            ->assertSee('UpdatedMoon')
+            ->assertSee('UpdatedPhase')
 
 
             ->clickLink('Administradora')
             ->clickLink('Sair');
 
-            $adviceTest = Advice::latest()->first();
-            $adviceTest->delete();
+            $moonTest = Moon::latest()->first();
+            $moonTest->delete();
 
                   
         });
