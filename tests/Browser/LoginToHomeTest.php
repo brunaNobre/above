@@ -19,26 +19,18 @@ class LoginToHomeTest extends DuskTestCase
      */
     public function testHomeLogin()
     {
-        $user = User::find(18);
 
 
-        $this->browse(function ($browser) use ($user) {
+        $this->browse(function ($browser) {
 
 
             $browser->visit('/login')
-            ->pause(2000)
-            ->type('email', $user->email)
-            ->pause(2000)
+            ->type('email', 'usuaria@gmail.com')
             ->type('password', '1qwertyu')
-            ->pause(2000)
             ->press('Entrar')
-            ->pause(2000)
             ->assertPathIs('/home')
-            ->pause(2000)
-            ->clickLink('Usuário ')
-            ->pause(2000)
-            ->clickLink('Logout')
-            ->pause(2000);
+            ->clickLink('Usuária ')
+            ->clickLink('Logout');
                   
         });
 
