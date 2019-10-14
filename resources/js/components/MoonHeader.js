@@ -1,8 +1,8 @@
 import React from 'react'
 
-const MoonHeader = () => (
+const MoonPhaseHeader = () => (
     
-    <div className="abvr-moon-header">
+    <div className="abvr-moon-phase-header">
 
         <h1>Lua em Escorpião</h1>
         <p>Fase Cheia</p>
@@ -10,4 +10,4 @@ const MoonHeader = () => (
     </div>
 )
 
-export default MoonHeader
+export default MoonPhaseHeader
