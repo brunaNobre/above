@@ -64469,7 +64469,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -70147,6 +70147,188 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_
 
 /***/ }),
 
+/***/ "./resources/js/components/AbvCalendar.js":
+/*!************************************************!*\
+  !*** ./resources/js/components/AbvCalendar.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var AbvCalendar = function AbvCalendar() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "abvr-calendar"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, "setembro"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "cells-list"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell week-day"
+  }, "D"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell week-day"
+  }, "S"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell week-day"
+  }, "T"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell week-day"
+  }, "Q"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell week-day"
+  }, "Q"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell week-day"
+  }, "S"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell week-day item-seven"
+  }, "S"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "1"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "2"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "3"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "4"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "5"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "6"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell item-fortheen"
+  }, "7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "8"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "9"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "10"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "11"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "12"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "13"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell item-twone"
+  }, "14"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "15"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "16"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "17"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "18"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "19"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "20"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell item-tweigth"
+  }, "21"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "22"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "23"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "24"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "25"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "26"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "27"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell item-trfive"
+  }, "28"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "29"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }, "30"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "calendar-cell item-forttwo"
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (AbvCalendar);
+
+/***/ }),
+
+/***/ "./resources/js/components/MoonDisplay.js":
+/*!************************************************!*\
+  !*** ./resources/js/components/MoonDisplay.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var MoonDisplay = function MoonDisplay() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "abvr-moon-display",
+    src: "/images/fullmoonTOP.png",
+    alt: "MDN Logo"
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (MoonDisplay);
+
+/***/ }),
+
+/***/ "./resources/js/components/MoonHeader.js":
+/*!***********************************************!*\
+  !*** ./resources/js/components/MoonHeader.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var MoonPhaseHeader = function MoonPhaseHeader() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "abvr-moon-phase-header"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Lua em Escorpi\xE3o"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Fase Cheia"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (MoonPhaseHeader);
+
+/***/ }),
+
+/***/ "./resources/js/components/Panel.js":
+/*!******************************************!*\
+  !*** ./resources/js/components/Panel.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _MoonDisplay__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MoonDisplay */ "./resources/js/components/MoonDisplay.js");
+
+
+
+var Panel = function Panel() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "abvr-panel"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MoonDisplay__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Panel);
+
+/***/ }),
+
 /***/ "./resources/js/components/layout/AboveMainContent.js":
 /*!************************************************************!*\
   !*** ./resources/js/components/layout/AboveMainContent.js ***!
@@ -70158,11 +70340,119 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _AbvCalendar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../AbvCalendar */ "./resources/js/components/AbvCalendar.js");
+/* harmony import */ var _Panel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Panel */ "./resources/js/components/Panel.js");
+/* harmony import */ var _MoonHeader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../MoonHeader */ "./resources/js/components/MoonHeader.js");
+function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
+
+function _typeof(obj) {
+  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
+    _typeof = function _typeof(obj) {
+      return _typeof2(obj);
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
+    };
+  }
+
+  return _typeof(obj);
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return _assertThisInitialized(self);
+}
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) _setPrototypeOf(subClass, superClass);
+}
+
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return _setPrototypeOf(o, p);
+}
 
 
-var AboveMainContent = function AboveMainContent() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Main Content");
-};
+
+
+
+
+var AboveMainContent =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(AboveMainContent, _Component);
+
+  function AboveMainContent() {
+    _classCallCheck(this, AboveMainContent);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(AboveMainContent).apply(this, arguments));
+  }
+
+  _createClass(AboveMainContent, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Panel__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MoonHeader__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AbvCalendar__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+    }
+  }]);
+
+  return AboveMainContent;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (AboveMainContent);
 
