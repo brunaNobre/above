@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom'
 
 import AboveMainContent from './layout/AboveMainContent'
+
 import Moons from '../views/Moons'
 import NatalChart from '../views/NatalChart'
 import Planets from '../views/Planets'
@@ -16,11 +17,14 @@ import Tasks from '../views/Tasks'
 import TodaySky from '../views/TodaySky'
 import UserMood from '../views/UserMood'
 
+
+
 class AboveApp extends Component {
   render () {
     return (
 
       <div>
+
         <Router>
           <Switch>
 
