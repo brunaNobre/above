@@ -1,11 +1,9 @@
 import React from 'react' 
-import Button from '@material-ui/core/Button';
 
 
 function AboveHeader () {
     return (
-        <Button variant="contained" color="primary">
-            Hello World
-        </Button>    )
+         <h1>HEADER</h1> 
+    )
 }
 export default AboveHeader

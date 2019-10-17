@@ -7,6 +7,9 @@ import {
   Link 
 } from 'react-router-dom'
 
+import CssBaseline from '@material-ui/core/CssBaseline';
+
+
 import AboveMainContent from './layouts/AboveMainContent'
 import AboveHeader from './layouts/AboveHeader'
 
@@ -24,7 +27,8 @@ class AboveApp extends Component {
   render () {
     return (
 
-      <div>
+      <>  
+        <CssBaseline />
 
         <AboveHeader />
 
@@ -47,7 +51,7 @@ class AboveApp extends Component {
         </Router>
           
 
-      </div>
+      </>
     
     )
   }
