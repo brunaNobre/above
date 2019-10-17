@@ -13,13 +13,21 @@ import AboveMainContent from './layout/AboveMainContent'
 class AboveApp extends Component {
   render () {
     return (
-      <Router>
-        <div>
+
+      <div>
+        <Router>
+          <Switch>
+
+            <Route exact path='/home' component={AboveMainContent}/>
+
+
+          </Switch>
+
+        </Router>
           
-          <AboveMainContent />
-         
-        </div>
-      </Router>
+
+      </div>
+    
     )
   }
 }
