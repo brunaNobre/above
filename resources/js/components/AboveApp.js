@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom'
 
 import AboveMainContent from './layout/AboveMainContent'
+import MoonDisplay from './MoonDisplay'
 
 
 class AboveApp extends Component {

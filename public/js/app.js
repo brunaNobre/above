@@ -70032,6 +70032,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _layout_AboveMainContent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./layout/AboveMainContent */ "./resources/js/components/layout/AboveMainContent.js");
+/* harmony import */ var _MoonDisplay__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./MoonDisplay */ "./resources/js/components/MoonDisplay.js");
 function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
 
 function _typeof(obj) {
@@ -70116,6 +70117,7 @@ function _setPrototypeOf(o, p) {
 
   return _setPrototypeOf(o, p);
 }
+
 
 
 
