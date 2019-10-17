@@ -7,7 +7,8 @@ import {
   Link 
 } from 'react-router-dom'
 
-import AboveMainContent from './layout/AboveMainContent'
+import AboveMainContent from './layouts/AboveMainContent'
+import AboveHeader from './layouts/AboveHeader'
 
 import Moons from '../views/Moons'
 import NatalChart from '../views/NatalChart'
@@ -24,6 +25,8 @@ class AboveApp extends Component {
     return (
 
       <div>
+
+        <AboveHeader />
 
         <Router>
           <Switch>
