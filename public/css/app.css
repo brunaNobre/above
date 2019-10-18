@@ -10837,6 +10837,25 @@ body .places .m-b-md {
   top: 15%;
 }
 
+.abv-header {
+  background-color: #8344E0 !important;
+}
+
+@media (max-width: 650px) {
+  .abv-header {
+    background-color: white !important;
+  }
+}
+
+.aboveheader-decorator {
+  background-color: white;
+  width: 50%;
+  height: 99%;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+}
+
 .abvr-panel {
   background-color: #8344E0;
   width: 50%;
@@ -10918,6 +10937,69 @@ body .places .m-b-md {
 
 .abvr-calendar .cells-list .week-day {
   color: gray;
+}
+
+.abv-logo {
+  color: white;
+  text-decoration: none;
+  font-family: Arvo, sans-serif;
+  font-size: 3.8vw;
+  font-weight: 700;
+}
+
+.abv-logo:hover {
+  text-decoration: none;
+  color: white;
+}
+
+@media (max-width: 650px) {
+  .abv-logo {
+    color: #8344E0;
+    font-size: 2em;
+    font-weight: 700;
+  }
+
+  .abv-logo:hover {
+    text-decoration: none;
+    color: #8344E0;
+  }
+}
+
+.abv-navbar {
+  list-style: none;
+  margin-bottom: 0;
+  width: 100%;
+  margin-left: -1%;
+}
+
+.abv-navbar li {
+  display: inline;
+  position: absolute;
+  width: 12%;
+  top: 37%;
+}
+
+.abv-navbar li a {
+  padding: 1%;
+  color: white;
+  text-decoration: none;
+  font-size: 1.4vw;
+}
+
+.abv-navbar li a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 650px) {
+  .abv-navbar {
+    display: none;
+  }
+}
+
+.todaysky-icon {
+  width: 1.5em;
+  vertical-align: sub;
 }
 
 .abvr-logo {

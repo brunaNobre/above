@@ -1,0 +1,29 @@
+.abv-navbar {
+    list-style: none;
+    margin-bottom: 0;
+    width: 100%;
+    margin-left: -1%;
+    li {
+        display: inline;
+        position: absolute;
+        width: 12%;
+        top: 37%;
+        a {
+            padding: 1%;
+            color:  white;
+            text-decoration: none;
+            font-size: 1.4vw;
+            &:hover {
+                color:  white;
+                text-decoration: none;
+            }
+           
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .abv-navbar {
+        display: none;
+    }
+}

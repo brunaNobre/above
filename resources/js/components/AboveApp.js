@@ -7,7 +7,11 @@ import {
   Link 
 } from 'react-router-dom'
 
-import AboveMainContent from './layout/AboveMainContent'
+import CssBaseline from '@material-ui/core/CssBaseline';
+
+
+import AboveMainContent from './layouts/AboveMainContent'
+import AboveHeader from './layouts/AboveHeader'
 
 import Moons from '../views/Moons'
 import NatalChart from '../views/NatalChart'
@@ -23,11 +27,14 @@ class AboveApp extends Component {
   render () {
     return (
 
-      <div>
+      <>  
+        <CssBaseline />
+
 
         <Router>
-          <Switch>
+          <AboveHeader />
 
+          <Switch>
             <Route exact path='/home' component={AboveMainContent}/>
             <Route path='/home/moons' component={Moons}/>
             <Route path='/home/natal-chart' component={NatalChart}/>
@@ -36,15 +43,14 @@ class AboveApp extends Component {
             <Route path='/home/tasks' component={Tasks}/>
             <Route path='/home/today-sky' component={TodaySky}/>
             <Route path='/home/user-mood' component={UserMood}/>
-
-
-
           </Switch>
+
+
 
         </Router>
           
 
-      </div>
+      </>
     
     )
   }
