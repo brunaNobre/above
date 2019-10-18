@@ -86422,6 +86422,29 @@ var AbvCalendar = function AbvCalendar() {
 
 /***/ }),
 
+/***/ "./resources/js/components/AbvGreeting.js":
+/*!************************************************!*\
+  !*** ./resources/js/components/AbvGreeting.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function AbvGreeting() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "abv-greeting"
+  }, "Ol\xE1, ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "libriana"), ".");
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (AbvGreeting);
+
+/***/ }),
+
 /***/ "./resources/js/components/AbvLogo.js":
 /*!********************************************!*\
   !*** ./resources/js/components/AbvLogo.js ***!
@@ -86520,6 +86543,135 @@ function AbvNavBar() {
 
 /***/ }),
 
+/***/ "./resources/js/components/AbvSideMenuHeader.js":
+/*!******************************************************!*\
+  !*** ./resources/js/components/AbvSideMenuHeader.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _AbvUserProfile_AbvUserProfile__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AbvUserProfile/AbvUserProfile */ "./resources/js/components/AbvUserProfile/AbvUserProfile.js");
+/* harmony import */ var _AbvGreeting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AbvGreeting */ "./resources/js/components/AbvGreeting.js");
+function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
+
+function _typeof(obj) {
+  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
+    _typeof = function _typeof(obj) {
+      return _typeof2(obj);
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
+    };
+  }
+
+  return _typeof(obj);
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return _assertThisInitialized(self);
+}
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) _setPrototypeOf(subClass, superClass);
+}
+
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return _setPrototypeOf(o, p);
+}
+
+
+
+
+
+var AbvSideMenuHeader =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(AbvSideMenuHeader, _Component);
+
+  function AbvSideMenuHeader() {
+    _classCallCheck(this, AbvSideMenuHeader);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(AbvSideMenuHeader).apply(this, arguments));
+  }
+
+  _createClass(AbvSideMenuHeader, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "abv-sidemenu-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AbvUserProfile_AbvUserProfile__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AbvGreeting__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+    }
+  }]);
+
+  return AbvSideMenuHeader;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (AbvSideMenuHeader);
+
+/***/ }),
+
 /***/ "./resources/js/components/AbvUserProfile/AbvUserProfile.js":
 /*!******************************************************************!*\
   !*** ./resources/js/components/AbvUserProfile/AbvUserProfile.js ***!
@@ -86533,19 +86685,121 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/Avatar */ "./node_modules/@material-ui/core/esm/Avatar/index.js");
 /* harmony import */ var _AbvUserProfileSigns__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AbvUserProfileSigns */ "./resources/js/components/AbvUserProfile/AbvUserProfileSigns.js");
+function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
 
+function _typeof(obj) {
+  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
+    _typeof = function _typeof(obj) {
+      return _typeof2(obj);
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
+    };
+  }
 
-
-
-function AbvUserProfile() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "abv-user-profile"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    alt: "Avatar",
-    src: "/images/users/avatar.jpg",
-    className: "user-profile-img"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AbvUserProfileSigns__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+  return _typeof(obj);
 }
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return _assertThisInitialized(self);
+}
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) _setPrototypeOf(subClass, superClass);
+}
+
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return _setPrototypeOf(o, p);
+}
+
+
+
+
+
+var AbvUserProfile =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(AbvUserProfile, _Component);
+
+  function AbvUserProfile() {
+    _classCallCheck(this, AbvUserProfile);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(AbvUserProfile).apply(this, arguments));
+  }
+
+  _createClass(AbvUserProfile, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "abv-user-profile"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        alt: "Avatar",
+        src: "/images/users/avatar.jpg",
+        className: "user-profile-img"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AbvUserProfileSigns__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+    }
+  }]);
+
+  return AbvUserProfile;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (AbvUserProfile);
 
@@ -86562,26 +86816,128 @@ function AbvUserProfile() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
 
+function _typeof(obj) {
+  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
+    _typeof = function _typeof(obj) {
+      return _typeof2(obj);
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
+    };
+  }
 
-function AbvUserProfileSigns() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "/images/icons/signs/icon_leo.png",
-    alt: "Ascendente em Le\xE3o",
-    title: "Ascendente em Le\xE3o",
-    className: "profile-sign-icon profile-icon-asc"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "/images/icons/signs/icon_libra.png",
-    alt: "Sol em Libra",
-    title: "Sol em Libra",
-    className: "profile-sign-icon profile-icon-sun"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "/images/icons/signs/icon_virgo.png",
-    alt: "Lua em Virgem",
-    title: "Lua em Virgem",
-    className: "profile-sign-icon profile-icon-moon"
-  }));
+  return _typeof(obj);
 }
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return _assertThisInitialized(self);
+}
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) _setPrototypeOf(subClass, superClass);
+}
+
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return _setPrototypeOf(o, p);
+}
+
+
+
+var AbvUserProfileSigns =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(AbvUserProfileSigns, _Component);
+
+  function AbvUserProfileSigns() {
+    _classCallCheck(this, AbvUserProfileSigns);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(AbvUserProfileSigns).apply(this, arguments));
+  }
+
+  _createClass(AbvUserProfileSigns, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/images/icons/signs/icon_leo.png",
+        alt: "Ascendente em Le\xE3o",
+        title: "Ascendente em Le\xE3o",
+        className: "profile-sign-icon profile-icon-asc"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/images/icons/signs/icon_libra.png",
+        alt: "Sol em Libra",
+        title: "Sol em Libra",
+        className: "profile-sign-icon profile-icon-sun"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/images/icons/signs/icon_virgo.png",
+        alt: "Lua em Virgem",
+        title: "Lua em Virgem",
+        className: "profile-sign-icon profile-icon-moon"
+      }));
+    }
+  }]);
+
+  return AbvUserProfileSigns;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (AbvUserProfileSigns);
 
@@ -86876,6 +87232,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _icons_NatalChartIcon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../icons/NatalChartIcon */ "./resources/js/icons/NatalChartIcon.js");
 /* harmony import */ var _icons_PlanetsIcon__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../icons/PlanetsIcon */ "./resources/js/icons/PlanetsIcon.js");
 /* harmony import */ var _icons_SignsIcon__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../icons/SignsIcon */ "./resources/js/icons/SignsIcon.js");
+/* harmony import */ var _AbvSideMenuHeader__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../AbvSideMenuHeader */ "./resources/js/components/AbvSideMenuHeader.js");
 function _slicedToArray(arr, i) {
   return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
 }
@@ -86931,6 +87288,7 @@ function _arrayWithHoles(arr) {
 
 
 
+
 function AboveSideMenu() {
   var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(null),
       _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -86959,7 +87317,7 @@ function AboveSideMenu() {
     keepMounted: true,
     open: Boolean(anchorEl),
     onClose: handleClose
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AbvSideMenuHeader__WEBPACK_IMPORTED_MODULE_12__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
     to: "/home/tasks",
     className: "abv-sidemenu-link"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_AssignmentTurnedIn__WEBPACK_IMPORTED_MODULE_6___default.a, {

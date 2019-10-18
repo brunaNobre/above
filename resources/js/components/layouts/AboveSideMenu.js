@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
 import Menu from '@material-ui/core/Menu';
@@ -16,6 +16,8 @@ import MoodIcon from '@material-ui/icons/Mood';
 import NatalChartIcon from '../../icons/NatalChartIcon'
 import PlanetsIcon from '../../icons/PlanetsIcon'
 import SignsIcon from '../../icons/SignsIcon'
+
+import AbvSideMenuHeader from '../AbvSideMenuHeader'
 
 
 function AboveSideMenu () {
@@ -43,6 +45,7 @@ function AboveSideMenu () {
             onClose={handleClose}
      
             >
+                <AbvSideMenuHeader />
                 <MenuItem><Link to="/home/tasks" className="abv-sidemenu-link"><AssignmentTurnedInIcon className="abv-sidemenu-icon" />Tarefas</Link></MenuItem>
                 <MenuItem><Link to="/home/planets" className="abv-sidemenu-link"><PlanetsIcon />Planetas</Link></MenuItem>
                 <MenuItem><Link to="/home/signs" className="abv-sidemenu-link"><SignsIcon />Signos</Link></MenuItem>
@@ -54,5 +57,7 @@ function AboveSideMenu () {
         </div>
     )
 }
+
+
 
 export default AboveSideMenu
