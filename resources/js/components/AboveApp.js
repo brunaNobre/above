@@ -30,11 +30,11 @@ class AboveApp extends Component {
       <>  
         <CssBaseline />
 
-        <AboveHeader />
 
         <Router>
-          <Switch>
+          <AboveHeader />
 
+          <Switch>
             <Route exact path='/home' component={AboveMainContent}/>
             <Route path='/home/moons' component={Moons}/>
             <Route path='/home/natal-chart' component={NatalChart}/>
@@ -43,10 +43,9 @@ class AboveApp extends Component {
             <Route path='/home/tasks' component={Tasks}/>
             <Route path='/home/today-sky' component={TodaySky}/>
             <Route path='/home/user-mood' component={UserMood}/>
-
-
-
           </Switch>
+
+
 
         </Router>
           

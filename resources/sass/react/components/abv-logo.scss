@@ -1,0 +1,23 @@
+.abv-logo {
+    color: white;
+    text-decoration: none;
+    font-family: Arvo, sans-serif;
+    font-size: 3em;
+    font-weight: 700;
+    &:hover {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+@media (max-width: 650px) {
+    .abv-logo {
+        color: #8344E0;
+        font-size: 2em;
+        font-weight: 700;
+        &:hover {
+            text-decoration: none;
+            color: #8344E0;
+        }
+    }
+}

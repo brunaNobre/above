@@ -10837,6 +10837,16 @@ body .places .m-b-md {
   top: 15%;
 }
 
+.abv-header {
+  background-color: #8344E0 !important;
+}
+
+@media (max-width: 650px) {
+  .abv-header {
+    background-color: white !important;
+  }
+}
+
 .abvr-panel {
   background-color: #8344E0;
   width: 50%;
@@ -10918,6 +10928,64 @@ body .places .m-b-md {
 
 .abvr-calendar .cells-list .week-day {
   color: gray;
+}
+
+.abv-logo {
+  color: white;
+  text-decoration: none;
+  font-family: Arvo, sans-serif;
+  font-size: 3em;
+  font-weight: 700;
+}
+
+.abv-logo:hover {
+  text-decoration: none;
+  color: white;
+}
+
+@media (max-width: 650px) {
+  .abv-logo {
+    color: #8344E0;
+    font-size: 2em;
+    font-weight: 700;
+  }
+
+  .abv-logo:hover {
+    text-decoration: none;
+    color: #8344E0;
+  }
+}
+
+.abv-navbar {
+  list-style: none;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.abv-navbar li {
+  display: inline;
+}
+
+.abv-navbar li a {
+  padding: 1%;
+  color: white;
+  text-decoration: none;
+}
+
+.abv-navbar li a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 650px) {
+  .abv-navbar {
+    display: none;
+  }
+}
+
+.todaysky-icon {
+  width: 3%;
+  vertical-align: sub;
 }
 
 .abvr-logo {
