@@ -10847,6 +10847,15 @@ body .places .m-b-md {
   }
 }
 
+.aboveheader-decorator {
+  background-color: white;
+  width: 50%;
+  height: 99%;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+}
+
 .abvr-panel {
   background-color: #8344E0;
   width: 50%;
@@ -10934,7 +10943,7 @@ body .places .m-b-md {
   color: white;
   text-decoration: none;
   font-family: Arvo, sans-serif;
-  font-size: 3em;
+  font-size: 3.8vw;
   font-weight: 700;
 }
 
@@ -10960,16 +10969,21 @@ body .places .m-b-md {
   list-style: none;
   margin-bottom: 0;
   width: 100%;
+  margin-left: -1%;
 }
 
 .abv-navbar li {
   display: inline;
+  position: absolute;
+  width: 12%;
+  top: 37%;
 }
 
 .abv-navbar li a {
   padding: 1%;
   color: white;
   text-decoration: none;
+  font-size: 1.4vw;
 }
 
 .abv-navbar li a:hover {
@@ -10984,7 +10998,7 @@ body .places .m-b-md {
 }
 
 .todaysky-icon {
-  width: 3%;
+  width: 1.5em;
   vertical-align: sub;
 }
 

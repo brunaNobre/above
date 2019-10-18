@@ -17,6 +17,8 @@ function AboveHeader () {
             <Toolbar>
                 <AbvLogo />
                 <AbvNavBar />
+                <div className="aboveheader-decorator"></div>
+
            </Toolbar>
         </AppBar>
     )
