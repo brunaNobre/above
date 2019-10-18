@@ -10847,13 +10847,19 @@ body .places .m-b-md {
   }
 }
 
-.aboveheader-decorator {
+.aboveheader-colorbar {
   background-color: white;
   width: 50%;
   height: 99%;
   position: absolute;
   right: 0;
   z-index: -1;
+}
+
+@media (min-width: 1000px) {
+  .aboveheader-colorbar {
+    height: 100%;
+  }
 }
 
 .abvr-panel {
@@ -10997,9 +11003,51 @@ body .places .m-b-md {
   }
 }
 
+.abv-user-profile {
+  width: 10%;
+  text-align: center;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  position: relative;
+  cursor: pointer;
+}
+
+.abv-user-profile .user-profile-img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 4vw;
+  height: 4vw;
+}
+
+@media (max-width: 650px) {
+  .aboveheader-colorbar + .abv-user-profile {
+    display: none;
+  }
+}
+
 .todaysky-icon {
   width: 1.5em;
   vertical-align: sub;
+}
+
+.profile-sign-icon {
+  width: 1.5vw;
+}
+
+.profile-icon-sun {
+  margin-top: 10%;
+}
+
+.profile-icon-asc {
+  position: absolute;
+  left: 0%;
+  top: 50%;
+}
+
+.profile-icon-moon {
+  position: absolute;
+  right: 0%;
+  top: 50%;
 }
 
 .abvr-logo {
