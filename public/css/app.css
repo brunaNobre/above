@@ -10862,6 +10862,27 @@ body .places .m-b-md {
   }
 }
 
+.abv-sidemenu-wrapper {
+  position: fixed;
+  right: 0%;
+}
+
+.abv-sidemenu-link {
+  color: black;
+  font-weight: 300;
+}
+
+.abv-sidemenu-link:hover {
+  color: black;
+  text-decoration: none;
+}
+
+@media (min-width: 651px) {
+  .abv-sidemenu-wrapper {
+    display: none;
+  }
+}
+
 .abvr-panel {
   background-color: #8344E0;
   width: 50%;

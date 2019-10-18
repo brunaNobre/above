@@ -8172,6 +8172,64 @@ function isObject(val) {
 
 /***/ }),
 
+/***/ "./node_modules/@material-ui/icons/AssignmentTurnedIn.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@material-ui/icons/AssignmentTurnedIn.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
+  d: "M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 14l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"
+}), 'AssignmentTurnedIn');
+
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/icons/Brightness3.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@material-ui/icons/Brightness3.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
+  d: "M9 2c-1.05 0-2.05.16-3 .46 4.06 1.27 7 5.06 7 9.54 0 4.48-2.94 8.27-7 9.54.95.3 1.95.46 3 .46 5.52 0 10-4.48 10-10S14.52 2 9 2z"
+}), 'Brightness3');
+
+exports.default = _default;
+
+/***/ }),
+
 /***/ "./node_modules/@material-ui/icons/Menu.js":
 /*!*************************************************!*\
   !*** ./node_modules/@material-ui/icons/Menu.js ***!
@@ -8196,6 +8254,35 @@ var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/crea
 var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
   d: "M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
 }), 'Menu');
+
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/icons/Mood.js":
+/*!*************************************************!*\
+  !*** ./node_modules/@material-ui/icons/Mood.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
+  d: "M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"
+}), 'Mood');
 
 exports.default = _default;
 
@@ -86070,14 +86157,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/CssBaseline */ "./node_modules/@material-ui/core/esm/CssBaseline/index.js");
 /* harmony import */ var _layouts_AboveMainContent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./layouts/AboveMainContent */ "./resources/js/components/layouts/AboveMainContent.js");
 /* harmony import */ var _layouts_AboveHeader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./layouts/AboveHeader */ "./resources/js/components/layouts/AboveHeader.js");
-/* harmony import */ var _layouts_AboveSideMenu__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./layouts/AboveSideMenu */ "./resources/js/components/layouts/AboveSideMenu.js");
-/* harmony import */ var _views_Moons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../views/Moons */ "./resources/js/views/Moons.js");
-/* harmony import */ var _views_NatalChart__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../views/NatalChart */ "./resources/js/views/NatalChart.js");
-/* harmony import */ var _views_Planets__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../views/Planets */ "./resources/js/views/Planets.js");
-/* harmony import */ var _views_Signs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../views/Signs */ "./resources/js/views/Signs.js");
-/* harmony import */ var _views_Tasks__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../views/Tasks */ "./resources/js/views/Tasks.js");
-/* harmony import */ var _views_TodaySky__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../views/TodaySky */ "./resources/js/views/TodaySky.js");
-/* harmony import */ var _views_UserMood__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../views/UserMood */ "./resources/js/views/UserMood.js");
+/* harmony import */ var _views_Moons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../views/Moons */ "./resources/js/views/Moons.js");
+/* harmony import */ var _views_NatalChart__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../views/NatalChart */ "./resources/js/views/NatalChart.js");
+/* harmony import */ var _views_Planets__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../views/Planets */ "./resources/js/views/Planets.js");
+/* harmony import */ var _views_Signs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../views/Signs */ "./resources/js/views/Signs.js");
+/* harmony import */ var _views_Tasks__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../views/Tasks */ "./resources/js/views/Tasks.js");
+/* harmony import */ var _views_TodaySky__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../views/TodaySky */ "./resources/js/views/TodaySky.js");
+/* harmony import */ var _views_UserMood__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../views/UserMood */ "./resources/js/views/UserMood.js");
 function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
 
 function _typeof(obj) {
@@ -86177,7 +86263,6 @@ function _setPrototypeOf(o, p) {
 
 
 
-
 var AboveApp =
 /*#__PURE__*/
 function (_Component) {
@@ -86192,31 +86277,31 @@ function (_Component) {
   _createClass(AboveApp, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_AboveHeader__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_AboveSideMenu__WEBPACK_IMPORTED_MODULE_6__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_AboveHeader__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         exact: true,
         path: "/home",
         component: _layouts_AboveMainContent__WEBPACK_IMPORTED_MODULE_4__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/home/moons",
-        component: _views_Moons__WEBPACK_IMPORTED_MODULE_7__["default"]
+        component: _views_Moons__WEBPACK_IMPORTED_MODULE_6__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/home/natal-chart",
-        component: _views_NatalChart__WEBPACK_IMPORTED_MODULE_8__["default"]
+        component: _views_NatalChart__WEBPACK_IMPORTED_MODULE_7__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/home/planets",
-        component: _views_Planets__WEBPACK_IMPORTED_MODULE_9__["default"]
+        component: _views_Planets__WEBPACK_IMPORTED_MODULE_8__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/home/signs",
-        component: _views_Signs__WEBPACK_IMPORTED_MODULE_10__["default"]
+        component: _views_Signs__WEBPACK_IMPORTED_MODULE_9__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/home/tasks",
-        component: _views_Tasks__WEBPACK_IMPORTED_MODULE_11__["default"]
+        component: _views_Tasks__WEBPACK_IMPORTED_MODULE_10__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/home/today-sky",
-        component: _views_TodaySky__WEBPACK_IMPORTED_MODULE_12__["default"]
+        component: _views_TodaySky__WEBPACK_IMPORTED_MODULE_11__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/home/user-mood",
-        component: _views_UserMood__WEBPACK_IMPORTED_MODULE_13__["default"]
+        component: _views_UserMood__WEBPACK_IMPORTED_MODULE_12__["default"]
       }))));
     }
   }]);
@@ -86588,10 +86673,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/AppBar */ "./node_modules/@material-ui/core/esm/AppBar/index.js");
 /* harmony import */ var _material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/Toolbar */ "./node_modules/@material-ui/core/esm/Toolbar/index.js");
-/* harmony import */ var _AbvLogo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../AbvLogo */ "./resources/js/components/AbvLogo.js");
-/* harmony import */ var _AbvNavBar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../AbvNavBar */ "./resources/js/components/AbvNavBar.js");
-/* harmony import */ var _AboveHeaderColorBar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./AboveHeaderColorBar */ "./resources/js/components/layouts/AboveHeaderColorBar.js");
-/* harmony import */ var _AbvUserProfile_AbvUserProfile__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../AbvUserProfile/AbvUserProfile */ "./resources/js/components/AbvUserProfile/AbvUserProfile.js");
+/* harmony import */ var _AboveSideMenu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AboveSideMenu */ "./resources/js/components/layouts/AboveSideMenu.js");
+/* harmony import */ var _AbvLogo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../AbvLogo */ "./resources/js/components/AbvLogo.js");
+/* harmony import */ var _AbvNavBar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../AbvNavBar */ "./resources/js/components/AbvNavBar.js");
+/* harmony import */ var _AboveHeaderColorBar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./AboveHeaderColorBar */ "./resources/js/components/layouts/AboveHeaderColorBar.js");
+/* harmony import */ var _AbvUserProfile_AbvUserProfile__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../AbvUserProfile/AbvUserProfile */ "./resources/js/components/AbvUserProfile/AbvUserProfile.js");
+
 
 
 
@@ -86604,7 +86691,7 @@ function AboveHeader() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_1__["default"], {
     position: "static",
     className: "abv-header"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_2__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AbvLogo__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AbvNavBar__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AboveHeaderColorBar__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AbvUserProfile_AbvUserProfile__WEBPACK_IMPORTED_MODULE_6__["default"], null)));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_2__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AbvLogo__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AbvNavBar__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AboveHeaderColorBar__WEBPACK_IMPORTED_MODULE_6__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AbvUserProfile_AbvUserProfile__WEBPACK_IMPORTED_MODULE_7__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AboveSideMenu__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (AboveHeader);
@@ -86779,6 +86866,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _material_ui_core_Menu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Menu */ "./node_modules/@material-ui/core/esm/Menu/index.js");
 /* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/MenuItem */ "./node_modules/@material-ui/core/esm/MenuItem/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _material_ui_icons_AssignmentTurnedIn__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/icons/AssignmentTurnedIn */ "./node_modules/@material-ui/icons/AssignmentTurnedIn.js");
+/* harmony import */ var _material_ui_icons_AssignmentTurnedIn__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_AssignmentTurnedIn__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _material_ui_icons_Brightness3__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/icons/Brightness3 */ "./node_modules/@material-ui/icons/Brightness3.js");
+/* harmony import */ var _material_ui_icons_Brightness3__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Brightness3__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _material_ui_icons_Mood__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/icons/Mood */ "./node_modules/@material-ui/icons/Mood.js");
+/* harmony import */ var _material_ui_icons_Mood__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Mood__WEBPACK_IMPORTED_MODULE_8__);
 function _slicedToArray(arr, i) {
   return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
 }
@@ -86827,6 +86921,10 @@ function _arrayWithHoles(arr) {
 
 
 
+
+
+
+
 function AboveSideMenu() {
   var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(null),
       _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -86855,7 +86953,27 @@ function AboveSideMenu() {
     keepMounted: true,
     open: Boolean(anchorEl),
     onClose: handleClose
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], null, "Tarefas"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], null, "Planetas"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], null, "Signos")));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+    to: "/home/tasks",
+    className: "abv-sidemenu-link"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_AssignmentTurnedIn__WEBPACK_IMPORTED_MODULE_6___default.a, null), "Tarefas")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+    to: "/home/planets",
+    className: "abv-sidemenu-link"
+  }, "Planetas")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+    to: "/home/signs",
+    className: "abv-sidemenu-link"
+  }, "Signos")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+    to: "/home/moons",
+    className: "abv-sidemenu-link"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Brightness3__WEBPACK_IMPORTED_MODULE_7___default.a, null), "Lua")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+    to: "/home/natal-chart",
+    className: "abv-sidemenu-link"
+  }, "Mapa Astral")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+    to: "/home/user-mood",
+    className: "abv-sidemenu-link"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Mood__WEBPACK_IMPORTED_MODULE_8___default.a, null), "Meu mood")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: "abv-sidemenu-link"
+  }, "Sair")));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (AboveSideMenu);
@@ -86877,7 +86995,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function TodaySkyIcon() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "/images/todaysky.svg",
+    src: "/images/icons/icon_todaysky.png",
     alt: "C\xE9u de hoje",
     title: "C\xE9u de hoje",
     className: "todaysky-icon"

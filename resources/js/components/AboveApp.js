@@ -12,7 +12,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 
 import AboveMainContent from './layouts/AboveMainContent'
 import AboveHeader from './layouts/AboveHeader'
-import AboveSideMenu from './layouts/AboveSideMenu'
 
 import Moons from '../views/Moons'
 import NatalChart from '../views/NatalChart'
@@ -34,7 +33,6 @@ class AboveApp extends Component {
 
         <Router>
           <AboveHeader />
-          <AboveSideMenu />
 
           <Switch>
             <Route exact path='/home' component={AboveMainContent}/>
