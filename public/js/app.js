@@ -86875,6 +86875,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_Mood__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Mood__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _icons_NatalChartIcon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../icons/NatalChartIcon */ "./resources/js/icons/NatalChartIcon.js");
 /* harmony import */ var _icons_PlanetsIcon__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../icons/PlanetsIcon */ "./resources/js/icons/PlanetsIcon.js");
+/* harmony import */ var _icons_SignsIcon__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../icons/SignsIcon */ "./resources/js/icons/SignsIcon.js");
 function _slicedToArray(arr, i) {
   return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
 }
@@ -86929,6 +86930,7 @@ function _arrayWithHoles(arr) {
 
 
 
+
 function AboveSideMenu() {
   var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(null),
       _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -86966,7 +86968,7 @@ function AboveSideMenu() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_icons_PlanetsIcon__WEBPACK_IMPORTED_MODULE_10__["default"], null), "Planetas")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
     to: "/home/signs",
     className: "abv-sidemenu-link"
-  }, "Signos")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_icons_SignsIcon__WEBPACK_IMPORTED_MODULE_11__["default"], null), "Signos")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
     to: "/home/moons",
     className: "abv-sidemenu-link"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Brightness3__WEBPACK_IMPORTED_MODULE_7___default.a, null), "Lua")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
@@ -87024,11 +87026,35 @@ __webpack_require__.r(__webpack_exports__);
 function PlanetsIcon() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "/images/icons/icon_planets.svg",
-    "class": "planets-icon"
+    className: "planets-icon"
   });
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (PlanetsIcon);
+
+/***/ }),
+
+/***/ "./resources/js/icons/SignsIcon.js":
+/*!*****************************************!*\
+  !*** ./resources/js/icons/SignsIcon.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function SignsIcon() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "/images/icons/icon_signs.png",
+    className: "signs-icon"
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (SignsIcon);
 
 /***/ }),
 
