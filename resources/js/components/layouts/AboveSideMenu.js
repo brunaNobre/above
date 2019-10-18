@@ -19,12 +19,13 @@ function AboveSideMenu () {
       };
 
     return (
-        <div>
-            <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+        <div className="abv-sidemenu-wrapper">
+            <Button className="abv-open-sidemenu-button" aria-controls="abv-sidemenu" aria-haspopup="true" onClick={handleClick}>
             <MenuIcon />
             </Button>
             <Menu 
-            id="simple-menu"
+            id="abv-sidemenu"
+            className="abv-sidemenu"
             anchorEl={anchorEl}
             keepMounted
             open={Boolean(anchorEl)}

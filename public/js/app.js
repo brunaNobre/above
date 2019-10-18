@@ -86841,12 +86841,16 @@ function AboveSideMenu() {
     setAnchorEl(null);
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    "aria-controls": "simple-menu",
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "abv-sidemenu-wrapper"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    className: "abv-open-sidemenu-button",
+    "aria-controls": "abv-sidemenu",
     "aria-haspopup": "true",
     onClick: handleClick
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_2___default.a, null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Menu__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    id: "simple-menu",
+    id: "abv-sidemenu",
+    className: "abv-sidemenu",
     anchorEl: anchorEl,
     keepMounted: true,
     open: Boolean(anchorEl),
