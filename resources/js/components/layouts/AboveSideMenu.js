@@ -14,6 +14,7 @@ import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
 import Brightness3Icon from '@material-ui/icons/Brightness3';  
 import MoodIcon from '@material-ui/icons/Mood';
 import NatalChartIcon from '../../icons/NatalChartIcon'
+import PlanetsIcon from '../../icons/PlanetsIcon'
 
 
 function AboveSideMenu () {
@@ -42,7 +43,7 @@ function AboveSideMenu () {
      
             >
                 <MenuItem><Link to="/home/tasks" className="abv-sidemenu-link"><AssignmentTurnedInIcon />Tarefas</Link></MenuItem>
-                <MenuItem><Link to="/home/planets" className="abv-sidemenu-link">Planetas</Link></MenuItem>
+                <MenuItem><Link to="/home/planets" className="abv-sidemenu-link"><PlanetsIcon />Planetas</Link></MenuItem>
                 <MenuItem><Link to="/home/signs" className="abv-sidemenu-link">Signos</Link></MenuItem>
                 <MenuItem><Link to="/home/moons" className="abv-sidemenu-link"><Brightness3Icon />Lua</Link></MenuItem>
                 <MenuItem><Link to="/home/natal-chart" className="abv-sidemenu-link"><NatalChartIcon />Mapa Astral</Link></MenuItem>
