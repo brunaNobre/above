@@ -16,7 +16,7 @@ function AbvNavBar () {
             <li style={{left: "37vw"}}><Link to="/home/moons">Lua</Link></li>
             <li style={{left: "41vw"}}><Link to="/home/natal-chart">Mapa Astral</Link></li>
             <li style={{left: "51vw"}}><Link to="/home/user-mood" style={{color: "#8344E0"}}>Meu mood</Link></li>
-            <li style={{left: "60vw"}}><Link to="/home/today-sky"><TodaySkyIcon></TodaySkyIcon></Link></li>
+            <li style={{left: "59vw"}}><Link to="/home/today-sky"><TodaySkyIcon></TodaySkyIcon></Link></li>
         </ul>
     )
 }

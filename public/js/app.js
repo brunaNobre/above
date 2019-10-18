@@ -78725,7 +78725,7 @@ function AbvNavBar() {
     }
   }, "Meu mood")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     style: {
-      left: "60vw"
+      left: "59vw"
     }
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/home/today-sky"
