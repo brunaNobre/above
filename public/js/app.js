@@ -86873,6 +86873,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_Brightness3__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Brightness3__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _material_ui_icons_Mood__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/icons/Mood */ "./node_modules/@material-ui/icons/Mood.js");
 /* harmony import */ var _material_ui_icons_Mood__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Mood__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _icons_NatalChartIcon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../icons/NatalChartIcon */ "./resources/js/icons/NatalChartIcon.js");
 function _slicedToArray(arr, i) {
   return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
 }
@@ -86914,6 +86915,7 @@ function _iterableToArrayLimit(arr, i) {
 function _arrayWithHoles(arr) {
   if (Array.isArray(arr)) return arr;
 }
+
 
 
 
@@ -86968,7 +86970,7 @@ function AboveSideMenu() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Brightness3__WEBPACK_IMPORTED_MODULE_7___default.a, null), "Lua")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
     to: "/home/natal-chart",
     className: "abv-sidemenu-link"
-  }, "Mapa Astral")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_icons_NatalChartIcon__WEBPACK_IMPORTED_MODULE_9__["default"], null), "Mapa Astral")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
     to: "/home/user-mood",
     className: "abv-sidemenu-link"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Mood__WEBPACK_IMPORTED_MODULE_8___default.a, null), "Meu mood")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -86977,6 +86979,30 @@ function AboveSideMenu() {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (AboveSideMenu);
+
+/***/ }),
+
+/***/ "./resources/js/icons/NatalChartIcon.js":
+/*!**********************************************!*\
+  !*** ./resources/js/icons/NatalChartIcon.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function NatalChartIcon() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "/images/icons/icon_natalchart.png",
+    className: "natalchart-icon"
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (NatalChartIcon);
 
 /***/ }),
 
