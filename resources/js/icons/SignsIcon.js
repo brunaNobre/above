@@ -2,7 +2,7 @@ import React from 'react'
 
 function SignsIcon () {
     return (
-        <img src="/images/icons/icon_signs.png" className="signs-icon"></img>
+        <img src="/images/icons/icon_signs.png" className="sidemenu-item-icon"></img>
     )
 }
 

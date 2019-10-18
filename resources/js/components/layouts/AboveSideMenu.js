@@ -43,12 +43,12 @@ function AboveSideMenu () {
             onClose={handleClose}
      
             >
-                <MenuItem><Link to="/home/tasks" className="abv-sidemenu-link"><AssignmentTurnedInIcon />Tarefas</Link></MenuItem>
+                <MenuItem><Link to="/home/tasks" className="abv-sidemenu-link"><AssignmentTurnedInIcon className="abv-sidemenu-icon" />Tarefas</Link></MenuItem>
                 <MenuItem><Link to="/home/planets" className="abv-sidemenu-link"><PlanetsIcon />Planetas</Link></MenuItem>
                 <MenuItem><Link to="/home/signs" className="abv-sidemenu-link"><SignsIcon />Signos</Link></MenuItem>
-                <MenuItem><Link to="/home/moons" className="abv-sidemenu-link"><Brightness3Icon />Lua</Link></MenuItem>
+                <MenuItem><Link to="/home/moons" className="abv-sidemenu-link"><Brightness3Icon className="abv-sidemenu-icon" />Lua</Link></MenuItem>
                 <MenuItem><Link to="/home/natal-chart" className="abv-sidemenu-link"><NatalChartIcon />Mapa Astral</Link></MenuItem>
-                <MenuItem><Link to="/home/user-mood" className="abv-sidemenu-link"><MoodIcon />Meu mood</Link></MenuItem>
+                <MenuItem><Link to="/home/user-mood" className="abv-sidemenu-link"><MoodIcon className="abv-sidemenu-icon" />Meu mood</Link></MenuItem>
                 <MenuItem className="abv-sidemenu-link">Sair</MenuItem>
             </Menu>
         </div>
