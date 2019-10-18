@@ -78824,6 +78824,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/Toolbar */ "./node_modules/@material-ui/core/esm/Toolbar/index.js");
 /* harmony import */ var _AbvLogo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../AbvLogo */ "./resources/js/components/AbvLogo.js");
 /* harmony import */ var _AbvNavBar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../AbvNavBar */ "./resources/js/components/AbvNavBar.js");
+/* harmony import */ var _AboveHeaderColorBar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./AboveHeaderColorBar */ "./resources/js/components/layouts/AboveHeaderColorBar.js");
+
 
 
 
@@ -78834,12 +78836,33 @@ function AboveHeader() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_1__["default"], {
     position: "static",
     className: "abv-header"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_2__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AbvLogo__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AbvNavBar__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "aboveheader-decorator"
-  })));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_2__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AbvLogo__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AbvNavBar__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AboveHeaderColorBar__WEBPACK_IMPORTED_MODULE_5__["default"], null)));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (AboveHeader);
+
+/***/ }),
+
+/***/ "./resources/js/components/layouts/AboveHeaderColorBar.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/components/layouts/AboveHeaderColorBar.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function AboveHeaderColorBar() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "aboveheader-colorbar"
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (AboveHeaderColorBar);
 
 /***/ }),
 

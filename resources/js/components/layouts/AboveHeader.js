@@ -6,6 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 
 import AbvLogo from '../AbvLogo'
 import AbvNavBar from '../AbvNavBar'
+import AboveHeaderColorBar from './AboveHeaderColorBar'
 
 
 
@@ -17,8 +18,7 @@ function AboveHeader () {
             <Toolbar>
                 <AbvLogo />
                 <AbvNavBar />
-                <div className="aboveheader-decorator"></div>
-
+                <AboveHeaderColorBar />
            </Toolbar>
         </AppBar>
     )

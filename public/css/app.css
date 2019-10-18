@@ -10847,13 +10847,19 @@ body .places .m-b-md {
   }
 }
 
-.aboveheader-decorator {
+.aboveheader-colorbar {
   background-color: white;
   width: 50%;
   height: 99%;
   position: absolute;
   right: 0;
   z-index: -1;
+}
+
+@media (min-width: 1820px) {
+  .aboveheader-colorbar {
+    height: 100%;
+  }
 }
 
 .abvr-panel {
