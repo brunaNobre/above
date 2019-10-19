@@ -11110,6 +11110,21 @@ body .places .m-b-md {
   margin-bottom: -0.5rem;
 }
 
+.tasks-header {
+  position: relative;
+  border-bottom: 1px solid darkgray;
+}
+
+.tasks-header .sun-sign-of-day {
+  color: #8344E0;
+  font-weight: 400;
+  width: 30%;
+  margin-left: 5%;
+  padding-top: 5%;
+  font-size: 1.4em;
+  margin-bottom: 0;
+}
+
 .todaysky-icon {
   width: 1.5em;
   vertical-align: sub;

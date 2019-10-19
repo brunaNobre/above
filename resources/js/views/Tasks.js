@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
-
+import TasksHeader from '../components/Tasks/TasksHeader'
+import TasksList from '../components/Tasks/TasksList'
+import CompletedTasksPanel from '../components/Tasks/CompletedTasksPanel'
 
 class Tasks extends Component {
     render() {
         return (
-            <h1>Tarefas</h1>
+            <div className="tasks-view">
+                <TasksHeader />
+                <TasksList />
+                <CompletedTasksPanel />
+            </div>
         )
     }
 }
