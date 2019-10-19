@@ -11137,6 +11137,18 @@ body .places .m-b-md {
   margin-right: auto;
 }
 
+.signs-view .MuiCard-root {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 5%;
+}
+
+.signs-view .learn-more {
+  color: #8344E0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .todaysky-icon {
   width: 1.5em;
   vertical-align: sub;
