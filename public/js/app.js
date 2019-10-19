@@ -87317,31 +87317,45 @@ function AboveSideMenu() {
     keepMounted: true,
     open: Boolean(anchorEl),
     onClose: handleClose
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AbvSideMenuHeader__WEBPACK_IMPORTED_MODULE_12__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AbvSideMenuHeader__WEBPACK_IMPORTED_MODULE_12__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    onClick: handleClose
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
     to: "/home/tasks",
-    className: "abv-sidemenu-link"
+    className: "abv-sidemenu-link",
+    id: "first-item"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_AssignmentTurnedIn__WEBPACK_IMPORTED_MODULE_6___default.a, {
     className: "abv-sidemenu-icon"
-  }), "Tarefas")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+  }), "Tarefas")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    onClick: handleClose
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
     to: "/home/planets",
     className: "abv-sidemenu-link"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_icons_PlanetsIcon__WEBPACK_IMPORTED_MODULE_10__["default"], null), "Planetas")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_icons_PlanetsIcon__WEBPACK_IMPORTED_MODULE_10__["default"], null), "Planetas")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    onClick: handleClose
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
     to: "/home/signs",
     className: "abv-sidemenu-link"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_icons_SignsIcon__WEBPACK_IMPORTED_MODULE_11__["default"], null), "Signos")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_icons_SignsIcon__WEBPACK_IMPORTED_MODULE_11__["default"], null), "Signos")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    onClick: handleClose
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
     to: "/home/moons",
     className: "abv-sidemenu-link"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Brightness3__WEBPACK_IMPORTED_MODULE_7___default.a, {
     className: "abv-sidemenu-icon"
-  }), "Lua")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+  }), "Lua")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    onClick: handleClose
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
     to: "/home/natal-chart",
     className: "abv-sidemenu-link"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_icons_NatalChartIcon__WEBPACK_IMPORTED_MODULE_9__["default"], null), "Mapa Astral")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_icons_NatalChartIcon__WEBPACK_IMPORTED_MODULE_9__["default"], null), "Mapa Astral")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    onClick: handleClose
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
     to: "/home/user-mood",
     className: "abv-sidemenu-link"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Mood__WEBPACK_IMPORTED_MODULE_8___default.a, {
     className: "abv-sidemenu-icon"
   }), "Meu mood")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    onClick: handleClose,
     className: "abv-sidemenu-link"
   }, "Sair")));
 }

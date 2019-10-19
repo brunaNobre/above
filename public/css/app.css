@@ -10867,8 +10867,13 @@ body .places .m-b-md {
   right: 0%;
 }
 
+.abv-open-sidemenu-button span svg {
+  font-size: 2.5rem;
+}
+
 .abv-sidemenu ul {
   padding: 0;
+  width: 80vw !important;
 }
 
 .abv-sidemenu-link {
@@ -10886,7 +10891,6 @@ body .places .m-b-md {
 
 .abv-sidemenu-icon {
   margin-right: 15%;
-  font-size: 2rem !important;
 }
 
 @media (min-width: 651px) {
@@ -10994,7 +10998,7 @@ body .places .m-b-md {
 @media (max-width: 650px) {
   .abv-logo {
     color: #8344E0;
-    font-size: 2em;
+    font-size: 3rem;
     font-weight: 700;
   }
 
@@ -11056,6 +11060,10 @@ body .places .m-b-md {
   .aboveheader-colorbar + .abv-user-profile {
     display: none;
   }
+
+  .abv-user-profile {
+    width: 30vw;
+  }
 }
 
 .abv-sidemenu-header {
@@ -11070,26 +11078,27 @@ body .places .m-b-md {
 }
 
 .abv-sidemenu-header .abv-user-profile .user-profile-img {
-  width: 10vw;
-  height: 11vw;
+  width: 20vw;
+  height: 21vw;
 }
 
 .abv-sidemenu-header .abv-user-profile .profile-sign-icon {
-  width: 3.5vw;
+  width: 7vw;
 }
 
 .abv-sidemenu-header .abv-user-profile .profile-icon-asc {
-  left: -40%;
+  left: -15%;
 }
 
 .abv-sidemenu-header .abv-user-profile .profile-icon-moon {
-  right: -40%;
+  right: -15%;
 }
 
 .abv-sidemenu-header .abv-greeting {
   text-align: center;
   font-weight: 700;
   font-size: 1.8em;
+  margin-bottom: -0.5rem;
 }
 
 .todaysky-icon {
@@ -11118,7 +11127,7 @@ body .places .m-b-md {
 }
 
 .sidemenu-item-icon {
-  width: 2rem;
+  width: 1.5rem;
   margin-right: 15%;
 }
 

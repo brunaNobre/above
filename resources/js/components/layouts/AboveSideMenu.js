@@ -21,15 +21,20 @@ import AbvSideMenuHeader from '../AbvSideMenuHeader'
 
 
 function AboveSideMenu () {
+
+
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const handleClick = event => {
         setAnchorEl(event.currentTarget);
       };
     
-      const handleClose = () => {
+    const handleClose = () => {  
         setAnchorEl(null);
       };
+
+     
+
 
     return (
         <div className="abv-sidemenu-wrapper">
@@ -46,13 +51,13 @@ function AboveSideMenu () {
      
             >
                 <AbvSideMenuHeader />
-                <MenuItem><Link to="/home/tasks" className="abv-sidemenu-link"><AssignmentTurnedInIcon className="abv-sidemenu-icon" />Tarefas</Link></MenuItem>
-                <MenuItem><Link to="/home/planets" className="abv-sidemenu-link"><PlanetsIcon />Planetas</Link></MenuItem>
-                <MenuItem><Link to="/home/signs" className="abv-sidemenu-link"><SignsIcon />Signos</Link></MenuItem>
-                <MenuItem><Link to="/home/moons" className="abv-sidemenu-link"><Brightness3Icon className="abv-sidemenu-icon" />Lua</Link></MenuItem>
-                <MenuItem><Link to="/home/natal-chart" className="abv-sidemenu-link"><NatalChartIcon />Mapa Astral</Link></MenuItem>
-                <MenuItem><Link to="/home/user-mood" className="abv-sidemenu-link"><MoodIcon className="abv-sidemenu-icon" />Meu mood</Link></MenuItem>
-                <MenuItem className="abv-sidemenu-link">Sair</MenuItem>
+                <MenuItem onClick={handleClose}><Link to="/home/tasks" className="abv-sidemenu-link" id="first-item"><AssignmentTurnedInIcon className="abv-sidemenu-icon" />Tarefas</Link></MenuItem>
+                <MenuItem onClick={handleClose}><Link to="/home/planets" className="abv-sidemenu-link"><PlanetsIcon />Planetas</Link></MenuItem>
+                <MenuItem onClick={handleClose}><Link to="/home/signs" className="abv-sidemenu-link"><SignsIcon />Signos</Link></MenuItem>
+                <MenuItem onClick={handleClose}><Link to="/home/moons" className="abv-sidemenu-link"><Brightness3Icon className="abv-sidemenu-icon" />Lua</Link></MenuItem>
+                <MenuItem onClick={handleClose}><Link to="/home/natal-chart" className="abv-sidemenu-link"><NatalChartIcon />Mapa Astral</Link></MenuItem>
+                <MenuItem onClick={handleClose}><Link to="/home/user-mood" className="abv-sidemenu-link"><MoodIcon className="abv-sidemenu-icon" />Meu mood</Link></MenuItem>
+                <MenuItem onClick={handleClose} className="abv-sidemenu-link">Sair</MenuItem>
             </Menu>
         </div>
     )
