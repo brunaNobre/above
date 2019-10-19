@@ -4,6 +4,8 @@
 
 }
 
+
+
 .abv-open-sidemenu-button {
     span {
         svg {
@@ -13,9 +15,14 @@
 }
 
 .abv-sidemenu {
+    .MuiPaper-root {
+        top:0 !important;
+    }
+
     ul {
         padding: 0;
         width: 80vw !important;
+        top: -60% !important;
     }
 
 }
@@ -40,5 +47,12 @@
 @media (min-width: 651px) {
     .abv-sidemenu-wrapper {
         display: none;
+    }
+
+    .abv-sidemenu {
+        .MuiPaper-root {
+            display: none;
+        }
+    
     }
 }

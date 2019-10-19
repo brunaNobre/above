@@ -10871,9 +10871,14 @@ body .places .m-b-md {
   font-size: 2.5rem;
 }
 
+.abv-sidemenu .MuiPaper-root {
+  top: 0 !important;
+}
+
 .abv-sidemenu ul {
   padding: 0;
   width: 80vw !important;
+  top: -60% !important;
 }
 
 .abv-sidemenu-link {
@@ -10895,6 +10900,10 @@ body .places .m-b-md {
 
 @media (min-width: 651px) {
   .abv-sidemenu-wrapper {
+    display: none;
+  }
+
+  .abv-sidemenu .MuiPaper-root {
     display: none;
   }
 }
