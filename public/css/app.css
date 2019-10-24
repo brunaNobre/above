@@ -11149,6 +11149,13 @@ body .places .m-b-md {
   margin-right: auto;
 }
 
+@media (min-width: 651px) {
+  .tasks-view {
+    width: 50%;
+    margin-left: 50%;
+  }
+}
+
 .todaysky-icon {
   width: 1.5em;
   vertical-align: sub;
