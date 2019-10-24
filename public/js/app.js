@@ -90784,24 +90784,24 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["ma
     height: 140
   }
 });
-function PlanetCard() {
+function PlanetCard(props) {
   var classes = useStyles();
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
     className: classes.card
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_CardActionArea__WEBPACK_IMPORTED_MODULE_3__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_6__["default"], {
     className: classes.media,
     image: "/images/planets/mercury.jpg",
-    title: "Merc\xFArio"
+    title: props.name
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_5__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8__["default"], {
     className: "card-planet-name",
     gutterBottom: true,
     variant: "h5",
     component: "h2"
-  }, "Merc\xFArio"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, props.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8__["default"], {
     variant: "body2",
     color: "textSecondary",
     component: "p"
-  }, "Merc\xFArio are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_CardActions__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, props.description))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_CardActions__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
     className: "learn-more",
     size: "small",
     color: "primary"
@@ -91900,6 +91900,16 @@ function (_Component) {
   }
 
   _createClass(NatalChart, [{
+    key: "calcChart",
+    value: function calcChart() {
+      var date = "19.05.1989";
+      var hour = "18:00:01";
+      var lat = -31.5365;
+      var lng = -52.2491;
+      var result = ephemeris.getAllPlanets(date + " " + hour, lng, lat, 0);
+      console.log(result);
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Mapa Astral"));
@@ -92019,17 +92029,41 @@ function (_Component) {
   _inherits(Planets, _Component);
 
   function Planets() {
+    var _this;
+
     _classCallCheck(this, Planets);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Planets).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Planets).call(this));
+    _this.state = {
+      planets: []
+    };
+    return _this;
   }
 
   _createClass(Planets, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      axios.get("/api/planets").then(function (res) {
+        _this2.setState({
+          planets: res.data
+        });
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
+      var planetCards = this.state.planets.map(function (planet) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Planets_PlanetCard__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          key: planet.id,
+          name: planet.name,
+          description: planet.description
+        });
+      });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "planets-view"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Planets_PlanetCard__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Planets_PlanetCard__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Planets_PlanetCard__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Planets_PlanetCard__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Planets_PlanetCard__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+      }, planetCards);
     }
   }]);
 
