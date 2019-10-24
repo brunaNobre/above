@@ -11126,9 +11126,9 @@ body .places .m-b-md {
 }
 
 .planets-view .MuiCard-root {
-  margin-right: auto;
+  margin-top: 3vw;
   margin-left: auto;
-  margin-top: 5%;
+  margin-right: auto;
 }
 
 .planets-view .learn-more {
@@ -11137,16 +11137,55 @@ body .places .m-b-md {
   margin-right: auto;
 }
 
+@media (min-width: 651px) {
+  .planets-view {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .planets-view .MuiCard-root {
+    width: 30%;
+    margin-left: 2%;
+    margin-right: 1%;
+  }
+}
+
 .signs-view .MuiCard-root {
-  margin-right: auto;
+  margin-top: 3vw;
   margin-left: auto;
-  margin-top: 5%;
+  margin-right: auto;
 }
 
 .signs-view .learn-more {
   color: #8344E0;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (min-width: 651px) {
+  .signs-view {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .signs-view .MuiCard-root {
+    width: 30%;
+    margin-left: 2%;
+    margin-right: 1%;
+  }
+}
+
+@media (min-width: 651px) {
+  .tasks-view {
+    width: 50%;
+    margin-left: 50%;
+  }
 }
 
 .todaysky-icon {

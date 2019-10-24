@@ -7,6 +7,10 @@ class Signs extends Component {
         return (
             <div className="signs-view">
                 <SignCard />
+                <SignCard />
+                <SignCard />
+                <SignCard />
+                <SignCard />
             </div>
         )
     }
