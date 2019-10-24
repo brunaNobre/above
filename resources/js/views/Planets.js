@@ -7,6 +7,10 @@ class Planets extends Component {
         return (
             <div className="planets-view">
                 <PlanetCard />
+                <PlanetCard />
+                <PlanetCard />
+                <PlanetCard />
+                <PlanetCard />
             </div>
         )
     }
