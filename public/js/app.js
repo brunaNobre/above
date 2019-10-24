@@ -90847,24 +90847,24 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["ma
     height: 140
   }
 });
-function SignCard() {
+function SignCard(props) {
   var classes = useStyles();
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
     className: classes.card
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_CardActionArea__WEBPACK_IMPORTED_MODULE_3__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_6__["default"], {
     className: classes.media,
     image: "/images/signs/aries.jpg",
-    title: "\xC1ries"
+    title: props.name
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_5__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8__["default"], {
     className: "card-sign-name",
     gutterBottom: true,
     variant: "h5",
     component: "h2"
-  }, "\xC1ries"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, props.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8__["default"], {
     variant: "body2",
     color: "textSecondary",
     component: "p"
-  }, "\xC1ries are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_CardActions__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, props.description))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_CardActions__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
     className: "learn-more",
     size: "small",
     color: "primary"
@@ -92189,17 +92189,41 @@ function (_Component) {
   _inherits(Signs, _Component);
 
   function Signs() {
+    var _this;
+
     _classCallCheck(this, Signs);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Signs).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Signs).call(this));
+    _this.state = {
+      signs: []
+    };
+    return _this;
   }
 
   _createClass(Signs, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      axios.get("/api/signs").then(function (res) {
+        _this2.setState({
+          signs: res.data
+        });
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
+      var signCards = this.state.signs.map(function (sign) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Signs_SignCard__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          key: sign.id,
+          name: sign.name,
+          description: sign.description
+        });
+      });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signs-view"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Signs_SignCard__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Signs_SignCard__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Signs_SignCard__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Signs_SignCard__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Signs_SignCard__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+      }, signCards);
     }
   }]);
 

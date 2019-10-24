@@ -17,7 +17,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function SignCard() {
+export default function SignCard(props) {
   const classes = useStyles();
 
   return (
@@ -26,15 +26,14 @@ export default function SignCard() {
         <CardMedia
           className={classes.media}
           image="/images/signs/aries.jpg"
-          title="Áries"
+          title={props.name}
         />
         <CardContent>
           <Typography className="card-sign-name" gutterBottom variant="h5" component="h2">
-            Áries
+            {props.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Áries are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+            {props.description}
           </Typography>
         </CardContent>
       </CardActionArea>
