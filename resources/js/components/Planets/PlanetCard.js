@@ -17,7 +17,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function PlanetCard() {
+export default function PlanetCard(props) {
   const classes = useStyles();
 
   return (
@@ -26,15 +26,14 @@ export default function PlanetCard() {
         <CardMedia
           className={classes.media}
           image="/images/planets/mercury.jpg"
-          title="Mercúrio"
+          title={props.name}
         />
         <CardContent>
           <Typography className="card-planet-name" gutterBottom variant="h5" component="h2">
-            Mercúrio
+            {props.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Mercúrio are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+           {props.description}
           </Typography>
         </CardContent>
       </CardActionArea>
