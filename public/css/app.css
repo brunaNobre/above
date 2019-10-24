@@ -11125,6 +11125,28 @@ body .places .m-b-md {
   margin-bottom: 0;
 }
 
+.decor-border {
+  border: 1px solid darkgray;
+  padding: 5%;
+  border-radius: 2px;
+  position: relative;
+}
+
+.decor-border .border-img {
+  width: 45%;
+  position: absolute;
+  top: -20vw;
+  left: 28%;
+}
+
+@media (min-width: 651px) {
+  .decor-border .border-img {
+    width: 30%;
+    top: -13vw;
+    left: 35%;
+  }
+}
+
 .planets-view .MuiCard-root {
   margin-top: 3vw;
   margin-left: auto;
@@ -11185,6 +11207,70 @@ body .places .m-b-md {
   .tasks-view {
     width: 50%;
     margin-left: 50%;
+  }
+}
+
+.moons-view {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Roboto, sans-serif;
+}
+
+.moons-view h1 {
+  margin-top: 20%;
+  margin-bottom: 5%;
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.moons-view .page-description-wrapper {
+  margin-top: 30vw;
+}
+
+.moons-view .page-description-wrapper h1 {
+  margin-top: 10%;
+}
+
+.moons-view .page-description-wrapper img {
+  width: 95%;
+  position: absolute;
+  top: -18vw;
+  left: 3%;
+}
+
+.moons-view p.page-description {
+  font-weight: 300;
+  font-size: 1.1em;
+}
+
+.moons-view .moon-description {
+  margin-top: 20vw;
+  text-align: center;
+}
+
+.moons-view .moon-description p {
+  font-weight: 300;
+  font-size: 1.1em;
+  text-align: left;
+}
+
+@media (min-width: 651px) {
+  .moons-view .moon-description {
+    margin-top: 13vw;
+  }
+
+  .moons-view h1 {
+    font-size: 2rem;
+  }
+
+  .moons-view p {
+    font-size: 1.8em;
+  }
+
+  .moons-view .page-description-wrapper {
+    margin-top: 15vw;
   }
 }
 

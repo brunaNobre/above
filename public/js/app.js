@@ -90621,6 +90621,32 @@ function (_Component) {
 
 /***/ }),
 
+/***/ "./resources/js/components/DecorBorder.js":
+/*!************************************************!*\
+  !*** ./resources/js/components/DecorBorder.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function DecorBorder(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "decor-border"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: props.img,
+    className: "border-img"
+  }), props.children);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (DecorBorder);
+
+/***/ }),
+
 /***/ "./resources/js/components/MoonDisplay.js":
 /*!************************************************!*\
   !*** ./resources/js/components/MoonDisplay.js ***!
@@ -90666,6 +90692,33 @@ var MoonPhaseHeader = function MoonPhaseHeader() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (MoonPhaseHeader);
+
+/***/ }),
+
+/***/ "./resources/js/components/Moons/MoonDescription.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/Moons/MoonDescription.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _DecorBorder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../DecorBorder */ "./resources/js/components/DecorBorder.js");
+
+
+
+function MoonDescription(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "moon-description"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_DecorBorder__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    img: props.img
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, props.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, props.description)));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (MoonDescription);
 
 /***/ }),
 
@@ -91590,6 +91643,8 @@ function TodaySkyIcon() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_Moons_MoonDescription__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Moons/MoonDescription */ "./resources/js/components/Moons/MoonDescription.js");
+/* harmony import */ var _components_DecorBorder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/DecorBorder */ "./resources/js/components/DecorBorder.js");
 function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
 
 function _typeof(obj) {
@@ -91677,6 +91732,8 @@ function _setPrototypeOf(o, p) {
 
 
 
+
+
 var Moons =
 /*#__PURE__*/
 function (_Component) {
@@ -91691,7 +91748,33 @@ function (_Component) {
   _createClass(Moons, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Fases da Lua");
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "moons-view"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-description-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_DecorBorder__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        img: "/images/moons/phases.png"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "page-title"
+      }, "As Fases da Lua"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "page-description"
+      }, "As fases da Lua representam os diferentes aspectos que vemos o sat\xE9lite natural da Terra ao longo de um ciclo. Isso acontece em virtude da varia\xE7\xE3o da sua posi\xE7\xE3o em rela\xE7\xE3o ao nosso planeta e ao Sol."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Moons_MoonDescription__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        img: "/images/moons/new-moon.png",
+        title: "Lua Nova",
+        description: "daiosdi joiahdoidho oihdoidho ahuhiaduhashdhiuad daiosdi joiahdoidho oihdoidho ahuhiaduhashdhiuad daiosdi joiahdoidho oihdoidho ahuhiaduhashdhiuad daiosdi joiahdoidho oihdoidho ahuhiaduhashdhiuad"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Moons_MoonDescription__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        img: "/images/moons/waxing-moon.png",
+        title: "Lua Crescente",
+        description: "daiosdi joiahdoidho oihdoidho ahuhiaduhashdhiuad"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Moons_MoonDescription__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        img: "/images/moons/full-moon.png",
+        title: "Lua Cheia",
+        description: "daiosdi joiahdoidho oihdoidho ahuhiaduhashdhiuad"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Moons_MoonDescription__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        img: "/images/moons/waning-moon.png",
+        title: "Lua Minguante",
+        description: "daiosdi joiahdoidho oihdoidho ahuhiaduhashdhiuad"
+      }));
     }
   }]);
 
