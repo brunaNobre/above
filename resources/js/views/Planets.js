@@ -15,7 +15,6 @@ class Planets extends Component {
           .then(res => {
              this.setState({planets: res.data})
           })
-
     }
     
 

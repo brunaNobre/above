@@ -90715,7 +90715,7 @@ function MoonDescription(props) {
     className: "moon-description"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_DecorBorder__WEBPACK_IMPORTED_MODULE_1__["default"], {
     img: props.img
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, props.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, props.description)));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, props.phase), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, props.description)));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (MoonDescription);
@@ -91745,14 +91745,39 @@ function (_Component) {
   _inherits(Moons, _Component);
 
   function Moons() {
+    var _this;
+
     _classCallCheck(this, Moons);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Moons).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Moons).call(this));
+    _this.state = {
+      moons: []
+    };
+    return _this;
   }
 
   _createClass(Moons, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      axios.get("/api/moons").then(function (res) {
+        _this2.setState({
+          moons: res.data
+        });
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
+      var moonDescriptions = this.state.moons.map(function (moon) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Moons_MoonDescription__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          key: moon.id,
+          img: "/images/moons/new-moon.png",
+          phase: moon.phase,
+          description: moon.description
+        });
+      });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "moons-view"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -91763,23 +91788,7 @@ function (_Component) {
         className: "page-title"
       }, "As Fases da Lua"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "page-description"
-      }, "As fases da Lua representam os diferentes aspectos que vemos o sat\xE9lite natural da Terra ao longo de um ciclo. Isso acontece em virtude da varia\xE7\xE3o da sua posi\xE7\xE3o em rela\xE7\xE3o ao nosso planeta e ao Sol."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Moons_MoonDescription__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        img: "/images/moons/new-moon.png",
-        title: "Lua Nova",
-        description: "daiosdi joiahdoidho oihdoidho ahuhiaduhashdhiuad daiosdi joiahdoidho oihdoidho ahuhiaduhashdhiuad daiosdi joiahdoidho oihdoidho ahuhiaduhashdhiuad daiosdi joiahdoidho oihdoidho ahuhiaduhashdhiuad"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Moons_MoonDescription__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        img: "/images/moons/waxing-moon.png",
-        title: "Lua Crescente",
-        description: "daiosdi joiahdoidho oihdoidho ahuhiaduhashdhiuad"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Moons_MoonDescription__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        img: "/images/moons/full-moon.png",
-        title: "Lua Cheia",
-        description: "daiosdi joiahdoidho oihdoidho ahuhiaduhashdhiuad"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Moons_MoonDescription__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        img: "/images/moons/waning-moon.png",
-        title: "Lua Minguante",
-        description: "daiosdi joiahdoidho oihdoidho ahuhiaduhashdhiuad"
-      }));
+      }, "As fases da Lua representam os diferentes aspectos que vemos o sat\xE9lite natural da Terra ao longo de um ciclo. Isso acontece em virtude da varia\xE7\xE3o da sua posi\xE7\xE3o em rela\xE7\xE3o ao nosso planeta e ao Sol."))), moonDescriptions);
     }
   }]);
 

@@ -5,7 +5,7 @@ function MoonDescription (props) {
     return (
         <div className="moon-description">
             <DecorBorder img={props.img}>
-                <h1>{props.title}</h1>
+                <h1>{props.phase}</h1>
                 <p>{props.description}</p>
             </DecorBorder>
         </div>

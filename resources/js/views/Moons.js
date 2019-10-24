@@ -4,7 +4,32 @@ import DecorBorder from '../components/DecorBorder'
 
 
 class Moons extends Component {
+    constructor() {
+        super()
+        this.state = {
+            moons: []
+        }
+    }
+
+    componentDidMount() {
+        axios.get(`/api/moons`)
+          .then(res => {
+             this.setState({moons: res.data})
+          })
+    }
+
+
     render() {
+
+        const moonDescriptions =  this.state.moons.map(
+            moon => <MoonDescription 
+                    key={moon.id}
+                    img="/images/moons/new-moon.png" 
+                    phase={moon.phase} 
+                    description={moon.description} />
+            )
+
+
         return (
             <div className="moons-view">
                 <div className="page-description-wrapper">
@@ -14,25 +39,9 @@ class Moons extends Component {
                     </DecorBorder>
                 </div>
 
-                <MoonDescription
-                 img="/images/moons/new-moon.png"
-                 title="Lua Nova"
-                 description="daiosdi joiahdoidho oihdoidho ahuhiaduhashdhiuad daiosdi joiahdoidho oihdoidho ahuhiaduhashdhiuad daiosdi joiahdoidho oihdoidho ahuhiaduhashdhiuad daiosdi joiahdoidho oihdoidho ahuhiaduhashdhiuad"/>
+                {moonDescriptions}
 
-                 <MoonDescription
-                 img="/images/moons/waxing-moon.png"
-                 title="Lua Crescente"
-                 description="daiosdi joiahdoidho oihdoidho ahuhiaduhashdhiuad"/>
-
-                  <MoonDescription
-                 img="/images/moons/full-moon.png"
-                 title="Lua Cheia"
-                 description="daiosdi joiahdoidho oihdoidho ahuhiaduhashdhiuad"/>
-
-                  <MoonDescription
-                 img="/images/moons/waning-moon.png"
-                 title="Lua Minguante"
-                 description="daiosdi joiahdoidho oihdoidho ahuhiaduhashdhiuad"/>
+                 
             </div>
         )
     }
