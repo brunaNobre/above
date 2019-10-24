@@ -91525,6 +91525,11 @@ function AboveSideMenu() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Mood__WEBPACK_IMPORTED_MODULE_8___default.a, {
     className: "abv-sidemenu-icon"
   }), "Meu mood")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    onClick: handleClose
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+    to: "/home/today-sky",
+    className: "abv-sidemenu-link"
+  }, "C\xE9u de Hoje")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__["default"], {
     onClick: handleClose,
     className: "abv-sidemenu-link"
   }, "Sair")));
@@ -92304,6 +92309,7 @@ function (_Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_DecorBorder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/DecorBorder */ "./resources/js/components/DecorBorder.js");
 function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
 
 function _typeof(obj) {
@@ -92391,6 +92397,7 @@ function _setPrototypeOf(o, p) {
 
 
 
+
 var TodaySky =
 /*#__PURE__*/
 function (_Component) {
@@ -92405,7 +92412,11 @@ function (_Component) {
   _createClass(TodaySky, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "C\xE9u de Hoje");
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "todaysky-view"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_DecorBorder__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        img: "/images/cosmos.png"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "C\xE9u de Hoje"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "jisjoisjiojio oijsoidjiosjo joidjoidjoid ijoijoidjojd")));
     }
   }]);
 

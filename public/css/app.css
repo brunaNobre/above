@@ -11274,6 +11274,45 @@ body .places .m-b-md {
   }
 }
 
+.todaysky-view {
+  margin-top: 10vw;
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.todaysky-view h1 {
+  margin-top: 20%;
+  margin-bottom: 5%;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.todaysky-view .decor-border {
+  border: 1px dotted darkgray;
+}
+
+.todaysky-view .decor-border .border-img {
+  width: 65%;
+  top: -20vw;
+  left: 17%;
+}
+
+.todaysky-view .decor-border p {
+  font-weight: 300;
+  font-size: 1.1em;
+}
+
+@media (min-width: 651px) {
+  .todaysky-view .decor-border .border-img {
+    width: 40%;
+    top: -13vw;
+    left: 30%;
+  }
+}
+
 .todaysky-icon {
   width: 1.5em;
   vertical-align: sub;
