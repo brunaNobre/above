@@ -108562,6 +108562,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/Divider */ "./node_modules/@material-ui/core/esm/Divider/index.js");
 /* harmony import */ var _material_ui_icons_Done__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/icons/Done */ "./node_modules/@material-ui/icons/Done.js");
 /* harmony import */ var _material_ui_icons_Done__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Done__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _formatMonth__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./formatMonth */ "./resources/js/components/Tasks/formatMonth.js");
+
 
 
 
@@ -108588,23 +108590,33 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["ma
 });
 function CompletedTasksPanel(props) {
   var classes = useStyles();
+  var date = props.date;
   var tasksList = props.tasks;
   var completedTasks = tasksList.filter(function (task) {
     return task.is_completed;
   });
-  var count = completedTasks.length;
+  var count = 0;
   var listItems = completedTasks.map(function (task) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_8__["default"], {
-      button: true,
-      key: task.id
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItemIcon__WEBPACK_IMPORTED_MODULE_9__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Done__WEBPACK_IMPORTED_MODULE_12___default.a, {
-      onClick: function onClick() {
-        props.handleUpdate(task);
-      }
-    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_10__["default"], {
-      className: "completed-task-item",
-      primary: task.title
-    }));
+    var splited = task.due_to.split('-');
+    var year = splited[0];
+    var month = splited[1];
+    var day = splited[2];
+    var taskDueTo = day + " de " + Object(_formatMonth__WEBPACK_IMPORTED_MODULE_13__["default"])(month) + " de " + year;
+
+    if (date == taskDueTo) {
+      count = count + 1;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        button: true,
+        key: task.id
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItemIcon__WEBPACK_IMPORTED_MODULE_9__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Done__WEBPACK_IMPORTED_MODULE_12___default.a, {
+        onClick: function onClick() {
+          props.handleUpdate(task);
+        }
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        className: "completed-task-item",
+        primary: task.title
+      }));
+    }
   });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: classes.root
@@ -110275,7 +110287,8 @@ function (_Component) {
         date: this.state.date
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Tasks_CompletedTasksPanel__WEBPACK_IMPORTED_MODULE_3__["default"], {
         tasks: this.state.tasks,
-        handleUpdate: this.handleUpdate
+        handleUpdate: this.handleUpdate,
+        date: this.state.date
       }));
     }
   }]);

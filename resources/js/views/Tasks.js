@@ -106,7 +106,8 @@ class Tasks extends Component {
                  />
                 <CompletedTasksPanel 
                 tasks={this.state.tasks} 
-                handleUpdate={this.handleUpdate}/>
+                handleUpdate={this.handleUpdate}
+                date={this.state.date}/>
             </div>
         )
     }
