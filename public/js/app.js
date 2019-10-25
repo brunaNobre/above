@@ -108634,20 +108634,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_ArrowBackIos__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_ArrowBackIos__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _material_ui_icons_ArrowForwardIos__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/icons/ArrowForwardIos */ "./node_modules/@material-ui/icons/ArrowForwardIos.js");
 /* harmony import */ var _material_ui_icons_ArrowForwardIos__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_ArrowForwardIos__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
 
 function TaskDate(props) {
   var date = props.date.toString();
+  var today = moment__WEBPACK_IMPORTED_MODULE_3___default()().locale('pt-br').format('LL');
+  var hideIfToday = date == today ? "hidden" : "";
+  var showIfToday = date == today ? "" : "hidden";
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "task-date"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_ArrowBackIos__WEBPACK_IMPORTED_MODULE_1___default.a, {
     className: "nav-arrow arrow-back",
     onClick: props.prevDay
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "today-button"
-  }, "voltar pra hoje"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_ArrowForwardIos__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    className: "today-button " + hideIfToday,
+    onClick: props.backToPresent
+  }, "voltar pra hoje"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "today-label " + showIfToday
+  }, "hoje"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_ArrowForwardIos__WEBPACK_IMPORTED_MODULE_2___default.a, {
     className: "nav-arrow arrow-for",
     onClick: props.nextDay
   }));
@@ -108776,7 +108785,8 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TaskDate__WEBPACK_IMPORTED_MODULE_1__["default"], {
         date: this.props.date,
         nextDay: this.props.nextDay,
-        prevDay: this.props.prevDay
+        prevDay: this.props.prevDay,
+        backToPresent: this.props.backToPresent
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
         className: "sun-sign-of-day"
       }, "Virgem"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -108823,6 +108833,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_colors_red__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_colors_red__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _formatMonth__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./formatMonth */ "./resources/js/components/Tasks/formatMonth.js");
 function _extends() {
   _extends = Object.assign || function (target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -108840,6 +108851,7 @@ function _extends() {
 
   return _extends.apply(this, arguments);
 }
+
 
 
 
@@ -108873,8 +108885,15 @@ function ListItemLink(props) {
 function TasksList(props) {
   var classes = useStyles();
   var tasksList = props.tasks;
+  var date = props.date;
   var listItems = tasksList.map(function (task) {
-    if (!task.is_completed) {
+    var splited = task.due_to.split('-');
+    var year = splited[0];
+    var month = splited[1];
+    var day = splited[2];
+    var taskDueTo = day + " de " + Object(_formatMonth__WEBPACK_IMPORTED_MODULE_12__["default"])(month) + " de " + year;
+
+    if (!task.is_completed && taskDueTo == date) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
         key: task.id
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Radio__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -108896,6 +108915,75 @@ function TasksList(props) {
     component: "nav",
     "aria-label": "main mailbox folders"
   }, listItems), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_6__["default"], null));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/Tasks/formatMonth.js":
+/*!******************************************************!*\
+  !*** ./resources/js/components/Tasks/formatMonth.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return formatMonth; });
+function formatMonth(m) {
+  switch (m) {
+    case "1":
+      m = "Janeiro";
+      break;
+
+    case "2":
+      m = "Fevereiro";
+      break;
+
+    case "3":
+      m = "Março";
+      break;
+
+    case "4":
+      m = "Abril";
+      break;
+
+    case "5":
+      m = "Maio";
+      break;
+
+    case "6":
+      m = "Junho";
+      break;
+
+    case "7":
+      m = "Julho";
+      break;
+
+    case "8":
+      m = "Agosto";
+      break;
+
+    case "9":
+      m = "Setembro";
+      break;
+
+    case "10":
+      m = "Outubro";
+      break;
+
+    case "11":
+      m = "Novembro";
+      break;
+
+    case "12":
+      m = "Dezembro";
+      break;
+
+    default:
+      break;
+  }
+
+  return m;
 }
 
 /***/ }),
@@ -110097,6 +110185,7 @@ function (_Component) {
     _this.handleUpdate = _this.handleUpdate.bind(_assertThisInitialized(_this));
     _this.nextDay = _this.nextDay.bind(_assertThisInitialized(_this));
     _this.prevDay = _this.prevDay.bind(_assertThisInitialized(_this));
+    _this.backToPresent = _this.backToPresent.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -110109,6 +110198,13 @@ function (_Component) {
         _this2.setState({
           tasks: res.data
         });
+      });
+    }
+  }, {
+    key: "backToPresent",
+    value: function backToPresent() {
+      this.setState({
+        date: moment__WEBPACK_IMPORTED_MODULE_4___default()().locale('pt-br').format('LL')
       });
     }
   }, {
@@ -110171,10 +110267,12 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Tasks_TasksHeader__WEBPACK_IMPORTED_MODULE_1__["default"], {
         date: this.state.date,
         nextDay: this.nextDay,
-        prevDay: this.prevDay
+        prevDay: this.prevDay,
+        backToPresent: this.backToPresent
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Tasks_TasksList__WEBPACK_IMPORTED_MODULE_2__["default"], {
         tasks: this.state.tasks,
-        handleUpdate: this.handleUpdate
+        handleUpdate: this.handleUpdate,
+        date: this.state.date
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Tasks_CompletedTasksPanel__WEBPACK_IMPORTED_MODULE_3__["default"], {
         tasks: this.state.tasks,
         handleUpdate: this.handleUpdate

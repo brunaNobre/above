@@ -11153,7 +11153,7 @@ body .places .m-b-md {
 
 .task-date .today-button {
   position: absolute;
-  left: 42.5%;
+  left: 43%;
   padding: 0.3%;
   border: 1px solid #8344E0;
   border-radius: 3px;
@@ -11162,6 +11162,12 @@ body .places .m-b-md {
   background-color: #8344E0;
   color: white;
   cursor: pointer;
+}
+
+.task-date .today-label {
+  color: darkgray;
+  position: absolute;
+  left: 47%;
 }
 
 .decor-border {
