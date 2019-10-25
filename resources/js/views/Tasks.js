@@ -46,7 +46,7 @@ class Tasks extends Component {
             <div className="tasks-view">
                 <TasksHeader />
                 <TasksList tasks={this.state.tasks} handleUpdate={this.handleUpdate}/>
-                <CompletedTasksPanel tasks={this.state.tasks}/>
+                <CompletedTasksPanel tasks={this.state.tasks} handleUpdate={this.handleUpdate}/>
             </div>
         )
     }

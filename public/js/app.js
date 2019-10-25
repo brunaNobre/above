@@ -90934,7 +90934,11 @@ function CompletedTasksPanel(props) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_8__["default"], {
       button: true,
       key: task.id
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItemIcon__WEBPACK_IMPORTED_MODULE_9__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Done__WEBPACK_IMPORTED_MODULE_12___default.a, null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItemIcon__WEBPACK_IMPORTED_MODULE_9__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Done__WEBPACK_IMPORTED_MODULE_12___default.a, {
+      onClick: function onClick() {
+        props.handleUpdate(task);
+      }
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_10__["default"], {
       primary: task.title
     }));
   });
@@ -92429,7 +92433,8 @@ function (_Component) {
         tasks: this.state.tasks,
         handleUpdate: this.handleUpdate
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Tasks_CompletedTasksPanel__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        tasks: this.state.tasks
+        tasks: this.state.tasks,
+        handleUpdate: this.handleUpdate
       }));
     }
   }]);
