@@ -36,7 +36,7 @@ export default function CompletedTasksPanel(props) {
           <ListItemIcon>
               <DoneIcon onClick={() => {props.handleUpdate(task)}}/>
           </ListItemIcon>
-          <ListItemText primary={task.title}/>
+          <ListItemText className="completed-task-item" primary={task.title}/>
         </ListItem>
       )
   });  

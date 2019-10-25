@@ -11203,6 +11203,10 @@ body .places .m-b-md {
   }
 }
 
+.tasks-view .completed-task-item {
+  text-decoration: line-through;
+}
+
 @media (min-width: 651px) {
   .tasks-view {
     width: 50%;

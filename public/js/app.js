@@ -90939,6 +90939,7 @@ function CompletedTasksPanel(props) {
         props.handleUpdate(task);
       }
     })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      className: "completed-task-item",
       primary: task.title
     }));
   });
