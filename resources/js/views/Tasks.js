@@ -2,27 +2,70 @@ import React, { Component } from 'react'
 import TasksHeader from '../components/Tasks/TasksHeader'
 import TasksList from '../components/Tasks/TasksList'
 import CompletedTasksPanel from '../components/Tasks/CompletedTasksPanel'
+import moment from 'moment'
 
 class Tasks extends Component {
     constructor() {
         super()
         this.state = {
-            tasks: []
+            tasks: [],
+            date: moment().locale('pt-br').format('LL'),
+            daysForward: 0,
+            daysBackward: 0
         }
+
         this.handleUpdate = this.handleUpdate.bind(this)
+        this.nextDay = this.nextDay.bind(this)
+        this.prevDay = this.prevDay.bind(this)
+
     }
+
+
 
     componentDidMount() {
-
         axios.get(`/api/tasks`)
           .then(res => {
-             this.setState({tasks: res.data})
-          })          
+             this.setState({
+                 tasks: res.data
+                })
+          })   
+                
     }
 
-    updateState(data) {
-        this.setState({tasks: data})
+
+
+    nextDay() {
+
+        if (this.state.daysBackward > 0) {
+            this.setState({
+                daysBackward: (this.state.daysBackward - 1),
+                date: moment().locale('pt-br').subtract((this.state.daysBackward) - 1, 'days').format('LL')
+            })
+
+        } else {
+            this.setState({
+                daysForward: (this.state.daysForward + 1),
+                date: moment().locale('pt-br').add((this.state.daysForward) + 1, 'days').format('LL')
+            })
+        }
     }
+
+
+    prevDay() {
+        if (this.state.daysForward > 0) {
+            this.setState({
+                daysForward: (this.state.daysForward - 1),
+                date: moment().locale('pt-br').add((this.state.daysForward) - 1, 'days').format('LL')
+            })
+        } else {
+            this.setState({
+                daysBackward: (this.state.daysBackward + 1),
+                date: moment().locale('pt-br').subtract((this.state.daysBackward) + 1, 'days').format('LL')
+            })
+        }
+
+    }
+
 
      handleUpdate (task) {
         task.is_completed = !task.is_completed;
@@ -44,7 +87,7 @@ class Tasks extends Component {
     render() {
         return (
             <div className="tasks-view">
-                <TasksHeader />
+                <TasksHeader date={this.state.date} nextDay={this.nextDay} prevDay={this.prevDay}/>
                 <TasksList tasks={this.state.tasks} handleUpdate={this.handleUpdate}/>
                 <CompletedTasksPanel tasks={this.state.tasks} handleUpdate={this.handleUpdate}/>
             </div>

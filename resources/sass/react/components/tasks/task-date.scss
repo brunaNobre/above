@@ -1,0 +1,39 @@
+.task-date {
+    position: relative;
+
+    .nav-arrow {
+        position: absolute;
+        top: 50%;
+        color: darkgray;
+        cursor: pointer;
+    }
+
+    .arrow-back {
+        left: 10%;
+    }
+
+    .arrow-for {
+        right: 10%;
+    }
+
+    p {
+        text-align: center;
+        font-size: 1.2rem;
+        padding-top: 5%;
+        margin-bottom: 0;
+    }
+
+    .today-button {
+        position: absolute;
+        left: 42.5%;
+        padding: 0.3%;
+        border: 1px solid #8344E0;
+        border-radius: 3px;
+        font-size: 0.6rem;
+        margin-top: 0.5%;
+        background-color: #8344E0;
+        color: white;
+        cursor: pointer; 
+       }
+    
+}
