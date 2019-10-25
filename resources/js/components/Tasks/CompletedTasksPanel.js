@@ -23,8 +23,23 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function CompletedTasksPanel() {
+export default function CompletedTasksPanel(props) {
   const classes = useStyles();
+
+  const tasksList = props.tasks;
+  const completedTasks = tasksList.filter(task => task.is_completed);
+  const count = completedTasks.length;
+
+  const listItems = completedTasks.map(function(task) {
+      return (
+        <ListItem button key={task.id}>
+          <ListItemIcon>
+              <DoneIcon onClick={() => {props.handleUpdate(task)}}/>
+          </ListItemIcon>
+          <ListItemText primary={task.title}/>
+        </ListItem>
+      )
+  });  
 
   return (
     <div className={classes.root}>
@@ -34,24 +49,11 @@ export default function CompletedTasksPanel() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography className={classes.heading}>Concluídas (3)</Typography>
+          <Typography className={classes.heading}>Concluídas ({count})</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <List>
-            <ListItem button>
-                <ListItemIcon>
-                    <DoneIcon />
-                </ListItemIcon>
-                <ListItemText primary="Tarefa Incrível" />
-            </ListItem>
-            <Divider />
-            <ListItem button>
-                <ListItemIcon>
-                    <DoneIcon />
-                </ListItemIcon>
-                <ListItemText primary="Tarefa Importante" />
-            </ListItem>
-
+            { listItems }       
           </List>
         </ExpansionPanelDetails>
       </ExpansionPanel>

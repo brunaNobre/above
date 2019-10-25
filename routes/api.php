@@ -45,11 +45,18 @@ Route::get('/signs', function () {
     return $signs;
 });
 
+// TASKS
 
-
-Route::middleware('auth:api')->get('/tasks', function () {
+Route::get('/tasks', function () {
 
     $tasks = Task::all();
+    return $tasks;
+});
+
+Route::put('tasks/{id}', function(Request $request, $id) {
+    $tasks = Task::findOrFail($id);
+    $tasks->update($request->all());
+
     return $tasks;
 });
 
