@@ -23,8 +23,26 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function CompletedTasksPanel() {
+export default function CompletedTasksPanel(props) {
   const classes = useStyles();
+
+  const tasksList = props.tasks;
+  
+  const listItems = tasksList.map(function(task) {
+    if(task.is_completed) {
+
+      return (
+        <ListItem button key={task.id}>
+          <ListItemIcon>
+              <DoneIcon />
+          </ListItemIcon>
+          <ListItemText primary={task.title}/>
+        </ListItem>
+      )
+
+    } 
+   
+  });  
 
   return (
     <div className={classes.root}>
@@ -38,20 +56,7 @@ export default function CompletedTasksPanel() {
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <List>
-            <ListItem button>
-                <ListItemIcon>
-                    <DoneIcon />
-                </ListItemIcon>
-                <ListItemText primary="Tarefa Incrível" />
-            </ListItem>
-            <Divider />
-            <ListItem button>
-                <ListItemIcon>
-                    <DoneIcon />
-                </ListItemIcon>
-                <ListItemText primary="Tarefa Importante" />
-            </ListItem>
-
+            { listItems }       
           </List>
         </ExpansionPanelDetails>
       </ExpansionPanel>
