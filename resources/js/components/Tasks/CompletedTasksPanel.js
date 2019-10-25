@@ -27,10 +27,10 @@ export default function CompletedTasksPanel(props) {
   const classes = useStyles();
 
   const tasksList = props.tasks;
-  
-  const listItems = tasksList.map(function(task) {
-    if(task.is_completed) {
+  const completedTasks = tasksList.filter(task => task.is_completed);
+  const count = completedTasks.length;
 
+  const listItems = completedTasks.map(function(task) {
       return (
         <ListItem button key={task.id}>
           <ListItemIcon>
@@ -39,9 +39,6 @@ export default function CompletedTasksPanel(props) {
           <ListItemText primary={task.title}/>
         </ListItem>
       )
-
-    } 
-   
   });  
 
   return (
@@ -52,7 +49,7 @@ export default function CompletedTasksPanel(props) {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography className={classes.heading}>Concluídas (3)</Typography>
+          <Typography className={classes.heading}>Concluídas ({count})</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <List>
