@@ -11125,6 +11125,51 @@ body .places .m-b-md {
   margin-bottom: 0;
 }
 
+.task-date {
+  position: relative;
+}
+
+.task-date .nav-arrow {
+  position: absolute;
+  top: 50%;
+  color: darkgray;
+  cursor: pointer;
+}
+
+.task-date .arrow-back {
+  left: 10%;
+}
+
+.task-date .arrow-for {
+  right: 10%;
+}
+
+.task-date p {
+  text-align: center;
+  font-size: 1.2rem;
+  padding-top: 5%;
+  margin-bottom: 0;
+}
+
+.task-date .today-button {
+  position: absolute;
+  left: 43%;
+  padding: 0.3%;
+  border: 1px solid #8344E0;
+  border-radius: 3px;
+  font-size: 0.6rem;
+  margin-top: 0.5%;
+  background-color: #8344E0;
+  color: white;
+  cursor: pointer;
+}
+
+.task-date .today-label {
+  color: darkgray;
+  position: absolute;
+  left: 47%;
+}
+
 .decor-border {
   border: 1px solid darkgray;
   padding: 5%;
@@ -11145,6 +11190,24 @@ body .places .m-b-md {
     top: -13vw;
     left: 35%;
   }
+}
+
+.MuiPickersToolbar-toolbar,
+.MuiPickersDay-daySelected {
+  background-color: #8344E0 !important;
+  color: white !important;
+}
+
+.MuiButton-textPrimary {
+  color: #8344E0 !important;
+}
+
+.MuiPickersDay-current span p {
+  color: #8344E0;
+}
+
+.MuiPickersDay-daySelected span p {
+  color: white !important;
 }
 
 .planets-view .MuiCard-root {
@@ -11203,11 +11266,48 @@ body .places .m-b-md {
   }
 }
 
+.tasks-view .completed-task-item {
+  text-decoration: line-through;
+}
+
+.tasks-view .new-task-button {
+  border-color: #8344E0 !important;
+  color: white;
+  background-color: #8344E0;
+  margin-top: 3%;
+  left: 28%;
+  width: 50%;
+  font-size: 1rem;
+  position: fixed;
+  bottom: 10%;
+}
+
+.tasks-view .new-task-button:hover {
+  background-color: #7a2dee;
+  border-color: #b490eb !important;
+}
+
+.newtask-header {
+  background-color: #8344E0 !important;
+}
+
 @media (min-width: 651px) {
   .tasks-view {
     width: 50%;
     margin-left: 50%;
   }
+
+  .tasks-view .new-task-button {
+    position: relative;
+  }
+}
+
+.MuiFormControl-root .MuiInput-underline:after {
+  border-bottom: 2px solid #8344E0 !important;
+}
+
+.MuiFormLabel-root.Mui-focused {
+  color: #8344E0 !important;
 }
 
 .moons-view {

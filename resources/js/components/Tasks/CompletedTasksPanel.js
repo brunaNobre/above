@@ -12,6 +12,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import DoneIcon from '@material-ui/icons/Done';
+import formatMonth from '../../utils/formatMonth'
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -26,38 +28,55 @@ const useStyles = makeStyles(theme => ({
 export default function CompletedTasksPanel(props) {
   const classes = useStyles();
 
+  const date = props.date;
   const tasksList = props.tasks;
   const completedTasks = tasksList.filter(task => task.is_completed);
-  const count = completedTasks.length;
+  let count = 0;
+  
+    const listItems = completedTasks.map(function(task) {
 
-  const listItems = completedTasks.map(function(task) {
-      return (
-        <ListItem button key={task.id}>
-          <ListItemIcon>
-              <DoneIcon onClick={() => {props.handleUpdate(task)}}/>
-          </ListItemIcon>
-          <ListItemText primary={task.title}/>
-        </ListItem>
-      )
-  });  
+    const splited = task.due_to.split('-');
+    const year = splited[0];
+    const month = splited[1];
+    const day = splited[2];
+    const taskDueTo = day+ " de "+ formatMonth(month) + " de "+ year;
 
-  return (
-    <div className={classes.root}>
-      <ExpansionPanel>
-        <ExpansionPanelSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography className={classes.heading}>Concluídas ({count})</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <List>
-            { listItems }       
-          </List>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
- 
-    </div>
-  );
+  if(date == taskDueTo) {
+    count = count + 1;
+    return (
+      <ListItem button key={task.id}>
+        <ListItemIcon>
+            <DoneIcon onClick={() => {props.handleUpdate(task)}}/>
+        </ListItemIcon>
+        <ListItemText className="completed-task-item" primary={task.title}/>
+      </ListItem>
+    )
+  }
+});  
+
+const hidden = (count == 0) ? " hidden" : "";
+
+    return (
+    
+      <div className={classes.root +""+ hidden}>
+        <ExpansionPanel>
+          <ExpansionPanelSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography className={classes.heading}>Concluídas ({count})</Typography>
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <List>
+              { listItems }       
+            </List>
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
+   
+      </div>
+    );
+  
+
+
 }

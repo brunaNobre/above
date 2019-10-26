@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
-    protected $fillable = ['title', 'due_to', 'is_completed'];
+    protected $fillable = ['user_id', 'title', 'due_to', 'is_completed'];
     
     public function user() {
         return $this->belongsTo('App\User');

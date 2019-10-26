@@ -1,6 +1,30 @@
 .tasks-view {
+    .completed-task-item {
+        text-decoration: line-through;
+    }
 
 
+    .new-task-button {
+        border-color: #8344E0 !important;
+        color: white;
+        background-color: #8344E0;
+        margin-top: 3%;
+        left: 28%;
+        width: 50%;
+        font-size: 1rem;
+        position: fixed;
+        bottom: 10%;
+        
+        &:hover {
+            background-color: rgb(122, 45, 238);
+            border-color: rgb(180, 144, 235) !important;
+
+        }
+      }
+}
+
+.newtask-header {
+    background-color: #8344E0 !important;
 }
 
 
@@ -8,6 +32,24 @@
     .tasks-view {
         width: 50%;
         margin-left: 50%;
+
+        .new-task-button {
+            position: relative;
+        }
     }
+
+    
+}
+
+.MuiFormControl-root {
+    .MuiInput-underline {
+       &:after {
+        border-bottom: 2px solid #8344E0 !important;
+       }
+    }
+}
+
+.MuiFormLabel-root.Mui-focused,  {
+    color: #8344E0 !important;
 }
 
