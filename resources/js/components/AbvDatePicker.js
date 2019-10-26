@@ -7,6 +7,7 @@ import {
   KeyboardTimePicker,
   KeyboardDatePicker,
 } from '@material-ui/pickers';
+import formatDate from '../utils/formatDate'
 
 export default function MaterialUIPickers(props) {
   // The first commit of Material-UI
@@ -14,7 +15,7 @@ export default function MaterialUIPickers(props) {
 
   const handleDateChange = date => {
     setSelectedDate(date);
-    props.sendInputValue('due_to', date.toLocaleDateString());
+    props.sendInputValue('due_to', formatDate(date.toLocaleDateString()));
   };
 
   return (

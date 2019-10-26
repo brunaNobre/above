@@ -4,6 +4,7 @@ import TasksList from '../components/Tasks/TasksList'
 import CompletedTasksPanel from '../components/Tasks/CompletedTasksPanel'
 import NewTaskForm from "../components/Tasks/NewTaskForm"
 import moment from 'moment'
+import formatDate from '../utils/formatDate'
 
 class Tasks extends Component {
     constructor() {
@@ -14,9 +15,10 @@ class Tasks extends Component {
             daysForward: 0,
             daysBackward: 0,
             newTask: {
+                user_id: 1,
                 title: "",
-                due_to: ""
-            }
+                due_to: formatDate(new Date().toLocaleDateString())
+            },
         }
 
         this.handleUpdate = this.handleUpdate.bind(this)
@@ -35,7 +37,7 @@ class Tasks extends Component {
         axios.get(`/api/tasks`)
           .then(res => {
              this.setState({
-                 tasks: res.data
+                 tasks: res.data,
                 })
           })   
                 
@@ -83,15 +85,26 @@ class Tasks extends Component {
 
     }
 
-    handleAdd (task) {
-        axios.post('/api/tasks', task);
-        axios.get(`/api/tasks`)
-        .then(res => {
-           this.setState({
-               tasks: res.data
-              })
-        }) 
+    handleAdd (newTask) {
+        if(newTask.title) {
+            axios.post('/api/tasks', newTask);
+            axios.get(`/api/tasks`)
+            .then(res => {
+            this.setState({
+                 tasks: res.data
+                 })
+            })
+
+            this.setState({
+                newTask: {
+                    user_id: 1,
+                    title: "",
+                    due_to: formatDate(new Date().toLocaleDateString())
+                }
+            }) 
+       }
     };
+
 
     sendInputValue (key, newValue) {
         this.setState((state) => state.newTask[key] = newValue)
@@ -119,10 +132,6 @@ class Tasks extends Component {
 
     render() {
 
-        console.log("this.state.newtask.title: " +this.state.newTask.title)
-        console.log("this.state.newtask.due_to: " +this.state.newTask.due_to)
-
-
         return (
             <div className="tasks-view">
                 <TasksHeader 
@@ -143,6 +152,7 @@ class Tasks extends Component {
                 <NewTaskForm 
                 newTask={this.state.newTask} 
                 sendInputValue={this.sendInputValue}
+                handleAdd={this.handleAdd}
                 />
             </div>
         )

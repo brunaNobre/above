@@ -31,11 +31,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 export default function NewTaskForm(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const addTask = props.handleAdd;
-  const newTask = {
-    'title': '',
-    'due_to': ''
-  }
+ 
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -45,9 +41,9 @@ export default function NewTaskForm(props) {
     setOpen(false);
   };
 
-  const handleCloseAndSend = () => {
+  const handleCloseAndSaveTask = () => {
     setOpen(false);
-    addTask(newTask)
+    props.handleAdd(props.newTask)
   };
 
   
@@ -67,7 +63,7 @@ export default function NewTaskForm(props) {
             <Typography variant="h6" className={classes.title}>
               Nova tarefa
             </Typography>
-            <Button color="inherit" onClick={handleCloseAndSend}>
+            <Button color="inherit" onClick={handleCloseAndSaveTask}>
               save
             </Button>
           </Toolbar>
