@@ -109816,7 +109816,7 @@ var Transition = react__WEBPACK_IMPORTED_MODULE_0___default.a.forwardRef(functio
     ref: ref
   }, props));
 });
-function NewTaskForm() {
+function NewTaskForm(props) {
   var classes = useStyles();
 
   var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(false),
@@ -109824,12 +109824,15 @@ function NewTaskForm() {
       open = _React$useState2[0],
       setOpen = _React$useState2[1];
 
+  var addTask = props.handleAdd;
+
   var handleClickOpen = function handleClickOpen() {
     setOpen(true);
   };
 
   var handleClose = function handleClose() {
     setOpen(false);
+    addTask();
   };
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -111633,17 +111636,10 @@ function (_Component) {
   }, {
     key: "handleAdd",
     value: function handleAdd() {
-      var task = {
-        user_id: 1,
-        title: 'a',
-        due_to: '2019-10-27',
-        is_completed: 0
-      };
-      axios.post('/api/tasks/', task);
-      var tasks = [task].concat(_toConsumableArray(this.state.tasks));
-      this.setState({
-        tasks: tasks
-      });
+      console.log("addeu");
+      var task = {};
+      axios.post('/api/tasks', task); //const tasks = [task, ...this.state.tasks];
+      //this.setState({ tasks: tasks });
     }
   }, {
     key: "handleUpdate",
@@ -111685,7 +111681,9 @@ function (_Component) {
         tasks: this.state.tasks,
         handleUpdate: this.handleUpdate,
         date: this.state.date
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Tasks_NewTaskForm__WEBPACK_IMPORTED_MODULE_4__["default"], null));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Tasks_NewTaskForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        handleAdd: this.handleAdd
+      }));
     }
   }]);
 

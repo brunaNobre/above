@@ -27,9 +27,10 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function NewTaskForm() {
+export default function NewTaskForm(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const addTask = props.handleAdd;
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -37,6 +38,7 @@ export default function NewTaskForm() {
 
   const handleClose = () => {
     setOpen(false);
+    addTask()
   };
 
   return (

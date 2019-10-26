@@ -78,10 +78,11 @@ class Tasks extends Component {
     }
 
     handleAdd () {
-        const task = { user_id: 1, title: 'a', due_to: '2019-10-27', is_completed: 0 };
-        axios.post('/api/tasks/', task);
-        const tasks = [task, ...this.state.tasks];
-        this.setState({ tasks: tasks });
+        console.log("addeu")
+        const task = {};
+        axios.post('/api/tasks', task);
+        //const tasks = [task, ...this.state.tasks];
+        //this.setState({ tasks: tasks });
     };
 
 
@@ -121,7 +122,7 @@ class Tasks extends Component {
                 tasks={this.state.tasks} 
                 handleUpdate={this.handleUpdate}
                 date={this.state.date}/>
-                <NewTaskForm />
+                <NewTaskForm handleAdd={this.handleAdd}/>
             </div>
         )
     }
