@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import TaskDate from './TaskDate'
-
+import sunSign from '../sunSign'
 
 class TasksHeader extends Component {
     render() {
@@ -13,7 +13,7 @@ class TasksHeader extends Component {
                 backToPresent={this.props.backToPresent}
                 />
 
-                <h4 className="sun-sign-of-day">Virgem</h4>
+                <h4 className="sun-sign-of-day">{sunSign(this.props.date)}</h4>
                 <div className="transit-changes">
                     <img src=""></img>
                     <img src=""></img>

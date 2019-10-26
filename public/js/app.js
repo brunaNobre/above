@@ -108690,6 +108690,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _TaskDate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TaskDate */ "./resources/js/components/Tasks/TaskDate.js");
+/* harmony import */ var _sunSign__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../sunSign */ "./resources/js/components/sunSign.js");
 function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
 
 function _typeof(obj) {
@@ -108778,6 +108779,7 @@ function _setPrototypeOf(o, p) {
 
 
 
+
 var TasksHeader =
 /*#__PURE__*/
 function (_Component) {
@@ -108801,7 +108803,7 @@ function (_Component) {
         backToPresent: this.props.backToPresent
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
         className: "sun-sign-of-day"
-      }, "Virgem"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, Object(_sunSign__WEBPACK_IMPORTED_MODULE_2__["default"])(this.props.date)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "transit-changes"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: ""
@@ -109350,6 +109352,140 @@ function AboveSideMenu() {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (AboveSideMenu);
+
+/***/ }),
+
+/***/ "./resources/js/components/sunSign.js":
+/*!********************************************!*\
+  !*** ./resources/js/components/sunSign.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return sunSign; });
+function sunSign(date) {
+  var sign = "";
+  var splited = date.split("de");
+  var day = Number(splited[0]);
+  var month = splited[1].trim();
+
+  switch (month) {
+    case "Março":
+      if (day >= 21) {
+        sign = "Áries";
+      } else {
+        sign = "Peixes";
+      }
+
+      break;
+
+    case "Abril":
+      if (day >= 20) {
+        sign = "Touro";
+      } else {
+        sign = "Áries";
+      }
+
+      break;
+
+    case "Maio":
+      if (day >= 21) {
+        sign = "Gêmeos";
+      } else {
+        sign = "Touro";
+      }
+
+      break;
+
+    case "Junho":
+      if (day >= 22) {
+        sign = "Câncer";
+      } else {
+        sign = "Gêmeos";
+      }
+
+      break;
+
+    case "Julho":
+      if (day >= 23) {
+        sign = "Leão";
+      } else {
+        sign = "Câncer";
+      }
+
+      break;
+
+    case "Agosto":
+      if (day >= 23) {
+        sign = "Virgem";
+      } else {
+        sign = "Leão";
+      }
+
+      break;
+
+    case "Setembro":
+      if (day >= 23) {
+        sign = "Libra";
+      } else {
+        sign = "Virgem";
+      }
+
+      break;
+
+    case "Outubro":
+      if (day >= 23) {
+        sign = "Escorpião";
+      } else {
+        sign = "Libra";
+      }
+
+      break;
+
+    case "Novembro":
+      if (day >= 22) {
+        sign = "Sagitário";
+      } else {
+        sign = "Escorpião";
+      }
+
+      break;
+
+    case "Dezembro":
+      if (day >= 22) {
+        sign = "Capricórnio";
+      } else {
+        sign = "Sagitário";
+      }
+
+      break;
+
+    case "Janeiro":
+      if (day >= 20) {
+        sign = "Aquário";
+      } else {
+        sign = "Capricórnio";
+      }
+
+      break;
+
+    case "Fevereiro":
+      if (day >= 19) {
+        sign = "Peixes";
+      } else {
+        sign = "Aquário";
+      }
+
+      break;
+
+    default:
+      break;
+  }
+
+  return sign;
+}
 
 /***/ }),
 
