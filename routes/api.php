@@ -21,7 +21,7 @@ use App\Task;
 
 // middleware('auth:api')->
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::get('/user', function (Request $request) {
     return $request->user();
 });
 
@@ -63,8 +63,8 @@ Route::put('tasks/{id}', function(Request $request, $id) {
 
 Route::post('/tasks', function(Request $request) {
 
+    return Task::create($request->all());
 
-    return $request;
 
 });
 
