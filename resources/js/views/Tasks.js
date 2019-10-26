@@ -13,6 +13,10 @@ class Tasks extends Component {
             date: moment().locale('pt-br').format('LL'),
             daysForward: 0,
             daysBackward: 0,
+            newTask: {
+                title: "",
+                due_to: ""
+            }
         }
 
         this.handleUpdate = this.handleUpdate.bind(this)
@@ -20,6 +24,8 @@ class Tasks extends Component {
         this.nextDay = this.nextDay.bind(this)
         this.prevDay = this.prevDay.bind(this)
         this.backToPresent = this.backToPresent.bind(this)
+        this.sendInputValue = this.sendInputValue.bind(this)
+
 
     }
 
@@ -77,13 +83,21 @@ class Tasks extends Component {
 
     }
 
-    handleAdd () {
-        console.log("addeu")
-        const task = {};
+    handleAdd (task) {
         axios.post('/api/tasks', task);
-        //const tasks = [task, ...this.state.tasks];
-        //this.setState({ tasks: tasks });
+        axios.get(`/api/tasks`)
+        .then(res => {
+           this.setState({
+               tasks: res.data
+              })
+        }) 
     };
+
+    sendInputValue (key, newValue) {
+        this.setState((state) => state.newTask[key] = newValue)
+    }
+
+   
 
 
      handleUpdate (task) {
@@ -105,6 +119,10 @@ class Tasks extends Component {
 
     render() {
 
+        console.log("this.state.newtask.title: " +this.state.newTask.title)
+        console.log("this.state.newtask.due_to: " +this.state.newTask.due_to)
+
+
         return (
             <div className="tasks-view">
                 <TasksHeader 
@@ -122,7 +140,10 @@ class Tasks extends Component {
                 tasks={this.state.tasks} 
                 handleUpdate={this.handleUpdate}
                 date={this.state.date}/>
-                <NewTaskForm handleAdd={this.handleAdd}/>
+                <NewTaskForm 
+                newTask={this.state.newTask} 
+                sendInputValue={this.sendInputValue}
+                />
             </div>
         )
     }

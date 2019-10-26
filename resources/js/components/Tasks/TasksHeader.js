@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import TaskDate from './TaskDate'
-import sunSign from '../sunSign'
+import sunSign from '../../utils/sunSign'
 
 class TasksHeader extends Component {
     render() {

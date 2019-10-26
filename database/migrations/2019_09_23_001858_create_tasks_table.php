@@ -18,7 +18,7 @@ class CreateTasksTable extends Migration
             $table->bigInteger('user_id');
             $table->string('title');
             $table->date('due_to');
-            $table->boolean('is_completed');
+            $table->boolean('is_completed')->default(0);
             $table->timestamps();
         });
     }

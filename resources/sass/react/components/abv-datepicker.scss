@@ -1,0 +1,27 @@
+.MuiPickersToolbar-toolbar, .MuiPickersDay-daySelected {
+    background-color: #8344E0 !important;
+    color: white !important;
+    
+}
+
+.MuiButton-textPrimary {
+    color: #8344E0 !important;
+}
+
+.MuiPickersDay-current  {
+    span {
+        p {
+            color: #8344E0; 
+
+        }
+    }
+}
+
+.MuiPickersDay-daySelected {
+    span {
+        p {
+            color: white !important; 
+
+        }
+    }
+}

@@ -12,7 +12,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import DoneIcon from '@material-ui/icons/Done';
-import formatMonth from './formatMonth'
+import formatMonth from '../../utils/formatMonth'
 
 
 const useStyles = makeStyles(theme => ({

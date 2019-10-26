@@ -3,7 +3,6 @@
         text-decoration: line-through;
     }
 
-   
 
     .new-task-button {
         border-color: #8344E0 !important;
@@ -40,5 +39,17 @@
     }
 
     
+}
+
+.MuiFormControl-root {
+    .MuiInput-underline {
+       &:after {
+        border-bottom: 2px solid #8344E0 !important;
+       }
+    }
+}
+
+.MuiFormLabel-root.Mui-focused,  {
+    color: #8344E0 !important;
 }
 

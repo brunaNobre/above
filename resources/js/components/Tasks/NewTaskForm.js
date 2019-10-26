@@ -12,6 +12,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
+import NewTaskFields from './NewTaskFields'
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -31,6 +32,10 @@ export default function NewTaskForm(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const addTask = props.handleAdd;
+  const newTask = {
+    'title': '',
+    'due_to': ''
+  }
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -38,8 +43,15 @@ export default function NewTaskForm(props) {
 
   const handleClose = () => {
     setOpen(false);
-    addTask()
   };
+
+  const handleCloseAndSend = () => {
+    setOpen(false);
+    addTask(newTask)
+  };
+
+  
+
 
   return (
     <div>
@@ -55,20 +67,17 @@ export default function NewTaskForm(props) {
             <Typography variant="h6" className={classes.title}>
               Nova tarefa
             </Typography>
-            <Button color="inherit" onClick={handleClose}>
+            <Button color="inherit" onClick={handleCloseAndSend}>
               save
             </Button>
           </Toolbar>
         </AppBar>
-        <List>
-          <ListItem button>
-            <ListItemText primary="Phone ringtone" secondary="Titania" />
-          </ListItem>
-          <Divider />
-          <ListItem button>
-            <ListItemText primary="Default notification ringtone" secondary="Tethys" />
-          </ListItem>
-        </List>
+        
+        <NewTaskFields 
+        newTask={props.newTask}
+        sendInputValue={props.sendInputValue}
+         />
+
       </Dialog>
     </div>
   );

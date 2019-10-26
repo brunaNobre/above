@@ -10,7 +10,7 @@ import DraftsIcon from '@material-ui/icons/Drafts';
 import Radio from '@material-ui/core/Radio';
 import color from '@material-ui/core/colors/red';
 import { func } from 'prop-types';
-import formatMonth from './formatMonth'
+import formatMonth from '../../utils/formatMonth'
 
 const useStyles = makeStyles(theme => ({
   root: {

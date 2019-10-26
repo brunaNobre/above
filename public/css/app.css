@@ -11192,6 +11192,24 @@ body .places .m-b-md {
   }
 }
 
+.MuiPickersToolbar-toolbar,
+.MuiPickersDay-daySelected {
+  background-color: #8344E0 !important;
+  color: white !important;
+}
+
+.MuiButton-textPrimary {
+  color: #8344E0 !important;
+}
+
+.MuiPickersDay-current span p {
+  color: #8344E0;
+}
+
+.MuiPickersDay-daySelected span p {
+  color: white !important;
+}
+
 .planets-view .MuiCard-root {
   margin-top: 3vw;
   margin-left: auto;
@@ -11282,6 +11300,14 @@ body .places .m-b-md {
   .tasks-view .new-task-button {
     position: relative;
   }
+}
+
+.MuiFormControl-root .MuiInput-underline:after {
+  border-bottom: 2px solid #8344E0 !important;
+}
+
+.MuiFormLabel-root.Mui-focused {
+  color: #8344E0 !important;
 }
 
 .moons-view {
