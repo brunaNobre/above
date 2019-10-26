@@ -11257,8 +11257,8 @@ body .places .m-b-md {
   color: white;
   background-color: #8344E0;
   margin-top: 3%;
-  left: 29%;
-  width: 40%;
+  left: 28%;
+  width: 50%;
   font-size: 1rem;
   position: fixed;
   bottom: 10%;
@@ -11277,6 +11277,10 @@ body .places .m-b-md {
   .tasks-view {
     width: 50%;
     margin-left: 50%;
+  }
+
+  .tasks-view .new-task-button {
+    position: relative;
   }
 }
 

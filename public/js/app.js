@@ -110171,7 +110171,7 @@ function TasksList(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_List__WEBPACK_IMPORTED_MODULE_2__["default"], {
     component: "nav",
     "aria-label": "main mailbox folders"
-  }, listItems), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_6__["default"], null));
+  }, listItems));
 }
 
 /***/ }),

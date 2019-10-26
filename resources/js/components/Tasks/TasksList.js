@@ -61,7 +61,6 @@ export default function TasksList(props) {
       <List component="nav" aria-label="main mailbox folders">
       {listItems}
       </List>
-      <Divider />
      
     </div>
   );

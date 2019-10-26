@@ -64,7 +64,7 @@ Route::put('tasks/{id}', function(Request $request, $id) {
 Route::post('/tasks', function(Request $request) {
 
 
-    return $request->user_id;
+    return $request;
 
 });
 
