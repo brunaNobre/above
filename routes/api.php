@@ -61,6 +61,14 @@ Route::put('tasks/{id}', function(Request $request, $id) {
 });
 
 
+Route::post('/tasks', function(Request $request) {
+    return Task::create($request->all);
+
+});
+
+
+
+
 Route::middleware('auth:api')->get('/charts', function () {
 
     $charts = Chart::all();

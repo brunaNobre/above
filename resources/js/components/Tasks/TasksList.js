@@ -28,6 +28,7 @@ export default function TasksList(props) {
   const classes = useStyles();
   const tasksList = props.tasks;
   const date = props.date;
+  let toDo = 0;
 
  
 
@@ -40,6 +41,7 @@ export default function TasksList(props) {
     const taskDueTo = day+ " de "+ formatMonth(month) + " de "+ year;
 
     if(!task.is_completed && (taskDueTo == date)) {
+      toDo = toDo + 1;
        return (
         <ListItem key={task.id} >
           <Radio style={{color:"gray"}} checked={!!task.is_completed} onClick={() => {props.handleUpdate(task)}}/>
@@ -52,11 +54,12 @@ export default function TasksList(props) {
    
   });  
 
+
   return (
 
     <div className={classes.root}>
       <List component="nav" aria-label="main mailbox folders">
-        { listItems }
+      {listItems}
       </List>
       <Divider />
      

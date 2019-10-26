@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import TasksHeader from '../components/Tasks/TasksHeader'
 import TasksList from '../components/Tasks/TasksList'
 import CompletedTasksPanel from '../components/Tasks/CompletedTasksPanel'
+import NewTaskForm from "../components/Tasks/NewTaskForm"
 import moment from 'moment'
 
 class Tasks extends Component {
@@ -15,6 +16,7 @@ class Tasks extends Component {
         }
 
         this.handleUpdate = this.handleUpdate.bind(this)
+        this.handleAdd = this.handleAdd.bind(this)
         this.nextDay = this.nextDay.bind(this)
         this.prevDay = this.prevDay.bind(this)
         this.backToPresent = this.backToPresent.bind(this)
@@ -35,7 +37,11 @@ class Tasks extends Component {
 
 
     backToPresent() {
-        this.setState({date: moment().locale('pt-br').format('LL')})
+        this.setState({
+            date: moment().locale('pt-br').format('LL'),
+            daysForward: 0,
+            daysBackward: 0,
+    })
     }
 
 
@@ -70,6 +76,13 @@ class Tasks extends Component {
         }
 
     }
+
+    handleAdd () {
+        const task = { user_id: 1, title: 'a', due_to: '2019-10-27', is_completed: 0 };
+        axios.post('/api/tasks/', task);
+        const tasks = [task, ...this.state.tasks];
+        this.setState({ tasks: tasks });
+    };
 
 
      handleUpdate (task) {
@@ -108,6 +121,7 @@ class Tasks extends Component {
                 tasks={this.state.tasks} 
                 handleUpdate={this.handleUpdate}
                 date={this.state.date}/>
+                <NewTaskForm />
             </div>
         )
     }

@@ -52,29 +52,31 @@ export default function CompletedTasksPanel(props) {
       </ListItem>
     )
   }
+});  
+
+const hidden = (count == 0) ? " hidden" : "";
+
+    return (
     
+      <div className={classes.root +""+ hidden}>
+        <ExpansionPanel>
+          <ExpansionPanelSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography className={classes.heading}>Concluídas ({count})</Typography>
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <List>
+              { listItems }       
+            </List>
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
+   
+      </div>
+    );
+  
 
-    
 
-  });  
-
-  return (
-    <div className={classes.root}>
-      <ExpansionPanel>
-        <ExpansionPanelSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography className={classes.heading}>Concluídas ({count})</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <List>
-            { listItems }       
-          </List>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
- 
-    </div>
-  );
 }
