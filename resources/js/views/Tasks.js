@@ -5,6 +5,7 @@ import CompletedTasksPanel from '../components/Tasks/CompletedTasksPanel'
 import NewTaskForm from "../components/Tasks/NewTaskForm"
 import moment from 'moment'
 import formatDate from '../utils/formatDate'
+import formatMonth from '../utils/formatMonth'
 import TasksListDatePicker from '../components/Tasks/TasksListDatePicker'
 
 
@@ -35,6 +36,7 @@ class Tasks extends Component {
         this.openTaskModal = this.openTaskModal.bind(this)
         this.closeTaskModal = this.closeTaskModal.bind(this)
         this.setOpenModalState = this.setOpenModalState.bind(this)
+        this.handleDatePick = this.handleDatePick.bind(this)
 
 
     }
@@ -176,6 +178,16 @@ class Tasks extends Component {
     this.setOpenModalState ();  
    }
 
+   handleDatePick(date) {
+    let splited = date.split("-");
+    let day = Number(splited[2]);
+    let month = splited[1].trim();
+    let year = splited[0].trim();
+    month = formatMonth(month);
+
+    this.setState({date: `${day} de ${month} de ${year}`});
+
+   }
     
 
 
@@ -208,7 +220,10 @@ class Tasks extends Component {
                 sendInputValue={this.sendInputValue}
                 handleAdd={this.handleAdd}
                 />
-                <TasksListDatePicker />
+                <TasksListDatePicker 
+                date={this.state.date}
+                handleDatePick={this.handleDatePick}
+                />
 
                 
             </div>
