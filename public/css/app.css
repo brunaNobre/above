@@ -11291,6 +11291,15 @@ body .places .m-b-md {
   background-color: #8344E0 !important;
 }
 
+.new-task-form-sunsign {
+  margin-left: 8px;
+  margin-top: 8px;
+}
+
+.new-task-form-sunsign span {
+  color: #8344E0;
+}
+
 @media (min-width: 651px) {
   .tasks-view {
     width: 50%;
