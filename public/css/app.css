@@ -11270,6 +11270,10 @@ body .places .m-b-md {
   text-decoration: line-through;
 }
 
+.tasks-view .incompleted-task-item {
+  cursor: pointer;
+}
+
 .tasks-view .new-task-button {
   border-color: #8344E0 !important;
   color: white;
@@ -11335,6 +11339,38 @@ body .places .m-b-md {
 
 .MuiFormLabel-root.Mui-focused {
   color: #8344E0 !important;
+}
+
+.see-task-dialog .see-task-close {
+  position: absolute;
+  right: 2%;
+  top: 5%;
+  cursor: pointer;
+  color: #281546;
+}
+
+.see-task-dialog .see-task-heading {
+  color: #8344E0;
+  padding: 5%;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+}
+
+.see-task-dialog .see-task-heading + .MuiDialogTitle-root {
+  padding: 10px 70px 80px 70px;
+}
+
+.see-task-dialog h2 {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+}
+
+.see-task-dialog .see-task-delete {
+  position: absolute;
+  bottom: 8%;
+  right: 3%;
+  color: gray;
+  cursor: pointer;
 }
 
 .moons-view {

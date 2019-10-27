@@ -3,6 +3,10 @@
         text-decoration: line-through;
     }
 
+    .incompleted-task-item {
+        cursor: pointer;
+    }
+
 
     .new-task-button {
         border-color: #8344E0 !important;
@@ -86,3 +90,40 @@
     color: #8344E0 !important;
 }
 
+
+.see-task-dialog {
+    .see-task-close {
+        position: absolute;
+        right: 2%;
+        top: 5%;
+        cursor: pointer;
+        color: rgb(40, 21, 70);
+    }
+
+    .see-task-heading {
+        color: #8344E0;
+        padding: 5%;
+        font-family: Roboto, sans-serif;
+        font-weight: 400;
+    }
+
+
+    .see-task-heading + .MuiDialogTitle-root {
+        padding: 10px 70px 80px 70px;
+        
+    }
+
+    h2 {
+        font-family: Roboto, sans-serif;
+        font-weight: 400;
+    }
+
+    .see-task-delete {
+        position: absolute;
+        bottom: 8%;
+        right: 3%;
+        color: gray;
+        cursor: pointer;
+
+    }
+}

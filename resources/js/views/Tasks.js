@@ -8,6 +8,7 @@ import formatDate from '../utils/formatDate'
 import TasksListDatePicker from '../components/Tasks/TasksListDatePicker'
 
 
+
 class Tasks extends Component {
     constructor() {
         super()
@@ -21,14 +22,19 @@ class Tasks extends Component {
                 title: "",
                 due_to: formatDate(new Date().toLocaleDateString())
             },
+            taskModalOpen: {open: false}
         }
 
         this.handleUpdate = this.handleUpdate.bind(this)
         this.handleAdd = this.handleAdd.bind(this)
+        this.handleDelete = this.handleDelete.bind(this)
         this.nextDay = this.nextDay.bind(this)
         this.prevDay = this.prevDay.bind(this)
         this.backToPresent = this.backToPresent.bind(this)
         this.sendInputValue = this.sendInputValue.bind(this)
+        this.openTaskModal = this.openTaskModal.bind(this)
+        this.closeTaskModal = this.closeTaskModal.bind(this)
+        this.setOpenModalState = this.setOpenModalState.bind(this)
 
 
     }
@@ -38,12 +44,40 @@ class Tasks extends Component {
     componentDidMount() {
         axios.get(`/api/tasks`)
           .then(res => {
-             this.setState({
-                 tasks: res.data,
-                })
-          })   
-                
+            this.setState({
+                tasks: res.data,
+            })
+            this.setOpenModalState();
+          }) 
+        }
+
+      
+
+
+    setOpenModalState () {
+        let obj = {};
+
+            this.state.tasks.forEach((task) => {
+                let key_name = "open_"+task.id;
+                obj[key_name] = false;
+            });  
+                  
+            this.setState({taskModalOpen: obj});  
+    }   
+
+
+    openTaskModal (id) {
+        let key = "open_"+id;
+        let taskModalOpen = {...this.state.taskModalOpen}
+        taskModalOpen[key] = true;
+        this.setState({taskModalOpen: taskModalOpen })
     }
+
+    closeTaskModal (id) {
+        let key = "open_"+id;
+        let taskModalOpen = {...this.state.taskModalOpen}
+        taskModalOpen[key] = false;
+        this.setState({taskModalOpen: taskModalOpen })    }
 
 
     backToPresent() {
@@ -109,7 +143,7 @@ class Tasks extends Component {
 
 
     sendInputValue (key, newValue) {
-        this.setState((state) => state.newTask[key] = newValue)
+        this.setState((state) => state.newTask[key] = newValue);
     }
 
    
@@ -127,13 +161,25 @@ class Tasks extends Component {
 
             this.setState({tasks: tasks})
         })
-       
-        
-    };
+     };
+     
+
+   handleDelete(id) {
+    axios.delete('/api/tasks/' + id);
+    axios.get(`/api/tasks`)
+            .then(res => {
+            this.setState({
+                 tasks: res.data
+                 })
+            });
+    this.closeTaskModal(id);
+    this.setOpenModalState ();  
+   }
+
+    
 
 
-    render() {
-
+    render() {    
         return (
             <div className="tasks-view">
                 <TasksHeader 
@@ -142,10 +188,16 @@ class Tasks extends Component {
                 prevDay={this.prevDay}
                  backToPresent={this.backToPresent}
                  />
+
+                 
                 <TasksList 
                 tasks={this.state.tasks}
                  handleUpdate={this.handleUpdate}
                  date={this.state.date}
+                 open={this.state.taskModalOpen}
+                 openTaskModal={this.openTaskModal}
+                 closeTaskModal={this.closeTaskModal}
+                 handleDelete={this.handleDelete}
                  />
                 <CompletedTasksPanel 
                 tasks={this.state.tasks} 
@@ -157,6 +209,8 @@ class Tasks extends Component {
                 handleAdd={this.handleAdd}
                 />
                 <TasksListDatePicker />
+
+                
             </div>
         )
     }
