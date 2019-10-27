@@ -106,6 +106,8 @@ class Tasks extends Component {
                 date: moment().locale('pt-br').add((this.state.daysForward) +1, 'days').format('LL')
             })
         }
+
+        
     }
 
 
@@ -121,6 +123,7 @@ class Tasks extends Component {
                 date: moment().locale('pt-br').subtract((this.state.daysBackward) + 1, 'days').format('LL')
             })
         }
+
 
     }
 
