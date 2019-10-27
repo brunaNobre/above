@@ -51,9 +51,9 @@ export default function TasksList(props) {
     const year = splited[0];
     const month = splited[1];
     const day = splited[2];
+    
+    
     const taskDueTo = day+ " de "+ formatMonth(month) + " de "+ year;
-
-
 
     if(!task.is_completed && (taskDueTo == date)) {
       toDo = toDo + 1;

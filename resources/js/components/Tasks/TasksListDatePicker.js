@@ -8,6 +8,7 @@ import {
   KeyboardDatePicker,
 } from '@material-ui/pickers';
 import formatDate from '../../utils/formatDate'
+import moment from 'moment'
 
 export default function TasksListDatePicker(props) {
   // The first commit of Material-UI
@@ -15,7 +16,8 @@ export default function TasksListDatePicker(props) {
 
   const handleDateChange = date => {
     setSelectedDate(date);
-    //props.sendInputValue('due_to', formatDate(date.toLocaleDateString()));
+    props.handleDatePick(formatDate(date.toLocaleDateString()));
+    
   };
 
   return (
