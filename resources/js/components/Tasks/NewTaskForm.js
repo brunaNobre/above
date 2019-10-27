@@ -48,7 +48,6 @@ export default function NewTaskForm(props) {
     props.handleAdd(props.newTask)
   };
 
-  
 
 
   return (
@@ -76,7 +75,7 @@ export default function NewTaskForm(props) {
         sendInputValue={props.sendInputValue}
          />
 
-         <p className="new-task-form-sunsign">O <span>Sol</span> nesta data está em <span>Virgem</span></p>
+         <p className="new-task-form-sunsign">Nesta data o <span>Sol</span> está em <span>{sunSign(props.newTask.due_to)}</span></p>
 
       </Dialog>
     </div>
