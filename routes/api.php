@@ -47,7 +47,7 @@ Route::get('/signs', function () {
 
 // TASKS
 
-Route::get('/tasks', function () {
+Route::middleware('auth:api')->get('/tasks', function () {
     $tasks = Task::all();
     return $tasks;
 });
