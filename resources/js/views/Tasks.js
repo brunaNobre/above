@@ -5,6 +5,8 @@ import CompletedTasksPanel from '../components/Tasks/CompletedTasksPanel'
 import NewTaskForm from "../components/Tasks/NewTaskForm"
 import moment from 'moment'
 import formatDate from '../utils/formatDate'
+import TasksListDatePicker from '../components/Tasks/TasksListDatePicker'
+
 
 class Tasks extends Component {
     constructor() {
@@ -154,6 +156,7 @@ class Tasks extends Component {
                 sendInputValue={this.sendInputValue}
                 handleAdd={this.handleAdd}
                 />
+                <TasksListDatePicker />
             </div>
         )
     }

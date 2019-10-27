@@ -11287,6 +11287,24 @@ body .places .m-b-md {
   border-color: #b490eb !important;
 }
 
+.tasks-view #date-picker-dialog {
+  display: none;
+}
+
+.tasks-view #date-picker-dialog + div button {
+  position: fixed;
+  bottom: 10%;
+  right: 3%;
+}
+
+.tasks-view .MuiInput-underline:before {
+  border: none;
+}
+
+.tasks-view .MuiInput-underline:hover:before {
+  border: none !important;
+}
+
 .newtask-header {
   background-color: #8344E0 !important;
 }

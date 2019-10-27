@@ -21,6 +21,31 @@
 
         }
       }
+
+      #date-picker-dialog {
+          display: none;
+      }
+
+      #date-picker-dialog + div {
+          button {
+            position: fixed;
+            bottom: 10%;
+            right: 3%;
+          }
+      }
+    
+
+      .MuiInput-underline {
+          &:before {
+            border: none;
+          }
+
+          &:hover {
+              &:before {
+                  border: none !important;
+              }
+          }
+      }
 }
 
 .newtask-header {
