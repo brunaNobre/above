@@ -3,6 +3,10 @@
         text-decoration: line-through;
     }
 
+    .incompleted-task-item {
+        cursor: pointer;
+    }
+
 
     .new-task-button {
         border-color: #8344E0 !important;
@@ -21,10 +25,43 @@
 
         }
       }
+
+      #date-picker-dialog {
+          display: none;
+      }
+
+      #date-picker-dialog + div {
+          button {
+            position: fixed;
+            bottom: 10%;
+            right: 3%;
+          }
+      }
+    
+
+      .MuiInput-underline {
+          &:before {
+            border: none;
+          }
+
+          &:hover {
+              &:before {
+                  border: none !important;
+              }
+          }
+      }
 }
 
 .newtask-header {
     background-color: #8344E0 !important;
+}
+
+.new-task-form-sunsign {
+    margin-left: 8px;
+    margin-top: 8px;
+    span {
+        color: #8344E0;
+    }
 }
 
 
@@ -53,3 +90,40 @@
     color: #8344E0 !important;
 }
 
+
+.see-task-dialog {
+    .see-task-close {
+        position: absolute;
+        right: 2%;
+        top: 5%;
+        cursor: pointer;
+        color: rgb(40, 21, 70);
+    }
+
+    .see-task-heading {
+        color: #8344E0;
+        padding: 5%;
+        font-family: Roboto, sans-serif;
+        font-weight: 400;
+    }
+
+
+    .see-task-heading + .MuiDialogTitle-root {
+        padding: 10px 70px 80px 70px;
+        
+    }
+
+    h2 {
+        font-family: Roboto, sans-serif;
+        font-weight: 400;
+    }
+
+    .see-task-delete {
+        position: absolute;
+        bottom: 8%;
+        right: 3%;
+        color: gray;
+        cursor: pointer;
+
+    }
+}

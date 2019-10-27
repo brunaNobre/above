@@ -48,27 +48,26 @@ Route::get('/signs', function () {
 // TASKS
 
 Route::get('/tasks', function () {
-
     $tasks = Task::all();
     return $tasks;
 });
 
+
 Route::put('tasks/{id}', function(Request $request, $id) {
     $tasks = Task::findOrFail($id);
     $tasks->update($request->all());
-
     return $tasks;
 });
 
 
 Route::post('/tasks', function(Request $request) {
-
     return Task::create($request->all());
-
-
 });
 
-
+Route::delete('tasks/{id}', function($id) {
+    Task::find($id)->delete();
+    return 204;
+});
 
 
 Route::middleware('auth:api')->get('/charts', function () {

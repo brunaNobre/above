@@ -13,6 +13,8 @@ import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import NewTaskFields from './NewTaskFields'
+import sunSign from '../../utils/sunSign'
+
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -46,7 +48,6 @@ export default function NewTaskForm(props) {
     props.handleAdd(props.newTask)
   };
 
-  
 
 
   return (
@@ -73,6 +74,8 @@ export default function NewTaskForm(props) {
         newTask={props.newTask}
         sendInputValue={props.sendInputValue}
          />
+
+         <p className="new-task-form-sunsign">Nesta data o <span>Sol</span> está em <span>{sunSign(props.newTask.due_to)}</span></p>
 
       </Dialog>
     </div>
