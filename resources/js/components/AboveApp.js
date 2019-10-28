@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom'
 
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Button from '@material-ui/core/Button';
 
 
 import AboveMainContent from './layouts/AboveMainContent'
@@ -24,6 +25,22 @@ import UserMood from '../views/UserMood'
 
 
 class AboveApp extends Component {
+  constructor() {
+    super()
+    this.state = {
+      user: {},
+    }
+  }
+
+  componentDidMount() {
+    axios.get('/api/user')
+    .then(res => {
+        this.setState({user: res.data});
+    });
+  }
+
+
+
   render () {
     return (
 
@@ -32,7 +49,9 @@ class AboveApp extends Component {
 
 
         <Router>
-          <AboveHeader />
+          <AboveHeader user={this.state.user}/>
+          
+
 
           <Switch>
             <Route exact path='/home' component={AboveMainContent}/>

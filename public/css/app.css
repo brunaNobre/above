@@ -10894,6 +10894,10 @@ body .places .m-b-md {
   text-decoration: none;
 }
 
+.logout-link {
+  color: black;
+}
+
 .abv-sidemenu-icon {
   margin-right: 15%;
 }

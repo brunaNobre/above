@@ -7,6 +7,7 @@ use App\Moon;
 use App\Planet;
 use App\Sign;
 use App\Task;
+use App\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +22,8 @@ use App\Task;
 
 // middleware('auth:api')->
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return auth()->user();
 });
 
 Route::get('/planets', function () {
@@ -53,18 +54,18 @@ Route::middleware('auth:api')->get('/tasks', function () {
 });
 
 
-Route::put('tasks/{id}', function(Request $request, $id) {
+Route::middleware('auth:api')->put('tasks/{id}', function(Request $request, $id) {
     $tasks = Task::findOrFail($id);
     $tasks->update($request->all());
     return $tasks;
 });
 
 
-Route::post('/tasks', function(Request $request) {
+Route::middleware('auth:api')->post('/tasks', function(Request $request) {
     return Task::create($request->all());
 });
 
-Route::delete('tasks/{id}', function($id) {
+Route::middleware('auth:api')->delete('tasks/{id}', function($id) {
     Task::find($id)->delete();
     return 204;
 });

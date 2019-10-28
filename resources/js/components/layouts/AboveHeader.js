@@ -12,7 +12,7 @@ import AbvUserProfile from '../AbvUserProfile/AbvUserProfile'
 
 
 
-function AboveHeader () {
+function AboveHeader (props) {
 
 
     return (
@@ -22,7 +22,7 @@ function AboveHeader () {
                 <AbvNavBar />
                 <AboveHeaderColorBar />
                 <AbvUserProfile />
-                <AboveSideMenu />
+                <AboveSideMenu user={props.user}/>
            </Toolbar>
         </AppBar>
     )
