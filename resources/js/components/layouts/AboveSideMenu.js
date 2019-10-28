@@ -20,7 +20,7 @@ import SignsIcon from '../../icons/SignsIcon'
 import AbvSideMenuHeader from '../AbvSideMenuHeader'
 
 
-function AboveSideMenu () {
+function AboveSideMenu (props) {
 
 
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -33,6 +33,9 @@ function AboveSideMenu () {
         setAnchorEl(null);
       };
 
+    const logout = () => {
+        axios.post('/logout'); 
+    }
      
 
 
@@ -50,7 +53,7 @@ function AboveSideMenu () {
             onClose={handleClose}
      
             >
-                <AbvSideMenuHeader />
+                <AbvSideMenuHeader user={props.user}/>
                 <MenuItem onClick={handleClose}><Link to="/home/tasks" className="abv-sidemenu-link" id="first-item"><AssignmentTurnedInIcon className="abv-sidemenu-icon" />Tarefas</Link></MenuItem>
                 <MenuItem onClick={handleClose}><Link to="/home/planets" className="abv-sidemenu-link"><PlanetsIcon />Planetas</Link></MenuItem>
                 <MenuItem onClick={handleClose}><Link to="/home/signs" className="abv-sidemenu-link"><SignsIcon />Signos</Link></MenuItem>
@@ -58,7 +61,9 @@ function AboveSideMenu () {
                 <MenuItem onClick={handleClose}><Link to="/home/natal-chart" className="abv-sidemenu-link"><NatalChartIcon />Mapa Astral</Link></MenuItem>
                 <MenuItem onClick={handleClose}><Link to="/home/user-mood" className="abv-sidemenu-link"><MoodIcon className="abv-sidemenu-icon" />Meu mood</Link></MenuItem>
                 <MenuItem onClick={handleClose}><Link to="/home/today-sky" className="abv-sidemenu-link">Céu de Hoje</Link></MenuItem>
-                <MenuItem onClick={handleClose} className="abv-sidemenu-link">Sair</MenuItem>
+                <MenuItem onClick={handleClose} className="abv-sidemenu-link">
+                    <a href="/home" onClick={logout} className="logout-link">Sair</a>
+                </MenuItem>
             </Menu>
         </div>
     )

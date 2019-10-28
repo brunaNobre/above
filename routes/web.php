@@ -51,7 +51,7 @@ Route::resource('admin/feellings', 'FeellingController');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::view('/home/{path?}', 'home');
+Route::view('/home/{path?}', 'home')->middleware('auth');
 
 
 

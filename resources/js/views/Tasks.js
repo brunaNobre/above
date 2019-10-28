@@ -6,6 +6,7 @@ import NewTaskForm from "../components/Tasks/NewTaskForm"
 import moment from 'moment'
 import formatDate from '../utils/formatDate'
 import formatMonth from '../utils/formatMonth'
+import daysFromNow from '../utils/daysFromNow'
 import TasksListDatePicker from '../components/Tasks/TasksListDatePicker'
 
 
@@ -53,8 +54,8 @@ class Tasks extends Component {
           }) 
         }
 
+     
       
-
 
     setOpenModalState () {
         let obj = {};
@@ -102,9 +103,11 @@ class Tasks extends Component {
         } else {
             this.setState({
                 daysForward: (this.state.daysForward + 1),
-                date: moment().locale('pt-br').add((this.state.daysForward) + 1, 'days').format('LL')
+                date: moment().locale('pt-br').add((this.state.daysForward) +1, 'days').format('LL')
             })
         }
+
+        
     }
 
 
@@ -120,6 +123,7 @@ class Tasks extends Component {
                 date: moment().locale('pt-br').subtract((this.state.daysBackward) + 1, 'days').format('LL')
             })
         }
+
 
     }
 
@@ -178,14 +182,38 @@ class Tasks extends Component {
     this.setOpenModalState ();  
    }
 
-   handleDatePick(date) {
-    let splited = date.split("-");
+   handleDatePick(date, pickedDate) {
+    let splited = pickedDate.split("-");
     let day = Number(splited[2]);
     let month = splited[1].trim();
     let year = splited[0].trim();
-    month = formatMonth(month);
 
-    this.setState({date: `${day} de ${month} de ${year}`});
+    let days = daysFromNow(date, pickedDate).days;
+    let isForward = daysFromNow(date, pickedDate).isForward;
+
+    let daysForward = isForward ? days : 0;
+    let daysBackward = isForward ? 0 : days;
+
+    let newDate;
+
+    if(isForward) {
+        newDate = moment().locale('pt-br').add((days), 'days').format('LL')
+    } else {
+        newDate = moment().locale('pt-br').subtract((days), 'days').format('LL')
+    }
+
+    this.setState({
+        date: newDate,
+        daysForward: daysForward,
+        daysBackward: daysBackward,
+    });
+
+
+
+    //date: day+ " de "+ formatMonth(month) + " de "+ year,
+
+
+    
 
    }
     
@@ -220,10 +248,7 @@ class Tasks extends Component {
                 sendInputValue={this.sendInputValue}
                 handleAdd={this.handleAdd}
                 />
-                <TasksListDatePicker 
-                date={this.state.date}
-                handleDatePick={this.handleDatePick}
-                />
+               
 
                 
             </div>

@@ -16,7 +16,7 @@ export default function TasksListDatePicker(props) {
 
   const handleDateChange = date => {
     setSelectedDate(date);
-    props.handleDatePick(formatDate(date.toLocaleDateString()));
+    props.handleDatePick(props.date,formatDate(date.toLocaleDateString()));
     
   };
 
