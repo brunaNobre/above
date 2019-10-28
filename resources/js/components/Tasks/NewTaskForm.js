@@ -65,7 +65,7 @@ export default function NewTaskForm(props) {
               Nova tarefa
             </Typography>
             <Button color="inherit" onClick={handleCloseAndSaveTask}>
-              save
+              salvar
             </Button>
           </Toolbar>
         </AppBar>
@@ -75,7 +75,7 @@ export default function NewTaskForm(props) {
         sendInputValue={props.sendInputValue}
          />
 
-         <p className="new-task-form-sunsign">Nesta data o <span>Sol</span> está em <span>{sunSign(props.newTask.due_to)}</span></p>
+         <p className="new-task-form-sunsign">Na data acima o <span>Sol</span> está em <span>{sunSign(props.newTask.due_to)}</span></p>
 
       </Dialog>
     </div>

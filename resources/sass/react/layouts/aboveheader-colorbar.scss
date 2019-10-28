@@ -1,7 +1,7 @@
 .aboveheader-colorbar {
     background-color: white;
     width: 50%;
-    height: 99%;
+    height: 100%;
     position: absolute;
     right: 0;
     z-index: -1;
@@ -9,8 +9,3 @@
    
 }
 
-@media (min-width: 1000px) {
-    .aboveheader-colorbar {
-        height: 100%;
-    }
-}

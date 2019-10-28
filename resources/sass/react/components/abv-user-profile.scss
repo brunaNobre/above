@@ -1,5 +1,5 @@
 .abv-user-profile {
-    width: 10vw;
+    width: 9vw;
     text-align: center;
     margin-top: 1%;
     margin-bottom: 1%;
@@ -16,9 +16,6 @@
 }
 
 @media (max-width: 650px) {
-    .aboveheader-colorbar + .abv-user-profile{
-        display: none;
-    }
 
     .abv-user-profile {
         width: 30vw;
