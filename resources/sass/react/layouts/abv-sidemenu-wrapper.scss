@@ -43,6 +43,10 @@
 
 .logout-link {
     color: black;
+    &:hover {
+        text-decoration: none;
+        color: black;
+    }
 }
 
 .abv-sidemenu-icon {

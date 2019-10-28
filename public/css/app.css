@@ -10898,6 +10898,11 @@ body .places .m-b-md {
   color: black;
 }
 
+.logout-link:hover {
+  text-decoration: none;
+  color: black;
+}
+
 .abv-sidemenu-icon {
   margin-right: 15%;
 }

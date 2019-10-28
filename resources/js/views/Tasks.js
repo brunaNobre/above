@@ -20,11 +20,12 @@ class Tasks extends Component {
             daysForward: 0,
             daysBackward: 0,
             newTask: {
-                user_id: 1,
+                user_id: 0,
                 title: "",
                 due_to: formatDate(new Date().toLocaleDateString())
             },
-            taskModalOpen: {open: false}
+            taskModalOpen: {open: false},
+            user: {},
         }
 
         this.handleUpdate = this.handleUpdate.bind(this)
@@ -52,6 +53,19 @@ class Tasks extends Component {
             })
             this.setOpenModalState();
           }) 
+
+          axios.get(`/api/user`)
+          .then(res => {
+            this.setState({
+                user: res.data,
+                newTask: {
+                    user_id: res.data.id,
+                    title: "",
+                    due_to: formatDate(new Date().toLocaleDateString())
+                },
+            })
+          })
+
         }
 
      
@@ -139,7 +153,7 @@ class Tasks extends Component {
 
             this.setState({
                 newTask: {
-                    user_id: 1,
+                    user_id: this.state.newTask.user_id,
                     title: "",
                     due_to: formatDate(new Date().toLocaleDateString())
                 }
@@ -207,19 +221,13 @@ class Tasks extends Component {
         daysForward: daysForward,
         daysBackward: daysBackward,
     });
-
-
-
     //date: day+ " de "+ formatMonth(month) + " de "+ year,
-
-
-    
 
    }
     
 
 
-    render() {    
+    render() { 
         return (
             <div className="tasks-view">
                 <TasksHeader 
@@ -238,6 +246,7 @@ class Tasks extends Component {
                  openTaskModal={this.openTaskModal}
                  closeTaskModal={this.closeTaskModal}
                  handleDelete={this.handleDelete}
+                 user={this.state.user}
                  />
                 <CompletedTasksPanel 
                 tasks={this.state.tasks} 

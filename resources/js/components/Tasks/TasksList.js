@@ -51,11 +51,11 @@ export default function TasksList(props) {
     const year = splited[0];
     const month = splited[1];
     const day = splited[2];
-    
+    const user_id = props.user.id;
     
     const taskDueTo = day+ " de "+ formatMonth(month) + " de "+ year;
 
-    if(!task.is_completed && (taskDueTo == date)) {
+    if(!task.is_completed && (taskDueTo == date) && (task.user_id == user_id)) {
       toDo = toDo + 1;
 
       let key = "open_"+task.id;
@@ -79,10 +79,7 @@ export default function TasksList(props) {
    
   });  
 
-  
-
   return (
-
     <div className={classes.root}>
       <List component="nav" aria-label="main mailbox folders">
       {listItems}
