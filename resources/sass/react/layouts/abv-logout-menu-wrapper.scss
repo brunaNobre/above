@@ -1,0 +1,60 @@
+.abv-logout-menu-wrapper {
+}
+
+.logout-menu {
+
+    .logout-user-email {
+        padding: 5%;
+        margin-left: 7%;
+        color: #666;
+        display: block;
+        font-size: 1.8vw;
+    }
+
+    .MuiPaper-root , .MuiMenu-paper {
+        top:10vw !important;
+        padding: 1% !important;
+       
+        ul {
+            padding-right: 20px;
+            li {
+                font-size: 1.8vw;
+            }
+        }
+    }
+
+    #logout-link {
+        color: black;
+        text-decoration: none;
+        margin-top: 30%;
+        font-weight: 300;
+        &:hover {
+            color: black;
+            text-decoration: none;
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .abv-logout-menu-wrapper {
+        .abv-user-profile {
+            display: none;
+        }
+    }
+
+    .abv-user-profile {
+        width: 30vw;
+    }
+
+
+   
+}
+
+
+@media (min-width: 900px) {
+    .logout-menu {
+        .MuiPaper-root , .MuiMenu-paper {
+            top:8vw !important;
+        }
+    }
+}

@@ -1,16 +1,15 @@
 import React from 'react' 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import CloseIcon from '@material-ui/icons/Close';
 
 
 import AboveSideMenu from './AboveSideMenu'
+import AbvLogoutMenu from './AbvLogoutMenu'
 
 import AbvLogo from '../AbvLogo'
 import AbvNavBar from '../AbvNavBar'
 import AboveHeaderColorBar from './AboveHeaderColorBar'
-import AbvUserProfile from '../AbvUserProfile/AbvUserProfile'
-
-
 
 function AboveHeader (props) {
 
@@ -21,9 +20,10 @@ function AboveHeader (props) {
                 <AbvLogo />
                 <AbvNavBar />
                 <AboveHeaderColorBar />
-                <AbvUserProfile />
                 <AboveSideMenu user={props.user}/>
+                <AbvLogoutMenu user={props.user}/>
            </Toolbar>
+
         </AppBar>
     )
 }

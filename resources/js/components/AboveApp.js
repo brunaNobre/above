@@ -28,14 +28,14 @@ class AboveApp extends Component {
   constructor() {
     super()
     this.state = {
-      user: {},
+      user: {}
     }
   }
 
   componentDidMount() {
     axios.get('/api/user')
     .then(res => {
-        this.setState({user: res.data});
+        this.setState({user: res.data})
     });
   }
 
@@ -49,8 +49,10 @@ class AboveApp extends Component {
 
 
         <Router>
-          <AboveHeader user={this.state.user}/>
-          
+          <AboveHeader 
+          user={this.state.user}
+          />
+
 
 
           <Switch>
@@ -59,7 +61,7 @@ class AboveApp extends Component {
             <Route path='/home/natal-chart' component={NatalChart}/>
             <Route path='/home/planets' component={Planets}/>
             <Route path='/home/signs' component={Signs}/>
-            <Route path='/home/tasks' component={Tasks}/>
+            <Route path='/home/tasks' component={Tasks} user={this.state.user}/>
             <Route path='/home/today-sky' component={TodaySky}/>
             <Route path='/home/user-mood' component={UserMood}/>
           </Switch>
