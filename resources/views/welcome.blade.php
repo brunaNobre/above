@@ -1,8 +1,11 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="pt-br">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
 
         <title>Above - Sua vida virginiane.</title>
 
@@ -120,10 +123,10 @@
                     @auth
                     <!--<a href="{{ url('/home') }}"></a>-->
                     @else
-                        <a class="login-link" href="{{ route('login') }}">Entrar</a>
+                        <a class="login-link" href="/login">Entrar</a>
 
                         @if (Route::has('register'))
-                            <a class="register-link" href="{{ route('register') }}">Começar</a>
+                            <a class="register-link" href="/register">Começar</a>
                         @endif
                     @endauth
                 </div>
