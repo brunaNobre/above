@@ -30,5 +30,7 @@ class AuthServiceProvider extends ServiceProvider
 
         Passport::cookie('custom_name');
 
+        Passport::loadKeysFrom('/secret-keys/oauth');
+
     }
 }
