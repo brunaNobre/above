@@ -13,7 +13,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:light,regular,bold|Arvo:regular,bold|Roboto:thin,light,regular,medium,bold,black" rel="stylesheet">
 
         <!-- Styles -->
-       <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+       <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
        
     </head>
     <body>
@@ -133,10 +133,10 @@
             <div id="map"></div>
          <!-- Scripts -->
 
-         <script src="{{ asset('js/places.js') }}" defer></script>
+         <script src="{{ secure_asset('js/places.js') }}" defer></script>
 
          <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCcGzYzYG1XCHItLqB3k2AOJzKu8RTvM3E&callback=initMap">
         </script>
-         <script src="{{ asset('js/app.js') }}" defer></script>
+         <script src="{{ secure_asset('js/app.js') }}" defer></script>
     </body>
 </html>
