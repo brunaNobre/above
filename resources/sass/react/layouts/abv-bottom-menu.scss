@@ -1,10 +1,10 @@
 .abv-bottom-menu-wrapper {
-    position: absolute;
+    position: fixed;
     width: 100%;
     bottom: 1%;
    
-    .makeStyles-root-88 {
-        width: 100%;
+    .abv-bottom-menu {
+        width: 100% !important;
     }
 
     .MuiBottomNavigationAction-root.Mui-selected {

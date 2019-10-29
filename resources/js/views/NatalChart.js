@@ -1,27 +1,68 @@
 import React, { Component } from 'react'
+import NewTaskDialog from '../components/layouts/NewTaskDialog'
+import formatDate from '../utils/formatDate'
 
 
 
 class NatalChart extends Component {
+    constructor() {
+        super()
+        this.state = {
+            newTask: {
+                user_id: 0,
+                title: "",
+                due_to: formatDate(new Date().toLocaleDateString())
+            }
+        }
 
-    calcChart() {
+        this.handleAdd = this.handleAdd.bind(this)    
+        this.sendInputValue = this.sendInputValue.bind(this)
+       
 
-var date = "19.05.1989";
-var hour = "18:00:01";
+    }
 
-var lat = -31.5365;
-var lng =  -52.2491;
+    componentDidMount() {
+        axios.get(`/api/user`)
+        .then(res => {
+          this.setState({
+              newTask: {
+                  user_id: res.data.id,
+                  title: "",
+                  due_to: formatDate(new Date().toLocaleDateString())
+              },
+          })
+        })
 
-var result = ephemeris.getAllPlanets(date + " " + hour, lng, lat, 0);
-    
-  
-console.log(result);
+      }
+
+      handleAdd (newTask) {
+        if(newTask.title) {
+            axios.post('/api/tasks', newTask);
+
+            this.setState({
+                newTask: {
+                    user_id: this.state.newTask.user_id,
+                    title: "",
+                    due_to: formatDate(new Date().toLocaleDateString())
+                }
+            }) 
+       }
+    };
+
+
+    sendInputValue (key, newValue) {
+        this.setState((state) => state.newTask[key] = newValue);
     }
 
     render() {
         return (
             <div>
                 <h1>Mapa Astral</h1>
+                <NewTaskDialog
+                newTask={this.state.newTask} 
+                sendInputValue={this.sendInputValue}
+                handleAdd={this.handleAdd}
+                />
 
             </div>
         )
