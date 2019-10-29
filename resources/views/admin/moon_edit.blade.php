@@ -13,6 +13,46 @@
 </header>
 
 
+
+        @if ($message = Session::get('success'))
+
+<div class="alert alert-success alert-block">
+
+    <button type="button" class="close" data-dismiss="alert">×</button>
+
+        <strong>{{ $message }}</strong>
+
+</div>
+
+<img src="images/uploaded{{ Session::get('image') }}">
+
+@endif
+
+
+
+@if (count($errors) > 0)
+
+    <div class="alert alert-danger">
+
+        <strong>Opa!</strong> Algo deu errado.
+
+        <ul>
+
+            @foreach ($errors->all() as $error)
+
+                <li>{{ $error }}</li>
+
+            @endforeach
+
+        </ul>
+
+    </div>
+
+@endif
+
+
+
+
 <div class="abv-card">
 <form class="abv-form-create" method="post" action="{{route('moons.update', $moon->id)}}">
 {!! method_field('put') !!}
@@ -42,7 +82,22 @@
 
 
         <button type="submit" class="abv-btn btn btn-primary">Enviar</button>        
-    </form>  
+    </form>
+
+    <form class="image-upload" action="{{ route('admin.moon.image')}}" method="POST" enctype="multipart/form-data">
+    {{ csrf_field() }}
+    
+    <input type="hidden" name="id" value="{{$moon->id}}">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="file" name="image" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <button type="submit" class="abv-btn btn btn-primary">Incluir imagem</button>
+                </div>
+            </div>
+        </form>  
         
 </div>
 @endsection

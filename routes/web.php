@@ -42,9 +42,15 @@ Route::post('admin/image-upload', 'ImageUploadController@imageUploadPost')->name
 
 Route::resource('admin/moons', 'MoonController');
 
+Route::post('admin/moon-upload', 'MoonController@image')->name('admin.moon.image');
+
 Route::resource('admin/planets', 'PlanetController');
 
+Route::post('admin/planet-upload', 'PlanetController@image')->name('admin.planet.image');
+
 Route::resource('admin/signs', 'SignController');
+
+Route::post('admin/sign-upload', 'SignController@image')->name('admin.sign.image');
 
 Route::resource('admin/users', 'UserController');
 

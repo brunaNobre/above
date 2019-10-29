@@ -42,6 +42,28 @@
   margin-bottom: 5%;
 }
 
+.abv-dashboard-container main .abv-card .abv-admin-send {
+  background-color: #6311de;
+  border-color: #6311de;
+  margin-bottom: 5%;
+  position: relative;
+  left: 84%;
+}
+
+.abv-dashboard-container main .abv-card .image-upload {
+  padding: 5%;
+}
+
+.abv-dashboard-container main .abv-card .image-upload button {
+  background-color: #6311de;
+  border-color: #6311de;
+}
+
+.abv-dashboard-container main .abv-card .image-upload button:hover {
+  background-color: #550ebe;
+  border-color: #550ebe;
+}
+
 .abv-dashboard-container main .abv-card table {
   font-weight: 300;
 }

@@ -40,6 +40,27 @@
             }
         }
 
+        .abv-admin-send {
+            background-color: #6311de;
+            border-color: #6311de;
+            margin-bottom: 5%;
+            position: relative;
+            left: 84%;
+        }
+
+        .image-upload {
+            padding: 5%;
+            button {
+                background-color: #6311de;
+                border-color: #6311de;
+
+                &:hover {
+                    background-color: #550ebe;
+                    border-color: #550ebe;
+                }
+            }
+        }
+
         table {
             font-weight: 300;
 
