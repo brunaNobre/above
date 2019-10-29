@@ -1,13 +1,35 @@
 import React from 'react'
 
-const MoonPhaseHeader = () => (
-    
-    <div className="abvr-moon-phase-header">
+function MoonPhaseHeader (props) {
 
-        <h1>Lua em Escorpião</h1>
-        <p>Fase Cheia</p>
+    let phase = "";
+
+    switch (props.phase) {
+        case "new":
+        phase = "Nova";
+        break;
+        case "waxing":
+        phase = "Crescente";
+        break;
+        case "full":
+        phase = "Cheia";
+        break;
+        default:
+        phase = "Minguante";
+        break;
+    }
+
+    return (
     
-    </div>
-)
+        <div className="abvr-moon-phase-header">
+    
+            <h1>Lua em Escorpião</h1>
+            <p>Fase {phase}</p>
+        
+        </div>
+    )
+}
+
+
 
 export default MoonPhaseHeader
