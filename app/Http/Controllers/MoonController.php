@@ -127,4 +127,22 @@ class MoonController extends Controller
                 ->with('status', $moon->phase . ' Excluída!');
         }
     }
+
+
+    public function image(Request $request) {
+        request()->validate([
+            'image' => 'required|image|mimes:png|max:2048',
+        ]);
+
+        $id = $request->id;
+
+        $imageName = $id.'.'.request()->image->getClientOriginalExtension();
+
+        request()->image->move(public_path('images/moons'), $imageName);
+
+        return back()
+            ->with('success','Imagem enviada com sucesso.')
+            ->with('image',$imageName);
+
+    }
 }

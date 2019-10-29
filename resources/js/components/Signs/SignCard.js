@@ -25,7 +25,7 @@ export default function SignCard(props) {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="/images/signs/aries.jpg"
+          image={props.image}
           title={props.name}
         />
         <CardContent>

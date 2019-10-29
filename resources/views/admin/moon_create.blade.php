@@ -34,12 +34,13 @@
                    required></textarea>
         </div>
         
-     
 
+       
 
-
-        <button type="submit" class="abv-btn btn btn-primary">Enviar</button>        
+        <button type="submit" class="abv-admin-send btn btn-primary">Enviar</button>        
     </form>  
+
+
         
 </div>
 @endsection

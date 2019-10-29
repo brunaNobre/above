@@ -21,8 +21,8 @@ class Signs extends Component {
 
     render() {
         const signCards =  this.state.signs.map(
-            sign => <SignCard key={sign.id} name={sign.name} description={sign.description} />
-            )
+            sign => <SignCard key={sign.id} name={sign.name} description={sign.description} image={`/images/signs/${sign.id}.jpg`}/>
+        )
 
         return (
             <div className="signs-view">

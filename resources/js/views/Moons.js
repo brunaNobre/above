@@ -22,11 +22,7 @@ class Moons extends Component {
     render() {
 
         const moonDescriptions =  this.state.moons.map(
-            moon => <MoonDescription 
-                    key={moon.id}
-                    img="/images/moons/new-moon.png" 
-                    phase={moon.phase} 
-                    description={moon.description} />
+            moon =>  <MoonDescription key={moon.id} img={`/images/moons/${moon.id}.png`} phase={moon.phase} description={moon.description} />
             )
 
 

@@ -71,7 +71,7 @@
                         </div>
 
                           <a class="btn btn-link google-account" href="">
-                            <img src="{{ secure_asset('images/google-logo.png') }}" alt="Google Cadastrar">
+                            <img src="{{ asset('images/google-logo.png') }}" alt="Google Cadastrar">
                             Cadastrar com o Google
 
                         </a>

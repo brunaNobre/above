@@ -25,7 +25,7 @@
 
             .main-container {
                 background-color: #E2C9A7;
-                background: linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)) , url({{ secure_asset('images/presentation-page-background.png') }});
+                background: linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)) , url({{ asset('images/presentation-page-background.png') }});
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: 20%;
@@ -123,10 +123,10 @@
                     @auth
                     <!--<a href="{{ url('/home') }}"></a>-->
                     @else
-                        <a class="login-link" href="/login">Entrar</a>
+                        <a class="login-link" href="{{ url('/login') }}">Entrar</a>
 
                         @if (Route::has('register'))
-                            <a class="register-link" href="/register">Começar</a>
+                            <a class="register-link" href="{{ url('/register') }}">Começar</a>
                         @endif
                     @endauth
                 </div>

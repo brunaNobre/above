@@ -20,7 +20,7 @@ class Planets extends Component {
 
     render() {
         const planetCards =  this.state.planets.map(
-            planet => <PlanetCard key={planet.id} name={planet.name} description={planet.description} />
+            planet =>  <PlanetCard key={planet.id} name={planet.name} description={planet.description} image={`/images/planets/${planet.id}.jpg`}/>
             )
 
         return (
