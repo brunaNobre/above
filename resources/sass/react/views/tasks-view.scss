@@ -68,14 +68,26 @@
 @media (min-width: 651px) {
     .tasks-view {
         width: 50%;
-        margin-left: 50%;
+        position: absolute;
+        top: 10%;
+        left: 50%;
 
         .new-task-button {
             position: relative;
         }
     }
+}
 
-    
+@media (min-width: 1800px) {
+    .tasks-view {
+        top: 15%;      
+    }
+}
+
+@media (min-width: 2800px) {
+    .tasks-view {
+        top: 20%;      
+    }
 }
 
 .MuiFormControl-root {
@@ -125,5 +137,14 @@
         color: gray;
         cursor: pointer;
 
+    }
+}
+
+
+@media(max-width: 650px) {
+    .tasks-view-wrapper {
+        .abv-panel {
+            display: none;
+        }
     }
 }

@@ -11050,7 +11050,6 @@ body .places .m-b-md {
   .moon-header {
     left: 0%;
     width: 100%;
-    top: 10%;
   }
 
   .moon-header h1 {
@@ -11399,11 +11398,25 @@ body .places .m-b-md {
 @media (min-width: 651px) {
   .tasks-view {
     width: 50%;
-    margin-left: 50%;
+    position: absolute;
+    top: 10%;
+    left: 50%;
   }
 
   .tasks-view .new-task-button {
     position: relative;
+  }
+}
+
+@media (min-width: 1800px) {
+  .tasks-view {
+    top: 15%;
+  }
+}
+
+@media (min-width: 2800px) {
+  .tasks-view {
+    top: 20%;
   }
 }
 
@@ -11445,6 +11458,12 @@ body .places .m-b-md {
   right: 3%;
   color: gray;
   cursor: pointer;
+}
+
+@media (max-width: 650px) {
+  .tasks-view-wrapper .abv-panel {
+    display: none;
+  }
 }
 
 .moons-view {
