@@ -81,7 +81,7 @@
                     <button type="submit" class="abv-btn btn btn-primary">Incluir imagem</button>
                 </div>
             </div>
-        </form>  
+    </form>  
         
 </div>
 @endsection

@@ -141,7 +141,7 @@ class MoonController extends Controller
         request()->image->move(public_path('images/moons'), $imageName);
 
         return back()
-            ->with('success','You have successfully upload image.')
+            ->with('success','Imagem enviada com sucesso.')
             ->with('image',$imageName);
 
     }

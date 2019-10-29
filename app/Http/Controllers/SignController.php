@@ -125,4 +125,21 @@ class SignController extends Controller
                 ->with('status', $sign->name . ' Excluído!');
         }
     }
+
+    public function image(Request $request) {
+        request()->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $id = $request->id;
+
+        $imageName = $id.'.'.request()->image->getClientOriginalExtension();
+
+        request()->image->move(public_path('images/signs'), $imageName);
+
+        return back()
+            ->with('success','Imagem enviada com sucesso.')
+            ->with('image',$imageName);
+
+    }
 }
