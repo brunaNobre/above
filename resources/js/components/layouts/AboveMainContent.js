@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import AbvCalendar from '../AbvCalendar'
 import Panel from '../Panel'
 import MoonHeader from '../MoonHeader'
 import formatDate from '../../utils/formatDate'
@@ -21,12 +20,10 @@ class AboveMainContent extends Component {
     }
 
     render() {
-        console.log(this.state.phase + " main")
         return (
             <div>
                 <Panel />
                 <MoonHeader phase={this.state.phase}/>
-                <AbvCalendar phase={this.state.phase}/>
             </div>
         )
     }

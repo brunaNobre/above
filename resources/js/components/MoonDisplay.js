@@ -26,7 +26,7 @@ function MoonDisplay (props) {
 
     return (
     
-    <img className="abvr-moon-display"
+    <img className="moon-display"
         src={`/images/phases/${phase}.png`}
         alt={`Lua na fase ${phase_pt_br}`}
         title={`Lua na fase ${phase_pt_br}`} />

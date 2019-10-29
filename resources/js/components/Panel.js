@@ -2,7 +2,7 @@ import React from 'react'
 import MoonDisplay from './MoonDisplay'
 
 const Panel = () => (
-    <div className='abvr-panel'>
+    <div className='abv-panel'>
     <MoonDisplay />
     </div>
   
