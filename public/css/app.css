@@ -11087,14 +11087,16 @@ body .places .m-b-md {
   .moon-header {
     left: 0%;
     width: 100%;
+    top: 13%;
   }
 
   .moon-header h1 {
     margin-bottom: 0.1rem;
+    font-size: 1.5rem;
   }
 
   .moon-header p {
-    font-size: 1.5em;
+    font-size: 0.5rem;
   }
 }
 
@@ -11634,6 +11636,7 @@ body .places .m-b-md {
 .icon {
   font-family: "Material Icons", serif;
   font-style: normal;
+  font-size: 1.8em;
   display: inline-block;
   vertical-align: middle;
   line-height: 1;
@@ -11646,59 +11649,6 @@ body .places .m-b-md {
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: "liga";
-}
-
-/* VARIABLES */
-
-:root {
-  --main-color: #1a8fff;
-  --text-color: #777;
-  --text-color-light: #ccc;
-  --border-color: #eee;
-  --bg-color: #f9f9f9;
-  --neutral-color: #fff;
-}
-
-/* GENERAL */
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  font-size: 1em;
-  font-weight: 300;
-  line-height: 1.5;
-  color: var(--text-color);
-  background: var(--bg-color);
-  position: relative;
-}
-
-header {
-  display: block;
-  width: 100%;
-  padding: 1.75em 0;
-  border-bottom: 1px solid var(--border-color);
-  background: var(--neutral-color);
-}
-
-header #logo {
-  font-size: 175%;
-  text-align: center;
-  color: var(--main-color);
-  line-height: 1;
-}
-
-header #logo .icon {
-  padding-right: 0.25em;
-}
-
-main {
-  display: block;
-  margin: 0 auto;
-  margin-top: 5em;
-  max-width: 50em;
 }
 
 /* GRID */
@@ -11742,15 +11692,18 @@ main {
 .calendar {
   display: block;
   position: relative;
-  width: 100%;
+  width: 90%;
   background: var(--neutral-color);
   border: 1px solid var(--border-color);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 14%;
 }
 
 .calendar .header {
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 115%;
+  font-size: 70%;
   padding: 1.5em 0;
   border-bottom: 1px solid var(--border-color);
 }
@@ -11799,10 +11752,7 @@ main {
 }
 
 .calendar .body .selected {
-  border-left: 10px solid transparent;
-  -o-border-image: linear-gradient(45deg, #1a8fff 0%, #53cbf1 40%);
-     border-image: linear-gradient(45deg, #1a8fff 0%, #53cbf1 40%);
-  border-image-slice: 1;
+  color: #8344E0;
 }
 
 .calendar .body .row {
@@ -11829,19 +11779,7 @@ main {
 .calendar .body .disabled {
   color: var(--text-color-light);
   pointer-events: none;
-}
-
-.calendar .body .cell .bg {
-  font-weight: 700;
-  line-height: 1;
-  color: var(--main-color);
-  opacity: 0;
-  font-size: 8em;
-  position: absolute;
-  top: -0.2em;
-  right: -0.05em;
-  transition: 0.25s ease-out;
-  letter-spacing: -0.07em;
+  color: darkgray;
 }
 
 .calendar .body .cell:hover .bg,
@@ -11854,6 +11792,36 @@ main {
   flex-grow: 0;
   flex-basis: calc(100%/7);
   width: calc(100%/7);
+}
+
+.calendar .cel-phase-icon {
+  background-image: url("/images/icons/phases_icon.jpg");
+  display: block;
+  width: 3.1vw;
+  height: 4vw;
+  background-size: 400%;
+  background-repeat: no-repeat;
+}
+
+.calendar .new-icon {
+  background-position-y: 4%;
+  background-position-x: 7%;
+}
+
+.calendar .waxing-icon {
+  transform: rotate(180deg);
+  background-position-y: 33%;
+  background-position-x: 50%;
+}
+
+.calendar .full-icon {
+  background-position-y: 100%;
+  background-position-x: 97%;
+}
+
+.calendar .waning-icon {
+  background-position-y: 33%;
+  background-position-x: 50%;
 }
 
 .todaysky-icon {

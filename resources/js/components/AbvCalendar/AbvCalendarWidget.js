@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import 'date-fns';
+import {subDays} from 'date-fns';
 import {formatDistance} from 'date-fns/esm'
 import {pt} from 'date-fns/esm/locale'
+import getPhase from '../../utils/getPhase'
 
 class AbvCalendarWidget extends Component {
     constructor() {
@@ -19,6 +20,23 @@ class AbvCalendarWidget extends Component {
 
 
 
+    }
+
+    translatePhase (phase) {
+        switch (phase) {
+            case "new":
+            return "nova";
+            break;
+            case "waxing":
+            return "crescente";
+            break;
+            case "full":
+            return "cheia";
+            break;
+            default:
+            return "minguante";
+            break;
+        }
     }
   
     
@@ -88,8 +106,13 @@ class AbvCalendarWidget extends Component {
             key={day}
             onClick={() => this.onDateClick(dateFns.parse(cloneDay))}
           >
+
+            {(getPhase(subDays(cloneDay, 1)) != getPhase(cloneDay)) ? <i title={`Fase ${this.translatePhase(getPhase(cloneDay))}`} className={`cel-phase-icon ${getPhase(cloneDay)}-icon`}></i> : ""}
+          
+
+             
+
             <span className="number">{formattedDate}</span>
-            <span className="bg">{formattedDate}</span>
           </div>
         );
         day = dateFns.addDays(day, 1);
