@@ -1,4 +1,6 @@
 import React from 'react'
+import { HashLink as Link } from 'react-router-hash-link';
+
 
 function MoonPhaseHeader (props) {
 
@@ -24,7 +26,10 @@ function MoonPhaseHeader (props) {
         <div className="moon-header">
     
             <h1>Lua em Escorpião</h1>
-            <p>Fase {phase}</p>
+            <Link
+             to={`/home/moons#${phase.toLocaleLowerCase()}`}><p>Fase {phase}</p>
+             </Link>
+            
         
         </div>
     )
