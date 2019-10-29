@@ -10964,35 +10964,101 @@ body .places .m-b-md {
   }
 }
 
-.abvr-panel {
+.abv-panel {
   background-color: #8344E0;
   width: 50%;
   height: 100vh;
 }
 
-.abvr-moon-display {
+@media (max-width: 650px) {
+  .abv-panel {
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+.moon-display {
   width: 15em;
   position: relative;
-  top: 13em;
-  left: 23%;
+  top: 10em;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
 }
 
-.abvr-moon-header {
+@media (min-width: 500px) {
+  .moon-display {
+    width: 15em;
+  }
+}
+
+@media (min-width: 1400px) {
+  .moon-display {
+    width: 20em;
+    top: 8em;
+  }
+}
+
+@media (min-width: 2000px) {
+  .moon-display {
+    width: 28em;
+  }
+}
+
+.moon-header {
   position: absolute;
-  top: 20%;
+  top: 15%;
   text-align: center;
-  left: 63%;
+  left: 50%;
   font-family: Roboto, sans-serif;
+  width: 50%;
 }
 
-.abvr-moon-header h1 {
+.moon-header h1 {
   font-weight: 400;
   margin-bottom: 0.1rem;
 }
 
-.abvr-moon-header p {
+.moon-header a {
+  color: black;
+}
+
+.moon-header a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.moon-header p {
   font-size: 1.5em;
   font-weight: 100;
+}
+
+@media (min-width: 2000px) {
+  .moon-header {
+    top: 20%;
+  }
+}
+
+@media (min-width: 2500px) {
+  .moon-header {
+    top: 25%;
+  }
+}
+
+@media (max-width: 650px) {
+  .moon-header {
+    left: 0%;
+    width: 100%;
+  }
+
+  .moon-header h1 {
+    margin-bottom: 0.1rem;
+  }
+
+  .moon-header p {
+    font-size: 1.5em;
+  }
 }
 
 .react-calendar {
@@ -11000,51 +11066,6 @@ body .places .m-b-md {
   top: 40%;
   left: 60%;
   border: none;
-}
-
-.abvr-calendar {
-  width: 350px;
-  text-align: center;
-  position: absolute;
-  top: 37%;
-  left: 60%;
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
-}
-
-.abvr-calendar header {
-  margin-bottom: 5%;
-  font-weight: 600;
-}
-
-.abvr-calendar .cells-list {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(7, 50px);
-  grid-template-rows: 25px repeat(5, 50px);
-  width: 350px;
-  padding: 0;
-  text-align: left;
-}
-
-.abvr-calendar .cells-list .calendar-cell {
-  display: block;
-  border-bottom: 1px solid gray;
-  border-right: 1px solid gray;
-  padding-left: 5%;
-}
-
-.abvr-calendar .cells-list .item-seven,
-.abvr-calendar .cells-list .item-fortheen,
-.abvr-calendar .cells-list .item-twone,
-.abvr-calendar .cells-list .item-tweigth,
-.abvr-calendar .cells-list .item-trfive,
-.abvr-calendar .cells-list .item-forttwo {
-  border-right: 0px solid gray;
-}
-
-.abvr-calendar .cells-list .week-day {
-  color: gray;
 }
 
 .abv-logo {
@@ -11377,11 +11398,25 @@ body .places .m-b-md {
 @media (min-width: 651px) {
   .tasks-view {
     width: 50%;
-    margin-left: 50%;
+    position: absolute;
+    top: 10%;
+    left: 50%;
   }
 
   .tasks-view .new-task-button {
     position: relative;
+  }
+}
+
+@media (min-width: 1800px) {
+  .tasks-view {
+    top: 15%;
+  }
+}
+
+@media (min-width: 2800px) {
+  .tasks-view {
+    top: 20%;
   }
 }
 
@@ -11423,6 +11458,12 @@ body .places .m-b-md {
   right: 3%;
   color: gray;
   cursor: pointer;
+}
+
+@media (max-width: 650px) {
+  .tasks-view-wrapper .abv-panel {
+    display: none;
+  }
 }
 
 .moons-view {

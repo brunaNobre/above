@@ -1,9 +1,10 @@
-.abvr-moon-header {
+.moon-header {
     position: absolute;
-    top: 20%;
+    top: 15%;
     text-align: center;
-    left: 63%;
+    left: 50%;
     font-family: Roboto, sans-serif;
+    width: 50%;
 
     h1 {
         font-weight: 400;
@@ -11,9 +12,44 @@
 
         }
 
+    a {
+        color: black;
+        &:hover {
+            color: black;
+            text-decoration: none;
+        }
+    }    
+
     p {
         font-size: 1.5em;
         font-weight: 100;
     }
 
 }
+
+@media (min-width: 2000px) {
+    .moon-header {
+        top: 20%;
+    }
+}
+
+@media (min-width: 2500px) {
+    .moon-header {
+        top: 25%;
+    }
+}
+
+@media(max-width: 650px) {
+    .moon-header {
+        left: 0%;
+        width: 100%;
+        h1 {
+            margin-bottom: 0.1rem;
+    
+            }
+    
+        p {
+            font-size: 1.5em;
+        }
+    
+    }}

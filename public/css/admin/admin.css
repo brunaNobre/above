@@ -181,6 +181,12 @@
   display: none;
 }
 
+#contain_moon {
+  background-color: gray;
+  color: white;
+  font-family: Arial;
+}
+
 .abv-grid {
   display: grid;
 }

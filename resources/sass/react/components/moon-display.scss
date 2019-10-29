@@ -1,6 +1,29 @@
-.abvr-moon-display {
+.moon-display {
     width: 15em;
     position: relative;
-    top: 13em;
-    left: 23%;
+    top: 10em;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+@media(min-width: 500px) {
+    .moon-display {
+        width: 15em;
+    }
+}
+
+@media(min-width: 1400px) {
+    .moon-display {
+        width: 20em;
+        top: 8em;
+
+    }
+}
+
+
+@media(min-width: 2000px) {
+    .moon-display {
+        width: 28em;
+    }
 }

@@ -8,6 +8,7 @@ import formatDate from '../utils/formatDate'
 import formatMonth from '../utils/formatMonth'
 import daysFromNow from '../utils/daysFromNow'
 import TasksListDatePicker from '../components/Tasks/TasksListDatePicker'
+import Panel from '../components/Panel'
 
 
 
@@ -229,6 +230,9 @@ class Tasks extends Component {
 
     render() { 
         return (
+            <div class="tasks-view-wrapper">
+            <Panel />
+
             <div className="tasks-view">
                 <TasksHeader 
                 date={this.state.date}
@@ -260,6 +264,7 @@ class Tasks extends Component {
                
 
                 
+            </div>
             </div>
         )
     }
