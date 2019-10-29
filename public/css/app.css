@@ -10964,6 +10964,43 @@ body .places .m-b-md {
   }
 }
 
+.abv-bottom-menu-wrapper {
+  position: absolute;
+  width: 100%;
+  bottom: 1%;
+}
+
+.abv-bottom-menu-wrapper .makeStyles-root-88 {
+  width: 100%;
+}
+
+.abv-bottom-menu-wrapper .MuiBottomNavigationAction-root.Mui-selected {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.abv-bottom-menu-wrapper .MuiBottomNavigationAction-label.Mui-selected {
+  font-size: 0.75rem;
+}
+
+.abv-bottom-menu-wrapper a {
+  display: block;
+}
+
+.abv-bottom-menu-wrapper a:hover {
+  text-decoration: none;
+  color: #8344E0;
+}
+
+.abv-bottom-menu-wrapper .todaysky-icon {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+@media (min-width: 651px) {
+  .abv-bottom-menu {
+    display: none !important;
+  }
+}
+
 .abv-panel {
   background-color: #8344E0;
   width: 50%;
@@ -11570,8 +11607,7 @@ body .places .m-b-md {
 }
 
 .todaysky-icon {
-  width: 1.5em;
-  vertical-align: sub;
+  color: black;
 }
 
 .profile-sign-icon {

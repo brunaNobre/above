@@ -1,0 +1,37 @@
+.abv-bottom-menu-wrapper {
+    position: absolute;
+    width: 100%;
+    bottom: 1%;
+   
+    .makeStyles-root-88 {
+        width: 100%;
+    }
+
+    .MuiBottomNavigationAction-root.Mui-selected {
+        color: rgba(0, 0, 0, 0.54);
+    }
+
+    .MuiBottomNavigationAction-label.Mui-selected {
+        font-size: 0.75rem;
+    }
+
+    a {
+        display: block;
+        &:hover {
+            text-decoration: none;
+            color: #8344E0;
+        }
+
+    }
+
+    .todaysky-icon {
+        color: rgba(0, 0, 0, 0.54);
+    }
+
+}
+
+@media (min-width: 651px) {
+    .abv-bottom-menu {
+        display: none !important;
+    }
+}

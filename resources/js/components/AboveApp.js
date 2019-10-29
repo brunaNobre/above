@@ -13,6 +13,7 @@ import Button from '@material-ui/core/Button';
 
 import AboveMainContent from './layouts/AboveMainContent'
 import AboveHeader from './layouts/AboveHeader'
+import AboveBottomMenu from './layouts/AboveBottomMenu'
 
 import Moons from '../views/Moons'
 import NatalChart from '../views/NatalChart'
@@ -21,6 +22,8 @@ import Signs from '../views/Signs'
 import Tasks from '../views/Tasks'
 import TodaySky from '../views/TodaySky'
 import UserMood from '../views/UserMood'
+import Calendar from '../views/Calendar'
+
 
 
 
@@ -59,6 +62,7 @@ class AboveApp extends Component {
             <Route exact path='/home' component={AboveMainContent}/>
             <Route path='/home/moons' component={Moons}/>
             <Route path='/home/natal-chart' component={NatalChart}/>
+            <Route path='/home/calendar' component={Calendar}/>
             <Route path='/home/planets' component={Planets}/>
             <Route path='/home/signs' component={Signs}/>
             <Route path='/home/tasks' component={Tasks} user={this.state.user}/>
@@ -67,7 +71,7 @@ class AboveApp extends Component {
           </Switch>
 
 
-
+        <AboveBottomMenu />
         </Router>
           
 
