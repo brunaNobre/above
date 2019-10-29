@@ -21,7 +21,7 @@ function MoonPhaseHeader (props) {
 
     return (
     
-        <div className="abvr-moon-phase-header">
+        <div className="moon-header">
     
             <h1>Lua em Escorpião</h1>
             <p>Fase {phase}</p>

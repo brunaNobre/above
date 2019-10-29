@@ -10981,7 +10981,7 @@ body .places .m-b-md {
 .moon-display {
   width: 15em;
   position: relative;
-  top: 8em;
+  top: 10em;
   margin-right: auto;
   margin-left: auto;
   display: block;
@@ -10989,44 +10989,67 @@ body .places .m-b-md {
 
 @media (min-width: 500px) {
   .moon-display {
+    width: 15em;
+  }
+}
+
+@media (min-width: 1400px) {
+  .moon-display {
     width: 20em;
-  }
-}
-
-@media (min-width: 1400px) {
-  .moon-display {
-    width: 25em;
-  }
-}
-
-@media (min-width: 1400px) {
-  .moon-display {
-    width: 25em;
+    top: 8em;
   }
 }
 
 @media (min-width: 2000px) {
   .moon-display {
-    width: 33em;
+    width: 28em;
   }
 }
 
-.abvr-moon-header {
+.moon-header {
   position: absolute;
-  top: 20%;
+  top: 10%;
   text-align: center;
-  left: 63%;
+  left: 50%;
   font-family: Roboto, sans-serif;
+  width: 50%;
 }
 
-.abvr-moon-header h1 {
+.moon-header h1 {
   font-weight: 400;
   margin-bottom: 0.1rem;
 }
 
-.abvr-moon-header p {
+.moon-header p {
   font-size: 1.5em;
   font-weight: 100;
+}
+
+@media (min-width: 1300px) {
+  .moon-header {
+    top: 15%;
+  }
+}
+
+@media (min-width: 2000px) {
+  .moon-header {
+    top: 20%;
+  }
+}
+
+@media (max-width: 650px) {
+  .moon-header {
+    left: 0%;
+    width: 100%;
+  }
+
+  .moon-header h1 {
+    margin-bottom: 0.1rem;
+  }
+
+  .moon-header p {
+    font-size: 1.5em;
+  }
 }
 
 .react-calendar {

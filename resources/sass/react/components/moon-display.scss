@@ -1,7 +1,7 @@
 .moon-display {
     width: 15em;
     position: relative;
-    top: 8em;
+    top: 10em;
     margin-right: auto;
     margin-left: auto;
     display: block;
@@ -9,24 +9,21 @@
 
 @media(min-width: 500px) {
     .moon-display {
+        width: 15em;
+    }
+}
+
+@media(min-width: 1400px) {
+    .moon-display {
         width: 20em;
+        top: 8em;
+
     }
 }
 
-@media(min-width: 1400px) {
-    .moon-display {
-        width: 25em;
-    }
-}
-
-@media(min-width: 1400px) {
-    .moon-display {
-        width: 25em;
-    }
-}
 
 @media(min-width: 2000px) {
     .moon-display {
-        width: 33em;
+        width: 28em;
     }
 }
