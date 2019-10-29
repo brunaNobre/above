@@ -230,7 +230,7 @@ class Tasks extends Component {
 
     render() { 
         return (
-            <div class="tasks-view-wrapper">
+            <div className="tasks-view-wrapper">
             <Panel />
 
             <div className="tasks-view">
