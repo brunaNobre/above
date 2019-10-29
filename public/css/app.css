@@ -10991,6 +10991,10 @@ body .places .m-b-md {
   color: #8344E0;
 }
 
+.abv-bottom-menu-wrapper .todaysky-icon {
+  color: rgba(0, 0, 0, 0.54);
+}
+
 @media (min-width: 651px) {
   .abv-bottom-menu {
     display: none !important;
@@ -11603,8 +11607,7 @@ body .places .m-b-md {
 }
 
 .todaysky-icon {
-  width: 1.5em;
-  vertical-align: sub;
+  color: black;
 }
 
 .profile-sign-icon {

@@ -60,7 +60,6 @@ function AboveSideMenu (props) {
                 <MenuItem onClick={handleClose}><Link to="/home/moons" className="abv-sidemenu-link"><Brightness3Icon className="abv-sidemenu-icon" />Lua</Link></MenuItem>
                 <MenuItem onClick={handleClose}><Link to="/home/natal-chart" className="abv-sidemenu-link"><NatalChartIcon />Mapa Astral</Link></MenuItem>
                 <MenuItem onClick={handleClose}><Link to="/home/user-mood" className="abv-sidemenu-link"><MoodIcon className="abv-sidemenu-icon" />Meu mood</Link></MenuItem>
-                <MenuItem onClick={handleClose}><Link to="/home/today-sky" className="abv-sidemenu-link">Céu de Hoje</Link></MenuItem>
                 <MenuItem onClick={handleClose} className="abv-sidemenu-link">
                     <a href="/login" onClick={logout} className="logout-link">Sair</a>
                 </MenuItem>
