@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 
-    
-function UserMood () {
 
-    return (
-        <div><h1>Meu mood</h1></div>
-    )
+class UserMood extends Component {
+    render() {
+        return (
+            <div className="usermood-view">
+               <h1>Mood</h1>
+            </div>
+        )
+    }
 }
-    
-
 
 export default UserMood
