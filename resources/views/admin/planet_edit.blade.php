@@ -13,6 +13,29 @@
 </header>
 
 
+
+@if (count($errors) > 0)
+
+<div class="alert alert-danger">
+
+    <strong>Opa!</strong> Algo deu errado.
+
+    <ul>
+
+        @foreach ($errors->all() as $error)
+
+            <li>{{ $error }}</li>
+
+        @endforeach
+
+    </ul>
+
+</div>
+
+@endif
+
+
+
 <div class="abv-card">
 <form class="abv-form-create" method="post" action="{{route('planets.update', $planet->id)}}">
 {!! method_field('put') !!}
@@ -43,7 +66,22 @@
 
 
         <button type="submit" class="abv-btn btn btn-primary">Enviar</button>        
-    </form>  
+    </form>
+    
+    <form class="image-upload" action="{{ route('admin.planet.image')}}" method="POST" enctype="multipart/form-data">
+    {{ csrf_field() }}
+    
+    <input type="hidden" name="id" value="{{$planet->id}}">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="file" name="image" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <button type="submit" class="abv-btn btn btn-primary">Incluir imagem</button>
+                </div>
+            </div>
+        </form>  
         
 </div>
 @endsection

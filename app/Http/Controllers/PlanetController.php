@@ -129,4 +129,22 @@ class PlanetController extends Controller
                 ->with('status', $planet->name . ' Excluído!');
         }
     }
+
+
+    public function image(Request $request) {
+        request()->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $id = $request->id;
+
+        $imageName = $id.'.'.request()->image->getClientOriginalExtension();
+
+        request()->image->move(public_path('images/planets'), $imageName);
+
+        return back()
+            ->with('success','You have successfully upload image.')
+            ->with('image',$imageName);
+
+    }
 }
