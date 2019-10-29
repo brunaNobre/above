@@ -10970,8 +10970,8 @@ body .places .m-b-md {
   bottom: 1%;
 }
 
-.abv-bottom-menu-wrapper .makeStyles-root-88 {
-  width: 100%;
+.abv-bottom-menu-wrapper .abv-bottom-menu {
+  width: 100% !important;
 }
 
 .abv-bottom-menu-wrapper .MuiBottomNavigationAction-root.Mui-selected {
