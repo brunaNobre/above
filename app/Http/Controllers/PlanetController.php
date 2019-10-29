@@ -133,7 +133,7 @@ class PlanetController extends Controller
 
     public function image(Request $request) {
         request()->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpg,jpeg|max:2048',
         ]);
 
         $id = $request->id;

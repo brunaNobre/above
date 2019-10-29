@@ -131,7 +131,7 @@ class MoonController extends Controller
 
     public function image(Request $request) {
         request()->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:png|max:2048',
         ]);
 
         $id = $request->id;

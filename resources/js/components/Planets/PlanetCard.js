@@ -25,7 +25,7 @@ export default function PlanetCard(props) {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="/images/planets/mercury.jpg"
+          image={props.image}
           title={props.name}
         />
         <CardContent>
