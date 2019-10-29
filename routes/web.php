@@ -36,6 +36,9 @@ Route::get('admin/login', 'Auth\Admin\LoginController@login')->name('admin.auth.
 Route::post('admin/login', 'Auth\Admin\LoginController@loginAdmin')->name('admin.auth.loginAdmin');
 Route::post('admin/logout', 'Auth\Admin\LoginController@logout')->name('admin.auth.logout');
 
+Route::get('admin/image-upload', 'ImageUploadController@imageUpload')->name('admin.image.upload');
+
+Route::post('admin/image-upload', 'ImageUploadController@imageUploadPost')->name('admin.image.upload.post');
 
 Route::resource('admin/moons', 'MoonController');
 
