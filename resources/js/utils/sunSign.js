@@ -7,7 +7,7 @@ export default function sunSign(date) {
 
     if(splited.length > 1) {
         day = Number(splited[0]);
-        month = splited[1].trim();
+        month = (splited.length > 3) ? "dezembro" : splited[1].trim().toLowerCase();
     } else {
         splited = date.split('-');
         day = Number(splited[2]);
@@ -15,7 +15,7 @@ export default function sunSign(date) {
     }
 
     switch (month) {
-        case "Março":
+        case "março":
         if(day >= 21) {sign = "Áries";} else {sign = "Peixes";}
         break;
 
@@ -23,7 +23,7 @@ export default function sunSign(date) {
         if(day >= 21) {sign = "Áries";} else {sign = "Peixes";}
         break;
 
-        case "Abril":
+        case "abril":
         if(day >= 20) {sign = "Touro";} else {sign = "Áries";}
         break;
 
@@ -31,7 +31,7 @@ export default function sunSign(date) {
         if(day >= 20) {sign = "Touro";} else {sign = "Áries";}
         break;
 
-        case "Maio":
+        case "maio":
         if(day >= 21) {sign = "Gêmeos";} else {sign = "Touro";}
         break;
 
@@ -39,7 +39,7 @@ export default function sunSign(date) {
         if(day >= 21) {sign = "Gêmeos";} else {sign = "Touro";}
         break;
 
-        case "Junho":
+        case "junho":
         if(day >= 22) {sign = "Câncer";} else {sign = "Gêmeos";}
         break;
 
@@ -47,7 +47,7 @@ export default function sunSign(date) {
         if(day >= 22) {sign = "Câncer";} else {sign = "Gêmeos";}
         break;
 
-        case "Julho":
+        case "julho":
         if(day >= 23) {sign = "Leão";} else {sign = "Câncer";}
         break;
 
@@ -55,7 +55,7 @@ export default function sunSign(date) {
         if(day >= 23) {sign = "Leão";} else {sign = "Câncer";}
         break;
 
-        case "Agosto":
+        case "agosto":
         if(day >= 23) {sign = "Virgem";} else {sign = "Leão";}
         break;
 
@@ -63,7 +63,7 @@ export default function sunSign(date) {
         if(day >= 23) {sign = "Virgem";} else {sign = "Leão";}
         break;
 
-        case "Setembro":
+        case "setembro":
         if(day >= 23) {sign = "Libra";} else {sign = "Virgem";}
         break;
 
@@ -71,7 +71,7 @@ export default function sunSign(date) {
         if(day >= 23) {sign = "Libra";} else {sign = "Virgem";}
         break;
 
-        case "Outubro":
+        case "outubro":
         if(day >= 23) {sign = "Escorpião";} else {sign = "Libra";}
         break;
 
@@ -79,7 +79,7 @@ export default function sunSign(date) {
         if(day >= 23) {sign = "Escorpião";} else {sign = "Libra";}
         break;
 
-        case "Novembro":
+        case "novembro":
         if(day >= 22) {sign = "Sagitário";} else {sign = "Escorpião";}
         break;
 
@@ -87,7 +87,7 @@ export default function sunSign(date) {
         if(day >= 22) {sign = "Sagitário";} else {sign = "Escorpião";}
         break;
 
-        case "Dezembro":
+        case "dezembro":
         if(day >= 22) {sign = "Capricórnio";} else {sign = "Sagitário";}
         break;
 
@@ -95,7 +95,7 @@ export default function sunSign(date) {
         if(day >= 22) {sign = "Capricórnio";} else {sign = "Sagitário";}
         break;
 
-        case "Janeiro":
+        case "janeiro":
         if(day >= 20) {sign = "Aquário";} else {sign = "Capricórnio";}
         break;
 
@@ -103,7 +103,7 @@ export default function sunSign(date) {
         if(day >= 20) {sign = "Aquário";} else {sign = "Capricórnio";}
         break;
 
-        case "Fevereiro":
+        case "fevereiro":
         if(day >= 19) {sign = "Peixes";} else {sign = "Aquário";}
         break;
 

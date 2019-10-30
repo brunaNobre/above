@@ -33,6 +33,47 @@
 
 
 
+
+.calendar-dialog {
+  .title {
+    h2 {
+      font-size: 1em;
+      font-weight: 300;
+      margin-top: 15%;
+    }
+  }
+
+  .sign-ofDay {
+    margin-left: 10%;
+    span {
+      color: #8344E0;
+    }
+  }
+
+  .moon-ofDay {
+    margin-left: 10%;
+    span {
+      font-weight: bold;
+    }
+  }
+
+  .close-dialog {
+    position: absolute;
+    top: 7%;
+    right: 3%;
+  }
+
+}
+
+@media (max-width: 650px) {
+  .calendar-dialog {
+    .MuiDialog-paper {
+      font-size: 3.5vw !important;
+    }
+  }
+}
+
+
 /* GRID */
 
 .row {
@@ -130,8 +171,8 @@
 }
 
 .calendar .body .cell:hover {
-  background: var(--bg-color);
-  transition: 0.5s ease-out;
+  border: 2px dotted rgba(135, 68, 224, 0.5);
+  transition: 0.1s ease-out;
 }
 
 .calendar .body .selected {
@@ -207,4 +248,6 @@
         background-position-y: 33%;
         background-position-x: 50%;
     }
+
 }
+

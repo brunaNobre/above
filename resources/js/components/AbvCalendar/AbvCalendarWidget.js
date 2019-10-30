@@ -3,22 +3,28 @@ import {subDays} from 'date-fns';
 import {formatDistance} from 'date-fns/esm'
 import {pt} from 'date-fns/esm/locale'
 import getPhase from '../../utils/getPhase'
+import sunSign from '../../utils/sunSign'
+import Dialog from '@material-ui/core/Dialog';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import CloseIcon from '@material-ui/icons/Close';
+
+
 
 class AbvCalendarWidget extends Component {
     constructor() {
         super();
         this.state = {
             currentMonth: new Date(),
-            selectedDate: new Date()
+            selectedDate: new Date(),
+            open: {}
           };
         this.renderHeader = this.renderHeader.bind(this)    
         this.renderDays = this.renderDays.bind(this)    
         this.renderCells = this.renderCells.bind(this)   
-        this.onDateClick = this.onDateClick.bind(this)    
         this.nextMonth = this.nextMonth.bind(this)    
-        this.prevMonth = this.prevMonth.bind(this)    
-
-
+        this.prevMonth = this.prevMonth.bind(this)  
+        this.openDialog = this.openDialog.bind(this)    
+        this.closeDialog = this.closeDialog.bind(this)   
 
     }
 
@@ -38,8 +44,6 @@ class AbvCalendarWidget extends Component {
             break;
         }
     }
-  
-    
 
   renderHeader() {
     const dateFormat = "MMMM yyyy";
@@ -86,16 +90,21 @@ class AbvCalendarWidget extends Component {
     const endDate = dateFns.endOfWeek(monthEnd);
 
     const dateFormat = "d";
+    const month = dateFns.format(this.state.currentMonth, "MMMM", {locale: pt});
+    const year = dateFns.format(this.state.currentMonth, "yyyy", {locale: pt});
     const rows = [];
+    const dialogs = [];
 
     let days = [];
     let day = startDate;
-    let formattedDate = "";
+    let formattedDay = "";
 
     while (day <= endDate) {
       for (let i = 0; i < 7; i++) {
-        formattedDate = dateFns.format(day, dateFormat);
+        formattedDay = dateFns.format(day, dateFormat);
         const cloneDay = day;
+        const phase = getPhase(cloneDay);        
+
         days.push(
           <div
             className={`col cell ${
@@ -104,18 +113,27 @@ class AbvCalendarWidget extends Component {
                 : dateFns.isSameDay(day, selectedDate) ? "selected" : ""
             }`}
             key={day}
-            onClick={() => this.onDateClick(dateFns.parse(cloneDay))}
+            onClick={() => {this.openDialog(cloneDay)}}
           >
 
-            {(getPhase(subDays(cloneDay, 1)) != getPhase(cloneDay)) ? <i title={`Fase ${this.translatePhase(getPhase(cloneDay))}`} className={`cel-phase-icon ${getPhase(cloneDay)}-icon`}></i> : ""}
-          
-
-             
-
-            <span className="number">{formattedDate}</span>
+            {(getPhase(subDays(cloneDay, 1)) != phase) ? <i title={`Fase ${this.translatePhase(phase)}`} className={`cel-phase-icon ${phase}-icon`}></i> : ""}
+    
+            <span className="number">{formattedDay}</span>
           </div>
         );
+
+        let dayOfWeek = dateFns.format(day, "EEEE", {locale: pt});
         day = dateFns.addDays(day, 1);
+        
+        dialogs.push(
+          <Dialog key={cloneDay} className="calendar-dialog" aria-labelledby="simple-dialog-title" open={this.state.open[cloneDay] || false}>
+            <CloseIcon className="close-dialog" onClick={() => {this.closeDialog(cloneDay)}}/>
+            <DialogTitle className="title">{`${dayOfWeek}, ${formattedDay} de ${month} de ${year}`}</DialogTitle>
+            <p className="sign-ofDay">Sol em <span>{sunSign(`${formattedDay} de ${month} de ${year}`)}</span></p>
+            <p className="moon-ofDay">Lua <span>{this.translatePhase(phase)}</span></p>
+          </Dialog>
+        );
+
       }
       rows.push(
         <div className="row" key={day}>
@@ -124,14 +142,8 @@ class AbvCalendarWidget extends Component {
       );
       days = [];
     }
-    return <div className="body">{rows}</div>;
+    return <div className="body"><>{rows}{dialogs}</></div>;
   }
-
-  onDateClick (day)  {
-    this.setState({
-      selectedDate: day
-    });
-  };
 
   nextMonth () {
     this.setState({
@@ -144,6 +156,20 @@ class AbvCalendarWidget extends Component {
       currentMonth: dateFns.subMonths(this.state.currentMonth, 1)
     });
   };
+
+  openDialog (key) {
+    let obj = {...this.state.open}
+    obj[key] = true;
+    this.setState({open: obj})
+  }
+  
+  closeDialog (key) {
+    let obj = {...this.state.open}
+    obj[key] = false;
+    this.setState({open: obj})
+  }
+  
+
 
   render() {
     return (

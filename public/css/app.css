@@ -11657,6 +11657,40 @@ body .places .m-b-md {
   font-feature-settings: "liga";
 }
 
+.calendar-dialog .title h2 {
+  font-size: 1em;
+  font-weight: 300;
+  margin-top: 15%;
+}
+
+.calendar-dialog .sign-ofDay {
+  margin-left: 10%;
+}
+
+.calendar-dialog .sign-ofDay span {
+  color: #8344E0;
+}
+
+.calendar-dialog .moon-ofDay {
+  margin-left: 10%;
+}
+
+.calendar-dialog .moon-ofDay span {
+  font-weight: bold;
+}
+
+.calendar-dialog .close-dialog {
+  position: absolute;
+  top: 7%;
+  right: 3%;
+}
+
+@media (max-width: 650px) {
+  .calendar-dialog .MuiDialog-paper {
+    font-size: 3.5vw !important;
+  }
+}
+
 /* GRID */
 
 .row {
@@ -11753,8 +11787,8 @@ body .places .m-b-md {
 }
 
 .calendar .body .cell:hover {
-  background: var(--bg-color);
-  transition: 0.5s ease-out;
+  border: 2px dotted rgba(135, 68, 224, 0.5);
+  transition: 0.1s ease-out;
 }
 
 .calendar .body .selected {
@@ -11843,13 +11877,33 @@ body .places .m-b-md {
 }
 
 .main-content-view .calendar .cel-phase-icon {
-  width: 2rem;
-  height: 3rem;
+  width: 70%;
+  height: 3vw;
 }
 
 @media (max-width: 650px) {
   .main-content-view .calendar {
     display: none;
+  }
+}
+
+@media (min-width: 1150px) {
+  .main-content-view .calendar .cel-phase-icon {
+    height: 4vw;
+  }
+}
+
+@media (min-width: 1150px) {
+  .main-content-view .calendar .cel-phase-icon {
+    width: 40%;
+    height: 3vw;
+  }
+}
+
+@media (min-width: 2000px) {
+  .main-content-view .calendar .cel-phase-icon {
+    width: 25%;
+    height: 2vw;
   }
 }
 
