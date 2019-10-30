@@ -20,6 +20,8 @@ class AboveMainContent extends Component {
         }
         this.handleAdd = this.handleAdd.bind(this)    
         this.sendInputValue = this.sendInputValue.bind(this)
+        this.addTaskFromWidget = this.addTaskFromWidget.bind(this)
+
     }
 
     componentDidMount() {
@@ -57,12 +59,35 @@ class AboveMainContent extends Component {
         this.setState((state) => state.newTask[key] = newValue);
     }
 
+
+    addTaskFromWidget(newTask, date) {
+        if(newTask.title) {
+            newTask.due_to = date;
+            axios.post('/api/tasks', newTask);
+            
+            //clear newTask
+            this.setState({
+                newTask: {
+                    user_id: this.state.newTask.user_id,
+                    title: "",
+                    due_to: formatDate(new Date().toLocaleDateString())
+                }
+            }) 
+       }
+    }
+
     render() {
         return (
             <div className="main-content-view">
                 <Panel />
                 <MoonHeader phase={this.state.phase}/>
-                <AbvCalendarWidget />
+
+                <AbvCalendarWidget
+                newTask={this.state.newTask}  
+                addTaskFromWidget={this.addTaskFromWidget}
+                sendInputValue={this.sendInputValue}
+                /> 
+
                 <NewTaskDialog
                 newTask={this.state.newTask} 
                 sendInputValue={this.sendInputValue}

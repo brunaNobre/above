@@ -7,7 +7,12 @@ import sunSign from '../../utils/sunSign'
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import CloseIcon from '@material-ui/icons/Close';
-
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
 
 
 class AbvCalendarWidget extends Component {
@@ -16,7 +21,7 @@ class AbvCalendarWidget extends Component {
         this.state = {
             currentMonth: new Date(),
             selectedDate: new Date(),
-            open: {}
+            open: {},
           };
         this.renderHeader = this.renderHeader.bind(this)    
         this.renderDays = this.renderDays.bind(this)    
@@ -113,7 +118,7 @@ class AbvCalendarWidget extends Component {
                 : dateFns.isSameDay(day, selectedDate) ? "selected" : ""
             }`}
             key={day}
-            onClick={() => {this.openDialog(cloneDay)}}
+            onClick={() => {this.openDialog(cloneDay, cloneDay)}}
           >
 
             {(getPhase(subDays(cloneDay, 1)) != phase) ? <i title={`Fase ${this.translatePhase(phase)}`} className={`cel-phase-icon ${phase}-icon`}></i> : ""}
@@ -131,6 +136,22 @@ class AbvCalendarWidget extends Component {
             <DialogTitle className="title">{`${dayOfWeek}, ${formattedDay} de ${month} de ${year}`}</DialogTitle>
             <p className="sign-ofDay">Sol em <span>{sunSign(`${formattedDay} de ${month} de ${year}`)}</span></p>
             <p className="moon-ofDay">Lua <span>{this.translatePhase(phase)}</span></p>
+            <ExpansionPanel>
+              <ExpansionPanelSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+              <Typography >Criar tarefa</Typography>
+              </ExpansionPanelSummary>
+              <ExpansionPanelDetails>
+                <input name="title" type="text" onChange={(e) => {this.props.sendInputValue('title', e.target.value)}}/>
+              </ExpansionPanelDetails>
+              <button className="send-button" onClick={() => {this.sendAndClose(cloneDay, this.props.newTask,
+                 `${dateFns.format(this.state.selectedDate, "yyyy", {locale: pt})}-${dateFns.format(this.state.selectedDate, "L", {locale: pt})}-${dateFns.format(this.state.selectedDate, "d", {locale: pt})}`)}}>
+                 Salvar
+              </button>
+          </ExpansionPanel>
           </Dialog>
         );
 
@@ -157,10 +178,13 @@ class AbvCalendarWidget extends Component {
     });
   };
 
-  openDialog (key) {
+  openDialog (key, day) {
     let obj = {...this.state.open}
     obj[key] = true;
-    this.setState({open: obj})
+    this.setState({
+      open: obj,
+      selectedDate: day
+    })
   }
   
   closeDialog (key) {
@@ -169,6 +193,10 @@ class AbvCalendarWidget extends Component {
     this.setState({open: obj})
   }
   
+  sendAndClose(key, task, date) {
+    this.closeDialog(key);
+    this.props.addTaskFromWidget(task, date);
+  }
 
 
   render() {

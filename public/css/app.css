@@ -11685,6 +11685,17 @@ body .places .m-b-md {
   right: 3%;
 }
 
+.calendar-dialog .send-button {
+  background-color: #8344E0;
+  color: white;
+  padding: 1% 5%;
+  font-weight: 700;
+  border-radius: 5px;
+  position: relative;
+  left: 35%;
+  margin-bottom: 5%;
+}
+
 @media (max-width: 650px) {
   .calendar-dialog .MuiDialog-paper {
     font-size: 3.5vw !important;
