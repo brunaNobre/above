@@ -6,6 +6,12 @@
     }
 }
 
+@media(min-width: 651px) {
+    .calendar-view {
+        display: none;
+    }
+}
+
 .icon {
   font-family: 'Material Icons', serif;
   font-style: normal;
@@ -74,7 +80,7 @@
   border: 1px solid var(--border-color);
   margin-left: auto;
   margin-right: auto;
-  margin-top: 14%;
+  margin-top: 16%;
 }
 
 .calendar .header {
