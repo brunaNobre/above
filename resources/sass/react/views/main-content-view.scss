@@ -1,0 +1,25 @@
+.main-content-view {
+    .calendar {
+        margin-left: 50%;
+        width: 50%;
+        display: block;
+        position: fixed;
+        top: 1.5rem;
+        .header {
+            font-size: 100%;
+        }
+        .cel-phase-icon {
+            width: 2rem;
+            height: 3rem;
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .main-content-view {
+        .calendar { 
+            display: none;
+        }
+    }
+}
+

@@ -4,7 +4,7 @@ import MoonHeader from '../MoonHeader'
 import formatDate from '../../utils/formatDate'
 import getPhase from '../../utils/getPhase'
 import NewTaskDialog from './NewTaskDialog'
-
+import AbvCalendarWidget from '../../components/AbvCalendar/AbvCalendarWidget'
 
 
 class AboveMainContent extends Component {
@@ -59,9 +59,10 @@ class AboveMainContent extends Component {
 
     render() {
         return (
-            <div>
+            <div className="main-content-view">
                 <Panel />
                 <MoonHeader phase={this.state.phase}/>
+                <AbvCalendarWidget />
                 <NewTaskDialog
                 newTask={this.state.newTask} 
                 sendInputValue={this.sendInputValue}

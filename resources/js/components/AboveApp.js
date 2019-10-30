@@ -22,7 +22,7 @@ import Signs from '../views/Signs'
 import Tasks from '../views/Tasks'
 import TodaySky from '../views/TodaySky'
 import UserMood from '../views/UserMood'
-import Calendar from '../views/Calendar'
+import AbvCalendar from '../views/AbvCalendar'
 
 
 
@@ -62,7 +62,7 @@ class AboveApp extends Component {
             <Route exact path='/home' component={AboveMainContent}/>
             <Route path='/home/moons' component={Moons}/>
             <Route path='/home/natal-chart' component={NatalChart}/>
-            <Route path='/home/calendar' component={Calendar}/>
+            <Route path='/home/calendar' component={AbvCalendar}/>
             <Route path='/home/planets' component={Planets}/>
             <Route path='/home/signs' component={Signs}/>
             <Route path='/home/tasks' component={Tasks} user={this.state.user}/>
