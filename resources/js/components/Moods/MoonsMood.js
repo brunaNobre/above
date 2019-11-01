@@ -57,9 +57,13 @@ export default function MoonsMood(props) {
   let userFeellingsFullList = <CircularProgress className="loading"/>;
   let userFeellingsWanList = <CircularProgress className="loading"/>;
   let newMoonMostFelt = "";
+  let newMoonMostFeltPercentage = "...";
   let waxMoonMostFelt = "";
+  let waxMoonMostFeltPercentage = "...";
   let fullMoonMostFelt = "";
+  let fullMoonMostFeltPercentage = "...";
   let wanMoonMostFelt = "";
+  let wanMoonMostFeltPercentage = "...";
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -245,6 +249,7 @@ export default function MoonsMood(props) {
           for(let p in percentage) {
             if((percentage[p] == max)) {
               newMoonMostFelt = p;
+              newMoonMostFeltPercentage = percentage[p].toPrecision(3);
               break;
             }
           }
@@ -274,6 +279,7 @@ export default function MoonsMood(props) {
         for(let p in percentage) {
           if((percentage[p] == max)) {
             waxMoonMostFelt = p;
+            waxMoonMostFeltPercentage = percentage[p].toPrecision(3);
             break;
           }
         }
@@ -303,6 +309,7 @@ export default function MoonsMood(props) {
         for(let p in percentage) {
           if((percentage[p] == max)) {
             fullMoonMostFelt = p;
+            fullMoonMostFeltPercentage = percentage[p].toPrecision(3);
             break;
           }
         }
@@ -332,6 +339,7 @@ export default function MoonsMood(props) {
         for(let p in percentage) {
           if((percentage[p] == max)) {
             wanMoonMostFelt = p;
+            wanMoonMostFeltPercentage = percentage[p].toPrecision(3);         
             break;
           }
         }
@@ -354,7 +362,7 @@ export default function MoonsMood(props) {
         {userFeellingsNewList}
         </List>
         <div className="major-feelling-in-moon">
-          <p className="major-people">Como a <b>maioria</b> das pessoas se sente: <b>{newMoonMostFelt}</b></p>
+          <p className="major-people">Como a <b>maioria ({newMoonMostFeltPercentage}%)</b> das pessoas se sente: <b>{newMoonMostFelt}</b></p>
         </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
@@ -363,7 +371,7 @@ export default function MoonsMood(props) {
         {userFeellingsWaxList}
         </List>
         <div className="major-feelling-in-moon">
-          <p className="major-people">Como a <b>maioria</b> das pessoas se sente: <b>{waxMoonMostFelt}</b></p>
+          <p className="major-people">Como a <b>maioria ({waxMoonMostFeltPercentage}%)</b> das pessoas se sente: <b>{waxMoonMostFelt}</b></p>
         </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
@@ -372,7 +380,7 @@ export default function MoonsMood(props) {
         {userFeellingsFullList}
         </List>
         <div className="major-feelling-in-moon">
-          <p className="major-people">Como a <b>maioria</b> das pessoas se sente: <b>{fullMoonMostFelt}</b></p>
+          <p className="major-people">Como a <b>maioria ({fullMoonMostFeltPercentage}%)</b> das pessoas se sente: <b>{fullMoonMostFelt}</b></p>
         </div>
       </TabPanel>
       <TabPanel value={value} index={3}>
@@ -381,7 +389,7 @@ export default function MoonsMood(props) {
         {userFeellingsWanList}
         </List>
         <div className="major-feelling-in-moon">
-          <p className="major-people">Como a <b>maioria</b> das pessoas se sente: <b>{wanMoonMostFelt}</b></p>
+          <p className="major-people">Como a <b>maioria ({wanMoonMostFeltPercentage}%)</b> das pessoas se sente: <b>{wanMoonMostFelt}</b></p>
         </div>
       </TabPanel>
       <Divider />
