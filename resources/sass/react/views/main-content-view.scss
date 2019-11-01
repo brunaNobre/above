@@ -25,63 +25,73 @@
     }
 }
 
-@media (max-width: 700px) {
+@media (min-width: 651px) {
     .main-content-view {
         .calendar { 
-            top: 9.5rem;
+            top: 6rem;
         }
     }
 }
 
-@media (max-width: 1150px) {
+@media (min-width: 800px) {
     .main-content-view {
         .calendar { 
-            top: 7.5rem;
+            top: 4.5rem;
         }
     }
 }
 
-@media (min-width: 1150px) {
+@media (min-width: 900px) {
     .main-content-view {
-        .calendar {
-            .cel-phase-icon {
-                height: 4vw;
-            }
+        .calendar { 
+            top: 3.5rem;
         }
     }
 }
 
-
-@media (min-width: 1150px) {
+@media (min-width: 1000px) {
     .main-content-view {
-        .calendar {
-            .cel-phase-icon {
-                width: 40%;
-                height: 3vw;
-            }
+        .calendar { 
+            top: 2.5rem;
         }
     }
 }
+
+@media (min-width: 1100px) {
+    .main-content-view {
+        .calendar { 
+            top: 1.5rem;
+        }
+    }
+}
+
 
 @media(min-width: 1200px) {
     .main-content-view {
         .calendar {
+            top: 1.5rem;
             width: 40%;
             margin-left: 55%;
-            top: 3.5rem;
             .cel-phase-icon {
-              height: 1.5vw;
+              height: 1vw;
             }
           }
     }
   }
+
+@media (min-width: 1300px) {
+    .main-content-view {
+        .calendar { 
+            top: 0.5rem;
+        }
+    }
+}  
 
 @media(min-width: 1500px) {
     .main-content-view {
         .calendar {
             width: 25%;
             margin-left: 62%;
-            top: 0.5rem;
             .cel-phase-icon {
               height: 1vw;
             }
@@ -93,8 +103,8 @@
     .main-content-view {
         .calendar {
             .cel-phase-icon {
-                //width: 25%;
-                //height: 2vw;
+                width: 25%;
+                height: 2vw;
             }
         }
     }

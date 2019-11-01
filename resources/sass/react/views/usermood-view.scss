@@ -9,6 +9,7 @@
         font-weight: 300;
         font-size: 1.4rem;
         margin-left: 20px;
+        color: #8344E0;
     }
 
     .MuiTabs-scroller {
@@ -33,7 +34,7 @@
         margin-bottom: 3%;
         margin-top: 2%;
         h3 {
-            font-weight: 300;
+            font-weight: 500;
             font-size: 1.4rem;
         }
     }
@@ -42,6 +43,12 @@
         left: 45% !important;
         position: relative !important;
         color: #8344E0;
+    }
+
+    .major-feelling-in-moon {
+        .major-people {
+            color: #8344E0;
+        }
     }
 
 }

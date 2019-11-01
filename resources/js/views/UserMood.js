@@ -79,6 +79,26 @@ class UserMood extends Component {
               this.setState({userFeellingsWan: res.data});
           }); 
 
+          axios.get(`/api/feellings-new`)
+          .then(res => {
+              this.setState({allFeellingsNew: res.data});
+          }); 
+
+          axios.get(`/api/feellings-waxing`)
+          .then(res => {
+              this.setState({allFeellingsWax: res.data});
+          }); 
+
+          axios.get(`/api/feellings-full`)
+          .then(res => {
+              this.setState({allFeellingsFull: res.data});
+          }); 
+
+          axios.get(`/api/feellings-waning`)
+          .then(res => {
+              this.setState({allFeellingsWan: res.data});
+          }); 
+
         }
 
 
@@ -117,7 +137,11 @@ class UserMood extends Component {
         return (
             <div className="usermood-view">
                <h1 onClick={this.click}>Meu Mood</h1>
-               <p className="subtitle">Como eu me sinto quando...</p> 
+               <p className="subtitle">Como eu me sinto quando...</p>
+               <AllMoods
+                userFeellings={this.state.userFeellings}
+                dayFeellings={this.state.dayFeellings}    
+                /> 
                <MoonsMood
                 userFeellingsNew={this.state.userFeellingsNew}
                 userFeellingsWax={this.state.userFeellingsWax}
@@ -128,11 +152,6 @@ class UserMood extends Component {
                 allFeellingsFull={this.state.allFeellingsFull}
                 allFeellingsWan={this.state.allFeellingsWan}
                /> 
-               <AllMoods
-                userFeellings={this.state.userFeellings}
-                dayFeellings={this.state.dayFeellings}    
-                />
-               
                <NewTaskDialog
                 newTask={this.state.newTask} 
                 sendInputValue={this.sendInputValue}

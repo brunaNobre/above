@@ -96,7 +96,7 @@ export default function AllMoods(props) {
       </Paper>
       <Paper className={classes.root + " top-moods"}>
         <Typography variant="h5" component="h3">
-          O que eu mais sinto
+          Como eu to na maioria das vezes
         </Typography>
         <List component="nav" aria-label="main mailbox folders">
         {userFeellingsList}

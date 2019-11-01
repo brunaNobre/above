@@ -56,6 +56,10 @@ export default function MoonsMood(props) {
   let userFeellingsWaxList = <CircularProgress className="loading"/>;
   let userFeellingsFullList = <CircularProgress className="loading"/>;
   let userFeellingsWanList = <CircularProgress className="loading"/>;
+  let newMoonMostFelt = "";
+  let waxMoonMostFelt = "";
+  let fullMoonMostFelt = "";
+  let wanMoonMostFelt = "";
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -93,7 +97,7 @@ export default function MoonsMood(props) {
           userFeellingsNewList = sortedPercentages.map(function(p, i) {
             return (
               <ListItem key={i}>
-                <ListItemText primary={`${p[0]}: ${p[1].toPrecision(2)}%`} />
+                <ListItemText primary={`${p[0]}: ${p[1].toPrecision(3)}%`} />
               </ListItem>
             )
           });
@@ -132,7 +136,7 @@ export default function MoonsMood(props) {
           userFeellingsWaxList = sortedPercentages.map(function(p, i) {
             return (
               <ListItem key={i}>
-                <ListItemText primary={`${p[0]}: ${p[1].toPrecision(2)}%`} />
+                <ListItemText primary={`${p[0]}: ${p[1].toPrecision(3)}%`} />
               </ListItem>
             )
           });
@@ -171,7 +175,7 @@ export default function MoonsMood(props) {
           userFeellingsFullList = sortedPercentages.map(function(p, i) {
             return (
               <ListItem key={i}>
-                <ListItemText primary={`${p[0]}: ${p[1].toPrecision(2)}%`} />
+                <ListItemText primary={`${p[0]}: ${p[1].toPrecision(3)}%`} />
               </ListItem>
             )
           });
@@ -210,15 +214,131 @@ export default function MoonsMood(props) {
           userFeellingsWanList = sortedPercentages.map(function(p, i) {
             return (
               <ListItem key={i}>
-                <ListItemText primary={`${p[0]}: ${p[1].toPrecision(2)}%`} />
+                <ListItemText primary={`${p[0]}: ${p[1].toPrecision(3)}%`} />
               </ListItem>
             )
           });
         }  
       }  
-      
+
+      // if allFeellingsNew state was loaded and has any feelling
+      if(Array.isArray(props.allFeellingsNew) && (props.allFeellingsNew).length) {
+          const percentage = {}
+          const count = {};
+          let sum = 0;
+
+          (props.allFeellingsNew).forEach(function(feelling) {
+             count[feelling.name] = (count[feelling.name] ||0) + 1;
+            });
+    
+          for(let feelling in count) {
+            sum = sum + count[feelling];
+          } 
+    
+          for(let feelling in count) {
+            percentage[feelling]  = (count[feelling] / sum) * 100
+          }
+
+          let arr = Object.values(percentage);
+          let max = Math.max(...arr);
+
+          for(let p in percentage) {
+            if((percentage[p] == max)) {
+              newMoonMostFelt = p;
+              break;
+            }
+          }
+      }
+
+      // if allFeellingsWax state was loaded and has any feelling
+      if(Array.isArray(props.allFeellingsWax) && (props.allFeellingsWax).length) {
+        const percentage = {}
+        const count = {};
+        let sum = 0;
+
+        (props.allFeellingsWax).forEach(function(feelling) {
+           count[feelling.name] = (count[feelling.name] ||0) + 1;
+          });
+  
+        for(let feelling in count) {
+          sum = sum + count[feelling];
+        } 
+  
+        for(let feelling in count) {
+          percentage[feelling]  = (count[feelling] / sum) * 100
+        }
+
+        let arr = Object.values(percentage);
+        let max = Math.max(...arr);
+
+        for(let p in percentage) {
+          if((percentage[p] == max)) {
+            waxMoonMostFelt = p;
+            break;
+          }
+        }
+    }      
+
+      // if allFeellingsFull state was loaded and has any feelling
+      if(Array.isArray(props.allFeellingsFull) && (props.allFeellingsFull).length) {
+        const percentage = {}
+        const count = {};
+        let sum = 0;
+
+        (props.allFeellingsFull).forEach(function(feelling) {
+           count[feelling.name] = (count[feelling.name] ||0) + 1;
+          });
+  
+        for(let feelling in count) {
+          sum = sum + count[feelling];
+        } 
+  
+        for(let feelling in count) {
+          percentage[feelling]  = (count[feelling] / sum) * 100
+        }
+
+        let arr = Object.values(percentage);
+        let max = Math.max(...arr);
+
+        for(let p in percentage) {
+          if((percentage[p] == max)) {
+            fullMoonMostFelt = p;
+            break;
+          }
+        }
+    }     
+
+      // if allFeellingsWan state was loaded and has any feelling
+      if(Array.isArray(props.allFeellingsWan) && (props.allFeellingsWan).length) {
+        const percentage = {}
+        const count = {};
+        let sum = 0;
+
+        (props.allFeellingsWan).forEach(function(feelling) {
+           count[feelling.name] = (count[feelling.name] ||0) + 1;
+          });
+  
+        for(let feelling in count) {
+          sum = sum + count[feelling];
+        } 
+  
+        for(let feelling in count) {
+          percentage[feelling]  = (count[feelling] / sum) * 100
+        }
+
+        let arr = Object.values(percentage);
+        let max = Math.max(...arr);
+
+        for(let p in percentage) {
+          if((percentage[p] == max)) {
+            wanMoonMostFelt = p;
+            break;
+          }
+        }
+    }     
+
   return (
-    <div className={classes.root}>
+    <div className={classes.root +" moons-panel"}>
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
           <Tab label="Nova" {...a11yProps(0)} />
@@ -234,8 +354,7 @@ export default function MoonsMood(props) {
         {userFeellingsNewList}
         </List>
         <div className="major-feelling-in-moon">
-          <p className>Como a maioria das pessoas se sente:</p>
-          <p className="answer">Feliz</p>
+          <p className="major-people">Como a <b>maioria</b> das pessoas se sente: <b>{newMoonMostFelt}</b></p>
         </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
@@ -244,8 +363,7 @@ export default function MoonsMood(props) {
         {userFeellingsWaxList}
         </List>
         <div className="major-feelling-in-moon">
-          <p className>Como a maioria das pessoas se sente:</p>
-          <p className="answer">Feliz</p>
+          <p className="major-people">Como a <b>maioria</b> das pessoas se sente: <b>{waxMoonMostFelt}</b></p>
         </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
@@ -254,8 +372,7 @@ export default function MoonsMood(props) {
         {userFeellingsFullList}
         </List>
         <div className="major-feelling-in-moon">
-          <p className>Como a maioria das pessoas se sente:</p>
-          <p className="answer">Feliz</p>
+          <p className="major-people">Como a <b>maioria</b> das pessoas se sente: <b>{fullMoonMostFelt}</b></p>
         </div>
       </TabPanel>
       <TabPanel value={value} index={3}>
@@ -264,8 +381,7 @@ export default function MoonsMood(props) {
         {userFeellingsWanList}
         </List>
         <div className="major-feelling-in-moon">
-          <p className>Como a maioria das pessoas se sente:</p>
-          <p className="answer">Feliz</p>
+          <p className="major-people">Como a <b>maioria</b> das pessoas se sente: <b>{wanMoonMostFelt}</b></p>
         </div>
       </TabPanel>
       <Divider />

@@ -82,21 +82,21 @@ Route::middleware('auth:api')->get('/charts', function () {
     return $charts;
 });
 
-// MOODS
+// FEELLINGS
 
 Route::post('/moods', function(Request $request) {
      Mood::create($request->all());
      $mood = Mood::all()->last();
-     return $mood->feellings()->attach([1]);
+     return $mood->feellings()->attach([4]);
      
 });
 
 
-
+// Feellings that the auth user registered on current day
 Route::middleware('auth:api')->get('/day-feellings', function() {
     $user_id = auth()->user()->id;
     $moods = Mood::where('user_id', $user_id)
-    ->where('day', '2019-10-31')
+    ->where('day', '2019-11-01')
     ->get();
 
     foreach ($moods as $mood) {
@@ -220,7 +220,7 @@ return $feellings;
 });
 
 
-// Routes for comparison
+// ROUTES FOR COMPARISON
 
 // Get all feellings in the new moon
 
