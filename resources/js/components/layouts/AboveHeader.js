@@ -20,8 +20,8 @@ function AboveHeader (props) {
                 <AbvLogo />
                 <AbvNavBar />
                 <AboveHeaderColorBar />
-                <AboveSideMenu user={props.user}/>
-                <AbvLogoutMenu user={props.user}/>
+                <AboveSideMenu user={props.user} firstName={props.firstName}/>
+                <AbvLogoutMenu user={props.user} firstName={props.firstName}/>
            </Toolbar>
 
         </AppBar>

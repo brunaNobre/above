@@ -8,7 +8,7 @@ class AbvSideMenuHeader extends Component {
         return (
             <div className="abv-sidemenu-header">
                 <AbvUserProfile />
-                <AbvGreeting user={this.props.user}/>
+                <AbvGreeting user={this.props.user} firstName={this.props.firstName}/>
             </div>
         )
     }

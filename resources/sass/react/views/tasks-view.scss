@@ -73,14 +73,17 @@
         left: 50%;
 
         .new-task-button {
-            position: relative;
+            position: fixed;
+            left: 54%;
+            width: 44%;
         }
     }
 }
 
 @media (min-width: 1800px) {
     .tasks-view {
-        top: 15%;      
+        top: 15%; 
+             
     }
 }
 

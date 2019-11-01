@@ -31,14 +31,19 @@ class AboveApp extends Component {
   constructor() {
     super()
     this.state = {
-      user: {}
+      user: {},
+      firstName: ""
     }
   }
 
   componentDidMount() {
     axios.get('/api/user')
     .then(res => {
-        this.setState({user: res.data})
+        let firstName = (res.data.name).split(" ")[0];
+        this.setState({
+          user: res.data,
+          firstName: firstName
+        })
     });
   }
 
@@ -54,6 +59,7 @@ class AboveApp extends Component {
         <Router>
           <AboveHeader 
           user={this.state.user}
+          firstName={this.state.firstName}
           />
 
 
@@ -67,7 +73,7 @@ class AboveApp extends Component {
             <Route path='/home/signs' component={Signs}/>
             <Route path='/home/tasks' component={Tasks} user={this.state.user}/>
             <Route path='/home/today-sky' component={TodaySky}/>
-            <Route path='/home/user-mood' component={UserMood}/>
+            <Route path='/home/user-mood' component={UserMood} user={this.state.user}/>
           </Switch>
 
 

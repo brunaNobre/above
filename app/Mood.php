@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mood extends Model
 {
-    protected $fillable = ['day', 'moon_phase', 'moon_sign'];
+    protected $fillable = ['user_id', 'day', 'moon_phase', 'moon_sign'];
     
 
    
