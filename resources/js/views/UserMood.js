@@ -85,9 +85,7 @@ class UserMood extends Component {
         axios.post('/api/moods', mood);
     }
 
-    render() {
-        console.log("userFeellings")
-        console.log(this.state.userFeellings)
+    render() {     
         return (
             <div className="usermood-view">
                <h1 onClick={this.click}>Meu Mood</h1>

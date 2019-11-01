@@ -20,6 +20,7 @@ export default function AllMoods(props) {
   let dayFeellingsList =  <CircularProgress className="loading"/>;
   let userFeellingsList = <CircularProgress className="loading"/>;
  
+  // if dayFeellings state was loaded
   if(Array.isArray(props.dayFeellings)) {
     dayFeellingsList = (props.dayFeellings).map(function(f){
       return (
@@ -31,21 +32,41 @@ export default function AllMoods(props) {
     });
   }
 
-
-
-
-  function totalFeellingsPercent() {
+    // if userFeellings state was loaded
     if(Array.isArray(props.userFeellings)) {
+      userFeellingsList = []
+      const percentage = {}
       const count = {};
-      (props.userFeellings).forEach(function(feelling) { count[feelling.name] = (count[feelling.name] ||0) + 1;});
-      console.log("count: ")
-      console.log(count);
+      let sum = 0;
+      (props.userFeellings).forEach(function(feelling) {
+         count[feelling.name] = (count[feelling.name] ||0) + 1;
+        });
+
+      for(let feelling in count) {
+        sum = sum + count[feelling];
+      } 
+
+      for(let feelling in count) {
+        percentage[feelling]  = (count[feelling] / sum) * 100
+      }
+      //sort the percentage values
+      let sortedPercentages = [];
+      for(let p in percentage) {
+        sortedPercentages.push([p, percentage[p]]);
+      }
+      sortedPercentages.sort(function(a, b) {
+        return b[1] - a[1];
+      });
+
+      userFeellingsList = sortedPercentages.map(function(p, i) {
+        return (
+          <ListItem key={i}>
+            <ListItemText primary={`${p[0]}: ${p[1].toPrecision(2)}%`} />
+          </ListItem>
+        )
+      });
+
     }
-
-
-  }
-  
-  totalFeellingsPercent();  
 
 
   return (
