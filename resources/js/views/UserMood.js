@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import NewTaskDialog from '../components/layouts/NewTaskDialog'
 import formatDate from '../utils/formatDate'
-
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import MoonsMood from '../components/Moods/MoonsMood'
+import AllMoods from '../components/Moods/AllMoods'
 
 class UserMood extends Component {
     constructor() {
@@ -11,11 +14,16 @@ class UserMood extends Component {
                 user_id: 0,
                 title: "",
                 due_to: formatDate(new Date().toLocaleDateString())
-            }
+            },
+            userFeellings: {},
+            dayFeellings: {},
+            date: formatDate(new Date().toLocaleDateString())
         }
 
         this.handleAdd = this.handleAdd.bind(this)    
         this.sendInputValue = this.sendInputValue.bind(this)
+        this.click = this.click.bind(this)
+
        
 
     }
@@ -31,6 +39,17 @@ class UserMood extends Component {
                 },
             })
           })
+
+          axios.get(`/api/day-feellings`)
+          .then(res => {
+             this.setState({dayFeellings: res.data});
+
+          }); 
+
+          axios.get(`/api/user-feellings`)
+          .then(res => {
+              this.setState({userFeellings: res.data});
+          }); 
 
         }
 
@@ -54,10 +73,31 @@ class UserMood extends Component {
         this.setState((state) => state.newTask[key] = newValue);
     }
 
+    click () {
+       const mood = {
+            user_id: this.props.user,
+            day: '2019-11-10',
+            moon_phase: "new",
+            moon_sign: "libra"
+
+        }
+
+        axios.post('/api/moods', mood);
+    }
+
     render() {
+        console.log("userFeellings")
+        console.log(this.state.userFeellings)
         return (
             <div className="usermood-view">
-               <h1>Mood</h1>
+               <h1 onClick={this.click}>Meu Mood</h1>
+               <p className="subtitle">Como eu me sinto quando...</p> 
+               <MoonsMood /> 
+               <AllMoods
+                userFeellings={this.state.userFeellings}
+                dayFeellings={this.state.dayFeellings}    
+                />
+               
                <NewTaskDialog
                 newTask={this.state.newTask} 
                 sendInputValue={this.sendInputValue}

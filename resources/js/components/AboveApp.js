@@ -73,7 +73,7 @@ class AboveApp extends Component {
             <Route path='/home/signs' component={Signs}/>
             <Route path='/home/tasks' component={Tasks} user={this.state.user}/>
             <Route path='/home/today-sky' component={TodaySky}/>
-            <Route path='/home/user-mood' component={UserMood}/>
+            <Route path='/home/user-mood' component={UserMood} user={this.state.user}/>
           </Switch>
 
 

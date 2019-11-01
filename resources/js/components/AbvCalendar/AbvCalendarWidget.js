@@ -142,7 +142,7 @@ class AbvCalendarWidget extends Component {
                 aria-controls="panel1a-content"
                 id="panel1a-header"
               >
-              <Typography >Criar tarefa</Typography>
+              <Typography >Nova tarefa</Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
                 <input name="title" type="text" onChange={(e) => {this.props.sendInputValue('title', e.target.value)}}/>

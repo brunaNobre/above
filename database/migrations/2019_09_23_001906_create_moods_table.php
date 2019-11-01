@@ -20,6 +20,7 @@ class CreateMoodsTable extends Migration
             $table->string('moon_phase');
             $table->string('moon_sign');
             $table->timestamps();
+            $table->index(['user_id', 'day'])->unique('day');
         });
     }
 

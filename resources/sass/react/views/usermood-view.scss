@@ -1,0 +1,48 @@
+.usermood-view {
+    h1 {
+        font-weight: 300;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    .subtitle {
+        font-weight: 300;
+        font-size: 1.4rem;
+        margin-left: 20px;
+    }
+
+    .MuiTabs-scroller {
+        background-color: white;
+        color: black;
+    }
+
+    .MuiTabs-flexContainer {
+        width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .MuiTabs-indicator {
+        background-color: #8344E0;
+    }
+
+    .moods-today, .top-moods {
+        width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 3%;
+        margin-top: 2%;
+        h3 {
+            font-weight: 300;
+            font-size: 1.4rem;
+            margin-left: 20px;
+        }
+    }
+
+    .loading {
+        left: 45% !important;
+        position: relative !important;
+        color: #8344E0;
+    }
+
+}
