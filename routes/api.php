@@ -128,3 +128,91 @@ return $feellings;
     
 });
 
+
+Route::middleware('auth:api')->get('/user-feellings-new', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'new')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+
+    
+});
+
+Route::middleware('auth:api')->get('/user-feellings-waxing', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waxing')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+
+    
+});
+
+Route::middleware('auth:api')->get('/user-feellings-full', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'full')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+
+    
+});
+
+Route::middleware('auth:api')->get('/user-feellings-waning', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waning')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+
+    
+});

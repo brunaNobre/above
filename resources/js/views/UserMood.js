@@ -16,6 +16,10 @@ class UserMood extends Component {
                 due_to: formatDate(new Date().toLocaleDateString())
             },
             userFeellings: {},
+            userFeellingsNew: {},
+            userFeellingsWax: {},
+            userFeellingsFull: {},
+            userFeellingsWan: {},
             dayFeellings: {},
             date: formatDate(new Date().toLocaleDateString())
         }
@@ -49,6 +53,26 @@ class UserMood extends Component {
           axios.get(`/api/user-feellings`)
           .then(res => {
               this.setState({userFeellings: res.data});
+          }); 
+
+          axios.get(`/api/user-feellings-new`)
+          .then(res => {
+              this.setState({userFeellingsNew: res.data});
+          }); 
+
+          axios.get(`/api/user-feellings-waxing`)
+          .then(res => {
+              this.setState({userFeellingsWax: res.data});
+          }); 
+
+          axios.get(`/api/user-feellings-full`)
+          .then(res => {
+              this.setState({userFeellingsFull: res.data});
+          }); 
+
+          axios.get(`/api/user-feellings-waning`)
+          .then(res => {
+              this.setState({userFeellingsWan: res.data});
           }); 
 
         }
@@ -90,7 +114,12 @@ class UserMood extends Component {
             <div className="usermood-view">
                <h1 onClick={this.click}>Meu Mood</h1>
                <p className="subtitle">Como eu me sinto quando...</p> 
-               <MoonsMood /> 
+               <MoonsMood
+                userFeellingsNew={this.state.userFeellingsNew}
+                userFeellingsWax={this.state.userFeellingsWax}
+                userFeellingsFull={this.state.userFeellingsFull}
+                userFeellingsWan={this.state.userFeellingsWan}
+               /> 
                <AllMoods
                 userFeellings={this.state.userFeellings}
                 dayFeellings={this.state.dayFeellings}    

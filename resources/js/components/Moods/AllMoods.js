@@ -22,49 +22,61 @@ export default function AllMoods(props) {
  
   // if dayFeellings state was loaded
   if(Array.isArray(props.dayFeellings)) {
-    dayFeellingsList = (props.dayFeellings).map(function(f){
-      return (
-        <ListItem key={f.id}>
-          <ListItemText primary={f.name} />
-        </ListItem>
-      )
-      
-    });
+    if((props.dayFeellings).length == 0) {
+      dayFeellingsList = <ListItem><ListItemText primary="Você não registrou nenhum sentimento." /></ListItem>
+    } else {
+      dayFeellingsList = (props.dayFeellings).map(function(f){
+        return (
+          <ListItem key={f.id}>
+            <ListItemText primary={f.name} />
+          </ListItem>
+        )
+        
+      });
+    }
+
   }
 
     // if userFeellings state was loaded
     if(Array.isArray(props.userFeellings)) {
-      userFeellingsList = []
-      const percentage = {}
-      const count = {};
-      let sum = 0;
-      (props.userFeellings).forEach(function(feelling) {
-         count[feelling.name] = (count[feelling.name] ||0) + 1;
+
+      if((props.userFeellings).length == 0) {
+        userFeellingsList =  <ListItem><ListItemText primary="Você não registrou nenhum sentimento." /></ListItem>
+      } else {
+        userFeellingsList = []
+        const percentage = {}
+        const count = {};
+        let sum = 0;
+        (props.userFeellings).forEach(function(feelling) {
+           count[feelling.name] = (count[feelling.name] ||0) + 1;
+          });
+  
+        for(let feelling in count) {
+          sum = sum + count[feelling];
+        } 
+  
+        for(let feelling in count) {
+          percentage[feelling]  = (count[feelling] / sum) * 100
+        }
+        //sort the percentage values
+        let sortedPercentages = [];
+        for(let p in percentage) {
+          sortedPercentages.push([p, percentage[p]]);
+        }
+        sortedPercentages.sort(function(a, b) {
+          return b[1] - a[1];
         });
-
-      for(let feelling in count) {
-        sum = sum + count[feelling];
-      } 
-
-      for(let feelling in count) {
-        percentage[feelling]  = (count[feelling] / sum) * 100
+  
+        userFeellingsList = sortedPercentages.map(function(p, i) {
+          return (
+            <ListItem key={i}>
+              <ListItemText primary={`${p[0]}: ${p[1].toPrecision(2)}%`} />
+            </ListItem>
+          )
+        });
       }
-      //sort the percentage values
-      let sortedPercentages = [];
-      for(let p in percentage) {
-        sortedPercentages.push([p, percentage[p]]);
-      }
-      sortedPercentages.sort(function(a, b) {
-        return b[1] - a[1];
-      });
 
-      userFeellingsList = sortedPercentages.map(function(p, i) {
-        return (
-          <ListItem key={i}>
-            <ListItemText primary={`${p[0]}: ${p[1].toPrecision(2)}%`} />
-          </ListItem>
-        )
-      });
+
 
     }
 
