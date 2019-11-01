@@ -91,6 +91,8 @@ Route::post('/moods', function(Request $request) {
      
 });
 
+
+
 Route::middleware('auth:api')->get('/day-feellings', function() {
     $user_id = auth()->user()->id;
     $moods = Mood::where('user_id', $user_id)
@@ -199,6 +201,102 @@ Route::middleware('auth:api')->get('/user-feellings-waning', function() {
 
     $user_id = auth()->user()->id;
     $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waning')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+
+    
+});
+
+
+// Routes for comparison
+
+// Get all feellings in the new moon
+
+Route::middleware('auth:api')->get('/feellings-new', function() {
+
+    $moods = Mood::where('moon_phase', 'new')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+
+    
+});
+
+// Get all feellings in the waxing moon
+
+Route::middleware('auth:api')->get('/feellings-waxing', function() {
+
+    $moods = Mood::where('moon_phase', 'waxing')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+
+    
+});
+
+// Get all feellings in the full moon
+
+Route::middleware('auth:api')->get('/feellings-full', function() {
+
+    $moods = Mood::where('moon_phase', 'full')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+
+    
+});
+
+
+// Get all feellings in the waning moon
+
+Route::middleware('auth:api')->get('/feellings-waning', function() {
+
+    $moods = Mood::where('moon_phase', 'waning')->get();
     $feellingsList = array();
     $feellings = array();
 

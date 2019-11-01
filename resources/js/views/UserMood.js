@@ -20,6 +20,10 @@ class UserMood extends Component {
             userFeellingsWax: {},
             userFeellingsFull: {},
             userFeellingsWan: {},
+            allFeellingsNew: {},
+            allFeellingsWax: {},
+            allFeellingsFull: {},
+            allFeellingsWan: {},
             dayFeellings: {},
             date: formatDate(new Date().toLocaleDateString())
         }
@@ -109,7 +113,7 @@ class UserMood extends Component {
         axios.post('/api/moods', mood);
     }
 
-    render() {     
+    render() {   
         return (
             <div className="usermood-view">
                <h1 onClick={this.click}>Meu Mood</h1>
@@ -119,6 +123,10 @@ class UserMood extends Component {
                 userFeellingsWax={this.state.userFeellingsWax}
                 userFeellingsFull={this.state.userFeellingsFull}
                 userFeellingsWan={this.state.userFeellingsWan}
+                allFeellingsNew={this.state.allFeellingsNew}
+                allFeellingsWax={this.state.allFeellingsWax}
+                allFeellingsFull={this.state.allFeellingsFull}
+                allFeellingsWan={this.state.allFeellingsWan}
                /> 
                <AllMoods
                 userFeellings={this.state.userFeellings}

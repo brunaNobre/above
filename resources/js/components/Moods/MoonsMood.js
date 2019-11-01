@@ -10,6 +10,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import List from '@material-ui/core/List';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Divider from '@material-ui/core/Divider';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -232,25 +233,42 @@ export default function MoonsMood(props) {
         <List component="nav" aria-label="main mailbox folders">
         {userFeellingsNewList}
         </List>
+        <div className="major-feelling-in-moon">
+          <p className>Como a maioria das pessoas se sente:</p>
+          <p className="answer">Feliz</p>
+        </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
         Na <b>Lua Crescente</b> eu me sinto:
         <List component="nav" aria-label="main mailbox folders">
         {userFeellingsWaxList}
         </List>
+        <div className="major-feelling-in-moon">
+          <p className>Como a maioria das pessoas se sente:</p>
+          <p className="answer">Feliz</p>
+        </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
         Na <b>Lua Cheia</b> eu me sinto:
         <List component="nav" aria-label="main mailbox folders">
         {userFeellingsFullList}
         </List>
+        <div className="major-feelling-in-moon">
+          <p className>Como a maioria das pessoas se sente:</p>
+          <p className="answer">Feliz</p>
+        </div>
       </TabPanel>
       <TabPanel value={value} index={3}>
         Na <b>Lua Minguante</b> eu me sinto:
         <List component="nav" aria-label="main mailbox folders">
         {userFeellingsWanList}
         </List>
+        <div className="major-feelling-in-moon">
+          <p className>Como a maioria das pessoas se sente:</p>
+          <p className="answer">Feliz</p>
+        </div>
       </TabPanel>
+      <Divider />
     </div>
   );
 }

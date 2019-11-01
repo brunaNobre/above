@@ -11900,6 +11900,18 @@ body .places .m-b-md {
   }
 }
 
+@media (max-width: 700px) {
+  .main-content-view .calendar {
+    top: 9.5rem;
+  }
+}
+
+@media (max-width: 1150px) {
+  .main-content-view .calendar {
+    top: 7.5rem;
+  }
+}
+
 @media (min-width: 1150px) {
   .main-content-view .calendar .cel-phase-icon {
     height: 4vw;
@@ -11913,10 +11925,27 @@ body .places .m-b-md {
   }
 }
 
-@media (min-width: 2000px) {
+@media (min-width: 1200px) {
+  .main-content-view .calendar {
+    width: 40%;
+    margin-left: 55%;
+    top: 3.5rem;
+  }
+
   .main-content-view .calendar .cel-phase-icon {
+    height: 1.5vw;
+  }
+}
+
+@media (min-width: 1500px) {
+  .main-content-view .calendar {
     width: 25%;
-    height: 2vw;
+    margin-left: 62%;
+    top: 0.5rem;
+  }
+
+  .main-content-view .calendar .cel-phase-icon {
+    height: 1vw;
   }
 }
 
