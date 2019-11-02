@@ -84,6 +84,11 @@ Route::middleware('auth:api')->get('/charts', function () {
 
 // FEELLINGS
 
+Route::middleware('auth:api')->get('/feellings', function () {
+    $feellings = Feelling::all();
+    return $feellings;
+});
+
 Route::middleware('auth:api')->post('/moods', function(Request $request) {
      Mood::create($request->all());
      $mood = Mood::all()->last();

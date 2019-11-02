@@ -12,6 +12,16 @@
         color: #8344E0;
     }
 
+    .add-feelling {
+        color: #8344E0;
+    }
+
+    .add-feelling-input {
+        float: left;
+        margin-right: 5px;
+        margin-bottom: 10px;
+    }
+
     .MuiTabs-scroller {
         background-color: white;
         color: black;
@@ -36,6 +46,10 @@
         h3 {
             font-weight: 500;
             font-size: 1.4rem;
+        }
+        button.save {
+            background-color: #8344E0;
+            color: white;
         }
     }
 

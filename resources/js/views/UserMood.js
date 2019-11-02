@@ -15,6 +15,7 @@ class UserMood extends Component {
                 title: "",
                 due_to: formatDate(new Date().toLocaleDateString())
             },
+            feellings: {},
             userFeellings: {},
             userFeellingsNew: {},
             userFeellingsWax: {},
@@ -53,6 +54,11 @@ class UserMood extends Component {
           .then(res => {
              this.setState({dayFeellings: res.data});
 
+          }); 
+
+          axios.get(`/api/feellings`)
+          .then(res => {
+              this.setState({feellings: res.data});
           }); 
 
           axios.get(`/api/user-feellings`)
@@ -135,14 +141,14 @@ class UserMood extends Component {
     }
 
     render() {
-        console.log(this.state.dayFeellings);   
         return (
             <div className="usermood-view">
                <h1 onClick={this.click}>Meu Mood</h1>
                <p className="subtitle">Como eu me sinto quando...</p>
                <AllMoods
                 userFeellings={this.state.userFeellings}
-                dayFeellings={this.state.dayFeellings}    
+                dayFeellings={this.state.dayFeellings}
+                feellings={this.state.feellings}    
                 /> 
                <MoonsMood
                 userFeellingsNew={this.state.userFeellingsNew}

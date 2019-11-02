@@ -11980,6 +11980,16 @@ body .places .m-b-md {
   color: #8344E0;
 }
 
+.usermood-view .add-feelling {
+  color: #8344E0;
+}
+
+.usermood-view .add-feelling-input {
+  float: left;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
 .usermood-view .MuiTabs-scroller {
   background-color: white;
   color: black;
@@ -12008,6 +12018,12 @@ body .places .m-b-md {
 .usermood-view .top-moods h3 {
   font-weight: 500;
   font-size: 1.4rem;
+}
+
+.usermood-view .moods-today button.save,
+.usermood-view .top-moods button.save {
+  background-color: #8344E0;
+  color: white;
 }
 
 .usermood-view .loading {

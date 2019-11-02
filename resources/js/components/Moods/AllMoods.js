@@ -6,7 +6,9 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import List from '@material-ui/core/List';
 import CircularProgress from '@material-ui/core/CircularProgress';
-
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 
 const useStyles = makeStyles(theme => ({
@@ -19,6 +21,9 @@ export default function AllMoods(props) {
   const classes = useStyles();
   let dayFeellingsList =  <CircularProgress className="loading"/>;
   let userFeellingsList = <CircularProgress className="loading"/>;
+  let options = [{name: "..."}];
+
+
  
   // if dayFeellings state was loaded
   if(Array.isArray(props.dayFeellings)) {
@@ -36,6 +41,9 @@ export default function AllMoods(props) {
     }
 
   }
+
+  if(Array.isArray(props.feellings)) {options = props.feellings}
+
 
     // if userFeellings state was loaded
     if(Array.isArray(props.userFeellings)) {
@@ -91,8 +99,21 @@ export default function AllMoods(props) {
         <List component="nav" aria-label="main mailbox folders">
         {dayFeellingsList}
         </List>
-      
-       
+        <Typography variant="h5" component="h3" className="add-feelling">
+        Adicionar sentimento
+        </Typography>
+        <Autocomplete
+        className="add-feelling-input"
+        options={options}
+        getOptionLabel={option => option.name}
+        style={{ width: 300 }}
+        renderInput={params => (
+        <TextField {...params}  variant="outlined" fullWidth />
+      )}
+    />
+          <Button variant="contained" className="save">
+            Salvar
+          </Button>       
       </Paper>
       <Paper className={classes.root + " top-moods"}>
         <Typography variant="h5" component="h3">
