@@ -48,7 +48,8 @@ class UserMood extends Component {
             })
           })
 
-          axios.get(`/api/day-feellings`)
+          let day = formatDate(new Date().toLocaleDateString())
+          axios.get(`/api/day-feellings?day=`+ day)
           .then(res => {
              this.setState({dayFeellings: res.data});
 
@@ -133,7 +134,8 @@ class UserMood extends Component {
         axios.post('/api/moods', mood);
     }
 
-    render() {   
+    render() {
+        console.log(this.state.dayFeellings);   
         return (
             <div className="usermood-view">
                <h1 onClick={this.click}>Meu Mood</h1>

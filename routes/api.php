@@ -84,7 +84,7 @@ Route::middleware('auth:api')->get('/charts', function () {
 
 // FEELLINGS
 
-Route::post('/moods', function(Request $request) {
+Route::middleware('auth:api')->post('/moods', function(Request $request) {
      Mood::create($request->all());
      $mood = Mood::all()->last();
      return $mood->feellings()->attach([4]);
@@ -93,18 +93,21 @@ Route::post('/moods', function(Request $request) {
 
 
 // Feellings that the auth user registered on current day
-Route::middleware('auth:api')->get('/day-feellings', function() {
+Route::middleware('auth:api')->get('/day-feellings', function(Request $request) {
     $user_id = auth()->user()->id;
     $moods = Mood::where('user_id', $user_id)
-    ->where('day', '2019-11-01')
+    ->where('day', $request->all())
     ->get();
 
-    foreach ($moods as $mood) {
-        $feellings = $mood->feellings()->get();
+    if(count($moods) > 0) {
+        foreach ($moods as $mood) {
+            $feellings = $mood->feellings()->get();
+         }
+     
+         return $feellings; 
     }
 
-    
-    return $feellings;            
+    return [];          
     
 });
 
@@ -114,6 +117,9 @@ Route::middleware('auth:api')->get('/user-feellings', function() {
     $moods = Mood::where('user_id', $user_id)->get();
     $feellingsList = array();
     $feellings = array();
+
+
+
 
     foreach ($moods as $mood) {
         array_push($feellingsList, $mood->feellings()->get());

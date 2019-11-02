@@ -11018,7 +11018,7 @@ body .places .m-b-md {
 .moon-display {
   width: 15em;
   position: relative;
-  top: 10em;
+  top: 12em;
   margin-right: auto;
   margin-left: auto;
   display: block;
@@ -11936,10 +11936,6 @@ body .places .m-b-md {
     width: 40%;
     margin-left: 55%;
   }
-
-  .main-content-view .calendar .cel-phase-icon {
-    height: 1vw;
-  }
 }
 
 @media (min-width: 1300px) {
@@ -11955,14 +11951,14 @@ body .places .m-b-md {
   }
 
   .main-content-view .calendar .cel-phase-icon {
-    height: 1vw;
+    height: 1.5vw;
   }
 }
 
-@media (min-width: 2000px) {
+@media (min-width: 3000px) {
   .main-content-view .calendar .cel-phase-icon {
     width: 25%;
-    height: 2vw;
+    height: 1vw;
   }
 }
 

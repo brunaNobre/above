@@ -23,7 +23,7 @@ export default function AllMoods(props) {
   // if dayFeellings state was loaded
   if(Array.isArray(props.dayFeellings)) {
     if((props.dayFeellings).length == 0) {
-      dayFeellingsList = <ListItem><ListItemText primary="Você não registrou nenhum sentimento." /></ListItem>
+      dayFeellingsList = <ListItem><ListItemText primary="Você ainda não registrou nenhum sentimento." /></ListItem>
     } else {
       dayFeellingsList = (props.dayFeellings).map(function(f){
         return (
@@ -96,7 +96,7 @@ export default function AllMoods(props) {
       </Paper>
       <Paper className={classes.root + " top-moods"}>
         <Typography variant="h5" component="h3">
-          Como eu to na maioria das vezes
+          Como eu me sinto na maioria das vezes
         </Typography>
         <List component="nav" aria-label="main mailbox folders">
         {userFeellingsList}

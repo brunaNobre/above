@@ -4,8 +4,8 @@ export default function formatDate(date) {
     let newDate;
     let splited = date.split('/');
     
-    if (splited.length > 1) {
-        let day = splited[1];
+    if (splited.length > 1) {        
+        let day = (Number(splited[1]) < 10) ? `0${splited[1]}` : splited[1];
         let month = splited[0];
         let year = splited[2];
         //format to save in database
