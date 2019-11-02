@@ -11687,6 +11687,11 @@ body .places .m-b-md {
   right: 3%;
 }
 
+.calendar-dialog .isfriday {
+  margin-left: 10%;
+  font-weight: 600;
+}
+
 .calendar-dialog .send-button {
   background-color: #8344E0;
   color: white;

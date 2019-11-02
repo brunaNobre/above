@@ -129,11 +129,14 @@ class AbvCalendarWidget extends Component {
 
         let dayOfWeek = dateFns.format(day, "EEEE", {locale: pt});
         day = dateFns.addDays(day, 1);
+
+        let isFriday = (dayOfWeek == "sexta-feira") ? <p className="isfriday">Vou só te avisar que sextou!</p> : "";
         
         dialogs.push(
           <Dialog key={cloneDay} className="calendar-dialog" aria-labelledby="simple-dialog-title" open={this.state.open[cloneDay] || false}>
             <CloseIcon className="close-dialog" onClick={() => {this.closeDialog(cloneDay)}}/>
             <DialogTitle className="title">{`${dayOfWeek}, ${formattedDay} de ${month} de ${year}`}</DialogTitle>
+            {isFriday}
             <p className="sign-ofDay">Sol em <span>{sunSign(`${formattedDay} de ${month} de ${year}`)}</span></p>
             <p className="moon-ofDay">Lua <span>{this.translatePhase(phase)}</span></p>
             <ExpansionPanel>
