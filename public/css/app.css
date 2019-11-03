@@ -11282,6 +11282,27 @@ body .places .m-b-md {
   left: 47%;
 }
 
+.signmoon-moods button {
+  font-size: 0.1em;
+  color: white;
+  border-color: #8344E0;
+  background-color: #8344E0;
+  margin-bottom: 7%;
+}
+
+.signmoon-mood-header {
+  background-color: #8344E0 !important;
+}
+
+.sign-mood-mostFelt {
+  color: #8344E0;
+  margin-left: 16px;
+}
+
+.sign-mood-mostFelt span {
+  font-weight: 500;
+}
+
 .decor-border {
   border: 1px solid darkgray;
   padding: 5%;
@@ -12034,6 +12055,7 @@ body .places .m-b-md {
 
 .usermood-view .major-feelling-in-moon .major-people {
   color: #8344E0;
+  margin-bottom: 4rem;
 }
 
 .todaysky-icon {

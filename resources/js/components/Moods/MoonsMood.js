@@ -11,6 +11,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import List from '@material-ui/core/List';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Divider from '@material-ui/core/Divider';
+import SignMoonMood from './SignMoonMood'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -357,6 +358,7 @@ export default function MoonsMood(props) {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
+        <SignMoonMood moonPhase="nova"/>
         Na <b>Lua Nova</b> eu me sinto:
         <List component="nav" aria-label="main mailbox folders">
         {userFeellingsNewList}
@@ -371,6 +373,7 @@ export default function MoonsMood(props) {
         </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
+        <SignMoonMood moonPhase="crescente"/>
         Na <b>Lua Crescente</b> eu me sinto:
         <List component="nav" aria-label="main mailbox folders">
         {userFeellingsWaxList}
@@ -380,11 +383,10 @@ export default function MoonsMood(props) {
         {(waxMoonMostFelt != "") ? 
         <p className="major-people">O que foi mais sentido pelos usuários nessa lua: <b>{waxMoonMostFelt} ({waxMoonMostFeltPercentage}%)</b></p> :
         <p className="major-people">Não há registros nessa lua</p>}
-
-
         </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
+        <SignMoonMood moonPhase="cheia"/>
         Na <b>Lua Cheia</b> eu me sinto:
         <List component="nav" aria-label="main mailbox folders">
         {userFeellingsFullList}
@@ -398,6 +400,7 @@ export default function MoonsMood(props) {
         </div>
       </TabPanel>
       <TabPanel value={value} index={3}>
+        <SignMoonMood moonPhase="minguante"/>
         Na <b>Lua Minguante</b> eu me sinto:
         <List component="nav" aria-label="main mailbox folders">
         {userFeellingsWanList}
