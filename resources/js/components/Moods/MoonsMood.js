@@ -364,7 +364,7 @@ export default function MoonsMood(props) {
         <div className="major-feelling-in-moon">
 
         {(newMoonMostFelt != "") ? 
-        <p className="major-people">O que foi mais sentido nessa lua: <b>{newMoonMostFelt} ({newMoonMostFeltPercentage}%)</b></p> :
+        <p className="major-people">O que foi mais sentido pelos usuários nessa lua: <b>{newMoonMostFelt} ({newMoonMostFeltPercentage}%)</b></p> :
         <p className="major-people">Não há registros nessa lua</p>}
 
           
@@ -378,7 +378,7 @@ export default function MoonsMood(props) {
         <div className="major-feelling-in-moon">
 
         {(waxMoonMostFelt != "") ? 
-        <p className="major-people">O que foi mais sentido nessa lua: <b>{waxMoonMostFelt} ({waxMoonMostFeltPercentage}%)</b></p> :
+        <p className="major-people">O que foi mais sentido pelos usuários nessa lua: <b>{waxMoonMostFelt} ({waxMoonMostFeltPercentage}%)</b></p> :
         <p className="major-people">Não há registros nessa lua</p>}
 
 
@@ -392,7 +392,7 @@ export default function MoonsMood(props) {
         <div className="major-feelling-in-moon">
 
         {(fullMoonMostFelt != "") ? 
-        <p className="major-people">O que foi mais sentido nessa lua: <b>{fullMoonMostFelt} ({fullMoonMostFeltPercentage}%)</b></p> :
+        <p className="major-people">O que foi mais sentido pelos usuários nessa lua: <b>{fullMoonMostFelt} ({fullMoonMostFeltPercentage}%)</b></p> :
         <p className="major-people">Não há registros nessa lua</p>}
 
         </div>
@@ -404,7 +404,7 @@ export default function MoonsMood(props) {
         </List>
         <div className="major-feelling-in-moon">
         {(wanMoonMostFelt != "") ? 
-        <p className="major-people">O que foi mais sentido nessa lua: <b>{wanMoonMostFelt} ({wanMoonMostFeltPercentage}%)</b></p> :
+        <p className="major-people">O que foi mais sentido pelos usuários nessa lua: <b>{wanMoonMostFelt} ({wanMoonMostFeltPercentage}%)</b></p> :
         <p className="major-people">Não há registros nessa lua</p>}        
         </div>
       </TabPanel>

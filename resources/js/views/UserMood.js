@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
-import NewTaskDialog from '../components/layouts/NewTaskDialog'
-import formatDate from '../utils/formatDate'
-import MoonsMood from '../components/Moods/MoonsMood'
-import AllMoods from '../components/Moods/AllMoods'
-import getPhase from '../utils/getPhase'
+import React, { Component } from 'react';
+import NewTaskDialog from '../components/layouts/NewTaskDialog';
+import formatDate from '../utils/formatDate';
+import MoonsMood from '../components/Moods/MoonsMood';
+import AllMoods from '../components/Moods/AllMoods';
+import getPhase from '../utils/getPhase';
+import moonSign from '../utils/moonSign';
+
 
 class UserMood extends Component {
     constructor() {
@@ -134,10 +136,11 @@ class UserMood extends Component {
        const mood = {
             day: formatDate(new Date().toLocaleDateString()),
             moon_phase: getPhase(),
-            moon_sign: "libra",
+            moon_sign: moonSign(new Date().toLocaleDateString()),
             feelling: this.state.feellingSelected
 
         }
+
         axios.post('/api/moods', mood).then(res => console.log(res.data));
 
         axios.get(`/api/day-feellings?day=`+ mood.day)
