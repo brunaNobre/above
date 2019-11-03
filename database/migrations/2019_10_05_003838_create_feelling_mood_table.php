@@ -24,8 +24,8 @@ class CreateFeellingMoodTable extends Migration
         
             $table->foreign('mood_id')->references('id')->on('moods')->onDelete('cascade');
         
-                  
-            $table->index(['feelling_id', 'mood_id'])->unique();
+    	      
+            $table->primary(['feelling_id', 'mood_id'])->unique();
    
             
     });

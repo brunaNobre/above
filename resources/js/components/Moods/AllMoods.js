@@ -28,7 +28,7 @@ export default function AllMoods(props) {
   // if dayFeellings state was loaded
   if(Array.isArray(props.dayFeellings)) {
     if((props.dayFeellings).length == 0) {
-      dayFeellingsList = <ListItem><ListItemText primary="Você ainda não registrou nenhum sentimento." /></ListItem>
+      dayFeellingsList = <ListItem><ListItemText primary="Você ainda não registrou nenhum sentimento hoje." /></ListItem>
     } else {
       dayFeellingsList = (props.dayFeellings).map(function(f){
         return (
@@ -78,7 +78,7 @@ export default function AllMoods(props) {
         userFeellingsList = sortedPercentages.map(function(p, i) {
           return (
             <ListItem key={i}>
-              <ListItemText primary={`${p[0]}: ${p[1].toPrecision(2)}%`} />
+              <ListItemText primary={`${p[0]}: ${p[1].toPrecision(3)}%`} />
             </ListItem>
           )
         });
@@ -107,11 +107,17 @@ export default function AllMoods(props) {
         options={options}
         getOptionLabel={option => option.name}
         style={{ width: 300 }}
+        onChange={(e) => {props.selectFeelling(e.target.innerText)}}
         renderInput={params => (
-        <TextField {...params}  variant="outlined" fullWidth />
+        <TextField 
+        {...params}
+        variant="outlined"
+        fullWidth 
+        
+        />
       )}
     />
-          <Button variant="contained" className="save">
+          <Button onClick={() => {props.addNewFeelling()}} variant="contained" className="save">
             Salvar
           </Button>       
       </Paper>

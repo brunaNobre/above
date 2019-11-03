@@ -89,11 +89,44 @@ Route::middleware('auth:api')->get('/feellings', function () {
     return $feellings;
 });
 
+// Add new feelling to the user mood
 Route::middleware('auth:api')->post('/moods', function(Request $request) {
-     Mood::create($request->all());
-     $mood = Mood::all()->last();
-     return $mood->feellings()->attach([4]);
-     
+    $user_id = auth()->user()->id;
+    $feelling = $request->feelling;
+    $feelling_id = Feelling::where('name', $feelling)->get()[0]->id;
+    
+    //returns an array with 0 or more objects (instead of a instance of the object)
+    $mood = Mood::where('user_id',$user_id)->where('day', $request->day)->get();
+
+    //if mood already exists in this date with this user: just attach the feelling
+    if(count($mood) > 0) {
+            // if feelling to attach already exists in mood: don't attach
+            $hasFeelling = false;
+            $feellings = $mood[0]->feellings()->get();
+            foreach ($feellings as $f) {
+                if($f->pivot->feelling_id == $feelling_id) {
+                    $hasFeelling = true;
+                    break;
+                }
+            }
+            if($hasFeelling) {
+                return "feelling already exists";
+            } else {
+                return $mood[0]->feellings()->attach([$feelling_id]);
+            }
+    } else {
+        $mood = Mood::create(
+            [
+                "user_id" => $user_id,
+                "day" => $request->day,
+                "moon_phase" => $request->moon_phase,
+                "moon_sign" => $request->moon_sign,
+   
+            ]
+            );
+           return  $mood->feellings()->attach([$feelling_id]);;
+    }
+  
 });
 
 

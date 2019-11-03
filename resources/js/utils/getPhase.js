@@ -1,8 +1,14 @@
 import lune from 'lune'
 
 export default function getPhase (date) {
+    let moon_age;
+    if(date) {
+        moon_age = lune.phase(date).age;
+    } else {
+        moon_age = lune.phase().age;
+    }
 
-    const moon_age = lune.phase(date).age;
+    
     let phase = "";
 
    if (moon_age < 6.5) {

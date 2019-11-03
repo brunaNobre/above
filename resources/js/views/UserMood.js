@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import NewTaskDialog from '../components/layouts/NewTaskDialog'
 import formatDate from '../utils/formatDate'
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
 import MoonsMood from '../components/Moods/MoonsMood'
 import AllMoods from '../components/Moods/AllMoods'
+import getPhase from '../utils/getPhase'
 
 class UserMood extends Component {
     constructor() {
@@ -16,6 +15,7 @@ class UserMood extends Component {
                 due_to: formatDate(new Date().toLocaleDateString())
             },
             feellings: {},
+            feellingSelected: "",
             userFeellings: {},
             userFeellingsNew: {},
             userFeellingsWax: {},
@@ -26,14 +26,12 @@ class UserMood extends Component {
             allFeellingsFull: {},
             allFeellingsWan: {},
             dayFeellings: {},
-            date: formatDate(new Date().toLocaleDateString())
         }
 
         this.handleAdd = this.handleAdd.bind(this)    
         this.sendInputValue = this.sendInputValue.bind(this)
-        this.click = this.click.bind(this)
-
-       
+        this.addNewFeelling = this.addNewFeelling.bind(this)
+        this.selectFeelling = this.selectFeelling.bind(this)
 
     }
 
@@ -128,27 +126,90 @@ class UserMood extends Component {
         this.setState((state) => state.newTask[key] = newValue);
     }
 
-    click () {
+    selectFeelling (feelling) {
+        this.setState({feellingSelected: feelling})
+    }
+
+    addNewFeelling () {
        const mood = {
-            user_id: this.props.user,
-            day: '2019-11-10',
-            moon_phase: "new",
-            moon_sign: "libra"
+            day: formatDate(new Date().toLocaleDateString()),
+            moon_phase: getPhase(),
+            moon_sign: "libra",
+            feelling: this.state.feellingSelected
 
         }
+        axios.post('/api/moods', mood).then(res => console.log(res.data));
 
-        axios.post('/api/moods', mood);
+        axios.get(`/api/day-feellings?day=`+ mood.day)
+        .then(res => {
+           this.setState({dayFeellings: res.data});
+
+        }); 
+
+        axios.get(`/api/feellings`)
+          .then(res => {
+              this.setState({feellings: res.data});
+          }); 
+
+          axios.get(`/api/user-feellings`)
+          .then(res => {
+              this.setState({userFeellings: res.data});
+          }); 
+
+          axios.get(`/api/user-feellings-new`)
+          .then(res => {
+              this.setState({userFeellingsNew: res.data});
+          }); 
+
+          axios.get(`/api/user-feellings-waxing`)
+          .then(res => {
+              this.setState({userFeellingsWax: res.data});
+          }); 
+
+          axios.get(`/api/user-feellings-full`)
+          .then(res => {
+              this.setState({userFeellingsFull: res.data});
+          }); 
+
+          axios.get(`/api/user-feellings-waning`)
+          .then(res => {
+              this.setState({userFeellingsWan: res.data});
+          }); 
+
+          axios.get(`/api/feellings-new`)
+          .then(res => {
+              this.setState({allFeellingsNew: res.data});
+          }); 
+
+          axios.get(`/api/feellings-waxing`)
+          .then(res => {
+              this.setState({allFeellingsWax: res.data});
+          }); 
+
+          axios.get(`/api/feellings-full`)
+          .then(res => {
+              this.setState({allFeellingsFull: res.data});
+          }); 
+
+          axios.get(`/api/feellings-waning`)
+          .then(res => {
+              this.setState({allFeellingsWan: res.data});
+          }); 
+
+
     }
 
     render() {
         return (
             <div className="usermood-view">
-               <h1 onClick={this.click}>Meu Mood</h1>
+               <h1>Meu Mood</h1>
                <p className="subtitle">Como eu me sinto quando...</p>
                <AllMoods
                 userFeellings={this.state.userFeellings}
                 dayFeellings={this.state.dayFeellings}
-                feellings={this.state.feellings}    
+                feellings={this.state.feellings}
+                addNewFeelling={this.addNewFeelling}
+                selectFeelling={this.selectFeelling}    
                 /> 
                <MoonsMood
                 userFeellingsNew={this.state.userFeellingsNew}

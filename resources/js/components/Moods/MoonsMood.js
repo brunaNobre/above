@@ -362,7 +362,12 @@ export default function MoonsMood(props) {
         {userFeellingsNewList}
         </List>
         <div className="major-feelling-in-moon">
-          <p className="major-people">O que foi mais escolhido nessa lua: <b>{newMoonMostFelt} ({newMoonMostFeltPercentage}%)</b></p>
+
+        {(newMoonMostFelt != "") ? 
+        <p className="major-people">O que foi mais sentido nessa lua: <b>{newMoonMostFelt} ({newMoonMostFeltPercentage}%)</b></p> :
+        <p className="major-people">Não há registros nessa lua</p>}
+
+          
         </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
@@ -371,7 +376,12 @@ export default function MoonsMood(props) {
         {userFeellingsWaxList}
         </List>
         <div className="major-feelling-in-moon">
-          <p className="major-people">O que foi mais escolhido nessa lua: <b>{waxMoonMostFelt} ({waxMoonMostFeltPercentage}%)</b></p>
+
+        {(waxMoonMostFelt != "") ? 
+        <p className="major-people">O que foi mais sentido nessa lua: <b>{waxMoonMostFelt} ({waxMoonMostFeltPercentage}%)</b></p> :
+        <p className="major-people">Não há registros nessa lua</p>}
+
+
         </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
@@ -380,7 +390,11 @@ export default function MoonsMood(props) {
         {userFeellingsFullList}
         </List>
         <div className="major-feelling-in-moon">
-          <p className="major-people">O que foi mais escolhido nessa lua: <b>{fullMoonMostFelt} ({fullMoonMostFeltPercentage}%)</b></p>
+
+        {(fullMoonMostFelt != "") ? 
+        <p className="major-people">O que foi mais sentido nessa lua: <b>{fullMoonMostFelt} ({fullMoonMostFeltPercentage}%)</b></p> :
+        <p className="major-people">Não há registros nessa lua</p>}
+
         </div>
       </TabPanel>
       <TabPanel value={value} index={3}>
@@ -389,7 +403,9 @@ export default function MoonsMood(props) {
         {userFeellingsWanList}
         </List>
         <div className="major-feelling-in-moon">
-          <p className="major-people">O que foi mais escolhido nessa lua: <b>{wanMoonMostFelt} ({wanMoonMostFeltPercentage}%)</b></p>
+        {(wanMoonMostFelt != "") ? 
+        <p className="major-people">O que foi mais sentido nessa lua: <b>{wanMoonMostFelt} ({wanMoonMostFeltPercentage}%)</b></p> :
+        <p className="major-people">Não há registros nessa lua</p>}        
         </div>
       </TabPanel>
       <Divider />
