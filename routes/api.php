@@ -89,6 +89,14 @@ Route::middleware('auth:api')->get('/feellings', function () {
     return $feellings;
 });
 
+
+Route::middleware('auth:api')->get('/user-moods', function () {
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->get();
+    return $moods;
+});
+
+
 // Add new feelling to the user mood
 Route::middleware('auth:api')->post('/moods', function(Request $request) {
     $user_id = auth()->user()->id;
@@ -197,6 +205,238 @@ return $feellings;
     
 });
 
+Route::middleware('auth:api')->get('/user-feellings-new-aries', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'new')->where('moon_sign', 'aries')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});
+
+Route::middleware('auth:api')->get('/user-feellings-new-taurus', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'new')->where('moon_sign', 'taurus')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-new-gemini', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'new')->where('moon_sign', 'gemini')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-new-cancer', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'new')->where('moon_sign', 'cancer')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-new-leo', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'new')->where('moon_sign', 'leo')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-new-virgo', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'new')->where('moon_sign', 'virgo')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-new-libra', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'new')->where('moon_sign', 'libra')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-new-scorpio', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'new')->where('moon_sign', 'scorpio')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-new-sagitarius', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'new')->where('moon_sign', 'sagitarius')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-new-capricorn', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'new')->where('moon_sign', 'capricorn')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-new-aquarius', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'new')->where('moon_sign', 'aquarius')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-new-pisces', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'new')->where('moon_sign', 'pisces')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});
+
 Route::middleware('auth:api')->get('/user-feellings-waxing', function() {
 
     $user_id = auth()->user()->id;
@@ -218,6 +458,240 @@ return $feellings;
 
     
 });
+
+
+Route::middleware('auth:api')->get('/user-feellings-waxing-aries', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waxing')->where('moon_sign', 'aries')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});
+
+Route::middleware('auth:api')->get('/user-feellings-waxing-taurus', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waxing')->where('moon_sign', 'taurus')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-waxing-gemini', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waxing')->where('moon_sign', 'gemini')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-waxing-cancer', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waxing')->where('moon_sign', 'cancer')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-waxing-leo', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waxing')->where('moon_sign', 'leo')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-waxing-virgo', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waxing')->where('moon_sign', 'virgo')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-waxing-libra', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waxing')->where('moon_sign', 'libra')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-waxing-scorpio', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waxing')->where('moon_sign', 'scorpio')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-waxing-sagitarius', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waxing')->where('moon_sign', 'sagitarius')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-waxing-capricorn', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waxing')->where('moon_sign', 'capricorn')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-waxing-aquarius', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waxing')->where('moon_sign', 'aquarius')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-waxing-pisces', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waxing')->where('moon_sign', 'pisces')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});
+
 
 Route::middleware('auth:api')->get('/user-feellings-full', function() {
 
@@ -241,6 +715,238 @@ return $feellings;
     
 });
 
+Route::middleware('auth:api')->get('/user-feellings-full-aries', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'full')->where('moon_sign', 'aries')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});
+
+Route::middleware('auth:api')->get('/user-feellings-full-taurus', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'full')->where('moon_sign', 'taurus')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-full-gemini', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'full')->where('moon_sign', 'gemini')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-full-cancer', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'full')->where('moon_sign', 'cancer')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-full-leo', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'full')->where('moon_sign', 'leo')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-full-virgo', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'full')->where('moon_sign', 'virgo')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-full-libra', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'full')->where('moon_sign', 'libra')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-full-scorpio', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'full')->where('moon_sign', 'scorpio')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-full-sagitarius', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'full')->where('moon_sign', 'sagitarius')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-full-capricorn', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'full')->where('moon_sign', 'capricorn')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-full-aquarius', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'full')->where('moon_sign', 'aquarius')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-full-pisces', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'full')->where('moon_sign', 'pisces')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});
+
 Route::middleware('auth:api')->get('/user-feellings-waning', function() {
 
     $user_id = auth()->user()->id;
@@ -260,6 +966,238 @@ Route::middleware('auth:api')->get('/user-feellings-waning', function() {
 
 return $feellings;
 
+    
+});
+
+Route::middleware('auth:api')->get('/user-feellings-waning-aries', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waning')->where('moon_sign', 'aries')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});
+
+Route::middleware('auth:api')->get('/user-feellings-waning-taurus', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waning')->where('moon_sign', 'taurus')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-waning-gemini', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waning')->where('moon_sign', 'gemini')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-waning-cancer', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waning')->where('moon_sign', 'cancer')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-waning-leo', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waning')->where('moon_sign', 'leo')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-waning-virgo', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waning')->where('moon_sign', 'virgo')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-waning-libra', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waning')->where('moon_sign', 'libra')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-waning-scorpio', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waning')->where('moon_sign', 'scorpio')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-waning-sagitarius', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waning')->where('moon_sign', 'sagitarius')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-waning-capricorn', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waning')->where('moon_sign', 'capricorn')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-waning-aquarius', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waning')->where('moon_sign', 'aquarius')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
+    
+});Route::middleware('auth:api')->get('/user-feellings-waning-pisces', function() {
+
+    $user_id = auth()->user()->id;
+    $moods = Mood::where('user_id', $user_id)->where('moon_phase', 'waning')->where('moon_sign', 'pisces')->get();
+    $feellingsList = array();
+    $feellings = array();
+
+    foreach ($moods as $mood) {
+        array_push($feellingsList, $mood->feellings()->get());
+    }
+
+    foreach ($feellingsList as $feeling) {
+        foreach($feeling as $f) {
+            array_push($feellings, $f);
+        }
+    }
+
+return $feellings;
     
 });
 

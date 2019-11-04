@@ -11290,17 +11290,51 @@ body .places .m-b-md {
   margin-bottom: 7%;
 }
 
+.signmoon-moods button:hover {
+  color: white;
+  border-color: #8344E0;
+  background-color: #8344E0;
+}
+
 .signmoon-mood-header {
   background-color: #8344E0 !important;
+  position: fixed !important;
 }
 
 .sign-mood-mostFelt {
-  color: #8344E0;
   margin-left: 16px;
 }
 
 .sign-mood-mostFelt span {
   font-weight: 500;
+  color: #8344E0;
+}
+
+.feel-predict {
+  margin-left: 16px;
+  margin-top: 5%;
+}
+
+.feel-predict span {
+  font-weight: 300;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.listItem span {
+  font-weight: 300;
+}
+
+.listItem p {
+  color: #8344E0;
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+.signmoon-mood-header + ul {
+  margin-top: 10% !important;
 }
 
 .decor-border {

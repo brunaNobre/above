@@ -18,6 +18,7 @@ class UserMood extends Component {
             },
             feellings: {},
             feellingSelected: "",
+            userMoods: {},
             userFeellings: {},
             userFeellingsNew: {},
             userFeellingsWax: {},
@@ -48,6 +49,11 @@ class UserMood extends Component {
                 },
             })
           })
+
+          axios.get(`/api/user-moods`)
+          .then(res => {
+              this.setState({userMoods: res.data});
+          }); 
 
           let day = formatDate(new Date().toLocaleDateString())
           axios.get(`/api/day-feellings?day=`+ day)
@@ -223,6 +229,7 @@ class UserMood extends Component {
                 allFeellingsWax={this.state.allFeellingsWax}
                 allFeellingsFull={this.state.allFeellingsFull}
                 allFeellingsWan={this.state.allFeellingsWan}
+                userMoods={this.state.userMoods}
                /> 
                <NewTaskDialog
                 newTask={this.state.newTask} 
@@ -235,3 +242,8 @@ class UserMood extends Component {
 }
 
 export default UserMood
+
+
+
+
+
