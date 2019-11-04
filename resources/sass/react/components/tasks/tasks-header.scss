@@ -2,13 +2,15 @@
     position: relative;
     border-bottom: 1px solid darkgray;
     .sun-sign-of-day {
-        color: #8344E0;
         font-weight: 400;
-        width: 30%;
+        width: 70%;
         margin-left: 5%;
-        padding-top: 5%;
+        padding-top: 9%;
         font-size: 1.4em;
-        margin-bottom: 0;   
+        margin-bottom: 0; 
+        span {
+            color: #8344E0;
+        }  
     }
 
 }
