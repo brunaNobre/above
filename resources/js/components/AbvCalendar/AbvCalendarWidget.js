@@ -37,57 +37,57 @@ class AbvCalendarWidget extends Component {
     translatePhase (phase) {
         switch (phase) {
             case "new":
-            return "nova";
+            return "Nova";
             break;
             case "waxing":
-            return "crescente";
+            return "Crescente";
             break;
             case "full":
-            return "cheia";
+            return "Cheia";
             break;
             default:
-            return "minguante";
+            return "Minguante";
             break;
         }
     }
 
     translateSign(sign) {
       switch (sign) {
-          case "arie":
-          return "áries";
+          case "aries":
+          return "Áries";
           break;
           case "taurus":
-          return "touro";
+          return "Touro";
           break;
           case "gemini":
-          return "gêmeos";
+          return "Gêmeos";
           break;
           case "cancer":
-          return "câncer";
+          return "Câncer";
           break;
           case "leo":
-          return "leão";
+          return "Leão";
           break;
           case "virgo":
-          return "virgem";
+          return "Virgem";
           break;
           case "libra":
-          return "libra";
+          return "Libra";
           break;
           case "scorpio":
-          return "escorpião";
+          return "Escorpião";
           break;
           case "sagitarius":
-          return "sagitário";
+          return "Sagitário";
           break;
           case "capricorn":
-          return "capricórnio";
+          return "Capricórnio";
           break;
           case "aquarius":
-          return "aquário";
+          return "Aquário";
           break;          
           default:
-          return "peixes";
+          return "Peixes";
           break;
       }
   }  
@@ -151,8 +151,7 @@ class AbvCalendarWidget extends Component {
         formattedDay = dateFns.format(day, dateFormat);
         const cloneDay = day;
         const phase = getPhase(cloneDay);        
-        //const moonsign = moonSign(`${year}-${month}-${formattedDay}`);
-
+        const moonsign = moonSign(cloneDay);
         days.push(
           <div
             className={`col cell ${
@@ -181,7 +180,7 @@ class AbvCalendarWidget extends Component {
             <DialogTitle className="title">{`${dayOfWeek}, ${formattedDay} de ${month} de ${year}`}</DialogTitle>
             {isFriday}
             <p className="sign-ofDay">Sol em <span>{sunSign(`${formattedDay} de ${month} de ${year}`)}</span></p>
-            <p className="moon-ofDay">Lua <span>{this.translatePhase(phase)}</span> em <span className="moon-sign-name">signo</span></p>
+            <p className="moon-ofDay">Lua <span>{this.translatePhase(phase)}</span> em <span className="moon-sign-name">{this.translateSign(moonsign)}</span></p>
             <ExpansionPanel>
               <ExpansionPanelSummary
                 expandIcon={<ExpandMoreIcon />}
