@@ -11018,7 +11018,7 @@ body .places .m-b-md {
 .moon-display {
   width: 15em;
   position: relative;
-  top: 10em;
+  top: 12em;
   margin-right: auto;
   margin-left: auto;
   display: block;
@@ -11280,6 +11280,61 @@ body .places .m-b-md {
   color: darkgray;
   position: absolute;
   left: 47%;
+}
+
+.signmoon-moods button {
+  font-size: 0.1em;
+  color: white;
+  border-color: #8344E0;
+  background-color: #8344E0;
+  margin-bottom: 7%;
+}
+
+.signmoon-moods button:hover {
+  color: white;
+  border-color: #8344E0;
+  background-color: #8344E0;
+}
+
+.signmoon-mood-header {
+  background-color: #8344E0 !important;
+  position: fixed !important;
+}
+
+.sign-mood-mostFelt {
+  margin-left: 16px;
+}
+
+.sign-mood-mostFelt span {
+  font-weight: 500;
+  color: #8344E0;
+}
+
+.feel-predict {
+  margin-left: 16px;
+  margin-top: 5%;
+}
+
+.feel-predict span {
+  font-weight: 300;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.listItem span {
+  font-weight: 300;
+}
+
+.listItem p {
+  color: #8344E0;
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+.signmoon-mood-header + ul {
+  margin-top: 10% !important;
 }
 
 .decor-border {
@@ -11687,6 +11742,11 @@ body .places .m-b-md {
   right: 3%;
 }
 
+.calendar-dialog .isfriday {
+  margin-left: 10%;
+  font-weight: 600;
+}
+
 .calendar-dialog .send-button {
   background-color: #8344E0;
   color: white;
@@ -11900,23 +11960,65 @@ body .places .m-b-md {
   }
 }
 
-@media (min-width: 1150px) {
-  .main-content-view .calendar .cel-phase-icon {
-    height: 4vw;
+@media (min-width: 651px) {
+  .main-content-view .calendar {
+    top: 6rem;
   }
 }
 
-@media (min-width: 1150px) {
-  .main-content-view .calendar .cel-phase-icon {
+@media (min-width: 800px) {
+  .main-content-view .calendar {
+    top: 4.5rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .main-content-view .calendar {
+    top: 3.5rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .main-content-view .calendar {
+    top: 2.5rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .main-content-view .calendar {
+    top: 1.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-content-view .calendar {
+    top: 1.5rem;
     width: 40%;
-    height: 3vw;
+    margin-left: 55%;
   }
 }
 
-@media (min-width: 2000px) {
+@media (min-width: 1300px) {
+  .main-content-view .calendar {
+    top: 0.5rem;
+  }
+}
+
+@media (min-width: 1500px) {
+  .main-content-view .calendar {
+    width: 25%;
+    margin-left: 62%;
+  }
+
+  .main-content-view .calendar .cel-phase-icon {
+    height: 1.5vw;
+  }
+}
+
+@media (min-width: 3000px) {
   .main-content-view .calendar .cel-phase-icon {
     width: 25%;
-    height: 2vw;
+    height: 1vw;
   }
 }
 
@@ -11930,6 +12032,17 @@ body .places .m-b-md {
   font-weight: 300;
   font-size: 1.4rem;
   margin-left: 20px;
+  color: #8344E0;
+}
+
+.usermood-view .add-feelling {
+  color: #8344E0;
+}
+
+.usermood-view .add-feelling-input {
+  float: left;
+  margin-right: 5px;
+  margin-bottom: 10px;
 }
 
 .usermood-view .MuiTabs-scroller {
@@ -11958,14 +12071,25 @@ body .places .m-b-md {
 
 .usermood-view .moods-today h3,
 .usermood-view .top-moods h3 {
-  font-weight: 300;
+  font-weight: 500;
   font-size: 1.4rem;
+}
+
+.usermood-view .moods-today button.save,
+.usermood-view .top-moods button.save {
+  background-color: #8344E0;
+  color: white;
 }
 
 .usermood-view .loading {
   left: 45% !important;
   position: relative !important;
   color: #8344E0;
+}
+
+.usermood-view .major-feelling-in-moon .major-people {
+  color: #8344E0;
+  margin-bottom: 4rem;
 }
 
 .todaysky-icon {

@@ -35,7 +35,7 @@ export default function AbvLogoutMenu(props) {
         onClose={handleClose}
       >
         <MenuItem onClick={handleClose}>
-        {props.firstName}
+        Olá, {props.firstName}
         </MenuItem>
         <span className="logout-user-email">{props.user.email}</span>
         <MenuItem onClick={handleClose}>
