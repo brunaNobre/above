@@ -110,81 +110,93 @@ if(props.userFelt) {
     
     <>
 <ListItem>
-<ListItemText className="listItem" primary="...em áries eu me sinto:" secondary={(props.userFelt.aries[0]) ? `${props.userFelt.aries[0]}` : "Você ainda não disse o que sentiu nessa lua"} />
+<ListItemText className="listItem" primary="...em áries eu me sinto:" secondary={(props.userFelt.aries[0]) ? `${props.userFelt.aries[0]}` : "Você ainda não disse o que sentiu nessa lua."} />
 </ListItem>
+<p className="other-feel"> {props.userFelt.aries[2]}</p>
 <p className="feel-predict bold"><span>Esperados:</span> {expected[props.moonPhase].aries}</p>
 <p className="sign-mood-mostFelt">Sentimento mais escolhido pelas usuárias: <span>Feliz</span></p>
 <Divider />
 <ListItem>
-<ListItemText className="listItem" primary="...em touro eu me sinto:" secondary={(props.userFelt.taurus[0]) ? `${props.userFelt.taurus[0]}` : "Você ainda não disse o que sentiu nessa lua"} />
+<ListItemText className="listItem" primary="...em touro eu me sinto:" secondary={(props.userFelt.taurus[0]) ? `${props.userFelt.taurus[0]}` : "Você ainda não disse o que sentiu nessa lua."} />
 </ListItem>
+<p className="other-feel"> {props.userFelt.taurus[2]}</p>
 <p className="feel-predict bold"><span>Esperados:</span> {expected[props.moonPhase].taurus}</p>
 <p className="sign-mood-mostFelt">Sentimento mais escolhido pelas usuárias: <span>Feliz</span></p>
 <Divider />
 
 <ListItem>
-<ListItemText className="listItem" primary="... em gêmeos eu me sinto:" secondary={(props.userFelt.gemini[0]) ? `${props.userFelt.gemini[0]}` : "Você ainda não disse o que sentiu nessa lua"} />
+<ListItemText className="listItem" primary="... em gêmeos eu me sinto:" secondary={(props.userFelt.gemini[0]) ? `${props.userFelt.gemini[0]}` : "Você ainda não disse o que sentiu nessa lua."} />
 </ListItem>
+<p className="other-feel"> {props.userFelt.gemini[2]}</p>
 <p className="feel-predict bold"><span>Esperados:</span> {expected[props.moonPhase].gemini}</p>
 <p className="sign-mood-mostFelt">Sentimento mais escolhido pelas usuárias: <span>Feliz</span></p>
 <Divider />
 
 <ListItem>
-<ListItemText className="listItem" primary="... em câncer eu me sinto:" secondary={(props.userFelt.cancer[0]) ? `${props.userFelt.cancer[0]}` : "Você ainda não disse o que sentiu nessa lua"} />
+<ListItemText className="listItem" primary="... em câncer eu me sinto:" secondary={(props.userFelt.cancer[0]) ? `${props.userFelt.cancer[0]}` : "Você ainda não disse o que sentiu nessa lua."} />
 </ListItem>
+<p className="other-feel"> {props.userFelt.cancer[2]}</p>
 <p className="feel-predict bold"><span>Esperados:</span> {expected[props.moonPhase].cancer}</p>
 <p className="sign-mood-mostFelt">Sentimento mais escolhido pelas usuárias: <span>Feliz</span></p>
 <Divider />
 
 <ListItem>
-<ListItemText className="listItem" primary="... em leão eu me sinto:" secondary={(props.userFelt.leo[0]) ? `${props.userFelt.leo[0]}` : "Você ainda não disse o que sentiu nessa lua"} />
+<ListItemText className="listItem" primary="... em leão eu me sinto:" secondary={(props.userFelt.leo[0]) ? `${props.userFelt.leo[0]}` : "Você ainda não disse o que sentiu nessa lua."} />
 </ListItem>
+<p className="other-feel"> {props.userFelt.leo[2]}</p>
 <p className="feel-predict bold"><span>Esperados:</span> {expected[props.moonPhase].leo}</p>
 <p className="sign-mood-mostFelt">Sentimento mais escolhido pelas usuárias: <span>Feliz</span></p>
 <Divider />
 
 <ListItem>
-<ListItemText className="listItem" primary="... em virgem eu me sinto:" secondary={(props.userFelt.virgo[0]) ? `${props.userFelt.virgo[0]}` : "Você ainda não disse o que sentiu nessa lua"} />
+<ListItemText className="listItem" primary="... em virgem eu me sinto:" secondary={(props.userFelt.virgo[0]) ? `${props.userFelt.virgo[0]}` : "Você ainda não disse o que sentiu nessa lua."} />
 </ListItem>
+<p className="other-feel"> {props.userFelt.virgo[2]}</p>
 <p className="feel-predict bold"><span>Esperados:</span> {expected[props.moonPhase].virgo}</p>
 <p className="sign-mood-mostFelt">Sentimento mais escolhido pelas usuárias: <span>Feliz</span></p>
 <Divider />
 
 <ListItem>
-<ListItemText className="listItem" primary="... em libra eu me sinto:" secondary={(props.userFelt.libra[0]) ? `${props.userFelt.libra[0]}` : "Você ainda não disse o que sentiu nessa lua"} />
+<ListItemText className="listItem" primary="... em libra eu me sinto:" secondary={(props.userFelt.libra[0]) ? `${props.userFelt.libra[0]}` : "Você ainda não disse o que sentiu nessa lua."} />
 </ListItem>
+<p className="other-feel"> {props.userFelt.libra[2]}</p>
 <p className="feel-predict bold"><span>Esperados:</span> {expected[props.moonPhase].libra}</p>
 <p className="sign-mood-mostFelt">Sentimento mais escolhido pelas usuárias: <span>Feliz</span></p>
 <Divider />
 
 <ListItem>
-<ListItemText className="listItem" primary="... em escorpião eu me sinto:" secondary={(props.userFelt.scorpio[0]) ? `${props.userFelt.scorpio[0]}` : "Você ainda não disse o que sentiu nessa lua"} />
+<ListItemText className="listItem" primary="... em escorpião eu me sinto:" secondary={(props.userFelt.scorpio[0]) ? `${props.userFelt.scorpio[0]}` : "Você ainda não disse o que sentiu nessa lua."} />
 </ListItem>
+<p className="other-feel"> {props.userFelt.scorpio[2]}</p>
 <p className="feel-predict bold"><span>Esperados:</span> {expected[props.moonPhase].scorpio}</p>
 <p className="sign-mood-mostFelt">Sentimento mais escolhido pelas usuárias: <span>Feliz</span></p>
 <Divider />
 
 <ListItem>
-<ListItemText className="listItem" primary="... em sagitário eu me sinto:" secondary={(props.userFelt.sagitarius[0]) ? `${props.userFelt.sagitarius[0]}` : "Você ainda não disse o que sentiu nessa lua"} />
+<ListItemText className="listItem" primary="... em sagitário eu me sinto:" secondary={(props.userFelt.sagitarius[0]) ? `${props.userFelt.sagitarius[0]}` : "Você ainda não disse o que sentiu nessa lua."} />
 </ListItem>
+<p className="other-feel"> {props.userFelt.sagitarius[2]}</p>
 <p className="feel-predict bold"><span>Esperados:</span> {expected[props.moonPhase].sagitarius}</p>
 <p className="sign-mood-mostFelt">Sentimento mais escolhido pelas usuárias: <span>Feliz</span></p><Divider />
 
 <ListItem>
-<ListItemText className="listItem" primary="... em capricórnio eu me sinto:" secondary={(props.userFelt.capricorn[0]) ? `${props.userFelt.capricorn[0]}` : "Você ainda não disse o que sentiu nessa lua"} />
+<ListItemText className="listItem" primary="... em capricórnio eu me sinto:" secondary={(props.userFelt.capricorn[0]) ? `${props.userFelt.capricorn[0]}` : "Você ainda não disse o que sentiu nessa lua."} />
 </ListItem>
+<p className="other-feel"> {props.userFelt.capricorn[2]}</p>
 <p className="feel-predict bold"><span>Esperados:</span> {expected[props.moonPhase].capricorn}</p>
 <p className="sign-mood-mostFelt">Sentimento mais escolhido pelas usuárias: <span>Feliz</span></p><Divider />
 
 <ListItem>
-<ListItemText className="listItem" primary="... em aquário eu me sinto:" secondary={(props.userFelt.aquarius[0]) ? `${props.userFelt.aquarius[0]}` : "Você ainda não disse o que sentiu nessa lua"} />
+<ListItemText className="listItem" primary="... em aquário eu me sinto:" secondary={(props.userFelt.aquarius[0]) ? `${props.userFelt.aquarius[0]}` : "Você ainda não disse o que sentiu nessa lua."} />
 </ListItem>
+<p className="other-feel"> {props.userFelt.aquarius[2]}</p>
 <p className="feel-predict bold"><span>Esperados:</span> {expected[props.moonPhase].aquarius}</p>
 <p className="sign-mood-mostFelt">Sentimento mais escolhido pelas usuárias: <span>Feliz</span></p><Divider />
 
 <ListItem>
-<ListItemText className="listItem" primary="... em peixes eu me sinto:" secondary={(props.userFelt.pisces[0]) ? `${props.userFelt.pisces[0]}` : "Você ainda não disse o que sentiu nessa lua"} />
+<ListItemText className="listItem" primary="... em peixes eu me sinto:" secondary={(props.userFelt.pisces[0]) ? `${props.userFelt.pisces[0]}` : "Você ainda não disse o que sentiu nessa lua."} />
 </ListItem>
+<p className="other-feel"> {props.userFelt.pisces[2]}</p>
 <p className="feel-predict bold"><span>Esperados:</span> {expected[props.moonPhase].pisces}</p>
 <p className="sign-mood-mostFelt">Sentimento mais escolhido pelas usuárias: <span>Feliz</span></p><Divider /> 
     </>

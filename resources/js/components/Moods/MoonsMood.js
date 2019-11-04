@@ -391,6 +391,7 @@ function getFeellingsInPhaseSign(userFeellingsPhase, sign, userMoods, phase) {
   let sum = 0;
   let mostFelt;
   let mostFeltPercentage;
+  let listOfFeellings = "";
 
   if(feellingsPhaseSign) { 
     (feellingsPhaseSign).forEach(function(feelling) {
@@ -415,12 +416,20 @@ function getFeellingsInPhaseSign(userFeellingsPhase, sign, userMoods, phase) {
         break;
       }
     }
+
+    for(let p in percentage){
+      if((p != mostFelt)) {
+        listOfFeellings = listOfFeellings + p + "; ";
+      }
+    }
+
+
   }
 
 
 
   
-  return [mostFelt, mostFeltPercentage];
+  return [mostFelt, mostFeltPercentage, listOfFeellings];
 }
 
 const signNames = ["aries", "taurus", "gemini", "cancer", "leo", 
@@ -455,7 +464,6 @@ for(let i = 0; i < signNames.length; i++) {
   userFeltSignWan[signNames[i]] = getFeellingsInPhaseSign(props.userFeellingsWan, signNames[i], props.userMoods, "waning");
 }
 } 
-
   return (
     <div className={classes.root +" moons-panel"}>
       <AppBar position="static">
@@ -479,7 +487,7 @@ for(let i = 0; i < signNames.length; i++) {
 
         {(newMoonMostFelt != "") ? 
         <p className="major-people">O que foi mais sentido pelos usuários nessa lua: <b>{newMoonMostFelt} ({newMoonMostFeltPercentage}%)</b></p> :
-        <p className="major-people">Não há registros nessa lua</p>}
+        <p className="major-people">Ninguém mais falou o que sentia nessa lua.</p>}
 
           
         </div>
@@ -496,7 +504,7 @@ for(let i = 0; i < signNames.length; i++) {
 
         {(waxMoonMostFelt != "") ? 
         <p className="major-people">O que foi mais sentido pelos usuários nessa lua: <b>{waxMoonMostFelt} ({waxMoonMostFeltPercentage}%)</b></p> :
-        <p className="major-people">Não há registros nessa lua</p>}
+        <p className="major-people">Ninguém mais falou o que sentia nessa lua.</p>}
         </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
@@ -511,7 +519,7 @@ for(let i = 0; i < signNames.length; i++) {
 
         {(fullMoonMostFelt != "") ? 
         <p className="major-people">O que foi mais sentido pelos usuários nessa lua: <b>{fullMoonMostFelt} ({fullMoonMostFeltPercentage}%)</b></p> :
-        <p className="major-people">Não há registros nessa lua</p>}
+        <p className="major-people">Ninguém mais falou o que sentia nessa lua.</p>}
 
         </div>
       </TabPanel>
@@ -526,7 +534,7 @@ for(let i = 0; i < signNames.length; i++) {
         <div className="major-feelling-in-moon">
         {(wanMoonMostFelt != "") ? 
         <p className="major-people">O que foi mais sentido pelos usuários nessa lua: <b>{wanMoonMostFelt} ({wanMoonMostFeltPercentage}%)</b></p> :
-        <p className="major-people">Não há registros nessa lua</p>}        
+        <p className="major-people">Ninguém mais falou o que sentia nessa lua.</p>}        
         </div>
       </TabPanel>
       <Divider />
