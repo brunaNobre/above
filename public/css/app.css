@@ -11736,6 +11736,10 @@ body .places .m-b-md {
   font-weight: bold;
 }
 
+.calendar-dialog .moon-ofDay .moon-sign-name {
+  color: #8344E0;
+}
+
 .calendar-dialog .close-dialog {
   position: absolute;
   top: 7%;

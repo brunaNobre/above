@@ -4,6 +4,7 @@ import {formatDistance} from 'date-fns/esm'
 import {pt} from 'date-fns/esm/locale'
 import getPhase from '../../utils/getPhase'
 import sunSign from '../../utils/sunSign'
+import moonSign from '../../utils/moonSign'
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import CloseIcon from '@material-ui/icons/Close';
@@ -49,6 +50,47 @@ class AbvCalendarWidget extends Component {
             break;
         }
     }
+
+    translateSign(sign) {
+      switch (sign) {
+          case "arie":
+          return "áries";
+          break;
+          case "taurus":
+          return "touro";
+          break;
+          case "gemini":
+          return "gêmeos";
+          break;
+          case "cancer":
+          return "câncer";
+          break;
+          case "leo":
+          return "leão";
+          break;
+          case "virgo":
+          return "virgem";
+          break;
+          case "libra":
+          return "libra";
+          break;
+          case "scorpio":
+          return "escorpião";
+          break;
+          case "sagitarius":
+          return "sagitário";
+          break;
+          case "capricorn":
+          return "capricórnio";
+          break;
+          case "aquarius":
+          return "aquário";
+          break;          
+          default:
+          return "peixes";
+          break;
+      }
+  }  
 
   renderHeader() {
     const dateFormat = "MMMM yyyy";
@@ -109,6 +151,7 @@ class AbvCalendarWidget extends Component {
         formattedDay = dateFns.format(day, dateFormat);
         const cloneDay = day;
         const phase = getPhase(cloneDay);        
+        //const moonsign = moonSign(`${year}-${month}-${formattedDay}`);
 
         days.push(
           <div
@@ -138,7 +181,7 @@ class AbvCalendarWidget extends Component {
             <DialogTitle className="title">{`${dayOfWeek}, ${formattedDay} de ${month} de ${year}`}</DialogTitle>
             {isFriday}
             <p className="sign-ofDay">Sol em <span>{sunSign(`${formattedDay} de ${month} de ${year}`)}</span></p>
-            <p className="moon-ofDay">Lua <span>{this.translatePhase(phase)}</span></p>
+            <p className="moon-ofDay">Lua <span>{this.translatePhase(phase)}</span> em <span className="moon-sign-name">signo</span></p>
             <ExpansionPanel>
               <ExpansionPanelSummary
                 expandIcon={<ExpandMoreIcon />}
