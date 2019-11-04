@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import NewTaskDialog from '../components/layouts/NewTaskDialog'
 import formatDate from '../utils/formatDate'
+import moonSign from '../utils/moonSign'
 import Calendar from 'react-calendar'
 import Panel from '../components/Panel'
 import getPhase from '../utils/getPhase'
@@ -15,6 +16,7 @@ class AbvCalendar extends Component {
         super()
         this.state = {
             phase: "",
+            moonsign: "",
             newTask: {
                 user_id: 0,
                 title: "",
@@ -29,7 +31,10 @@ class AbvCalendar extends Component {
 
     componentDidMount() {
         var today_date = new Date(formatDate(new Date().toLocaleDateString()))
-        this.setState({phase: getPhase(today_date)});
+        this.setState({
+            phase: getPhase(today_date),
+            moonsign: moonSign(today_date)
+        });
 
           axios.get(`/api/user`)
           .then(res => {
@@ -86,7 +91,7 @@ class AbvCalendar extends Component {
             <div className="calendar-view-wrapper">
              <Panel />
              <div className="calendar-view">
-             <MoonHeader phase={this.state.phase}/>
+             <MoonHeader phase={this.state.phase} moonsign={this.state.moonsign}/>
               <AbvCalendarWidget
               newTask={this.state.newTask}  
               addTaskFromWidget={this.addTaskFromWidget}

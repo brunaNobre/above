@@ -3,6 +3,7 @@ import Panel from '../Panel'
 import MoonHeader from '../MoonHeader'
 import formatDate from '../../utils/formatDate'
 import getPhase from '../../utils/getPhase'
+import moonSign from '../../utils/moonSign'
 import NewTaskDialog from './NewTaskDialog'
 import AbvCalendarWidget from '../../components/AbvCalendar/AbvCalendarWidget'
 
@@ -12,6 +13,7 @@ class AboveMainContent extends Component {
         super()
         this.state = {
             phase: "",
+            moonsign: "",
             newTask: {
                 user_id: 0,
                 title: "",
@@ -26,7 +28,10 @@ class AboveMainContent extends Component {
 
     componentDidMount() {
         var today_date = new Date(formatDate(new Date().toLocaleDateString()))
-        this.setState({phase: getPhase(today_date)});
+        this.setState({
+            phase: getPhase(today_date),
+            moonsign: moonSign(today_date)
+        });
 
         axios.get(`/api/user`)
         .then(res => {
@@ -80,7 +85,7 @@ class AboveMainContent extends Component {
         return (
             <div className="main-content-view">
                 <Panel />
-                <MoonHeader phase={this.state.phase}/>
+                <MoonHeader phase={this.state.phase} moonsign={this.state.moonsign}/>
 
                 <AbvCalendarWidget
                 newTask={this.state.newTask}  

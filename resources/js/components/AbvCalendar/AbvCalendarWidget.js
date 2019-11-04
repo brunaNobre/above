@@ -4,6 +4,7 @@ import {formatDistance} from 'date-fns/esm'
 import {pt} from 'date-fns/esm/locale'
 import getPhase from '../../utils/getPhase'
 import sunSign from '../../utils/sunSign'
+import moonSign from '../../utils/moonSign'
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import CloseIcon from '@material-ui/icons/Close';
@@ -36,19 +37,60 @@ class AbvCalendarWidget extends Component {
     translatePhase (phase) {
         switch (phase) {
             case "new":
-            return "nova";
+            return "Nova";
             break;
             case "waxing":
-            return "crescente";
+            return "Crescente";
             break;
             case "full":
-            return "cheia";
+            return "Cheia";
             break;
             default:
-            return "minguante";
+            return "Minguante";
             break;
         }
     }
+
+    translateSign(sign) {
+      switch (sign) {
+          case "aries":
+          return "Áries";
+          break;
+          case "taurus":
+          return "Touro";
+          break;
+          case "gemini":
+          return "Gêmeos";
+          break;
+          case "cancer":
+          return "Câncer";
+          break;
+          case "leo":
+          return "Leão";
+          break;
+          case "virgo":
+          return "Virgem";
+          break;
+          case "libra":
+          return "Libra";
+          break;
+          case "scorpio":
+          return "Escorpião";
+          break;
+          case "sagitarius":
+          return "Sagitário";
+          break;
+          case "capricorn":
+          return "Capricórnio";
+          break;
+          case "aquarius":
+          return "Aquário";
+          break;          
+          default:
+          return "Peixes";
+          break;
+      }
+  }  
 
   renderHeader() {
     const dateFormat = "MMMM yyyy";
@@ -109,7 +151,7 @@ class AbvCalendarWidget extends Component {
         formattedDay = dateFns.format(day, dateFormat);
         const cloneDay = day;
         const phase = getPhase(cloneDay);        
-
+        const moonsign = moonSign(cloneDay);
         days.push(
           <div
             className={`col cell ${
@@ -138,7 +180,7 @@ class AbvCalendarWidget extends Component {
             <DialogTitle className="title">{`${dayOfWeek}, ${formattedDay} de ${month} de ${year}`}</DialogTitle>
             {isFriday}
             <p className="sign-ofDay">Sol em <span>{sunSign(`${formattedDay} de ${month} de ${year}`)}</span></p>
-            <p className="moon-ofDay">Lua <span>{this.translatePhase(phase)}</span></p>
+            <p className="moon-ofDay">Lua <span>{this.translatePhase(phase)}</span> em <span className="moon-sign-name">{this.translateSign(moonsign)}</span></p>
             <ExpansionPanel>
               <ExpansionPanelSummary
                 expandIcon={<ExpandMoreIcon />}

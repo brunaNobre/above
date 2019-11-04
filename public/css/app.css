@@ -11228,13 +11228,16 @@ body .places .m-b-md {
 }
 
 .tasks-header .sun-sign-of-day {
-  color: #8344E0;
   font-weight: 400;
-  width: 30%;
+  width: 70%;
   margin-left: 5%;
-  padding-top: 5%;
+  padding-top: 9%;
   font-size: 1.4em;
   margin-bottom: 0;
+}
+
+.tasks-header .sun-sign-of-day span {
+  color: #8344E0;
 }
 
 .task-date {
@@ -11308,6 +11311,12 @@ body .places .m-b-md {
 .sign-mood-mostFelt span {
   font-weight: 500;
   color: #8344E0;
+}
+
+.other-feel {
+  margin-left: 16px;
+  color: #8344E0;
+  margin-top: -15px;
 }
 
 .feel-predict {
@@ -11734,6 +11743,10 @@ body .places .m-b-md {
 
 .calendar-dialog .moon-ofDay span {
   font-weight: bold;
+}
+
+.calendar-dialog .moon-ofDay .moon-sign-name {
+  color: #8344E0;
 }
 
 .calendar-dialog .close-dialog {
