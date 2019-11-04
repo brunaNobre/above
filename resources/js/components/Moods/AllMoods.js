@@ -100,7 +100,7 @@ export default function AllMoods(props) {
         {dayFeellingsList}
         </List>
         <Typography variant="h5" component="h3" className="add-feelling">
-        Adicionar sentimento
+        Escolher sentimento
         </Typography>
         <Autocomplete
         className="add-feelling-input"

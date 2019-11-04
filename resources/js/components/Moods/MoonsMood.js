@@ -74,6 +74,14 @@ export default function MoonsMood(props) {
 
   let userFeltSignWan = {};
 
+  let mostFeltSignNew = {};
+
+  let mostFeltSignWax = {};
+
+  let mostFeltSignFull = {};
+
+  let mostFeltSignWan = {};
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -444,11 +452,31 @@ if(Array.isArray(props.userFeellingsNew) ) {
    }
 }
 
+
+// All feellings on NEW MOON on each sign
+if(Array.isArray(props.allFeellingsNew) ) {
+  if(Array.isArray(props.moods)){
+   for(let i = 0; i < signNames.length; i++) {
+     mostFeltSignNew[signNames[i]] = getFeellingsInPhaseSign(props.allFeellingsNew, signNames[i], props.moods, "new");
+   }
+  }
+}
+
+
 // User feellings on WAX MOON on each sign
 if(Array.isArray(props.userFeellingsWax) && Array.isArray(props.userMoods)) {
 for(let i = 0; i < signNames.length; i++) {
   userFeltSignWax[signNames[i]] = getFeellingsInPhaseSign(props.userFeellingsWax, signNames[i], props.userMoods, "waxing");
 }
+}
+
+// All feellings on WAX MOON on each sign
+if(Array.isArray(props.allFeellingsWax) ) {
+  if(Array.isArray(props.moods)){
+   for(let i = 0; i < signNames.length; i++) {
+     mostFeltSignWax[signNames[i]] = getFeellingsInPhaseSign(props.allFeellingsWax, signNames[i], props.moods, "waxing");
+   }
+  }
 }
 
 // User feellings on FULL MOON on each sign
@@ -458,12 +486,31 @@ for(let i = 0; i < signNames.length; i++) {
 }
 }
 
+// All feellings on FULL MOON on each sign
+if(Array.isArray(props.allFeellingsFull) ) {
+  if(Array.isArray(props.moods)){
+   for(let i = 0; i < signNames.length; i++) {
+     mostFeltSignFull[signNames[i]] = getFeellingsInPhaseSign(props.allFeellingsFull, signNames[i], props.moods, "full");
+   }
+  }
+}
+
 // User feellings on WAN MOON on each sign
 if(Array.isArray(props.userFeellingsWan) && Array.isArray(props.userMoods)) {
 for(let i = 0; i < signNames.length; i++) {
   userFeltSignWan[signNames[i]] = getFeellingsInPhaseSign(props.userFeellingsWan, signNames[i], props.userMoods, "waning");
 }
-} 
+}
+
+// All feellings on WAN MOON on each sign
+if(Array.isArray(props.allFeellingsWan) ) {
+  if(Array.isArray(props.moods)){
+   for(let i = 0; i < signNames.length; i++) {
+     mostFeltSignWan[signNames[i]] = getFeellingsInPhaseSign(props.allFeellingsWan, signNames[i], props.moods, "waning");
+   }
+  }
+}
+
   return (
     <div className={classes.root +" moons-panel"}>
       <AppBar position="static">
@@ -478,6 +525,7 @@ for(let i = 0; i < signNames.length; i++) {
       <TabPanel value={value} index={0}>
         <SignMoonMood moonPhase="nova"
         userFelt = {userFeltSignNew}
+        mostFelt = {mostFeltSignNew}
         />
         Na <b>Lua Nova</b> eu me sinto:
         <List component="nav" aria-label="main mailbox folders">
@@ -486,7 +534,7 @@ for(let i = 0; i < signNames.length; i++) {
         <div className="major-feelling-in-moon">
 
         {(newMoonMostFelt != "") ? 
-        <p className="major-people">O que foi mais sentido pelos usuários nessa lua: <b>{newMoonMostFelt} ({newMoonMostFeltPercentage}%)</b></p> :
+        <p className="major-people">Sentimento mais escolhido pelas usuárias: <b>{newMoonMostFelt} ({newMoonMostFeltPercentage}%)</b></p> :
         <p className="major-people">Ninguém mais falou o que sentia nessa lua.</p>}
 
           
@@ -495,6 +543,8 @@ for(let i = 0; i < signNames.length; i++) {
       <TabPanel value={value} index={1}>
         <SignMoonMood moonPhase="crescente"
         userFelt={userFeltSignWax}
+        mostFelt = {mostFeltSignWax}
+
         />
         Na <b>Lua Crescente</b> eu me sinto:
         <List component="nav" aria-label="main mailbox folders">
@@ -503,13 +553,14 @@ for(let i = 0; i < signNames.length; i++) {
         <div className="major-feelling-in-moon">
 
         {(waxMoonMostFelt != "") ? 
-        <p className="major-people">O que foi mais sentido pelos usuários nessa lua: <b>{waxMoonMostFelt} ({waxMoonMostFeltPercentage}%)</b></p> :
+        <p className="major-people">Sentimento mais escolhido pelas usuárias: <b>{waxMoonMostFelt} ({waxMoonMostFeltPercentage}%)</b></p> :
         <p className="major-people">Ninguém mais falou o que sentia nessa lua.</p>}
         </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
         <SignMoonMood moonPhase="cheia"
         userFelt={userFeltSignFull}
+        mostFelt = {mostFeltSignFull}
         />
         Na <b>Lua Cheia</b> eu me sinto:
         <List component="nav" aria-label="main mailbox folders">
@@ -518,7 +569,7 @@ for(let i = 0; i < signNames.length; i++) {
         <div className="major-feelling-in-moon">
 
         {(fullMoonMostFelt != "") ? 
-        <p className="major-people">O que foi mais sentido pelos usuários nessa lua: <b>{fullMoonMostFelt} ({fullMoonMostFeltPercentage}%)</b></p> :
+        <p className="major-people">Sentimento mais escolhido pelas usuárias: <b>{fullMoonMostFelt} ({fullMoonMostFeltPercentage}%)</b></p> :
         <p className="major-people">Ninguém mais falou o que sentia nessa lua.</p>}
 
         </div>
@@ -526,6 +577,7 @@ for(let i = 0; i < signNames.length; i++) {
       <TabPanel value={value} index={3}>
         <SignMoonMood moonPhase="minguante"
         userFelt={userFeltSignWan}
+        mostFelt = {mostFeltSignWan}
         />
         Na <b>Lua Minguante</b> eu me sinto:
         <List component="nav" aria-label="main mailbox folders">
@@ -533,7 +585,7 @@ for(let i = 0; i < signNames.length; i++) {
         </List>
         <div className="major-feelling-in-moon">
         {(wanMoonMostFelt != "") ? 
-        <p className="major-people">O que foi mais sentido pelos usuários nessa lua: <b>{wanMoonMostFelt} ({wanMoonMostFeltPercentage}%)</b></p> :
+        <p className="major-people">Sentimento mais escolhido pelas usuárias: <b>{wanMoonMostFelt} ({wanMoonMostFeltPercentage}%)</b></p> :
         <p className="major-people">Ninguém mais falou o que sentia nessa lua.</p>}        
         </div>
       </TabPanel>
