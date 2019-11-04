@@ -18,6 +18,7 @@ class UserMood extends Component {
             },
             feellings: {},
             feellingSelected: "",
+            moods: {},
             userMoods: {},
             userFeellings: {},
             userFeellingsNew: {},
@@ -49,6 +50,11 @@ class UserMood extends Component {
                 },
             })
           })
+
+          axios.get(`/api/moods`)
+          .then(res => {
+              this.setState({moods: res.data});
+          }); 
 
           axios.get(`/api/user-moods`)
           .then(res => {
@@ -230,6 +236,7 @@ class UserMood extends Component {
                 allFeellingsFull={this.state.allFeellingsFull}
                 allFeellingsWan={this.state.allFeellingsWan}
                 userMoods={this.state.userMoods}
+                moods={this.state.moods}
                /> 
                <NewTaskDialog
                 newTask={this.state.newTask} 

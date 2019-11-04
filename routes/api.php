@@ -89,6 +89,10 @@ Route::middleware('auth:api')->get('/feellings', function () {
     return $feellings;
 });
 
+Route::middleware('auth:api')->get('/moods', function () {
+    $moods = Mood::all();
+    return $moods;
+});
 
 Route::middleware('auth:api')->get('/user-moods', function () {
     $user_id = auth()->user()->id;
