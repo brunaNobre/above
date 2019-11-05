@@ -38,7 +38,8 @@ export default function CompletedTasksPanel(props) {
     const splited = task.due_to.split('-');
     const year = splited[0];
     const month = splited[1];
-    const day = splited[2];
+    let day = splited[2];
+    if(day < 10) {day = day.split('0')[1];}
     const taskDueTo = day+ " de "+ formatMonth(month) + " de "+ year;
 
   if(date == taskDueTo) {

@@ -42,7 +42,7 @@ export default function TasksList(props) {
   const tasksList = props.tasks;
   const date = props.date;
   let toDo = 0;
-
+  let taskDueTo;
 
 
 
@@ -50,10 +50,11 @@ export default function TasksList(props) {
     const splited = task.due_to.split('-');
     const year = splited[0];
     const month = splited[1];
-    const day = splited[2];
+    let day = splited[2];
+    if(day < 10) {day = day.split('0')[1];}
     const user_id = props.user.id;
     
-    const taskDueTo = day+ " de "+ formatMonth(month) + " de "+ year;
+    taskDueTo = day+ " de "+ formatMonth(month) + " de "+ year;
 
     if(!task.is_completed && (taskDueTo == date) && (task.user_id == user_id)) {
       toDo = toDo + 1;
@@ -78,7 +79,6 @@ export default function TasksList(props) {
     } 
    
   });  
-
   return (
     <div className={classes.root}>
       <List component="nav" aria-label="main mailbox folders">
