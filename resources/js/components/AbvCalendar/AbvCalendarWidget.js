@@ -30,7 +30,8 @@ class AbvCalendarWidget extends Component {
         this.nextMonth = this.nextMonth.bind(this)    
         this.prevMonth = this.prevMonth.bind(this)  
         this.openDialog = this.openDialog.bind(this)    
-        this.closeDialog = this.closeDialog.bind(this)   
+        this.closeDialog = this.closeDialog.bind(this)
+        this.sendAndClose = this.sendAndClose.bind(this)  
 
     }
 
@@ -172,13 +173,12 @@ class AbvCalendarWidget extends Component {
         let dayOfWeek = dateFns.format(day, "EEEE", {locale: pt});
         day = dateFns.addDays(day, 1);
 
-        let isFriday = (dayOfWeek == "sexta-feira") ? <p className="isfriday">Vou só te avisar que sextou!</p> : "";
+        //let isFriday = (dayOfWeek == "sexta-feira") ? <p className="isfriday">Sextou!</p> : "";
         
         dialogs.push(
           <Dialog key={cloneDay} className="calendar-dialog" aria-labelledby="simple-dialog-title" open={this.state.open[cloneDay] || false}>
             <CloseIcon className="close-dialog" onClick={() => {this.closeDialog(cloneDay)}}/>
             <DialogTitle className="title">{`${dayOfWeek}, ${formattedDay} de ${month} de ${year}`}</DialogTitle>
-            {isFriday}
             <p className="sign-ofDay">Sol em <span>{sunSign(`${formattedDay} de ${month} de ${year}`)}</span></p>
             <p className="moon-ofDay">Lua <span>{this.translatePhase(phase)}</span> em <span className="moon-sign-name">{this.translateSign(moonsign)}</span></p>
             <ExpansionPanel>
@@ -235,7 +235,10 @@ class AbvCalendarWidget extends Component {
   closeDialog (key) {
     let obj = {...this.state.open}
     obj[key] = false;
-    this.setState({open: obj})
+    this.setState({
+      open: obj,
+      selectedDate: new Date()
+    })
   }
   
   sendAndClose(key, task, date) {
