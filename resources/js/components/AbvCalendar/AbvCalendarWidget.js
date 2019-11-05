@@ -30,7 +30,8 @@ class AbvCalendarWidget extends Component {
         this.nextMonth = this.nextMonth.bind(this)    
         this.prevMonth = this.prevMonth.bind(this)  
         this.openDialog = this.openDialog.bind(this)    
-        this.closeDialog = this.closeDialog.bind(this)   
+        this.closeDialog = this.closeDialog.bind(this)
+        this.sendAndClose = this.sendAndClose.bind(this)  
 
     }
 
@@ -234,7 +235,10 @@ class AbvCalendarWidget extends Component {
   closeDialog (key) {
     let obj = {...this.state.open}
     obj[key] = false;
-    this.setState({open: obj})
+    this.setState({
+      open: obj,
+      selectedDate: new Date()
+    })
   }
   
   sendAndClose(key, task, date) {
