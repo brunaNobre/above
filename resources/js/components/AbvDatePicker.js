@@ -1,4 +1,5 @@
 import 'date-fns';
+import {pt} from 'date-fns/esm/locale'
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import DateFnsUtils from '@date-io/date-fns';
@@ -19,7 +20,7 @@ export default function MaterialUIPickers(props) {
   };
 
   return (
-    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+    <MuiPickersUtilsProvider utils={DateFnsUtils} locale={pt}>
       <Grid container justify="flex-start">
      
         <KeyboardDatePicker

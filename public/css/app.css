@@ -11024,6 +11024,10 @@ body .places .m-b-md {
   display: block;
 }
 
+.waxing {
+  transform: rotate(110deg);
+}
+
 @media (min-width: 500px) {
   .moon-display {
     width: 15em;
@@ -11096,7 +11100,7 @@ body .places .m-b-md {
   }
 
   .moon-header p {
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 }
 

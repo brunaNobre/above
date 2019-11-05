@@ -7,6 +7,10 @@
     display: block;
 }
 
+.waxing {
+    transform: rotate(110deg);
+}
+
 @media(min-width: 500px) {
     .moon-display {
         width: 15em;

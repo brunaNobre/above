@@ -6,7 +6,8 @@ import getPhase from '../utils/getPhase'
 function MoonDisplay (props) {
     var today_date = new Date(formatDate(new Date().toLocaleDateString()))
     const phase = getPhase(today_date);
-
+    let isWaxing = false;
+    let image = phase;
     let phase_pt_br = "";
 
     switch (phase) {
@@ -15,6 +16,8 @@ function MoonDisplay (props) {
         break;
         case "waxing":
         phase_pt_br = "crescente";
+        isWaxing = true;
+        image = "waning"
         break;
         case "full":
         phase_pt_br = "cheia";
@@ -26,8 +29,8 @@ function MoonDisplay (props) {
 
     return (
     
-    <img className="moon-display"
-        src={`/images/phases/${phase}.png`}
+    <img className={"moon-display" + (isWaxing ? " waxing" : "")}
+        src={`/images/phases/${image}.png`}
         alt={`Lua na fase ${phase_pt_br}`}
         title={`Lua na fase ${phase_pt_br}`} />
     )
