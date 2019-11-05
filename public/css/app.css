@@ -10774,7 +10774,7 @@ body {
 body .places {
   text-align: left;
   position: relative;
-  top: 15%;
+  top: 4vw;
   height: 50vh;
 }
 
@@ -10784,9 +10784,6 @@ body .places .content {
 
 body .places .logo-above {
   color: #8344E0;
-  position: absolute;
-  top: -20%;
-  left: 5%;
 }
 
 body .places div.sign-places a {
@@ -10802,6 +10799,10 @@ body .places div.sign-places a.active {
 body .places div.sign-places .tab-pane h3 {
   margin-left: 10%;
   margin-top: 5%;
+}
+
+body .places div.sign-places .tab-pane h3 span {
+  color: #8344E0;
 }
 
 body .places div.sign-places .tab-pane p {
@@ -10835,6 +10836,20 @@ body .places .m-b-md {
   margin: 0;
   padding: 0;
   top: 15%;
+}
+
+.logo-above-places {
+  color: #8344E0;
+  font-family: Arvo, serif;
+  font-weight: 700;
+  margin-left: 16px;
+  margin-top: 10px;
+}
+
+@media (max-width: 400px) {
+  body .places {
+    top: 35vw;
+  }
 }
 
 .abv-header {
