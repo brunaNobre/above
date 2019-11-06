@@ -23,6 +23,7 @@ class AbvCalendarWidget extends Component {
             currentMonth: new Date(),
             selectedDate: new Date(),
             open: {},
+            isMercuryRetrograde: false
           };
         this.renderHeader = this.renderHeader.bind(this)    
         this.renderDays = this.renderDays.bind(this)    
@@ -32,6 +33,7 @@ class AbvCalendarWidget extends Component {
         this.openDialog = this.openDialog.bind(this)    
         this.closeDialog = this.closeDialog.bind(this)
         this.sendAndClose = this.sendAndClose.bind(this)  
+        this.setRetrograde = this.setRetrograde.bind(this)  
 
     }
 
@@ -93,6 +95,17 @@ class AbvCalendarWidget extends Component {
       }
   }  
 
+  setRetrograde() {
+
+    axios.get(`https://mercuryretrogradeapi.com?date=2016-09-14`)
+    .then(res => {console.log(res);});
+
+ 
+  }
+
+
+
+
   renderHeader() {
     const dateFormat = "MMMM yyyy";
 
@@ -104,7 +117,7 @@ class AbvCalendarWidget extends Component {
           </div>
         </div>
         <div className="col col-center">
-          <span>{dateFns.format(this.state.currentMonth, dateFormat, {locale: pt})}</span>
+          <span onClick={this.setRetrograde}>{dateFns.format(this.state.currentMonth, dateFormat, {locale: pt})}</span>
         </div>
         <div className="col col-end" onClick={this.nextMonth}>
           <div className="icon">chevron_right</div>
@@ -153,6 +166,8 @@ class AbvCalendarWidget extends Component {
         const cloneDay = day;
         const phase = getPhase(cloneDay);        
         const moonsign = moonSign(cloneDay);
+          
+
         days.push(
           <div
             className={`col cell ${

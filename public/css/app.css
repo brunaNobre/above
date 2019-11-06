@@ -11715,6 +11715,14 @@ body .places .m-b-md {
 }
 
 @media (max-width: 650px) {
+  .calendar-view-wrapper .moon-header {
+    top: 5%;
+  }
+
+  .calendar-view-wrapper .moon-header p {
+    margin-top: 0;
+  }
+
   .calendar-view-wrapper .abv-panel {
     display: none;
   }

@@ -1,5 +1,11 @@
 @media(max-width: 650px) {
     .calendar-view-wrapper {
+      .moon-header {
+        top: 5%;
+        p {
+          margin-top: 0;
+        }
+    }
         .abv-panel {
             display: none;
         }
