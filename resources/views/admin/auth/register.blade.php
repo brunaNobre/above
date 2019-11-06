@@ -8,7 +8,7 @@
                 <div class="card-header">Cadastro da Administradora</div>
 
                 <div class="card-body">
-                    <form class="register-form" method="POST" action="{{ route('admin.register.store') }}">
+                    <form class="register-form" method="POST" action="{{ secure_url('admin.register.store') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -76,7 +76,7 @@
 
                      <p class="login-register-call">
                     Já é de casa?
-                    <a class="register-link" href="{{ route('login') }}"> Pode entrar</a>
+                    <a class="register-link" href="{{ secure_url('login') }}"> Pode entrar</a>
                     </p>
 
                 </div>
