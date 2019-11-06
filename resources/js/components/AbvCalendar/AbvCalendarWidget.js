@@ -33,7 +33,6 @@ class AbvCalendarWidget extends Component {
         this.openDialog = this.openDialog.bind(this)    
         this.closeDialog = this.closeDialog.bind(this)
         this.sendAndClose = this.sendAndClose.bind(this)  
-        this.setRetrograde = this.setRetrograde.bind(this)  
 
     }
 
@@ -95,16 +94,6 @@ class AbvCalendarWidget extends Component {
       }
   }  
 
-  setRetrograde() {
-
-    axios.get(`https://mercuryretrogradeapi.com?date=2016-09-14`)
-    .then(res => {console.log(res);});
-
- 
-  }
-
-
-
 
   renderHeader() {
     const dateFormat = "MMMM yyyy";
@@ -117,7 +106,7 @@ class AbvCalendarWidget extends Component {
           </div>
         </div>
         <div className="col col-center">
-          <span onClick={this.setRetrograde}>{dateFns.format(this.state.currentMonth, dateFormat, {locale: pt})}</span>
+          <span>{dateFns.format(this.state.currentMonth, dateFormat, {locale: pt})}</span>
         </div>
         <div className="col col-end" onClick={this.nextMonth}>
           <div className="icon">chevron_right</div>
