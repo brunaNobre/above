@@ -64,7 +64,7 @@ export default function SignCard(props) {
               {props.name}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-            {props.description}
+              {props.description}
             </Typography>
           </CardContent>
         </Dialog>
