@@ -27,7 +27,7 @@ class RedirectIfAuthenticated
           
 
             if (Auth::guard($guard)->check()) {
-                return redirect(secure_url('/home'));
+                return redirect('/home');
             
             }
 
