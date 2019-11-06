@@ -8,7 +8,7 @@
                 <div class="card-header">Login da Administradora</div>
 
                 <div class="card-body">
-                    <form class="login-form" method="POST" action="{{ route('admin.auth.loginAdmin') }}">
+                    <form class="login-form" method="POST" action="{{ secure_url('admin.auth.loginAdmin') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -61,7 +61,7 @@
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link forgot-password" href="{{ route('password.request') }}">
+                                    <a class="btn btn-link forgot-password" href="{{ secure_url('password.request') }}">
                                         Esqueci a senha
                                     </a>
                                 @endif
@@ -74,7 +74,7 @@
 
                     <p class="login-register-call">
                     Acabou de chegar de marte?
-                    <a class="register-link" href="{{ route('admin.register') }}"> Cadastre-se</a>
+                    <a class="register-link" href="{{ secure_url('admin.register') }}"> Cadastre-se</a>
                     </p>
                 </div>
             </div>

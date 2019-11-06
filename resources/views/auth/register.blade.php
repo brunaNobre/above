@@ -8,7 +8,7 @@
                 <div class="card-header">Cadastre-se</div>
 
                 <div class="card-body">
-                    <form class="register-form" method="POST" action="{{ route('register') }}">
+                    <form class="register-form" method="POST" action="{{ secure_url('register') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -80,7 +80,7 @@
 
                      <p class="login-register-call">
                     Já é de casa?
-                    <a class="register-link" href="{{ route('login') }}"> Pode entrar</a>
+                    <a class="register-link" href="{{ secure_url('login') }}"> Pode entrar</a>
                     </p>
 
                 </div>

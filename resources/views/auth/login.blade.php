@@ -8,7 +8,7 @@
                 <div class="card-header">Olá, pode entrar :)</div>
 
                 <div class="card-body">
-                    <form class="login-form" method="POST" action="{{ route('login') }}">
+                    <form class="login-form" method="POST" action="{{ secure_url('login') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -61,7 +61,7 @@
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link forgot-password" href="{{ route('password.request') }}">
+                                    <a class="btn btn-link forgot-password" href="{{ secure_url('password.request') }}">
                                         Esqueci a senha
                                     </a>
                                 @endif
@@ -78,7 +78,7 @@
 
                     <p class="login-register-call">
                     Acabou de chegar de marte?
-                    <a class="register-link" href="{{ route('register') }}"> Cadastre-se</a>
+                    <a class="register-link" href="{{ secure_url('register') }}"> Cadastre-se</a>
                     </p>
                 </div>
             </div>
