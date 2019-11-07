@@ -12,7 +12,8 @@ class NatalChart extends Component {
                 user_id: 0,
                 title: "",
                 due_to: formatDate(new Date().toLocaleDateString())
-            }
+            },
+            isRetrograde: false,
         }
 
         this.handleAdd = this.handleAdd.bind(this)    
@@ -34,7 +35,7 @@ class NatalChart extends Component {
         })
 
         axios.get('https://mercuryretrogradeapi.com?date=2016-09-14')
-        .then(res => console.log(res))
+        .then(res => this.setState({isRetrograde: true}))
 
       }
 
@@ -60,7 +61,7 @@ class NatalChart extends Component {
     render() {
         return (
             <div>
-                <h1>Mapa Astral</h1>
+                <h1>{this.state.isRetrograde}</h1>
                 <NewTaskDialog
                 newTask={this.state.newTask} 
                 sendInputValue={this.sendInputValue}
