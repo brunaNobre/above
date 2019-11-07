@@ -35,7 +35,7 @@ class NatalChart extends Component {
         })
 
         axios.get('https://mercuryretrogradeapi.com?date=2016-09-14')
-        .then(res => this.setState({isRetrograde: true}))
+        .then(res => this.setState({isRetrograde: res.data.is_retrograde}))
 
       }
 
