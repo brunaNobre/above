@@ -13,7 +13,7 @@ class NatalChart extends Component {
                 title: "",
                 due_to: formatDate(new Date().toLocaleDateString())
             },
-            isRetrograde: {},
+            isRetrograde: false,
         }
 
         this.handleAdd = this.handleAdd.bind(this)    
@@ -70,7 +70,7 @@ class NatalChart extends Component {
         return (
             <div>
                 <h1 onClick={this.click}>click</h1>
-                <p>is retrograde? {typeof (this.state.isRetrograde) !== 'object' ? this.state.isRetrograde : ""}</p>
+                <p>is retrograde? {this.state.isRetrograde}</p>
                 <NewTaskDialog
                 newTask={this.state.newTask} 
                 sendInputValue={this.sendInputValue}
