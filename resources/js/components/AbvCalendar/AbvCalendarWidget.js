@@ -240,7 +240,7 @@ class AbvCalendarWidget extends Component {
 
     fetch('https://mercuryretrogradeapi.com?date=2016-09-14', { mode: 'cors' })
       .then(res => res.json())
-      .then(({is_retrograde}) => {console.log(is_retrograde)})
+      .then(({is_retrograde}) => {console.log({is_retrograde})})
 
   }
   
