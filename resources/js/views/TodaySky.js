@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import DecorBorder from '../components/DecorBorder'
 import NewTaskDialog from '../components/layouts/NewTaskDialog'
 import formatDate from '../utils/formatDate'
+import TodayChartTable from '../components/TodaySky/TodayChartTable'
 
 
 class TodaySky extends Component {
@@ -12,6 +13,18 @@ class TodaySky extends Component {
                 user_id: 0,
                 title: "",
                 due_to: formatDate(new Date().toLocaleDateString())
+            },
+            chart:  {
+                sun: "Escorpião",
+                moon: "Áries",
+                mercury: "Escorpião",
+                venus: "Sagitário",
+                mars: "Libra",
+                jupiter: "Sagitário",
+                saturn: "Capricórnio",
+                uranus: "Touro",
+                neptune: "Peixes",
+                pluto: "Capricórnio",
             }
         }
 
@@ -63,6 +76,7 @@ class TodaySky extends Component {
                     <h1>Céu de Hoje</h1>
                     <p>Veja em quais signos os astros estão transitando no dia de hoje.</p>
                </DecorBorder>
+               <TodayChartTable chart={this.state.chart}/>
                <NewTaskDialog
                 newTask={this.state.newTask} 
                 sendInputValue={this.sendInputValue}

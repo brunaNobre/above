@@ -11691,6 +11691,10 @@ body .places .m-b-md {
   font-size: 1.5rem;
 }
 
+.todaysky-view .chart-sign {
+  color: #8344E0;
+}
+
 .todaysky-view .decor-border {
   border: 1px dotted darkgray;
 }
