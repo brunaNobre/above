@@ -54,8 +54,9 @@ class AbvCalendar extends Component {
 
 
     clickOnCell() {
-
-            fetch('https://mercuryretrogradeapi.com?date=2016-09-14', { mode: 'cors' }).then(res => res.json()).then(({is_retrograde}) => {this.setState({is_retrograde: is_retrograde}); console.log("oi")})
+        fetch('https://mercuryretrogradeapi.com?date=2016-09-14', { mode: 'cors' })
+        .then(res => res.json())
+        .then(({is_retrograde}) => {console.log(is_retrograde)})
     }
 
 
@@ -99,10 +100,13 @@ class AbvCalendar extends Component {
     render() {
         return (
             <div className="calendar-view-wrapper">
-             <button type="button" onClick={() => {this.clickOnCell()}}>butao</button>   
              <Panel />
              <div className="calendar-view">
-             <MoonHeader phase={this.state.phase} moonsign={this.state.moonsign}/>
+             <MoonHeader 
+             phase={this.state.phase} 
+             moonsign={this.state.moonsign}
+             onClick={() => {this.clickOnCell()}}
+             />
               <AbvCalendarWidget
               newTask={this.state.newTask}  
               addTaskFromWidget={this.addTaskFromWidget}
