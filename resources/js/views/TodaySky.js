@@ -61,7 +61,7 @@ class TodaySky extends Component {
             <div className="todaysky-view">
                <DecorBorder img="/images/cosmos.png">
                     <h1>Céu de Hoje</h1>
-                    <p>jisjoisjiojio oijsoidjiosjo joidjoidjoid ijoijoidjojd</p>
+                    <p>Veja em quais signos os astros estão transitando no dia de hoje.</p>
                </DecorBorder>
                <NewTaskDialog
                 newTask={this.state.newTask} 
