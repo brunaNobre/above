@@ -21,12 +21,15 @@ class AbvCalendar extends Component {
                 user_id: 0,
                 title: "",
                 due_to: formatDate(new Date().toLocaleDateString())
-            }
+            },
+            is_retrograde: false,
         }
 
         this.handleAdd = this.handleAdd.bind(this)    
         this.sendInputValue = this.sendInputValue.bind(this)
         this.addTaskFromWidget = this.addTaskFromWidget.bind(this)
+        this.clickOnCell = this.clickOnCell.bind(this)
+
     }
 
     componentDidMount() {
@@ -48,6 +51,13 @@ class AbvCalendar extends Component {
           })
 
         }
+
+
+    clickOnCell() {
+
+            fetch('https://mercuryretrogradeapi.com?date=2016-09-14', { mode: 'cors' }).then(res => res.json()).then(({is_retrograde}) => {this.setState({is_retrograde: is_retrograde}); console.log(this.state.is_retrograde)})
+    }
+
 
 
     handleAdd (newTask) {
@@ -89,6 +99,7 @@ class AbvCalendar extends Component {
     render() {
         return (
             <div className="calendar-view-wrapper">
+             <button onClick={this.clickOnCell}>butao</button>   
              <Panel />
              <div className="calendar-view">
              <MoonHeader phase={this.state.phase} moonsign={this.state.moonsign}/>
