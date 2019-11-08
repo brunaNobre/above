@@ -23,7 +23,7 @@ class AbvCalendarWidget extends Component {
             currentMonth: new Date(),
             selectedDate: new Date(),
             open: {},
-            isMercuryRetrograde: false
+            is_retrograde: false
           };
         this.renderHeader = this.renderHeader.bind(this)    
         this.renderDays = this.renderDays.bind(this)    
@@ -36,7 +36,9 @@ class AbvCalendarWidget extends Component {
 
     }
 
-
+componentDidMount() {
+  fetch('https://mercuryretrogradeapi.com?date=2016-09-14', { mode: 'cors' }).then(res => res.json()).then(jsone => console.dir(jsone)).catch(e => console.log(e))
+}
 
 
     translatePhase (phase) {
@@ -237,10 +239,6 @@ class AbvCalendarWidget extends Component {
       open: obj,
       selectedDate: day
     })
-
-    fetch('https://mercuryretrogradeapi.com?date=2016-09-14', { mode: 'cors' })
-      .then(res => res.json())
-      .then(({is_retrograde}) => {console.log({is_retrograde})})
 
   }
   
