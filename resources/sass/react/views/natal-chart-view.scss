@@ -1,0 +1,49 @@
+.natal-chart-view {
+    .loading {
+        left: 45% !important;
+        position: relative !important;
+        color: #8344E0;
+    }
+
+    table {
+        margin-bottom: 50%;
+    }
+
+    .your-chart, .new-chart, .birth-place, .err {
+        color: #8344E0;
+        margin-top: 20px;
+        margin-left: 20px;
+        font-weight: 100;
+        margin-bottom: 30px;
+    }
+
+    .chart-sign {
+        color: #8344E0;   
+    }
+
+    .form-group {
+        margin-left: 20px;
+        label {
+            margin-right: 8px;
+        }
+    }
+
+    .err {
+        font-size: 1.5em;
+        font-weight: 300;
+    }
+
+    .calc {
+        border-color: #8344E0;
+        background-color: #8344E0;
+        color: white;
+        padding: 1% 4%;
+        border-radius: 5%;
+        margin-left: 5%;
+        &:hover {
+            border-color: #8344E0;
+            background-color: #8344E0;
+            color: white;
+        }
+    }
+}

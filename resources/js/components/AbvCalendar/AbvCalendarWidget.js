@@ -252,10 +252,6 @@ componentDidMount() {
       })
     })
 
-
-
-
-
   }
   
   closeDialog (key) {
