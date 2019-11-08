@@ -53,13 +53,6 @@ class AbvCalendar extends Component {
         }
 
 
-    clickOnCell() {
-        fetch('https://mercuryretrogradeapi.com?date=2016-09-14', { mode: 'cors' })
-        .then(res => res.json())
-        .then(({is_retrograde}) => {console.log(is_retrograde)})
-    }
-
-
 
     handleAdd (newTask) {
         if(newTask.title) {
@@ -105,7 +98,6 @@ class AbvCalendar extends Component {
              <MoonHeader 
              phase={this.state.phase} 
              moonsign={this.state.moonsign}
-             onClick={() => {console.log('oi')}}
              />
               <AbvCalendarWidget
               newTask={this.state.newTask}  

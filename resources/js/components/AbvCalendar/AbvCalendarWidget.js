@@ -33,8 +33,16 @@ class AbvCalendarWidget extends Component {
         this.openDialog = this.openDialog.bind(this)    
         this.closeDialog = this.closeDialog.bind(this)
         this.sendAndClose = this.sendAndClose.bind(this)  
+        this.clickOnCell = this.clickOnCell.bind(this)  
 
     }
+
+
+    clickOnCell() {
+      fetch('https://mercuryretrogradeapi.com?date=2016-09-14', { mode: 'cors' })
+      .then(res => res.json())
+      .then(({is_retrograde}) => {console.log(is_retrograde)})
+  }
 
     translatePhase (phase) {
         switch (phase) {
@@ -234,6 +242,11 @@ class AbvCalendarWidget extends Component {
       open: obj,
       selectedDate: day
     })
+
+    fetch('https://mercuryretrogradeapi.com?date=2016-09-14', { mode: 'cors' })
+      .then(res => res.json())
+      .then(({is_retrograde}) => {console.log(is_retrograde)})
+
   }
   
   closeDialog (key) {
