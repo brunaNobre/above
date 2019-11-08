@@ -48,11 +48,11 @@
 
 
 
-                <div class="modal fade" id="modalShowDetails" tabindex="-1" role="dialog" aria-labelledby="signDetails" aria-hidden="true">
+                <div class="modal fade" id="{{'modalShowDetails'.$sign->id}}" tabindex="-1" role="dialog" aria-labelledby="signDetails" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="details-header" id="{{'modalShowDetails'.$sign->id}}"><span>{{$sign->name}}</span></h5><br>
+                            <h5 class="details-header" id="signDetails"><span>{{$sign->name}}</span></h5><br>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                             <span aria-hidden="true">&times;</span>
                             </button>
