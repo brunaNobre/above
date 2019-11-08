@@ -28,7 +28,6 @@ class AbvCalendar extends Component {
         this.handleAdd = this.handleAdd.bind(this)    
         this.sendInputValue = this.sendInputValue.bind(this)
         this.addTaskFromWidget = this.addTaskFromWidget.bind(this)
-        this.clickOnCell = this.clickOnCell.bind(this)
 
     }
 

@@ -37,7 +37,7 @@ class AbvCalendarWidget extends Component {
     }
 
 componentDidMount() {
-  fetch('https://mercuryretrogradeapi.com?date=2016-09-14', { mode: 'cors' }).then(res => res.json()).then(jsone => console.dir(jsone)).catch(e => console.log(e))
+  
 }
 
 
@@ -183,11 +183,14 @@ componentDidMount() {
         day = dateFns.addDays(day, 1);
 
         //let isFriday = (dayOfWeek == "sexta-feira") ? <p className="isfriday">Sextou!</p> : "";
+        let isRetrograde = this.state.is_retrograde ? <p className="isfriday">Mercúrio retrógrado!</p> : "";
+
         
         dialogs.push(
           <Dialog key={cloneDay} className="calendar-dialog" aria-labelledby="simple-dialog-title" open={this.state.open[cloneDay] || false}>
             <CloseIcon className="close-dialog" onClick={() => {this.closeDialog(cloneDay)}}/>
             <DialogTitle className="title">{`${dayOfWeek}, ${formattedDay} de ${month} de ${year}`}</DialogTitle>
+            {isRetrograde}
             <p className="sign-ofDay">Sol em <span>{sunSign(`${formattedDay} de ${month} de ${year}`)}</span></p>
             <p className="moon-ofDay">Lua <span>{this.translatePhase(phase)}</span> em <span className="moon-sign-name">{this.translateSign(moonsign)}</span></p>
             <ExpansionPanel>
@@ -234,11 +237,24 @@ componentDidMount() {
 
   openDialog (key, day) {
     let obj = {...this.state.open}
-    obj[key] = true;
-    this.setState({
-      open: obj,
-      selectedDate: day
+    let y = dateFns.format(day, 'yyyy');
+    let m = dateFns.format(day, 'MM');
+    let d = dateFns.format(day, 'd');
+   
+    fetch(`https://mercuryretrogradeapi.com?date=${y}-${m}-${d}`, { mode: 'cors' })
+    .then(res => res.json())
+    .then(({is_retrograde}) => this.setState({is_retrograde})).catch(e => console.log(e))
+    .then(() => {
+      obj[key] = true;
+      this.setState({
+        open: obj,
+        selectedDate: day
+      })
     })
+
+
+
+
 
   }
   
