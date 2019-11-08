@@ -74,12 +74,50 @@ Route::middleware('auth:api')->delete('tasks/{id}', function($id) {
 });
 
 
-// CHARTS
+// CHART
 
-Route::middleware('auth:api')->get('/charts', function () {
+Route::middleware('auth:api')->get('/chart', function () {
+    $user_id = auth()->user()->id;
+    $user_chart = Chart::where('user_id',$user_id)->get();
 
-    $charts = Chart::all();
-    return $charts;
+    if(count($user_chart) > 0) {
+        return $user_chart[0];
+    } else {
+        return -1;
+    }
+});
+
+
+
+Route::middleware('auth:api')->post('/chart', function (Request $request) {
+    $user_id = auth()->user()->id;
+    $charts = Chart::where('user_id',$user_id)->get();
+
+    if(count($charts) == 0) {
+        $chart = Chart::create(
+            [
+                "user_id" => $user_id,
+                "sun" => $request->sun,
+                "rising_sign" => $request->rising_sign,
+                "moon" => $request->moon,
+                "mercury" => $request->mercury,
+                "venus" => $request->venus,
+                "mars" => $request->mars,
+                "jupiter" => $request->jupiter,
+                "saturn" => $request->saturn,
+                "uranus" => $request->uranus,
+                "neptune" => $request->neptune,
+                "pluto" => $request->pluto,
+                "mc" => $request->mc,
+    
+            ]
+            );
+    } else {
+        $chart = "user chart exists";
+    }
+
+
+        return $chart;
 });
 
 // FEELLINGS

@@ -12134,6 +12134,59 @@ body .places .m-b-md {
   margin-bottom: 4rem;
 }
 
+.natal-chart-view .loading {
+  left: 45% !important;
+  position: relative !important;
+  color: #8344E0;
+}
+
+.natal-chart-view table {
+  margin-bottom: 50%;
+}
+
+.natal-chart-view .your-chart,
+.natal-chart-view .new-chart,
+.natal-chart-view .birth-place,
+.natal-chart-view .err {
+  color: #8344E0;
+  margin-top: 20px;
+  margin-left: 20px;
+  font-weight: 100;
+  margin-bottom: 30px;
+}
+
+.natal-chart-view .chart-sign {
+  color: #8344E0;
+}
+
+.natal-chart-view .form-group {
+  margin-left: 20px;
+}
+
+.natal-chart-view .form-group label {
+  margin-right: 8px;
+}
+
+.natal-chart-view .err {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+.natal-chart-view .calc {
+  border-color: #8344E0;
+  background-color: #8344E0;
+  color: white;
+  padding: 1% 4%;
+  border-radius: 5%;
+  margin-left: 5%;
+}
+
+.natal-chart-view .calc:hover {
+  border-color: #8344E0;
+  background-color: #8344E0;
+  color: white;
+}
+
 .todaysky-icon {
   color: black;
 }
