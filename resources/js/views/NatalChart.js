@@ -18,11 +18,14 @@ class NatalChart extends Component {
 
         this.handleAdd = this.handleAdd.bind(this)    
         this.sendInputValue = this.sendInputValue.bind(this)
-       
+        this.click = this.click.bind(this)
+
 
     }
 
     componentDidMount() {
+
+
         axios.get(`/api/user`)
         .then(res => {
           this.setState({
@@ -34,8 +37,8 @@ class NatalChart extends Component {
           })
         })
 
-        axios.get('https://mercuryretrogradeapi.com?date=2016-09-14')
-        .then(res => this.setState({isRetrograde: res.data.is_retrograde}))
+     
+        
 
       }
 
@@ -58,10 +61,15 @@ class NatalChart extends Component {
         this.setState((state) => state.newTask[key] = newValue);
     }
 
+    click() {
+
+        fetch('https://mercuryretrogradeapi.com?date=2016-09-14', { mode: 'cors' }).then(res => res.json()).then(jsone => console.dir(jsone)).catch(e => console.log(e))
+}
+
     render() {
         return (
             <div>
-                <h1>{this.state.isRetrograde}</h1>
+                <h1 onClick={this.click}>click</h1>
                 <NewTaskDialog
                 newTask={this.state.newTask} 
                 sendInputValue={this.sendInputValue}
