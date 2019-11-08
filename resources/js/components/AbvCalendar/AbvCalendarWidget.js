@@ -24,7 +24,7 @@ class AbvCalendarWidget extends Component {
             selectedDate: new Date(),
             open: {},
             is_retrograde: false
-          };
+          },
         this.renderHeader = this.renderHeader.bind(this)    
         this.renderDays = this.renderDays.bind(this)    
         this.renderCells = this.renderCells.bind(this)   
