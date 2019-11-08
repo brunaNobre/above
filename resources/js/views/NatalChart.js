@@ -70,7 +70,7 @@ class NatalChart extends Component {
         return (
             <div>
                 <h1 onClick={this.click}>click</h1>
-                <p>is retrograde? {this.state.isRetrograde}</p>
+                <p>is retrograde? {this.state.isRetrograde + ""}</p>
                 <NewTaskDialog
                 newTask={this.state.newTask} 
                 sendInputValue={this.sendInputValue}
