@@ -13,7 +13,7 @@ class NatalChart extends Component {
                 title: "",
                 due_to: formatDate(new Date().toLocaleDateString())
             },
-            isRetrograde: false,
+            isRetrograde: {},
         }
 
         this.handleAdd = this.handleAdd.bind(this)    
@@ -63,13 +63,14 @@ class NatalChart extends Component {
 
     click() {
 
-        fetch('https://mercuryretrogradeapi.com?date=2016-09-14', { mode: 'cors' }).then(res => res.json()).then(jsone => console.dir(jsone)).catch(e => console.log(e))
+        fetch('https://mercuryretrogradeapi.com?date=2016-09-14', { mode: 'cors' }).then(res => res.json()).then(jsone => console.dir(jsone)).catch(e => this.setState({isRetrograde: e.is_retrograde}))
 }
 
     render() {
         return (
             <div>
                 <h1 onClick={this.click}>click</h1>
+                <p>is retrograde? {this.state.isRetrograde}</p>
                 <NewTaskDialog
                 newTask={this.state.newTask} 
                 sendInputValue={this.sendInputValue}
