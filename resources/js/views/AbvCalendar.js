@@ -105,7 +105,7 @@ class AbvCalendar extends Component {
              <MoonHeader 
              phase={this.state.phase} 
              moonsign={this.state.moonsign}
-             onClick={() => {this.clickOnCell()}}
+             onClick={() => {console.log('oi')}}
              />
               <AbvCalendarWidget
               newTask={this.state.newTask}  
