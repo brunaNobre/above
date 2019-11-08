@@ -63,7 +63,7 @@ class NatalChart extends Component {
 
     click() {
 
-        fetch('https://mercuryretrogradeapi.com?date=2016-09-14', { mode: 'cors' }).then(res => res.json()).then(({is_retrograde}) => {this.setState({is_retrograde}); console.log(is_retrograde)})
+        fetch('https://mercuryretrogradeapi.com?date=2016-09-14', { mode: 'cors' }).then(res => res.json()).then(({is_retrograde}) => {this.setState({is_retrograde: is_retrograde}); console.log(is_retrograde)})
 }
 
     render() {
