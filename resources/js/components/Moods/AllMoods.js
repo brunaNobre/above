@@ -9,7 +9,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-
+import AbvPercentageBar from '../AbvPercentageBar'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -77,9 +77,13 @@ export default function AllMoods(props) {
   
         userFeellingsList = sortedPercentages.map(function(p, i) {
           return (
-            <ListItem key={i}>
-              <ListItemText primary={`${p[0]}: ${p[1].toPrecision(3)}%`} />
+            <div key={i}>
+            <ListItem >
+              <ListItemText primary={`${p[0]}`} />
             </ListItem>
+            <AbvPercentageBar percentage={`${p[1].toPrecision(3)}%`}></AbvPercentageBar>
+
+            </div>
           )
         });
       }

@@ -12,6 +12,7 @@ import List from '@material-ui/core/List';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Divider from '@material-ui/core/Divider';
 import SignMoonMood from './SignMoonMood'
+import AbvPercentageBar from '../AbvPercentageBar'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -117,9 +118,12 @@ export default function MoonsMood(props) {
     
           userFeellingsNewList = sortedPercentages.map(function(p, i) {
             return (
-              <ListItem key={i}>
-                <ListItemText primary={`${p[0]}: ${p[1].toPrecision(3)}%`} />
+              <div key={i}>
+              <ListItem>
+                <ListItemText primary={`${p[0]}`} />
               </ListItem>
+              <AbvPercentageBar percentage={`${p[1].toPrecision(3)}%`}></AbvPercentageBar>
+              </div>
             )
           });
         }  
@@ -156,9 +160,12 @@ export default function MoonsMood(props) {
     
           userFeellingsWaxList = sortedPercentages.map(function(p, i) {
             return (
-              <ListItem key={i}>
-                <ListItemText primary={`${p[0]}: ${p[1].toPrecision(3)}%`} />
+              <div key={i}>
+              <ListItem>
+                <ListItemText primary={`${p[0]}`} />
               </ListItem>
+              <AbvPercentageBar percentage={`${p[1].toPrecision(3)}%`}></AbvPercentageBar>
+              </div>
             )
           });
         }  
@@ -195,9 +202,12 @@ export default function MoonsMood(props) {
     
           userFeellingsFullList = sortedPercentages.map(function(p, i) {
             return (
-              <ListItem key={i}>
-                <ListItemText primary={`${p[0]}: ${p[1].toPrecision(3)}%`} />
+              <div key={i}>
+              <ListItem>
+                <ListItemText primary={`${p[0]}`} />
               </ListItem>
+              <AbvPercentageBar percentage={`${p[1].toPrecision(3)}%`}></AbvPercentageBar>
+              </div>
             )
           });
         }  
@@ -234,9 +244,12 @@ export default function MoonsMood(props) {
     
           userFeellingsWanList = sortedPercentages.map(function(p, i) {
             return (
-              <ListItem key={i}>
-                <ListItemText primary={`${p[0]}: ${p[1].toPrecision(3)}%`} />
+              <div key={i}>
+              <ListItem>
+                <ListItemText primary={`${p[0]}`} />
               </ListItem>
+              <AbvPercentageBar percentage={`${p[1].toPrecision(3)}%`}></AbvPercentageBar>
+              </div>
             )
           });
         }  
