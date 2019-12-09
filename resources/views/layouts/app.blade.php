@@ -9,6 +9,8 @@
 
     <title>Above - Sua vida virginiane.</title>
 
+    <link rel="manifest" href="{{ asset('manifest.json') }}">
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arvo|Roboto:300,400,500,700&display=swap" />

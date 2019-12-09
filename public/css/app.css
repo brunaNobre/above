@@ -11673,6 +11673,11 @@ body .places .m-b-md {
   padding-left: 5px;
 }
 
+.abv-tooltip .MuiButton-label {
+  text-transform: initial;
+  margin-left: 21px;
+}
+
 .planets-view .MuiCard-root {
   margin-top: 3vw;
   margin-left: auto;
