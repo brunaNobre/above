@@ -14,6 +14,7 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import AbvToolTip from '../AbvToolTip';
 
 
 class AbvCalendarWidget extends Component {
@@ -183,7 +184,7 @@ componentDidMount() {
         day = dateFns.addDays(day, 1);
 
         //let isFriday = (dayOfWeek == "sexta-feira") ? <p className="isfriday">Sextou!</p> : "";
-        let isRetrograde = this.state.is_retrograde ? <p className="isfriday">Mercúrio retrógrado!</p> : "";
+        let isRetrograde = this.state.is_retrograde ? <AbvToolTip /> : "";
 
         
         dialogs.push(
