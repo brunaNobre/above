@@ -88,10 +88,11 @@ workflows:
   aboveWorkflow:
     jobs:
       - build
-      - test
+      - test:
+         requires:
+           - build
       - deploy:
           requires:
-            - build
             - test
           filters:
             branches:
