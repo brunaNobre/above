@@ -52,9 +52,7 @@ jobs:
             - node_modules
       - run: sudo apt-get install -y libsqlite3-dev
       - run: composer install -n --ignore-platform-reqs
-      - run: npm update
       - run: npm run production
-      - run: vendor/bin/phpunit
 
       - run:
           name: Start Chrome Driver
