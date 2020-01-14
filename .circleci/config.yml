@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  build:
+  build-and-test:
     docker:
       # Specify the version you desire here
       - image: circleci/php:7.1-node-browsers
@@ -49,12 +49,7 @@ jobs:
       - save_cache:
           key: node-v1-{{ checksum "package.json" }}
           paths:
-            - node_modules
-  test:
-    docker:
-      - image: circleci/php:7.1-node-browsers
-    steps:
-      - run: sudo apt-get install -y libsqlite3-dev
+            - node_modules      - run: sudo apt-get install -y libsqlite3-dev
       - run: composer install -n --ignore-platform-reqs
       - run: npm install
       - run: npm run production
@@ -72,7 +67,7 @@ jobs:
 
       - run:
           name: Run Laravel Dusk Tests
-          command: php artisan dusk          
+          command: php artisan dusk         
   deploy:
     docker:
       - image: circleci/php:7.1-node-browsers
@@ -87,13 +82,10 @@ workflows:
   version: 2
   aboveWorkflow:
     jobs:
-      - build
-      - test:
-         requires:
-           - build
+      - build-and-test
       - deploy:
           requires:
-            - test
+            - build-and-test
           filters:
             branches:
               only: master
