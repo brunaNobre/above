@@ -29,8 +29,8 @@ class LoginToHomeTest extends DuskTestCase
             ->type('password', '1qwertyu')
             ->press('Entrar')
             ->assertPathIs('/home')
-            ->clickLink('Usuária ')
-            ->clickLink('Logout');
+            ->click('.abv-logout-menu-wrapper')
+            ->clickLink('Sair');
                   
         });
 
