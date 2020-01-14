@@ -69,7 +69,7 @@
                         </div>
 
                         <a class="btn btn-link google-account" href="">
-                            <img src="{{ secure_asset('images/google-logo.png') }}" alt="Google Entrar">
+                            <img src="{{ asset('images/google-logo.png') }}" alt="Google Entrar">
                             Usar a conta do Google
 
                         </a>
