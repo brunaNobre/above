@@ -56,6 +56,10 @@ export default function TasksList(props) {
     
     taskDueTo = day+ " de "+ formatMonth(month) + " de "+ year;
 
+    console.log("month: " +month)
+    console.log("formateMonth: " + formatMonth(month))
+    
+
     if(!task.is_completed && (taskDueTo == date) && (task.user_id == user_id)) {
       toDo = toDo + 1;
 
@@ -78,7 +82,8 @@ export default function TasksList(props) {
 
     } 
    
-  });  
+  }); 
+ 
   return (
     <div className={classes.root}>
       <List component="nav" aria-label="main mailbox folders">
