@@ -56,8 +56,6 @@ export default function TasksList(props) {
     
     taskDueTo = day+ " de "+ formatMonth(month) + " de "+ year;
 
-    console.log("month: " +month)
-    console.log("formateMonth: " + formatMonth(month))
     
 
     if(!task.is_completed && (taskDueTo == date) && (task.user_id == user_id)) {
