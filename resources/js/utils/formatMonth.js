@@ -1,66 +1,66 @@
 export default function formatMonth(m) {
     switch(m) {
-      case "1":
+      case "01":
       m = "Janeiro";
       break;
       case "Janeiro":
-      m = "1";
+      m = "01";
       break;
 
-      case "2":
+      case "02":
       m = "Fevereiro";
       break;
       case "Fevereiro":
-      m = "2";
+      m = "02";
       break;
 
-      case "3":
+      case "03":
       m = "Março";
       break;
       case "Março":
-      m = "3";
+      m = "03";
       break;
 
-      case "4":
+      case "04":
       m = "Abril";
       break;
       case "Abril":
-      m = "4";
+      m = "04";
       break;
 
-      case "5":
+      case "05":
       m = "Maio";
       break;
       case "Maio":
-      m = "5";
+      m = "05";
       break;
 
-      case "6":
+      case "06":
       m = "Junho";
       break;
       case "Junho":
-      m = "6";
+      m = "06";
       break;
 
-      case "7":
+      case "07":
       m = "Julho";
       break;
       case "Julho":
-      m = "7";
+      m = "07";
       break;
 
-      case "8":
+      case "08":
       m = "Agosto";
       break;
       case "Agosto":
-      m = "8";
+      m = "08";
       break;
 
-      case "9":
+      case "09":
       m = "Setembro";
       break;
       case "Setembro":
-      m = "9";
+      m = "09";
       break;
 
       case "10":

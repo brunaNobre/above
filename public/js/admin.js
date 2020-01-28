@@ -53831,9 +53831,9 @@ window.dateFns = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/es
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/brunanobrealmeida/workspace/above/resources/js/admin.js */"./resources/js/admin.js");
-__webpack_require__(/*! /Users/brunanobrealmeida/workspace/above/resources/sass/app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! /Users/brunanobrealmeida/workspace/above/resources/sass/admin/admin.scss */"./resources/sass/admin/admin.scss");
+__webpack_require__(/*! /Users/bruna/workspace/above/resources/js/admin.js */"./resources/js/admin.js");
+__webpack_require__(/*! /Users/bruna/workspace/above/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /Users/bruna/workspace/above/resources/sass/admin/admin.scss */"./resources/sass/admin/admin.scss");
 
 
 /***/ })
