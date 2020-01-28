@@ -9,7 +9,7 @@ class AbvUserProfile extends Component {
         return (
             <div className="abv-user-profile">
                 <Avatar alt="Avatar" src="/images/users/avatar.jpg" className="user-profile-img"/>
-                <AbvUserProfileSun day="19" month="05"/>
+                {this.props.birth_date ? <AbvUserProfileSun day={this.props.birth_date.split("-")[2]} month={this.props.birth_date.split("-")[1]}/> : ""}
             </div>
         )
     }

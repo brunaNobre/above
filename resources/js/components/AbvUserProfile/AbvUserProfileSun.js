@@ -4,9 +4,8 @@ import userSun from '../../utils/userSun'
 
 function AbvUserProfileSun (props) {
     const userSunTitle = userSun(props.day, props.month);
-
     return (
-    <p>Olá, {userSunTitle}</p>
+    <p className="abv-user-profile-sun">Olá, {userSunTitle}</p>
     )
 }
 

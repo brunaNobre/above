@@ -23,7 +23,7 @@ export default function AbvLogoutMenu(props) {
   return (
     <div className="abv-logout-menu-wrapper">
       <Button aria-controls="logout-menu" aria-haspopup="true" onClick={handleClick}>
-      <AbvUserProfile />
+      <AbvUserProfile birth_date={props.user.birth_date}/>
 
       </Button>
       <Menu
@@ -35,7 +35,7 @@ export default function AbvLogoutMenu(props) {
         onClose={handleClose}
       >
         <MenuItem onClick={handleClose}>
-        Olá, {props.firstName}
+            {props.user.name}
         </MenuItem>
         <span className="logout-user-email">{props.user.email}</span>
         <MenuItem onClick={handleClose}>
