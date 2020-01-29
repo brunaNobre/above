@@ -12529,10 +12529,10 @@ body .places .m-b-md {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
   background-image: url(/images/icon_camera.png?2525fe5c37c548917b48acf6aa7bd0e8);
-  background-size: 70%;
+  background-size: 60%;
   background-repeat: no-repeat;
-  background-position-x: 55%;
-  background-position-y: 40%;
+  background-position-x: 50%;
+  background-position-y: 45%;
 }
 
 .abvr-logo {
