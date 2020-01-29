@@ -5,6 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import AbvUserProfile from '../AbvUserProfile/AbvUserProfile'
 
 
+
 export default function AbvLogoutMenu(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -34,6 +35,7 @@ export default function AbvLogoutMenu(props) {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
+        <AbvUserProfile edit="true"/>
         <MenuItem onClick={handleClose}>
             {props.user.name}
         </MenuItem>

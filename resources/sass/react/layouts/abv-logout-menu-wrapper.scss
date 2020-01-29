@@ -3,6 +3,17 @@
 
 .logout-menu {
 
+    .abv-user-profile  {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5%;
+        .user-profile-img {
+            width: 8vw;
+            height: 8vw;
+        }
+
+    }
+
     .logout-user-email {
         padding: 5%;
         margin-left: 5px;
