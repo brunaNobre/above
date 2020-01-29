@@ -12516,11 +12516,14 @@ body .places .m-b-md {
   top: 65%;
 }
 
-.userProfileEditIcon-wrapper .userProfileEditIcon-background {
-  background-color: white;
-  border-radius: 100%;
-  width: 75%;
-  height: 75%;
+.userProfileEditIcon-wrapper .MuiButton-root {
+  min-width: 0px;
+}
+
+.userProfileEditIcon-wrapper .MuiButton-outlinedPrimary {
+  background-color: white !important;
+  border-color: white;
+  border-radius: 100% !important;
   margin-top: 10%;
   margin-bottom: 10%;
   margin-right: auto;
@@ -12533,6 +12536,13 @@ body .places .m-b-md {
   background-repeat: no-repeat;
   background-position-x: 50%;
   background-position-y: 45%;
+  width: 75%;
+  height: 75%;
+  padding: 0;
+}
+
+.userProfileEditIcon-wrapper .MuiButton-outlinedPrimary:hover {
+  border-color: white;
 }
 
 .abvr-logo {
