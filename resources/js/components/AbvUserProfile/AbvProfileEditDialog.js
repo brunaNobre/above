@@ -20,7 +20,7 @@ export default function AbvProfileEditDialog() {
 
   return (
     <div className="userProfileEditIcon-wrapper">
-      <Button variant="outlined" color="primary" onClick={handleClickOpen} className="userProfileEditIcon">
+      <Button title="Atualizar foto do perfil" variant="outlined" color="primary" onClick={handleClickOpen} className="userProfileEditIcon">
           {""}
       </Button>
       <Dialog
@@ -29,19 +29,16 @@ export default function AbvProfileEditDialog() {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">{"Use Google's location service?"}</DialogTitle>
+        <DialogTitle id="alert-dialog-title">{"Atualize sua foto do perfil"}</DialogTitle>
         <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            Let Google help apps determine location. This means sending anonymous location data to
-            Google, even when no apps are running.
-          </DialogContentText>
+         
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
-            Disagree
+            Cancelar
           </Button>
           <Button onClick={handleClose} color="primary" autoFocus>
-            Agree
+            Salvar
           </Button>
         </DialogActions>
       </Dialog>
