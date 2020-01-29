@@ -5,6 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import AbvUserProfile from '../AbvUserProfile/AbvUserProfile'
 
 
+
 export default function AbvLogoutMenu(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -23,7 +24,7 @@ export default function AbvLogoutMenu(props) {
   return (
     <div className="abv-logout-menu-wrapper">
       <Button aria-controls="logout-menu" aria-haspopup="true" onClick={handleClick}>
-      <AbvUserProfile />
+      <AbvUserProfile birth_date={props.user.birth_date}/>
 
       </Button>
       <Menu
@@ -34,8 +35,9 @@ export default function AbvLogoutMenu(props) {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
+        <AbvUserProfile edit="true"/>
         <MenuItem onClick={handleClose}>
-        Olá, {props.firstName}
+            {props.user.name}
         </MenuItem>
         <span className="logout-user-email">{props.user.email}</span>
         <MenuItem onClick={handleClose}>

@@ -11158,9 +11158,20 @@ body .places .m-b-md {
   }
 }
 
+.logout-menu .abv-user-profile {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
+}
+
+.logout-menu .abv-user-profile .user-profile-img {
+  width: 8vw;
+  height: 8vw;
+}
+
 .logout-menu .logout-user-email {
   padding: 5%;
-  margin-left: 7%;
+  margin-left: 5px;
   color: #666;
   display: block;
   font-size: 1.8vw;
@@ -11440,6 +11451,13 @@ body .places .m-b-md {
   }
 }
 
+.abv-user-profile-sun {
+  margin-bottom: 8%;
+  text-transform: none;
+  font-size: 1.2vw;
+  margin-top: 8%;
+}
+
 .abv-sidemenu-header {
   background-color: #e9f1f0;
   padding-top: 10%;
@@ -11473,6 +11491,11 @@ body .places .m-b-md {
   font-weight: 700;
   font-size: 1.8em;
   margin-bottom: -0.5rem;
+}
+
+.abv-sidemenu-header .userProfileEditIcon-wrapper {
+  width: 8vw;
+  height: 8vw;
 }
 
 .tasks-header {
@@ -12474,6 +12497,42 @@ body .places .m-b-md {
 .sidemenu-item-icon {
   width: 1.5rem;
   margin-right: 15%;
+}
+
+.sidemenu-item-icon {
+  width: 1.5rem;
+  margin-right: 15%;
+}
+
+.userProfileEditIcon-wrapper {
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 100%;
+  width: 4vw;
+  height: 4vw;
+  margin: 0;
+  position: absolute;
+  left: 60%;
+  top: 65%;
+}
+
+.userProfileEditIcon-wrapper .userProfileEditIcon-background {
+  background-color: white;
+  border-radius: 100%;
+  width: 75%;
+  height: 75%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  margin-right: auto;
+  margin-left: auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  background-image: url(/images/icon_camera.png?2525fe5c37c548917b48acf6aa7bd0e8);
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 45%;
 }
 
 .abvr-logo {
