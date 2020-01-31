@@ -29,6 +29,19 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return auth()->user();
 });
 
+Route::middleware('auth:api')->post('/user/image', function (Request $request) {
+    $id = auth()->user()->id;    
+    
+    $imageName = $id.'.'.request()->user_image->getClientOriginalExtension();
+
+    request()->user_image->move(public_path('images/users'), $imageName);
+
+    return back()
+        ->with('success','Imagem enviada com sucesso.')
+        ->with('image',$imageName);
+
+});
+
 Route::middleware('auth:api')->get('/planets', function () {
 
     $planets = Planet::all();

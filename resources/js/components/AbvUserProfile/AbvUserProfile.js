@@ -5,6 +5,36 @@ import AbvUserProfileSun from './AbvUserProfileSun'
 import AbvProfileEditDialog from './AbvProfileEditDialog'
 
 class AbvUserProfile extends Component {
+    constructor(){
+        super()
+        this.state = {
+            image: '',
+        }
+
+        this.uploadUserImage = this.uploadUserImage.bind(this)
+        this.sendInputImage = this.sendInputImage.bind(this)
+    }
+
+
+
+    uploadUserImage() {
+        const formData = new FormData();
+        formData.append('user_image', this.state.image);
+
+        axios.post('/api/user/image', formData)
+        .then(res => {
+            console.log(res.data)
+            });
+
+    }
+
+
+    sendInputImage(file) {
+        this.setState({image: file})
+    }
+
+
+  
 
     render() {
         return (
@@ -21,7 +51,10 @@ class AbvUserProfile extends Component {
                 }
 
                 {this.props.birth_date ? <AbvUserProfileSun day={this.props.birth_date.split("-")[2]} month={this.props.birth_date.split("-")[1]}/> : ""}
-                {this.props.edit ? <AbvProfileEditDialog/> : ""}
+                {this.props.edit ? <AbvProfileEditDialog 
+                uploadUserImage={this.uploadUserImage}
+                sendInputImage={this.sendInputImage}
+                /> : ""}
             </div>
         )
     }
