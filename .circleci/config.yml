@@ -65,9 +65,3 @@ workflows:
   aboveWorkflow:
     jobs:
       - build
-      - deploy:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
