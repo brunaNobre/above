@@ -20,7 +20,7 @@ export default function AbvProfileEditDialog(props) {
   };
 
   const handleClose = () => {
-    props.uploadUserImage()
+    props.uploadUserImage();
     setOpen(false);
   };
 
@@ -47,7 +47,7 @@ export default function AbvProfileEditDialog(props) {
           <Button onClick={handleCancel} color="primary">
             Cancelar
           </Button>
-          <Button onClick={handleClose} color="primary" autoFocus>
+          <Button onClick={handleClose} color="primary">
             Salvar
           </Button>
         </DialogActions>

@@ -30,11 +30,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::middleware('auth:api')->post('/user/image', function (Request $request) {
-    $id = auth()->user()->id;    
+    $randomNumber = rand();
     
-    $imageName = $id.'.'.request()->user_image->getClientOriginalExtension();
+    $imageName = auth()->user()->email.$randomNumber.'.'.request()->user_image->getClientOriginalExtension();
 
     request()->user_image->move(public_path('images/users'), $imageName);
+
+    auth()->user()->update(['avatar' => auth()->user()->email.$randomNumber]);
+
+
 
     return back()
         ->with('success','Imagem enviada com sucesso.')

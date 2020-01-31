@@ -32,20 +32,52 @@ class AboveApp extends Component {
     super()
     this.state = {
       user: {},
-      firstName: ""
+      firstName: "",
+      user_avatar: "avatar",
+      image: "",
     }
+
+    this.uploadUserImage = this.uploadUserImage.bind(this)
+    this.sendInputImage = this.sendInputImage.bind(this)
   }
 
   componentDidMount() {
     axios.get('/api/user')
     .then(res => {
         let firstName = (res.data.name).split(" ")[0];
+        let user_avatar = res.data.avatar ? res.data.avatar : "avatar"
         this.setState({
           user: res.data,
-          firstName: firstName
+          firstName: firstName,
+          user_avatar: user_avatar
         })
     });
   }
+
+
+
+  uploadUserImage() {
+    const formData = new FormData();
+    formData.append('user_image', this.state.image);
+
+    axios.post('/api/user/image', formData)
+    .then(res => {
+        axios.get('api/user')
+        .then(res => {
+                this.setState({user_avatar: res.data.avatar})    
+            
+        })         
+    }) 
+}
+
+
+sendInputImage(file) {
+    this.setState({image: file})
+}
+
+
+
+
 
 
 
@@ -60,6 +92,9 @@ class AboveApp extends Component {
           <AboveHeader 
           user={this.state.user}
           firstName={this.state.firstName}
+          avatar={this.state.user_avatar}
+          uploadUserImage={this.uploadUserImage}
+          sendInputImage={this.sendInputImage}
           />
 
 

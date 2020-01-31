@@ -20,8 +20,22 @@ function AboveHeader (props) {
                 <AbvLogo />
                 <AbvNavBar />
                 <AboveHeaderColorBar />
-                <AboveSideMenu user={props.user} firstName={props.firstName}/>
-                <AbvLogoutMenu user={props.user} firstName={props.firstName}/>
+
+                <AboveSideMenu 
+                user={props.user}
+                firstName={props.firstName}
+                avatar={props.avatar}
+                uploadUserImage={props.uploadUserImage}
+                sendInputImage={props.sendInputImage}
+                />
+
+                <AbvLogoutMenu
+                 user={props.user}
+                 firstName={props.firstName}
+                 avatar={props.avatar}
+                 uploadUserImage={props.uploadUserImage}
+                 sendInputImage={props.sendInputImage}
+                 />
            </Toolbar>
 
         </AppBar>

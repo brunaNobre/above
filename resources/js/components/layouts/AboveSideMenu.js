@@ -53,7 +53,13 @@ function AboveSideMenu (props) {
             onClose={handleClose}
      
             >
-                <AbvSideMenuHeader user={props.user} firstName={props.firstName}/>
+                <AbvSideMenuHeader
+                 user={props.user}
+                 firstName={props.firstName}
+                 avatar={props.avatar}
+                 uploadUserImage={props.uploadUserImage}
+                 sendInputImage={props.sendInputImage}
+                 />
                 <MenuItem onClick={handleClose}><Link to="/home/tasks" className="abv-sidemenu-link" id="first-item"><AssignmentTurnedInIcon className="abv-sidemenu-icon" />Tarefas</Link></MenuItem>
                 <MenuItem onClick={handleClose}><Link to="/home/planets" className="abv-sidemenu-link"><PlanetsIcon />Planetas</Link></MenuItem>
                 <MenuItem onClick={handleClose}><Link to="/home/signs" className="abv-sidemenu-link"><SignsIcon />Signos</Link></MenuItem>
