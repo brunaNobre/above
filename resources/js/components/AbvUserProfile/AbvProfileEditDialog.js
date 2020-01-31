@@ -7,16 +7,26 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { relativeTimeRounding } from 'moment';
 
-export default function AbvProfileEditDialog() {
+
+export default function AbvProfileEditDialog(props) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
   };
 
-  const handleClose = () => {
+  const handleCancel = () => {
     setOpen(false);
   };
+
+  const handleClose = () => {
+    props.uploadUserImage();
+    setOpen(false);
+  };
+
+
+
+
 
   return (
     <div className="userProfileEditIcon-wrapper">
@@ -31,13 +41,13 @@ export default function AbvProfileEditDialog() {
       >
         <DialogTitle id="alert-dialog-title">{"Atualize sua foto do perfil"}</DialogTitle>
         <DialogContent>
-         
+          <input type="file" name="image" onChange={(e) => {props.sendInputImage(e.target.files[0])}}></input>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleCancel} color="primary">
             Cancelar
           </Button>
-          <Button onClick={handleClose} color="primary" autoFocus>
+          <Button onClick={handleClose} color="primary">
             Salvar
           </Button>
         </DialogActions>
