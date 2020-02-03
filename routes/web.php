@@ -30,8 +30,8 @@ Route::get('/admin', 'AdminController@index')->name('admin.dashboard');
 
 
 
-Route::get('admin/register', 'AdminController@create')->name('admin.register');
-Route::post('admin/register', 'AdminController@store')->name('admin.register.store');
+//Route::get('admin/register', 'AdminController@create')->name('admin.register');
+//Route::post('admin/register', 'AdminController@store')->name('admin.register.store');
 Route::get('admin/login', 'Auth\Admin\LoginController@login')->name('admin.auth.login');
 Route::post('admin/login', 'Auth\Admin\LoginController@loginAdmin')->name('admin.auth.loginAdmin');
 Route::post('admin/logout', 'Auth\Admin\LoginController@logout')->name('admin.auth.logout');
