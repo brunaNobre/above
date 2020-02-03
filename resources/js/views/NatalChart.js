@@ -3,6 +3,7 @@ import NewTaskDialog from '../components/layouts/NewTaskDialog'
 import formatDate from '../utils/formatDate'
 import ChartTable from '../components/Chart/ChartTable'
 import CircularProgress from '@material-ui/core/CircularProgress';
+import AbvDatePicker from '../components/AbvDatePicker';
 
 class NatalChart extends Component {
     constructor() {
@@ -28,7 +29,7 @@ class NatalChart extends Component {
         this.handleClick = this.handleClick.bind(this)
         this.renderForm = this.renderForm.bind(this)
         this.renderChart = this.renderChart.bind(this)
-        this.onDateChange = this.onDateChange.bind(this)
+        this.onDatePick = this.onDatePick.bind(this)
         this.onHourChange = this.onHourChange.bind(this)
         this.onLatChange = this.onLatChange.bind(this)
         this.onLongChange = this.onLongChange.bind(this)
@@ -132,12 +133,14 @@ class NatalChart extends Component {
 
     }
 
-
-    onDateChange(text) {
+    onDatePick(text) {
         let spl = text.split('-');
-        let fText = `${spl[2]}/${spl[1]}/${spl[0]}`;
-        this.setState({dob: fText, err: ""});
+        let month = spl[1] < 10 ? "0"+spl[1] : spl[1];
+        let formatedText = `${spl[2]}/${month}/${spl[0]}`;
+        this.setState({dob: formatedText, err: ""});
+
     }
+
 
     onHourChange(text) {
         this.setState({tob: text, err: ""});
@@ -165,8 +168,7 @@ class NatalChart extends Component {
                 <h1 className="new-chart">Faça seu mapa astral</h1>
     
                 <div className="form-group">
-                <label>Data de nascimento:</label>
-                <input onChange={(e) => {this.onDateChange(e.target.value)}} id="date" type="date" required></input>
+                <AbvDatePicker onDatePick={this.onDatePick} label="Data de nascimento:"/>
                 </div>
     
                 <div className="form-group">
