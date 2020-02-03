@@ -71,11 +71,11 @@
                        
 
                     </form>
-
+<!--
                     <p class="login-register-call">
                     Acabou de chegar de marte?
-                    <a class="register-link" href="{{ route('admin.register') }}"> Cadastre-se</a>
-                    </p>
+                    <a class="register-link" href=""> Cadastre-se</a>
+                    </p> -->
                 </div>
             </div>
         </div>
