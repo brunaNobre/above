@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use App\Admin;
-use Illuminate\Http\Request;
+=use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -26,7 +25,7 @@ class UserController extends Controller
     public function index()
     {
        
-        $users = Admin::all();
+        $users = User::all();
         return view('admin.users_list', compact('users'));
     }
 
@@ -93,7 +92,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = Admin::find($id);
+        $user = User::find($id);
         if ($user->delete()) {
             return redirect()->route('users.index')
                 ->with('status', $user->name . ' Excluído!');
